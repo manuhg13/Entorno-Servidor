@@ -44,7 +44,24 @@
     echo "<h2>Include</h2>";
     include_once("./prueba.html");
     
-    echo "<h2>Constantes</h2>";
+    echo "<h2>Server</h2>";
+
+    echo "<pre>";
+    var_dump($_SERVER);
+    echo "<br>";
+    echo "Request ";
+    var_dump($_REQUEST);
+    echo "<br>";
+    echo "Cookies ";
+    var_dump($_COOKIE);
+    echo "<br>";
+    echo "Session ";
+    session_start();
+    var_dump($_SESSION);
+    echo "</pre>";
+
 
     
+
+
 ?>
