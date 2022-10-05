@@ -1,0 +1,254 @@
+@charset "utf-8";
+body{
+    margin: 0;
+    height: 100%;
+    padding: 0;
+    font-size: 14px;
+    font-family: verdana, Arial, Helvetica, sans-serif;
+    color: #525252;
+    background-color: #131313;
+}
+
+img{display:block; margin:0; padding:0; border:0;}
+
+.clear{
+    clear:both;
+}
+br.clear{
+    clear:both; 
+    margin-top:-15px;
+}
+div.wrapper{
+    display:block; 
+    width:100%; 
+    margin:0; 
+    padding:0; 
+    text-align:left;
+}
+
+#header, #intro, #latest, #breadcrumb, #container, #footer, #copyright{
+    display:block; 
+    position:relative; 
+    width:100%; 
+    margin:0 auto;
+}
+
+
+#header{
+    display:block; 
+    position:relative; 
+    width: 1750px; 
+    margin:0 auto; 
+    padding:5px 20px 15px 20px; 
+    color:#DBDBDB; 
+    background-color:#232323; 
+}
+#header #logo{
+    display:block; 
+    float:left; 
+    width:400px; 
+    margin-top:7px;
+}
+#header #logo h1, #header #logo p{
+    margin:0; padding:0; 
+    line-height:normal;
+}
+#header #logo h1{
+    margin:0; 
+    padding:0; 
+    font-size:42px; 
+    border:none; 
+    text-transform:uppercase;
+}
+#header h1 a{
+    color:#DBDBDB; 
+    background-color:#232323;
+}
+
+#header #topnav{
+    display:block; 
+    float:right; 
+    width:900px; 
+    margin:30px 0 0 0; 
+    padding:0; 
+    font-size:13px; 
+    font-family:Verdana, Arial, Helvetica, sans-serif; 
+    text-align:right;
+}
+#header ul{margin:0; 
+    padding:0; 
+    list-style:none;
+}
+#header li{
+    display:inline; 
+    margin-right:35px;
+}
+#header li a:link, #header li a:visited, #header li a:hover{
+    margin:0;
+    padding:0 3px 10px 3px; 
+    color:#FFFFFF; 
+    background-color:#232323; 
+    border-bottom:1px solid #232323;
+}
+#header li a:hover, #header li.active a{
+    color:#FDC609; 
+    background-color:#232323; 
+    border-bottom-color:#FDC609;
+}
+#header #topnav li.last{
+    margin-right:0;
+}
+
+.fl_left, .imgl{
+    float:left;
+}
+.fl_right, .imgr{
+    float:right;
+}
+
+#latest{
+    padding:20px 0 0 0;
+}
+#latest .fl_left{
+    margin-left: 30px;
+    display:block; 
+    float:left; 
+    width:360px; 
+    height:280px; 
+    padding:10px; 
+    color:#333333; 
+    background-color:#FDC609;
+}
+#latest .fl_right{
+    display:block; 
+    margin-left: 7px;
+    float:left; 
+    width:575px; 
+    height:300px;
+}
+#latest .fl_right h2, #latest .fl_right p{
+    margin:0 0 12px 0; 
+    padding:0px;
+    border:none; 
+    line-height:normal;
+}
+
+#latest .fl_right h2{
+    font-size:30px;
+}
+#latest .fl_right p{
+    line-height:2.2em;
+}
+#latest .fl_right ul{
+    margin:0; padding:0; list-style:none;
+}
+
+#latest ul li.last{
+    margin-right:0;
+}
+
+/*Footer*/
+
+#footer{
+    display:block; 
+    position:relative; 
+    width:1750px; 
+    margin:0 auto; 
+    padding:20px;
+    margin-top: 50px;
+    color:#98989A; 
+    background-color:#232323;
+}
+
+#footer a{
+    color:#FDC609; 
+    background-color:#232323;
+}
+
+#footer h2{
+    margin-bottom:10px; 
+    border-bottom-color:#98989A;
+}
+
+#footer p, #footer ul, #footer a{
+    margin:0; 
+    padding:0; 
+    font-weight:normal; 
+    list-style:none; 
+    line-height:normal;
+}
+
+#footer .footboxR{
+    display:block; 
+    float:right; 
+    width:190px; 
+    margin:0 0 0 15px; 
+    padding:0;
+}
+#footer .footboxL{
+    display:block; 
+    float:left; 
+    width:190px; 
+    margin:0 0 0 15px; 
+    padding:0;
+}
+
+#footer li{
+    margin-bottom:3px;
+}
+
+#footer .last{
+    margin:0;
+}
+
+#newsletter{
+    display:block; 
+    float:left; 
+    width:300px;
+}
+
+/*Intro*/
+
+#intro{
+    padding:25px 0 15px 0;
+}
+#intro ul{
+    margin:0; 
+    padding:0; 
+    list-style:none;
+}
+#intro li{
+    display:block; 
+    float:left; 
+    width:300px; 
+    margin:0 30px 0 30px; 
+    padding:0;
+}
+#intro li.in{
+    display:block; 
+    float:left; 
+    width:300px; 
+    margin:0 30px 20px 30px; 
+    padding:0;
+}
+#intro li.last{
+    margin-right:0;
+}
+#intro h2, #intro p, #intro img, #intro div{
+    margin:0 0 20px 0; 
+    padding:0;
+}
+#intro h2{
+    padding-bottom:8px; 
+    color:#FFFFFF; 
+    background-color:#131313;
+}
+#intro div.imgholder{
+    display:block; 
+    width:300px;
+}
+#intro div.imgholder img{
+    margin:0; 
+    padding:0; 
+    border:none;
+}
