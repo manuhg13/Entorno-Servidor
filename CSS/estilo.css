@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 body{
     margin: 0;
     height: 100%;
@@ -68,11 +69,10 @@ div.wrapper{
 #header #topnav{
     display:block; 
     float:right; 
-    width:900px; 
-    margin:30px 0 0 0; 
+    width:1000px; 
+    margin:50px 0 0 0; 
     padding:0; 
-    font-size:13px; 
-    font-family:Verdana, Arial, Helvetica, sans-serif; 
+    font-size:15px;  
     text-align:right;
 }
 #header ul{margin:0; 
@@ -81,14 +81,16 @@ div.wrapper{
 }
 #header li{
     display:inline; 
-    margin-right:35px;
+    padding:20px 20px 20px 20px;
 }
 #header li a:link, #header li a:visited, #header li a:hover{
     margin:0;
     padding:0 3px 10px 3px; 
+    border: none;
+    text-decoration: none;
     color:#FFFFFF; 
-    background-color:#232323; 
-    border-bottom:1px solid #232323;
+    background-color:#232323;
+    display: inline-block; 
 }
 #header li a:hover, #header li.active a{
     color:#FDC609; 
@@ -147,7 +149,58 @@ div.wrapper{
     margin-right:0;
 }
 
-/*Footer*/
+/*----------------------------Intro----------------------------------------*/
+
+#intro{
+    padding:25px 0 15px 0;
+}
+#intro ul{
+    margin:0; 
+    padding:0; 
+    list-style:none;
+}
+#intro li{
+    display:block; 
+    float:left; 
+    width:300px; 
+    margin:0 30px 0 30px; 
+    padding:0;
+}
+#intro li.dentro{
+    display:block; 
+    float:left; 
+    width:300px; 
+    margin:0; 
+    padding:0;
+}
+#intro li.last{
+    margin-right:0;
+}
+#intro h2, #intro p{
+    margin:0 0 15px 0; 
+    padding:0;
+}
+#intro h2{
+    padding-bottom:8px; 
+    color:#FFFFFF; 
+    background-color:#131313;
+    border-bottom: 1px dotted #4C4C4C;
+}
+#intro a:link, a:visited{
+    background-color: #131313;
+    color: #FDC609;
+    border: 2px solid #FDC609;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;  
+}
+#intro a:hover, a:active{
+    background-color: #FDC609;
+    color: #131313;
+}
+
+/*------------------------------------------Footer-----------------------------------------*/
 
 #footer{
     display:block; 
@@ -207,48 +260,3 @@ div.wrapper{
     width:300px;
 }
 
-/*Intro*/
-
-#intro{
-    padding:25px 0 15px 0;
-}
-#intro ul{
-    margin:0; 
-    padding:0; 
-    list-style:none;
-}
-#intro li{
-    display:block; 
-    float:left; 
-    width:300px; 
-    margin:0 30px 0 30px; 
-    padding:0;
-}
-#intro li.in{
-    display:block; 
-    float:left; 
-    width:300px; 
-    margin:0 30px 20px 30px; 
-    padding:0;
-}
-#intro li.last{
-    margin-right:0;
-}
-#intro h2, #intro p, #intro img, #intro div{
-    margin:0 0 20px 0; 
-    padding:0;
-}
-#intro h2{
-    padding-bottom:8px; 
-    color:#FFFFFF; 
-    background-color:#131313;
-}
-#intro div.imgholder{
-    display:block; 
-    width:300px;
-}
-#intro div.imgholder img{
-    margin:0; 
-    padding:0; 
-    border:none;
-}
