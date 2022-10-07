@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ejercicio 1</title>
 </head>
 <body>
     <h1>Ejercicio 1</h1>
@@ -20,7 +20,7 @@
         echo date("Y-m-d H:i:s",strtotime("now"));
         echo "<h2>e. Muestra la fecha y hora actual en Oporto formateada en (día de la semana, dia de mes de año, hh:mm:ss, Zona horaria).</h2>";
         date_default_timezone_set('Europe/Lisbon');
-        echo date("l d H:i:s date_default_timezone_get()",strtotime("now"));
+        echo date("l d H:i:s ",strtotime("now")) . date_default_timezone_get();
     ?>
 </body>
 </html>
