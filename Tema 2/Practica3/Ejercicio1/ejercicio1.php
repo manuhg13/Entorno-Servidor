@@ -11,7 +11,7 @@
         include_once("../../../CSS/cabecera.html");
     ?>
     <?php
-        
+        include_once("../../../CSS/intro.html");
         echo "<h1>Ejercicio 1</h1>";
         echo "<h2>a. Muestra el nombre del fichero que se está ejecutando</h2>";
         echo basename(__FILE__);
