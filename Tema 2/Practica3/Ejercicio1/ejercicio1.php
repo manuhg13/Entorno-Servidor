@@ -16,9 +16,9 @@
         echo "$_SERVER[HTTP_HOST]";
         echo "<h2>c. Muestra el path donde se encuentra el fichero que se está ejecutando.</h2>";
         echo "$_SERVER[SCRIPT_NAME]";
-        echo "<h2>c. Muestra la fecha y hora actual formateada en 2022-09-4 19:17:18.</h2>";
+        echo "<h2>d. Muestra la fecha y hora actual formateada en 2022-09-4 19:17:18.</h2>";
         echo date("Y-m-d H:i:s",strtotime("now"));
-        echo "<h2>c. Muestra la fecha y hora actual en Oporto formateada en (día de la semana, dia de mes de año, hh:mm:ss, Zona horaria).</h2>";
+        echo "<h2>e. Muestra la fecha y hora actual en Oporto formateada en (día de la semana, dia de mes de año, hh:mm:ss, Zona horaria).</h2>";
         date_default_timezone_set('Europe/Lisbon');
         echo date("l d H:i:s date_default_timezone_get()",strtotime("now"));
     ?>
