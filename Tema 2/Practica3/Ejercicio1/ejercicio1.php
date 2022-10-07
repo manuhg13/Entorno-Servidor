@@ -7,8 +7,9 @@
     <title>Ejercicio 1</title>
 </head>
 <body>
-    <h1>Ejercicio 1</h1>
     <?php
+        include("../../../CSS/cabecera.html");
+        echo "<h1>Ejercicio 1</h1>";
         echo "<h2>a. Muestra el nombre del fichero que se está ejecutando</h2>";
         echo basename(__FILE__);
         echo "<h2>b. Muestra la dirección IP del equipo desde el que estas accediendo</h2>";
