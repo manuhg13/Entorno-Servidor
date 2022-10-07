@@ -42,7 +42,7 @@
     crearCoches();
 
     echo "<h2>Include</h2>";
-    include_once("./prueba.html");
+    /*include_once("./prueba.html");*/
     
     echo "<h2>Server</h2>";
 
