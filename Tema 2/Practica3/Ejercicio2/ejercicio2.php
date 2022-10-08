@@ -7,6 +7,11 @@
     <title>Ejercicio 2</title>
 </head>
 <body>
-    
+    <?
+        include_once("../../../CSS/cabecera.html");
+    ?>
+    <?php
+        include_once("../../../CSS/intro.html");
+    ?>
 </body>
 </html>
