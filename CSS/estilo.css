@@ -12,6 +12,14 @@ body{
 h1{
     color: #969393;  
 }
+h2{
+    color: #969393;  
+}
+p{
+    color:#DBDBDB; 
+}
+
+/***********************/
 
 img{display:block; margin:0; padding:0; border:0;}
 
