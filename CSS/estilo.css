@@ -7,18 +7,14 @@ body{
     font-size: 14px;
     font-family: verdana, Arial, Helvetica, sans-serif;
     background-color: #131313;
-}
-
-h1{
     color: #969393;  
 }
-h2{
-    color: #969393;  
-}
-p{
-    color:#DBDBDB; 
-}
 
+h1, h2, text{
+    color: #969393;  
+    margin-left: 20px;
+
+}
 /***********************/
 
 img{display:block; margin:0; padding:0; border:0;}
