@@ -7,7 +7,7 @@
     <title>Ejercicio 1</title>
 </head>
 <body>
-    <?
+    <?php
         include_once("../../../CSS/cabecera.html");
     ?>
     <?php
@@ -30,7 +30,10 @@
         echo "<h2>g.Calcular la fecha y el día de la dentro de 60 días.</h2>";
         $hoy = date("d-m-y");
         echo date("d-m-y", strtotime("+ 60 days"));
+    ?>
 
+    <?php
+        include_once("../../../CSS/pie.html");
     ?>
 </body>
 </html>
