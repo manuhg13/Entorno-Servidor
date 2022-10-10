@@ -15,28 +15,19 @@
         include_once("../../../CSS/intro.html");
         echo "<h1>Ejercicio 2</h1>";
         echo "<h2>Crea una página a la que se le pase por url una variable con el nombre que quieras y muestre el valor de la variable, el tipo, si es numérico o no y si lo es, si es entero o float.</h2>";
-<<<<<<< HEAD
+
         foreach ($_GET as $valor) {           
             if (ctype_digit($valor)){
                 echo "Es un número ";
-                if (is_float($valor)){
+                if (strpos($valor,".")!== false){
                     echo "float";
-                }else{
+                } else {
                     echo "entero";
                 }
             }else {
                 echo "No es un número";
-=======
-        foreach ($_GET as $valor) {
-            # code...
-        }
-        if (is_numeric($GET['gatos'])) {
-            if(strpos($_GET['gatos'], '.')!== false){
-                echo "";
->>>>>>> ffb3d05 (g)
             }
         }
-       
        include_once("../../../CSS/pie.html");
     ?>
 </body>
