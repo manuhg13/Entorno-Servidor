@@ -15,7 +15,6 @@
         include_once("../../../CSS/intro.html");
         echo "<h1>Ejercicio 2</h1>";
         echo "<h2>Crea una página a la que se le pase por url una variable con el nombre que quieras y muestre el valor de la variable, el tipo, si es numérico o no y si lo es, si es entero o float.</h2>";
-        echo var_dump($_GET);
         foreach ($_GET as $i => $valor) {
             echo "La variable " . $valor . " es un " . gettype($_GET[$i]) - " con el valor de: " . $_GET[$i] ;
             echo "<br>";
@@ -25,6 +24,7 @@
                 echo $_GET[$i] . " no es numerico";
             }
        }
+       include_once("../../../CSS/pie.html");
     ?>
 </body>
 </html>
