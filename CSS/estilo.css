@@ -180,14 +180,14 @@ div.wrapper{
     float:left; 
     width:300px; 
     margin:0; 
-    padding:0;
+    padding:10px;
 }
 #intro li.last{
     margin-right:0;
 }
 #intro h2, #intro p{
-    margin:0 0 15px 0; 
-    padding:0;
+    margin:15px 0 15px 0; 
+    padding:2px;
 }
 #intro h2{
     padding-bottom:8px; 

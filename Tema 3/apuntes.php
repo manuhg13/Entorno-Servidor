@@ -23,6 +23,10 @@
         var_dump($a & $b);
         echo "<br>";
         var_dump($a << $b);
+
+        echo "<h2> Bucles </h2>";
+        
+        include_once("../CSS/pie.html");
     ?>
 </body>
 </html>
