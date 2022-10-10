@@ -13,7 +13,11 @@
     ?>
     <?php
         include_once("../../../CSS/intro.html");
-        
+        echo "<h2>Crea una página en la que se le pase como parámetros en la URL (ano, mes y día) y muestre el día de la semana de dicho día. (Por defecto, dale el valor de 12/09/2022)</h2>";
+        foreach ($_GET as $valor) {
+            $fecha= new DateTime($valor);
+            echo date_format($fecha, "l");
+        }
     ?>
 
     <?php
