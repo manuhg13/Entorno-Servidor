@@ -28,14 +28,13 @@
 
         $lineas=3;
         for ($i=1; $i <= $lineas; $i++) { 
-            for ($espacios=1; $espacios<=$lineas; $espacios++) { 
-                echo " ";
+            for ($espacios=1; $espacios<=$lineas-1; $espacios++) { 
+                echo "&nbsp;&nbsp";
             }
-            for ($asteriscos=1; $i <=($i*2)-1; $asteriscos++) { 
-                
+            for ($asteriscos=1; $i <=($i*2)-1; $asteriscos++) {    
                 echo "*";
             } 
-            echo "<br>"
+            echo "<br>";
         }
 
         include_once("../CSS/pie.html");
