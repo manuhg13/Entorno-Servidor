@@ -26,7 +26,7 @@
 
         echo "<h2> Bucles </h2>";
 
-        $lineas=5;
+        $lineas= (int)$_GET["filas"];
         for ($i=1; $i <= $lineas; $i++) { 
             for ($espacios=1; $espacios<=$lineas-$i; $espacios++) { 
                 echo "&nbsp;&nbsp";
