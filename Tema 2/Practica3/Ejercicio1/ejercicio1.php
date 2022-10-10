@@ -31,6 +31,16 @@
         echo "<h2>g.Calcular la fecha y el día de la dentro de 60 días.</h2>";
         $hoy = date("d-m-y");
         echo date("d-m-y", strtotime("+ 60 days"));
+        echo "<div class='wrapper'>
+        <div id='intro'>
+                <li>
+                    <ul>
+                        <li class='dentro'><a href='ver1.php'>Ver fichero</a></li>
+                    </ul>                  
+                </li>
+                <br class='clear'/>
+            </div>
+        </div>";
     ?>
 
     <?php

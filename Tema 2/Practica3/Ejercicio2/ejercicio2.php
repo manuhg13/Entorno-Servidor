@@ -28,6 +28,16 @@
                 echo "No es un número";
             }
         }
+        echo "<div class='wrapper'>
+        <div id='intro'>
+                <li>
+                    <ul>
+                        <li class='dentro'><a href='ver2.php'>Ver fichero</a></li>
+                    </ul>                  
+                </li>
+                <br class='clear'/>
+            </div>
+        </div>";
        include_once("../../../CSS/pie.html");
     ?>
 </body>
