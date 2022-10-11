@@ -15,10 +15,13 @@ h1, h2, text{
     margin-left: 20px;
 
 }
-/***********************/
-
-img{display:block; margin:0; padding:0; border:0;}
-
+/***********************************************************************************/
+img{
+    display:block; 
+    margin:0; 
+    padding:0; 
+    border:0;
+}
 .clear{
     clear:both;
 }
@@ -33,21 +36,18 @@ div.wrapper{
     padding:0; 
     text-align:left;
 }
-
 #header, #intro, #latest, #breadcrumb, #container, #footer, #copyright{
     display:block; 
     position:relative; 
     width:100%; 
     margin:0 auto;
 }
-
-
 #header{
     display:block; 
     position:relative; 
-    width: 100%; 
+    width: 1750px; 
     margin:0 auto; 
-    padding:5px 0px 15px 20px; 
+    padding:5px 20px 15px 20px; 
     color:#DBDBDB; 
     background-color:#232323; 
 }
@@ -56,7 +56,6 @@ div.wrapper{
     float:left; 
     width:400px; 
     margin-top:7px;
-    margin-right: 50px;
 }
 #header #logo h1, #header #logo p{
     margin:0; padding:0; 
@@ -73,10 +72,9 @@ div.wrapper{
     color:#DBDBDB; 
     background-color:#232323;
 }
-
 #header #topnav{
     display:block; 
-    float:left; 
+    float:right; 
     width:1000px; 
     margin:50px 0 0 0; 
     padding:0; 
@@ -115,7 +113,6 @@ div.wrapper{
 .fl_right, .imgr{
     float:right;
 }
-
 
 #latest{
     padding:20px 0 0 0;
@@ -159,9 +156,8 @@ div.wrapper{
 }
 
 /*----------------------------Intro----------------------------------------*/
-
 #intro{
-    padding:25px 0px 15px 0;
+    padding:25px 0 15px 0;
 }
 #intro ul{
     margin:0; 
@@ -179,15 +175,15 @@ div.wrapper{
     display:block; 
     float:left; 
     width:300px; 
-    margin:0; 
-    padding:10px;
+    margin:5px; 
+    padding:0;
 }
 #intro li.last{
     margin-right:0;
 }
 #intro h2, #intro p{
-    margin:15px 0 15px 0; 
-    padding:2px;
+    margin:0 0 15px 0; 
+    padding:0;
 }
 #intro h2{
     padding-bottom:8px; 
@@ -214,9 +210,9 @@ div.wrapper{
 #footer{
     display:block; 
     position:relative; 
-    width:100%; 
+    width:1750px; 
     margin:0 auto; 
-    padding:20px 0px 20px 20px;
+    padding:20px;
     margin-top: 50px;
     color:#98989A; 
     background-color:#232323;
@@ -268,4 +264,3 @@ div.wrapper{
     float:left; 
     width:300px;
 }
-
