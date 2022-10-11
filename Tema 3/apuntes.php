@@ -35,6 +35,7 @@
                 echo "*";
             } 
             echo "<br>";
+            
         }
 
         include_once("../CSS/pie.html");

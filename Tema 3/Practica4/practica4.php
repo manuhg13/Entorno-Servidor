@@ -26,7 +26,26 @@
         }
         echo "<h2>Realiza un programa utilizando bucles qie muestre la siguiente figura</h2>";
         $rombo=5;
-
+        for ($i=1; $i <= $rombo ; $i++) { 
+            if ($i<4) {
+                for ($espacios=1; $espacios<=$rombo-$i; $espacios++) { 
+                    echo "&nbsp;&nbsp";
+                }
+                for ($asteriscos=1; $asteriscos <=($i*2)-1; $asteriscos++) {    
+                    echo "*";
+                } 
+                echo "<br>";
+            } else {
+                for ($espacios=1; $espacios<=$rombo-$i; $espacios++) { 
+                    echo "&nbsp;&nbsp";
+                }
+                for ($asteriscos=$rombo; $asteriscos<=($i*2)-1; $asteriscos++) {    
+                    echo "*";
+                } 
+                echo "<br>";
+            }
+            
+        }
         include_once("../../CSS/pie.html");
     ?>
 </body>
