@@ -175,14 +175,14 @@ div.wrapper{
     display:block; 
     float:left; 
     width:300px; 
-    margin:5px; 
+    margin:8px 0 10px 0; 
     padding:0;
 }
 #intro li.last{
     margin-right:0;
 }
 #intro h2, #intro p{
-    margin:0 0 15px 0; 
+    margin:5px 0 5px 0; 
     padding:0;
 }
 #intro h2{
