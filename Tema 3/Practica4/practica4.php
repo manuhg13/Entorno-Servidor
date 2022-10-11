@@ -36,7 +36,7 @@
                 } 
                 echo "<br>";
             } else {
-                for ($espacios=1; $espacios<=$rombo-$i; $espacios++) { 
+                for ($espacios=$rombo; $espacios<=$rombo-$i; $espacios++) { 
                     echo "&nbsp;&nbsp";
                 }
                 for ($asteriscos=$rombo; $asteriscos<=($i*2)-1; $asteriscos++) {    
