@@ -47,21 +47,32 @@
         }
         
         echo "<h2>3. Realiza un programa utilizando bucles qie muestre la siguiente figura</h2>";
-        $invertido=5;
-        for ($i=1; $i <=$invertido ; $i++) { 
-            if ($i<4) {
-                for ($espacios=1; $espacios<=($invertido/2)-$i ; $espacios++) { 
-                    echo "&nbsp;&nbsp";
-                }
-                for ($asteriscos=1; $asteriscos<= ($i*2)-1;$asteriscos++) {              
-                    if ($asteriscos==1 || $asteriscos) {
-                        echo "*";
-                    }
-                }
-            } else {
-               //for($espacios=1);
+        
+        for ($i=1; $i <= $rombo ; $i++) { 
+            for ($espacios=1; $espacios<=$rombo-$i; $espacios++) { 
+                echo "&nbsp;&nbsp";
             }
-            
+            for ($asteriscos=1; $asteriscos <=($i*2)-1; $asteriscos++) {    
+               if ($asteriscos==1 || $asteriscos==($i*2-1)) {
+                    echo "*";
+               }else {
+                    echo "&nbsp;&nbsp;";
+               }        
+            } 
+            echo "<br>";
+        }
+        for ($i=2; $i >= 1 ; $i--) { 
+            for ($espacios=1; $espacios<=3-$i; $espacios++) { 
+                echo "&nbsp;&nbsp";
+            }
+            for ($asteriscos=1; $asteriscos <=($i*2)-1; $asteriscos++) {    
+                if ($asteriscos==1 || $asteriscos==($i*2-1)) {
+                    echo "*";
+               }else {
+                    echo "&nbsp;&nbsp;";
+               }
+            } 
+            echo "<br>";
         }
 
         
