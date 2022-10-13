@@ -47,5 +47,17 @@ var_dump($meses);
 unset($meses[0]);
 var_dump($meses);
 
+//arrays multidimensionales
+echo "<br><br>";
+$multi= array(
+    'DAM' => array("PROG"=>"Programación","LM"=>"Lenguaje de Marcas"),
+    'DAW2'=> array("DWES"=>"Servidor","DWEC"=>"Cliente")
+);
 
+foreach ($multi as $curso => $valor) {
+    echo "<br>El curso " . $curso . " y estas asignaturas";
+    foreach ($valor as $abreviatura => $asignatura) {
+        echo "&nbsp;" . $abreviatura . "=> " . $asignatura; 
+    }
+}
 ?>
