@@ -39,5 +39,13 @@ foreach ($meses as $i) {
 
 var_dump($meses);
 
+array_push($meses, "Agosto");
+var_dump($meses);
+
+
+//quitar un elemento
+unset($meses[0]);
+var_dump($meses);
+
 
 ?>
