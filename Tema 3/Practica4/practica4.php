@@ -48,16 +48,17 @@
         
         echo "<h2>3. Realiza un programa utilizando bucles qie muestre la siguiente figura</h2>";
         
+        
         for ($i=1; $i <= $rombo ; $i++) { 
             for ($espacios=1; $espacios<=$rombo-$i; $espacios++) { 
                 echo "&nbsp;&nbsp";
             }
             for ($asteriscos=1; $asteriscos <=($i*2)-1; $asteriscos++) {    
-               if ($asteriscos==1 || $asteriscos==($i*2-1)) {
+                if ($asteriscos==1 || $asteriscos==($i*2-1)) {
                     echo "*";
-               }else {
+                }else {
                     echo "&nbsp;&nbsp;";
-               }        
+                }        
             } 
             echo "<br>";
         }
@@ -68,14 +69,19 @@
             for ($asteriscos=1; $asteriscos <=($i*2)-1; $asteriscos++) {    
                 if ($asteriscos==1 || $asteriscos==($i*2-1)) {
                     echo "*";
-               }else {
+                }else {
                     echo "&nbsp;&nbsp;";
-               }
+                }
             } 
             echo "<br>";
         }
+        
+        echo "<h2>4. Realiza un programa que le introduzca un valor (pasado por la URL) de un producto con 2 decimales
+        y posteriormente un valor con el que pagar por encima (Valor del producto 6.33€ y ha pagado con
+        10€). Muestra el número mínimo de monedas con las que puedes devolver el cambio</h2>";
 
         
+
         include_once("../../CSS/pie.html");
     ?>
 </body>
