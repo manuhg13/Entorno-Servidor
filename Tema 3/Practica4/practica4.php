@@ -83,7 +83,7 @@
         $precio=(float)$_GET['precio'];
         $pago=(float)$_GET['pago'];
         $devolucion=$pago-$precio;
-        
+   
         $mon2euro=0;
         $mon1euro=0;
         $cent50=0;
@@ -127,6 +127,8 @@
         }
 
         echo "Se devuelven " . $mon2euro . " monedas de 2€";
+
+        
         include_once("../../CSS/pie.html");
     ?>
 </body>
