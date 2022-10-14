@@ -93,42 +93,42 @@
         $cent2=0;
         $cent1=0;
 
-        while ($devolucion<=2) {
+        while ($devolucion>=2) {
             $devolucion-2;
             $mon2euro++;
         }
-        while ($devolucion<=1) {
+        while ($devolucion>=1) {
             $devolucion-1;
             $mon1euro++;
         }
-        while ($devolucion<=0.50) {
+        while ($devolucion>=0.50) {
             $devolucion-0.50;
             $cent50++;
         }
-        while ($devolucion<=0.20) {
+        while ($devolucion>=0.20) {
             $devolucion-0.20;
             $cent20++;
         }
-        while ($devolucion<=10) {
+        while ($devolucion>=10) {
             $devolucion-0.10;
             $cent10++;
         }
-        while ($devolucion<=0.05) {
+        while ($devolucion>=0.05) {
             $devolucion-0.05;
             $cent5++;
         }
-        while ($devolucion<=0.02) {
+        while ($devolucion>=0.02) {
             $devolucion-0.02;
             $cent2++;
         }
-        while ($devolucion<=0.01) {
+        while ($devolucion>=0.01) {
             $devolucion-0.01;
             $cent1++;
         }
 
         echo "Se devuelven " . $mon2euro . " monedas de 2€";
 
-        
+
         include_once("../../CSS/pie.html");
     ?>
 </body>
