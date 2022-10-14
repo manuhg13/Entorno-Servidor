@@ -80,8 +80,55 @@
         y posteriormente un valor con el que pagar por encima (Valor del producto 6.33€ y ha pagado con
         10€). Muestra el número mínimo de monedas con las que puedes devolver el cambio</h2>";
 
+        $precio=$_GET['precio'];
+        $pago=$_GET['pago'];
+        $devolucion=$pago-$precio;
+        $euros=(int)$devolucion;
+        $centimos=(float)($devolucion-$euros);
 
+        $mon2euro=0;
+        $mon1euro=0;
+        $cent50=0;
+        $cent20=0;
+        $cent10=0;
+        $cent5=0;
+        $cent2=0;
+        $cent1=0;
 
+        while ($euros>=2) {
+            $euros-2;
+            $mon2euro++;
+        }
+        while ($euros>=1) {
+            $euros-1;
+            $mon1euro++;
+        }
+        while ($centimos>=0.50) {
+            $centimos-0.50;
+            $cent50++;
+        }
+        while ($centimos>=0.20) {
+            $centimos-0.20;
+            $cent20++;
+        }
+        while ($centimos>=10) {
+            $centimos-0.10;
+            $cent10++;
+        }
+        while ($centimos>=0.05) {
+            $centimos-0.05;
+            $cent5++;
+        }
+        while ($centimos>=0.02) {
+            $centimos-2;
+            $cent2++;
+        }
+        while ($centimos>=0.01) {
+            $centimos-0.01;
+            $cent1++;
+        }
+
+        echo "Se devuelven " . $mon2euro . " monedas de 2€";
         include_once("../../CSS/pie.html");
     ?>
 </body>
