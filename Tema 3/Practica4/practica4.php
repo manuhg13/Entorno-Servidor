@@ -149,9 +149,9 @@
         $anio=(int)$_GET['anio'];
        
         if ($anio%4 == 0 && $anio%100 != 0 || $anio%400 == 0) {
-            echo "<p>el año ". $year . " es bisiesto.</p>";
+            echo "<p>El año ". $anio . " es bisiesto.</p>";
         } else {
-            echo "<p>el año ". $year . " NO es bisiesto.</p>";
+            echo "<p>El año ". $anio . " NO es bisiesto.</p>";
         }
 
         include_once("../../CSS/pie.html");
