@@ -142,7 +142,17 @@
         echo "<br>";
         echo "Se devuelven " . $cent1 . " monedas de 1 cent";
 
-        echo
+        echo "<h2>5. Escriba un programa que se le pase un año por la URL y que escriba si es bisiesto o no.
+        Los años bisiestos son múltiplos de 4, pero los múltiplos de 100 no lo son, aunque los múltiplos de
+        400 sí.</h2>";
+
+        $anio=(int)$_GET['anio'];
+       
+        if ($anio%4 == 0 && $anio%100 != 0 || $anio%400 == 0) {
+            echo "<p>el año ". $year . " es bisiesto.</p>";
+        } else {
+            echo "<p>el año ". $year . " NO es bisiesto.</p>";
+        }
 
         include_once("../../CSS/pie.html");
     ?>
