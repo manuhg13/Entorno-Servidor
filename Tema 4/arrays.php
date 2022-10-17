@@ -64,7 +64,7 @@ echo "<br><br>";
 //Curreb da el ultimo indice accedido del array 
 echo current($meses);
 
-echo each($meses);
+
 
 while($elemento = each($meses)){
     print_r($elemento);

@@ -38,6 +38,23 @@
         foreach ($datos as $clave) {
             echo $clave . "&nbsp;&nbsp;";
         }
+
+
+        echo "<h2>Matriz</h2>";
+
+        $lado=4;
+
+        $matriz=array();
+
+        for ($i=0; $i < $lado; $i++) { 
+            for ($j=0; $j < $lado; $j++) { 
+                
+            }
+        }
+
+        foreach ($matriz as $key ) {
+            echo $key . "&nbsp;&nbsp;";
+        }
     ?>
 </body>
 </html>

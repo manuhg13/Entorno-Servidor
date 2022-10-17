@@ -55,6 +55,33 @@
                 )
             ),
         );
+
+        echo "<table><tr><th>Equipos</th>";
+        $equiposLocales=array();       
+        $equiposVisitantes=array();        
+
+        foreach ($liga as $locales => $equipo) {
+            echo "<th>" . $locales . "</th>"; 
+            $equiposLocales=array_push($equiposLocales, $locales);       
+        }
+
+        echo "</tr><tr>";
+
+        foreach ($liga as $locales => $visitantes) {
+            foreach ($visitantes as $equipo => $dato) {
+                echo "<td>";
+                foreach ($dato as $clave => $valor) {
+                    if ($locales!=$equipo) {
+                        echo "<td>" . $valor . "</td>";
+                    }else {
+                        echo "<td></td>"; 
+                    }
+                }
+            }   
+            echo "</tr>" ;  
+        }
+        
+
     
     ?>
 </body>
