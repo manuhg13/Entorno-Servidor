@@ -109,24 +109,33 @@
         echo "<th>Goles en contra</th></tr>";
 
         foreach ($liga as $locales => $partidos) {
-            $puntos=0;
-            $golesFavor=0;
-            $golesContra=0;
-            echo "<tr><td>" . $locales . "</td>";
-            foreach ($partidos as $visitante => $resultado) {
-                foreach ($resultado as $clave => $valor) {
-                    $partidoJugado=explode("-", $valor);
-                    $golesFavor+=$partidoJugado[0];
-                    $golesContra+=$partidoJugado[1];
-                    if ($partidoJugado[0]>$partidoJugado[1]){
-                        $puntos+=3;
-                    }elseif ($partidoJugado) {
-                        # code...
-                    }
+            foreach ($partidos as $visitante => $resultado) {               
+                list($gf,$gc)=explode("-", $resultado["Resultado"]);
+                $clasificacion[$locales]["GolesFavor"]+=$gf;
+                $clasificacion[$visitante]["GolesContra"]+=$gf;
+                $clasificacion[$locales]["GolesContra"]+=$gc;
+                $clasificacion[$visitante]["GolesFavor"]+=$gc;
+                if ($gf>$gc){
+                    $clasificacion[$locales]["Puntos"]+=3;
+                }elseif ($gf==$gc) {
+                    $clasificacion[$locales]["Puntos"]+=1;                
+                    $clasificacion[$visitante]["Puntos"]+=1;                
+                }else {
+                    $clasificacion[$visitante]["Puntos"]+=3;
+                    
                 }
+            }
+        }
+
+        foreach ($clasificacion as $local => $resultado) {
+            echo "<tr><td>" . $local . "</td>";
+            foreach ($resultado as $valor) {
+              echo "<td>". $valor . "</td>" ; 
             }
             echo "</tr>";
         }
+       
+        
         
     ?>
 </body>
