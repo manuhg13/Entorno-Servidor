@@ -63,9 +63,6 @@
         foreach ($liga as $locales => $equipo) {
             echo "<th>" . $locales . "</th>"; 
             array_push($equiposLocales, $locales);
-            foreach ($equipo as $visitante => $datos) {
-                array_push($equiposVisitantes, $visitante);
-            }
         }
 
         echo "</tr>";
