@@ -83,6 +83,8 @@
             }
             echo "</tr>";
         } 
+
+        echo "</table>";
         
         
     ?>
