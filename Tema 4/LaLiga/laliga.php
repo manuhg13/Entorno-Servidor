@@ -84,8 +84,49 @@
             echo "</tr>";
         } 
 
-        echo "</table>";
-        
+        echo "</table><br><br>";
+
+        $clasificacion=array(
+            "Zamora" => array(
+                "Puntos"=>0, "GolesFavor"=>0, "GolesContra"=>0
+            ),
+            "Salamanca" => array(
+                "Puntos"=>0, "GolesFavor"=>0, "GolesContra"=>0
+            ),
+            "Avila" => array(
+                "Puntos"=>0, "GolesFavor"=>0, "GolesContra"=>0
+            ),
+            "Valladolid" => array(
+                "Puntos"=>0, "GolesFavor"=>0, "GolesContra"=>0
+            ),
+
+        );
+
+        echo "<table border=1><tr>";
+        echo "<th>Equipos</th>";
+        echo "<th>Puntos</th>";
+        echo "<th>Goles a favor</th>";
+        echo "<th>Goles en contra</th></tr>";
+
+        foreach ($liga as $locales => $partidos) {
+            $puntos=0;
+            $golesFavor=0;
+            $golesContra=0;
+            echo "<tr><td>" . $locales . "</td>";
+            foreach ($partidos as $visitante => $resultado) {
+                foreach ($resultado as $clave => $valor) {
+                    $partidoJugado=explode("-", $valor);
+                    $golesFavor+=$partidoJugado[0];
+                    $golesContra+=$partidoJugado[1];
+                    if ($partidoJugado[0]>$partidoJugado[1]){
+                        $puntos+=3;
+                    }elseif ($partidoJugado) {
+                        # code...
+                    }
+                }
+            }
+            echo "</tr>";
+        }
         
     ?>
 </body>
