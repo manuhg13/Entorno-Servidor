@@ -38,27 +38,6 @@
         foreach ($datos as $clave) {
             echo $clave . "&nbsp;&nbsp;";
         }
-
-
-        echo "<h2>Matriz</h2>";
-
-        $lado=4;
-
-        $matriz=array($lado,$lado);
-
-        for ($i=0; $i<= $lado; $i++) { 
-            for ($j=0; $j < $lado; $j++) { 
-                if ($i==0 || j==0){
-                    array_push($matriz[$i][$j],1);
-                }
-                
-                
-            }
-        }
-
-        foreach ($matriz as $key ) {
-            echo $key . "&nbsp;&nbsp;";
-        }
     ?>
 </body>
 </html>
