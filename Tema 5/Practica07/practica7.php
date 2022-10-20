@@ -17,10 +17,11 @@
         echo "<h2>1. Crea tu propio fichero de php que tenga las funciones de:</h2>";
         echo "<h3>a. br() Pinta un br:</h3>";
         br();
-        echo "<h3>a. h1(cadena) Pinta la cadena entre h1:</h3>";
+        echo "<h3>b. h1(cadena) Pinta la cadena entre h1:</h3>";
         h1("Pepito en H1");
         echo "<h3>c. p(cadena) Pinta la cadena entre cadenas:</h3>";
         p("El aliento de mi gato huele a comida de gato");
+        echo "<h3>d. self() Devuelve el fichero actual</h3>";
 
         
     ?>

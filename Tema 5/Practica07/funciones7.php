@@ -6,8 +6,12 @@
     function h1($cadena){
         echo "<h2>" . $cadena . "</h2>";
     }
-    
+
     function p($cadena){
         echo "<p>" . $cadena . "</p>";
+    }
+
+    function self(){
+        
     }
 ?>
