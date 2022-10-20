@@ -12,6 +12,6 @@
     }
 
     function self(){
-        
+        echo basename(__FILE__);
     }
 ?>
