@@ -46,7 +46,10 @@
 
         $matriz=array();
 
-        for ($i=0; $i < $lado; $i++) { 
+        for ($i=0; $i<= $lado; $i++) { 
+            if ($i==0){
+                array_push($matriz,1);
+            }
             for ($j=0; $j < $lado; $j++) { 
                 
             }
