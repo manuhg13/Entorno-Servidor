@@ -23,6 +23,7 @@
         p("El aliento de mi gato huele a comida de gato");
         echo "<h3>d. self() Devuelve el fichero actual</h3>";
         self();
+        echo "<h3>e. letraDNI() Se introduce el dni y devuelve la letra que le corresponde</h3>";
 
         
     ?>
