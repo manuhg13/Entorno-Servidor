@@ -18,7 +18,9 @@
         echo "<h3>a. br() Pinta un br:</h3>";
         br();
         echo "<h3>a. h1(cadena) Pinta la cadena entre h1:</h3>";
-        h1("Pepito en H1")
+        h1("Pepito en H1");
+        echo "<h3>c. p(cadena) Pinta la cadena entre cadenas:</h3>";
+        p("El aliento de mi gato huele a comida de gato");
 
         
     ?>
