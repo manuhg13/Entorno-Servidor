@@ -12,7 +12,7 @@
         include_once("../../CSS/cabecera.html");
     ?>
     <?php
-        include_once("../../CSS/cabecera.html");
+        include_once("./funciones7.php");
     ?>
 </body>
 </html>
