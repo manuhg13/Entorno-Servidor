@@ -44,13 +44,14 @@
 
         $lado=4;
 
-        $matriz=array();
+        $matriz=array($lado,$lado);
 
         for ($i=0; $i<= $lado; $i++) { 
-            if ($i==0){
-                array_push($matriz,1);
-            }
             for ($j=0; $j < $lado; $j++) { 
+                if ($i==0 || j==0){
+                    array_push($matriz[$i][$j],1);
+                }
+                
                 
             }
         }
