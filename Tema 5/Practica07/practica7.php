@@ -22,6 +22,7 @@
         echo "<h3>c. p(cadena) Pinta la cadena entre cadenas:</h3>";
         p("El aliento de mi gato huele a comida de gato");
         echo "<h3>d. self() Devuelve el fichero actual</h3>";
+        self();
 
         
     ?>
