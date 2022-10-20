@@ -17,10 +17,21 @@
          saludo();
          saludo2("Carlos");
          echo "<br><br>"; 
-        //Pasar un array 
-        $array=array();
+         //Pasar un array 
+         $array=array();
         lahora($array);
         
+        
+        echo "<br><br>"; 
+        //Objeto
+        
+        class Cuadrado{
+            public $lado= 5;
+        }
+    
+        $objeto= new Cuadrado();
+        cambioLado($objeto, 6);
+        echo "Objeto= " .$objeto->lado;
     ?>
 </body>
 </html>

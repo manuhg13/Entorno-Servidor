@@ -24,5 +24,9 @@
         print_r($array);
     }
 
+    function cambioLado($objeto,$lado){
+        $objeto->lado = $lado;
+    }
+
 
 ?>
