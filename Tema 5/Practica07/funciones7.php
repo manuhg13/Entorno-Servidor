@@ -14,4 +14,8 @@
     function self(){
         echo basename(__FILE__);
     }
+
+    function letraDNI(){
+        echo "";
+    }
 ?>
