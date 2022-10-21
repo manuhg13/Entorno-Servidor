@@ -36,7 +36,7 @@
         
         echo "<br><br>";
 
-        echo "Fichero " . $_FILES;
+        print_r($_FILES);
 
 
     ?>
