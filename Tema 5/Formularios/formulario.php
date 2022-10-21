@@ -7,7 +7,7 @@
     <title>Formulario</title>
 </head>
 <body>
-    <form action="./recibe.php" method="post">
+    <form action="./recibe.php" method="post" enctype="multipart/form-data">
         <p>
             <label for="idNombre">Nombre</label>
             <input type="text" name="nombre" id="idNombre" placeholder="Nombre">
