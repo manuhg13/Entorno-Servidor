@@ -28,7 +28,7 @@
         }
         
         echo "<br><br>";
-        if ($_REQUEST['curso']!=0) {
+        if ($_REQUEST['curso']==0) {
             echo "No has seleccionado nada";
         }else {
             echo "Curso " . $_REQUEST['curso'];
