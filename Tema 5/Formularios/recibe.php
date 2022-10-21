@@ -35,8 +35,20 @@
         }
         
         echo "<br><br>";
-
+        
         print_r($_FILES);
+        echo "<br><br>";
+
+        $ubi="var/www/html/ServidorClase/Tema 5/Formularios/";
+
+        if (move_uploaded_file($_FILES['fichero']['tmp_name'],$ubi)) {
+            echo "Se movió el fichero a ". $ubi;
+        }else {
+            echo "Error";
+        }
+
+
+         
 
 
     ?>
