@@ -35,9 +35,15 @@
         </p>
         <p>
             <label for="idMasculino">Hombre</label>
-            <input type="radio" name="genero" id="idMasculino" value="masculino">
+            <input type="radio" name="genero" id="idMasculino" value="masculino" <?php
+                if (enviado() && existe("genero") && $_REQUEST['genero']=="masculino")
+                    echo "checked";
+            ?>>
             <label for="idFemenino">Mujer</label>
-            <input type="radio" name="genero" id="idFemenino" value="feminio">
+            <input type="radio" name="genero" id="idFemenino" value="feminino" <?php
+                if (enviado() && existe("genero") && $_REQUEST['genero']=="femenino")
+                    echo "checked";
+            ?>>
 
             <?php
                 if (!existe("genero") && enviado()){
