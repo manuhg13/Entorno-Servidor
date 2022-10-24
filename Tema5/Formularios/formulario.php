@@ -1,3 +1,6 @@
+<?php
+    require("../Practica07/funciones7.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,7 +15,7 @@
             <label for="idNombre">Nombre</label>
             <input type="text" name="nombre" id="idNombre" placeholder="Nombre">
             <?php
-                if (empty($_REQUEST['nombre'])){
+                if (vacio("nombre") && enviado()){
                     echo "<p style='color: red'> Introduce el nombre</p>";
                 }
             ?>
@@ -47,7 +50,7 @@
             <input type="file" name="fichero" id="idFichero">
 
         </p>
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Enviar" name="enviar">
     </form>
    
 

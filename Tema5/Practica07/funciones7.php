@@ -18,4 +18,18 @@
     function letraDNI(){
         echo "";
     }
+
+    function vacio($dato){
+        if (empty($_REQUEST['nombre'])) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    function enviado(){
+        if (isset($_REQUEST['enviar']))
+            return true;
+        return false;
+    }
 ?>
