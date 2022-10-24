@@ -55,7 +55,7 @@
             <br>
             <label for="idDWES">Desarrollo web servidor</label>
             <input type="checkbox" name="asignaturas[]" id="idDWES" value="DWES" <?php
-                if (enviado() && existe("asignaturas[]") && )
+                if (enviado() && existe("asignaturas[]"))
                     echo "checked";
             ?>>
             <br>
