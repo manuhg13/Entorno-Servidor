@@ -54,13 +54,19 @@
         <p><b>Asignaturas</b>
             <br>
             <label for="idDWES">Desarrollo web servidor</label>
-            <input type="checkbox" name="asignaturas[]" id="idDWES" value="DWES">
+            <input type="checkbox" name="asignaturas[]" id="idDWES" value="DWES" <?php
+                if (enviado() && existe("asignaturas[]") && array)
+                    echo "checked";
+            ?>>
             <br>
             <label for="idDWEC">Desarrollo web cliente</label>
-            <input type="checkbox" name="asignaturas[]" id="idDWEC" value="DWEC">
+            <input type="checkbox" name="asignaturas[]" id="idDWEC" value="DWEC" <?php
+                if (enviado() && existe("asignaturas[]") && $_REQUEST['asignaturas[]']=="DWEC")
+                    echo "checked";
+            ?>>
             <br>
             <?php
-                if (!existe("genero") && enviado()){
+                if (!existe("asignaturas[]") && enviado()){
                     echo "<p style='color: red'> Introduce una asignatura</p>";
                 }
             ?>
