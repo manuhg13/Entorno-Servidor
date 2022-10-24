@@ -20,7 +20,7 @@
     }
 
     function vacio($dato){
-        if (empty($_REQUEST['nombre'])) {
+        if (empty($_REQUEST[$dato])) {
             return true;
         }else {
             return false;
@@ -29,6 +29,12 @@
 
     function enviado(){
         if (isset($_REQUEST['enviar']))
+            return true;
+        return false;
+    }
+
+    function existe($nombre){
+        if (isset($_REQUEST[$nombre]))
             return true;
         return false;
     }

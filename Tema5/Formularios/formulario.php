@@ -13,7 +13,11 @@
     <form action="./formulario.php" method="post" enctype="multipart/form-data">
         <p>
             <label for="idNombre">Nombre</label>
-            <input type="text" name="nombre" id="idNombre" placeholder="Nombre">
+            <input type="text" name="nombre" id="idNombre" placeholder="Nombre" value="<?php 
+                if (enviado() && !vacio("nombre")) {
+                    echo $_REQUEST['nombre'];
+                }
+            ?>">
             <?php
                 if (vacio("nombre") && enviado()){
                     echo "<p style='color: red'> Introduce el nombre</p>";
@@ -36,8 +40,8 @@
             <input type="radio" name="genero" id="idFemenino" value="feminio">
 
             <?php
-                if (vacio("genero") && enviado()){
-                    echo "<p style='color: red'> Introduce el nombre</p>";
+                if (!existe("genero") && enviado()){
+                    echo "<p style='color: red'> Introduce un género</p>";
                 }
             ?>
         </p>
@@ -49,6 +53,11 @@
             <label for="idDWEC">Desarrollo web cliente</label>
             <input type="checkbox" name="asignaturas[]" id="idDWEC" value="DWEC">
             <br>
+            <?php
+                if (!existe("genero") && enviado()){
+                    echo "<p style='color: red'> Introduce una asignatura</p>";
+                }
+            ?>
         </p>
         <p><b>Curso</b>
             <select name="curso" id="idCurso">
