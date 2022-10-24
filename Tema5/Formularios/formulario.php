@@ -23,12 +23,23 @@
         <p>
             <label for="idContraseña">Contraseña</label>
             <input type="password" name="pass" id="idContraseña">
+            <?php
+                if (vacio("pass") && enviado()){
+                    echo "<p style='color: red'> Introduce la contraseña</p>";
+                }
+            ?>
         </p>
         <p>
             <label for="idMasculino">Hombre</label>
             <input type="radio" name="genero" id="idMasculino" value="masculino">
             <label for="idFemenino">Mujer</label>
             <input type="radio" name="genero" id="idFemenino" value="feminio">
+
+            <?php
+                if (vacio("genero") && enviado()){
+                    echo "<p style='color: red'> Introduce el nombre</p>";
+                }
+            ?>
         </p>
         <p><b>Asignaturas</b>
             <br>
