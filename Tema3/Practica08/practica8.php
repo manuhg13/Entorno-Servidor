@@ -11,7 +11,9 @@
 </head>
 <body>
     <form action="./practica8.php" method="post" enctype="multipart/form-data">
-        <p></p>
+        <p>
+            
+        </p>
     </form>
 </body>
 </html>
