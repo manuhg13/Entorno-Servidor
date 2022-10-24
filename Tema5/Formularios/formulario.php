@@ -7,10 +7,15 @@
     <title>Formulario</title>
 </head>
 <body>
-    <form action="./recibe.php" method="post" enctype="multipart/form-data">
+    <form action="./formulario.php" method="post" enctype="multipart/form-data">
         <p>
             <label for="idNombre">Nombre</label>
             <input type="text" name="nombre" id="idNombre" placeholder="Nombre">
+            <?php
+                if (empty($_REQUEST['nombre'])){
+                    echo "<p style='color: red'> Introduce el nombre</p>";
+                }
+            ?>
         </p>
         <p>
             <label for="idContraseña">Contraseña</label>
@@ -44,5 +49,7 @@
         </p>
         <input type="submit" value="Enviar">
     </form>
+   
+
 </body>
 </html>
