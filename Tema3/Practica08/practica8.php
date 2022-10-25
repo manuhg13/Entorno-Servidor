@@ -162,8 +162,10 @@
             ?>
         </p>
         <p>
-
+            <label for="idTelefono">Nº de teléfono:</label>
+            <input type="tel" name="" id="">
         </p>
+        <input type="submit" value="enviar" name="enviar">
     </form>
 </body>
 </html>
