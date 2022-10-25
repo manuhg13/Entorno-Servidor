@@ -12,7 +12,17 @@
 <body>
     <form action="./practica8.php" method="post" enctype="multipart/form-data">
         <p>
-            
+            <label for="idAlfabetico">Alfabético</label>
+            <input type="text" name="alfabetico" id="idAlfabetico" placeholder="Nombre" value="<?php
+                if (enviado() && !vacio("alfabetico")) {
+                    echo $_REQUEST['alfabetico'];
+                }
+            ?>">
+            <?php
+                if (vacio("alfabetico") && enviado() && is_nan($_REQUEST['alfabetico'])){
+                    echo "<p style='color: red'> Introduce caracteres no numericos</p>";
+                }
+            ?>
         </p>
     </form>
 </body>
