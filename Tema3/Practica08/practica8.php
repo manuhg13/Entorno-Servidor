@@ -154,16 +154,16 @@
             <label for="idCheck1">Check 6</label>
             
             <?php
-                if (!existe('box[]') && enviado()) {
+                if (!existe('box') && enviado()) {
                     echo "<p style='color: red'> Introduce al menos una opción</p>";
-                }else if(cuantos('box[]')){
+                }else if(cuantos('box')){
                     echo "<p style='color: red'> Introduce máximo 3 opciones</p>";
                 }
             ?>
         </p>
         <p>
             <label for="idTelefono">Nº de teléfono:</label>
-            <input type="tel" name="" id="">
+            <input type="tel" name="telefono" id="idTelefono">
         </p>
         <input type="submit" value="enviar" name="enviar">
     </form>

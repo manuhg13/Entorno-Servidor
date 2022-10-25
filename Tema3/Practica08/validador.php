@@ -19,8 +19,8 @@
         return false;
     }
 
-    function cuantos($dato){
-        if (count($_REQUEST[$dato])>3){
+    function cuantos($array){
+        if (count($_REQUEST[$array])>3){
             return true;
         }
         return false;
