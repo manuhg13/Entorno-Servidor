@@ -114,6 +114,54 @@
                 }
             ?>
         </p>
+        <p><b>Elige al menos 1 y máximo 3:</b>
+        <br>
+            <input type="checkbox" name="box[]" id="idCheck1" value="check1" <?php
+                if(enviado() && existe('box[]') && in_array("check1",$_REQUEST['box[]'])){
+                    echo "checked";
+                }
+            ?>>
+            <label for="idCheck1">Check 1</label>
+            <input type="checkbox" name="box[]" id="idCheck2" value="check2" <?php
+                if(enviado() && existe('box[]') && in_array("check2",$_REQUEST['box[]'])){
+                    echo "checked";
+                }
+            ?>>
+            <label for="idCheck1">Check 2</label>
+            <input type="checkbox" name="box[]" id="idCheck3" value="check3" <?php
+                if(enviado() && existe('box[]') && in_array("check3",$_REQUEST['box[]'])){
+                    echo "checked";
+                }
+            ?>>
+            <label for="idCheck1">Check 3</label>
+            <input type="checkbox" name="box[]" id="idCheck4" value="check4" <?php
+                if(enviado() && existe('box[]') && in_array("check4",$_REQUEST['box[]'])){
+                    echo "checked";
+                }
+            ?>>
+            <label for="idCheck1">Check 4</label>
+            <input type="checkbox" name="box[]" id="idCheck5" value="check5" <?php
+                if(enviado() && existe('box[]') && in_array("check5",$_REQUEST['box[]'])){
+                    echo "checked";
+                }
+            ?>>
+            <label for="idCheck1">Check 5</label>
+            <input type="checkbox" name="box[]" id="idCheck6" value="check6" <?php
+                if(enviado() && existe('box[]') && in_array("check6",$_REQUEST['box[]'])){
+                    echo "checked";
+                }
+            ?>>
+            <label for="idCheck1">Check 6</label>
+            
+            <?php
+                if (!existe('box[]') && enviado()) {
+                    
+                }
+            ?>
+        </p>
+        <p>
+
+        </p>
     </form>
 </body>
 </html>
