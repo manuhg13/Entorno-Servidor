@@ -100,6 +100,20 @@
             ?>>
             <label for="idRadio3">Opción 3</label>
         </p>
+        <p>
+            <label for="idSelector">Elige una opción</label>
+            <select name="selector" id="idSelector">
+                <option value="0">Seleccione una opción</option>
+                <option value="1">La primera</option>
+                <option value="2">La segunda</option>
+                <option value="3">La tercera</option>
+            </select>
+            <?php
+                if($_REQUEST['selector']==0){
+                    echo "<p style='color: red'> Introduce una fecha</p>";
+                }
+            ?>
+        </p>
     </form>
 </body>
 </html>
