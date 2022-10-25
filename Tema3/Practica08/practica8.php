@@ -109,7 +109,7 @@
                 <option value="3">La tercera</option>
             </select>
             <?php
-                if($_REQUEST['selector']==0){
+                if(existe('selector') && $_REQUEST['selector']==0){
                     echo "<p style='color: red'> Introduce una opción</p>";
                 }
             ?>
