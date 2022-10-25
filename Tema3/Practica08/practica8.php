@@ -45,7 +45,7 @@
                 }
             ?>">
             <?php
-                if (vacio("nombre") && enviado()){
+                if (vacio("alfaNum") && enviado()){
                     echo "<p style='color: red'> Introduce el nombre</p>";
                 }
             ?>
