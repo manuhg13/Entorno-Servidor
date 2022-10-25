@@ -110,7 +110,7 @@
             </select>
             <?php
                 if($_REQUEST['selector']==0){
-                    echo "<p style='color: red'> Introduce una fecha</p>";
+                    echo "<p style='color: red'> Introduce una opción</p>";
                 }
             ?>
         </p>
