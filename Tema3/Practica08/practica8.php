@@ -25,9 +25,9 @@
             ?>
         </p>
         <p>
-        <label for="idAlfabetico">Alfabético</label>
-            <input type="text" name="alfabetico" id="idAlfabetico" placeholder="Nombre" value="<?php
-                if (enviado() && !vacio("alfabetico")) {
+        <label for="idAlfabeticoOpt">Alfabético</label>
+            <input type="text" name="alfabeticoOpt" id="idAlfabeticoOpt" placeholder="Nombre" value="<?php
+                if (enviado() && !vacio("alfabeticoOpt")) {
                     echo $_REQUEST['alfabetico'];
                 }
             ?>">
