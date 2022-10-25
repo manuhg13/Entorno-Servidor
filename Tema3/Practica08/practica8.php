@@ -33,7 +33,20 @@
             ?>">
             <?php
                 if (enviado() && is_nan($_REQUEST['alfabeticoOpt'])) {
-                    
+                    echo "<p style='color: red'> Introduce caracteres no numericos</p>"; 
+                }
+            ?>
+        </p>
+        <p>
+            <label for="idAlfaNum">Alfanumérico</label>
+            <input type="text" name="alfaNum" id="idAlfaNum" placeholder="Apellido" value="<?php
+                if (enviado() && !vacio("alfaNum")) {
+                    echo $_REQUEST['alfaNum'];
+                }
+            ?>">
+            <?php
+                if (vacio("nombre") && enviado()){
+                    echo "<p style='color: red'> Introduce el nombre</p>";
                 }
             ?>
         </p>
