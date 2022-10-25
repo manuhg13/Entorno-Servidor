@@ -50,6 +50,56 @@
                 }
             ?>
         </p>
+        <p>
+            <label for="idAlfaNumOpt">Alfanumérico Opcional</label>
+            <input type="text" name="alfaNumOpt" id="idAlfaNumOpt" placeholder="Apellido" value="<?php
+                if (enviado() && !vacio("alfaNumOpt")) {
+                    echo $_REQUEST['alfaNum'];
+                }
+            ?>">
+        </p>
+        <p>
+            <label for="idFecha">Fecha</label>
+            <input type="date" name="fecha" id="idFecha" value="<?php
+                if (enviado() && !vacio("fecha")) {
+                    echo $_REQUEST['fecha'];
+                }
+            ?>">
+            <?php
+                if (vacio("fecha") && enviado()){
+                    echo "<p style='color: red'> Introduce una fecha</p>";
+                }
+            ?>
+        </p>
+        <p>
+            <label for="idFechaOpt">Fecha Opcional</label>
+            <input type="date" name="fechaOpt" id="idFechaOpt" value="<?php
+                if (enviado() && !vacio('fechaOpt')) {
+                    echo $_REQUEST['fechaOpt'];
+                }
+            ?>">
+        </p>
+        <p><b>Radio Obligatorio</b>
+            <br>
+            <input type="radio" name="radios" id="idRadio1" value="opcion1" <?php
+                if (enviado() && existe('radios') && $_REQUEST['radios']=="opcion1") {
+                   echo "checked";
+                }
+            ?>>
+            <label for="idRadio1">Opción 1</label>
+            <input type="radio" name="radios" id="idRadio2" value="opcion2" <?php
+                if (enviado() && existe('radios') && $_REQUEST['radios']=="opcion1") {
+                   echo "checked";
+                }
+            ?>>
+            <label for="idRadio2">Opción 2</label>
+            <input type="radio" name="radios" id="idRadio3" value="opcion3" <?php
+                if (enviado() && existe('radios') && $_REQUEST['radios']=="opcion3") {
+                   echo "checked";
+                }
+            ?>>
+            <label for="idRadio3">Opción 3</label>
+        </p>
     </form>
 </body>
 </html>
