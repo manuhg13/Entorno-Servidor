@@ -155,7 +155,9 @@
             
             <?php
                 if (!existe('box[]') && enviado()) {
-                    
+                    echo "<p style='color: red'> Introduce al menos una opción</p>";
+                }else if(cuantos('box[]')){
+                    echo "<p style='color: red'> Introduce máximo 3 opciones</p>";
                 }
             ?>
         </p>

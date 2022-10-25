@@ -18,4 +18,11 @@
             return true;
         return false;
     }
+
+    function cuantos($dato){
+        if (count($_REQUEST[$dato])>3){
+            return true;
+        }
+        return false;
+    }
 ?>
