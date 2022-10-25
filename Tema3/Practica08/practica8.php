@@ -25,12 +25,17 @@
             ?>
         </p>
         <p>
-        <label for="idAlfabeticoOpt">Alfabético</label>
+            <label for="idAlfabeticoOpt">Alfabético Opcional</label>
             <input type="text" name="alfabeticoOpt" id="idAlfabeticoOpt" placeholder="Nombre" value="<?php
                 if (enviado() && !vacio("alfabeticoOpt")) {
-                    echo $_REQUEST['alfabetico'];
+                    echo $_REQUEST['alfabeticoOpt'];
                 }
             ?>">
+            <?php
+                if (enviado() && is_nan($_REQUEST['alfabeticoOpt'])) {
+                    
+                }
+            ?>
         </p>
     </form>
 </body>
