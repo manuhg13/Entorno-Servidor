@@ -10,15 +10,6 @@
     <title>Practica 8 || Manuel Hernández Gómez</title>
 </head>
 <body>
-    <h1>Formulario</h1>
-    <?php
-        if (correcto()){
-            echo "correcto";
-        } else{
-            
-        
-        
-    ?>  
     <form action="./practica8.php" method="post" enctype="multipart/form-data">
         <p>
             <label for="idAlfabetico">Alfabético</label>
@@ -181,10 +172,16 @@
             <?php
                 if (vacio('tel') && enviado()) {
                     echo "<p style='color: red'> Introduce nº de telefono</p>";    
+                }elseif (condition) {
+                    # code...
                 }
             ?>
         </p>
-        <input type="submit" value="enviar" name="enviar">
+        <p>
+            <input type="file" name="fichero" id="idFichero">
+        </p>
+
+        <input type="submit" value="Enviar" name="enviar">
     </form>
     <?php
         }

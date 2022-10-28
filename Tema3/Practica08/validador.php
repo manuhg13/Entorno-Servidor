@@ -33,23 +33,4 @@
         }
         return false;
     }
-
-    function correcto(){
-        if (enviado()) {
-           if (!vacio("alfabetico") && !is_numeric($_REQUEST['alfabetico'])){
-                if (!vacio("alfaNum")) {
-                    if (existe('radios')) {
-                        if (existe('selector') && $_REQUEST['selector']!=0) {
-                            if (existe('box') && cuantos('box')) {
-                                if (!vacio('tel') && telefono('tel')) {
-                                    return true;
-                                }
-                            }
-                        }
-                    }
-                }
-           }
-        }
-        return false;
-    }
 ?>
