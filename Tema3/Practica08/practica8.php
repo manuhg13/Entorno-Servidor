@@ -163,7 +163,11 @@
         </p>
         <p>
             <label for="idTelefono">Nº de teléfono:</label>
-            <input type="tel" name="telefono" id="idTelefono">
+            <input type="tel" name="telefono" id="idTelefono" value="<?php
+                if (enviado() && !vacio("telefono")) {
+                    echo $_REQUEST['telefono'];
+                }
+            ?>">
             <?php
                 if (vacio('tel') && enviado()) {
                     echo "<p style='color: red'> Introduce nº de telefono</p>";    
