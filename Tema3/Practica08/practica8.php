@@ -10,6 +10,10 @@
     <title>Practica 8 || Manuel Hernández Gómez</title>
 </head>
 <body>
+    <h1>Formulario</h1>
+    <?php
+        validarTodo($_REQUEST)
+    ?>
     <form action="./practica8.php" method="post" enctype="multipart/form-data">
         <p>
             <label for="idAlfabetico">Alfabético</label>
@@ -183,8 +187,5 @@
 
         <input type="submit" value="Enviar" name="enviar">
     </form>
-    <?php
-        }
-    ?>
 </body>
 </html>

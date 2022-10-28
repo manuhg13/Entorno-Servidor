@@ -33,4 +33,8 @@
         }
         return false;
     }
+
+    function validarTodo($datos){
+        
+    }
 ?>
