@@ -19,7 +19,7 @@
                 }
             ?>">
             <?php
-                if (vacio("alfabetico") && enviado() && is_nan($_REQUEST['alfabetico'])){
+                if (vacio("alfabetico") && enviado() && !is_numeric($_REQUEST['alfabetico'])){
                     echo "<p style='color: red'> Introduce caracteres no numericos</p>";
                 }
             ?>
@@ -32,7 +32,7 @@
                 }
             ?>">
             <?php
-                if (enviado() && is_nan($_REQUEST['alfabeticoOpt'])) {
+                if (enviado() && !is_numeric($_REQUEST['alfabeticoOpt'])) {
                     echo "<p style='color: red'> Introduce caracteres no numericos</p>"; 
                 }
             ?>
@@ -159,11 +159,18 @@
                 }else if(cuantos('box')){
                     echo "<p style='color: red'> Introduce máximo 3 opciones</p>";
                 }
-            ?>
+                ?>
         </p>
         <p>
             <label for="idTelefono">Nº de teléfono:</label>
             <input type="tel" name="telefono" id="idTelefono">
+            <?php
+                if (vacio('tel') && enviado()) {
+                    echo "<p style='color: red'> Introduce nº de telefono</p>";    
+                }elseif (condition) {
+                    # code...
+                }
+            ?>
         </p>
         <input type="submit" value="enviar" name="enviar">
     </form>

@@ -20,7 +20,15 @@
     }
 
     function cuantos($array){
-        if (count($_REQUEST[$array])>3){
+       if (count($_REQUEST[$array])>3){
+            return true;
+        }
+        return false;
+    }
+
+
+    function telefono($num){
+        if (strlen($_REQUEST[$num])==9) {
             return true;
         }
         return false;
