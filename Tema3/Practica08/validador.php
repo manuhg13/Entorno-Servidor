@@ -36,7 +36,17 @@
 
     function correcto(){
         if (enviado()) {
-           
+           if (vacio("alfabetico") && enviado() && !is_numeric($_REQUEST['alfabetico'])){
+                if (vacio("alfaNum") && enviado()) {
+                    if (existe('radios')) {
+                        if (existe('selector') && $_REQUEST['selector']==0) {
+                            if (!existe('box') && enviado()) {
+                                # code...
+                            }
+                        }
+                    }
+                }
+           }
         }
     }
 ?>
