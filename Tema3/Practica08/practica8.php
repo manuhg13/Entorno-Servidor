@@ -13,7 +13,10 @@
     <h1>Formulario</h1>
     <?php
         if (correcto()){
-            echo "correcto"
+            echo "correcto";
+        } else{
+            
+        
         
     ?>  
     <form action="./practica8.php" method="post" enctype="multipart/form-data">
@@ -38,8 +41,9 @@
                 }
             ?>">
             <?php
-                if (enviado() && !is_numeric($_REQUEST['alfabeticoOpt'])) {
-                    echo "<p style='color: red'> Introduce caracteres no numericos</p>"; 
+                if (enviado() && !vacio('alfabeticoOpt')) {
+                    if (!is_numeric($_REQUEST['alfabeticoOpt']))
+                        echo "<p style='color: red'> Introduce caracteres no numericos</p>"; 
                 }
             ?>
         </p>
