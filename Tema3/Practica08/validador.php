@@ -33,4 +33,8 @@
         }
         return false;
     }
+
+    function correcto(){
+        return true;
+    }
 ?>
