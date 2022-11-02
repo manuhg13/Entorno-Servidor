@@ -176,8 +176,8 @@
             <?php
                 if (vacio('tel') && enviado()) {
                     echo "<p style='color: red'> Introduce nº de telefono</p>";    
-                }elseif (condition) {
-                    # code...
+                }elseif (telefono('tel')) {
+                    echo "<p style='color: red'> Introduce nº de telefono correcto</p>";
                 }
             ?>
         </p>
