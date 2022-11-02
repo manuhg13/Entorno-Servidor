@@ -55,6 +55,10 @@
     }
 
     function imprimirInfo(){
+
+        foreach ($_REQUEST as $clave => $valor) {
+            echo "<p>" . $clave ." => " . $valor . "</p>";
+        }
         
     }
 ?>
