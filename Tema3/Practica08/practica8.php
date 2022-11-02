@@ -12,7 +12,11 @@
 <body>
     <h1>Formulario</h1>
     <?php
-        validarTodo($_REQUEST)
+        if (validarTodo()){
+            imprimirInfo();
+        }else{
+
+        
     ?>
     <form action="./practica8.php" method="post" enctype="multipart/form-data">
         <p>
@@ -159,7 +163,7 @@
             <label for="idCheck1">Check 6</label>
             
             <?php
-                if (!existe('box') && enviado()) {
+                if (existe('box') && enviado()) {
                     echo "<p style='color: red'> Introduce al menos una opción</p>";
                 }else if(cuantos('box')){
                     echo "<p style='color: red'> Introduce máximo 3 opciones</p>";
@@ -187,5 +191,8 @@
 
         <input type="submit" value="Enviar" name="enviar">
     </form>
+    <?php
+        }
+    ?>
 </body>
 </html>

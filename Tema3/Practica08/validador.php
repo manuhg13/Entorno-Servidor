@@ -34,7 +34,27 @@
         return false;
     }
 
-    function validarTodo($datos){
+    function validarTodo(){
+        if (enviado()) {
+           if (!vacio("alfabetico") && is_numeric($_REQUEST['alfabetico'])) {
+                if (!vacio('alfaNum')) {
+                    if (!vacio('fecha')) {
+                        if (existe('radios')) {
+                            if (existe('selector') && $_REQUEST['selector']!=0) {
+                               if (existe('box') && cuantos('box')) {
+                                    if (!vacio('tel') && telefono('tel')) {
+                                        return true;
+                                    }
+                               }
+                            }
+                        }
+                    }
+                }
+           }
+        }
+    }
+
+    function imprimirInfo(){
         
     }
 ?>
