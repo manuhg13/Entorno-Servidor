@@ -13,6 +13,7 @@
     <h1>Formulario</h1>
     <?php
         if (validarTodo()){
+            echo "<p style='color: red'>Esta todo</p>"; 
             imprimirInfo();
         }else{
 
