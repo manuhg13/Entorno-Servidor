@@ -40,13 +40,13 @@
 
     function validarTodo(){
         if (enviado()) {
-           if (!vacio("alfabetico") && is_numeric($_REQUEST['alfabetico'])) {
+           if (!vacio("alfabetico") && !is_numeric($_REQUEST['alfabetico'])) {
                 if (!vacio('alfaNum')) {
                     if (!vacio('fecha')) {
                         if (existe('radios')) {
                             if (existe('selector') && $_REQUEST['selector']!=0) {
                                if (existe('box') && !cuantos('box')) {
-                                    if (!vacio('tel') && telefono('tel')) {
+                                    if (!vacio('telefono') && telefono('telefono')) {
                                         return true;
                                     }
                                }
@@ -69,8 +69,8 @@
         echo "<p>Opciones radio: ". $_REQUEST["radios"] . "</p>";
         echo "<p>Opciones desplegable: ". $_REQUEST["selector"] . "</p>";
         echo "<p>Check: ";
-        foreach ($_REQUEST["selector"] as $valor) {
-           echo $valor . " | ";
+        foreach ($_REQUEST["box"] as $valor) {
+           echo $valor . "  ";
         }   
         echo "</p>";
         echo "<p>Fichero: ". $_FILES["fichero"]['name'] . "</p>";

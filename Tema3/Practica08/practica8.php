@@ -12,8 +12,7 @@
 <body>
     <h1>Formulario</h1>
     <?php
-        if (validarTodo()){
-            echo "<p style='color: red'>Esta todo</p>"; 
+        if (validarTodo()==true){
             imprimirInfo();
         }else{
     
@@ -180,7 +179,7 @@
             <?php
                 if (vacio('telefono') && enviado()) {
                     echo "<p style='color: red'> Introduce nº de telefono</p>";    
-                }elseif (!telefono('telefono')) {
+                }elseif (telefono('telefono')) {
                     echo "<p style='color: red'> Introduce nº de telefono correcto</p>";
                 }
             ?>
@@ -202,8 +201,8 @@
             ?>
         </p>
         <p>
-            <label for="idEmail">Email: </label>
-            <input type="password" name="pass" id="idPass"> value="<?php
+            <label for="idEmail">Contraseña: </label>
+            <input type="password" name="pass" id="idPass" value="<?php
                 if (enviado() && !vacio("pass")) {
                     echo $_REQUEST['pass'];
                 }
