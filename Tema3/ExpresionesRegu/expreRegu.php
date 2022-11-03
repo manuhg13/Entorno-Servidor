@@ -4,7 +4,7 @@
 
     echo "<br> Cadena: " . $cadena . " y patron: " . $patron .  " Match: " . preg_match($patron,$cadena);
 
-    $patron="/ha./";
+    $patron='/ha./';
     
     echo "<br> Cadena: " . $cadena . " || patron: " . $patron .  " ||Match: " . preg_match($patron,$cadena);
     
