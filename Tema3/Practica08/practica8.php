@@ -178,9 +178,9 @@
                 }
             ?>">
             <?php
-                if (vacio('tel') && enviado()) {
+                if (vacio('telefono') && enviado()) {
                     echo "<p style='color: red'> Introduce nº de telefono</p>";    
-                }elseif (telefono('tel')) {
+                }elseif (!telefono('telefono')) {
                     echo "<p style='color: red'> Introduce nº de telefono correcto</p>";
                 }
             ?>
