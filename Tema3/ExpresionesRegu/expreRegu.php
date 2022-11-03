@@ -75,10 +75,45 @@
     //match con <html> <h3> <a> </html> </h3>
     echo "<br><br>";
 
-    $patron='/<\/?\D+\d*>/';
-    $html='</html><a></a></html>';
+    $patron='/<\/?[a-z]+\d?>/';
+    $html='</html>dentro del html</html>
+    <a>dentro del a</a>
+    <h1>dentro del titulo</h1>';
     echo "<br> Cadena: " . str_replace('<','&lt', $html ) . " || patron: " . $patron .  " ||Match: " . preg_match_all($patron,$html,$array);
-
     
+    echo "<br><br>";
+    //El array tiene que ser de cero
+    foreach ($array[0] as $value) {
+        echo str_replace('<','&lt', $value ) . "<br>";
+    }
+    
+    $patron='/<?[a-z]+\d?>(.*)<\/[a-z]+\d?>/';
+    $html='</html>dentro del html</html>
+    <a>dentro del a</a>
+    <h1>dentro del titulo</h1>';
+    
+    echo "<br><br>";
+    /* Es suspension
+    foreach ($array as $key => $value) {
+        foreach ($value as $esto) {
+            echo str_replace('<','&lt', $esto ) . "<br>"; 
+        }
+    }*/
+    
+    echo "<br><br>";
+    
+    //Expresiones regulares en arrays
+    
+    $lista = array('María','Criado','25','Calle Requejo 25','49027');
+    $patron ='/^\d{1,3}$/';
+    $numeros= preg_grep($patron,$lista);
+    print_r($numeros);
+    
+    echo "<br><br>";
+    $sustituir='numero';
+    $cambiado=preg_replace($patron,$sustituir,$lista);
+    print_r($cambiado);
+
+
 
 ?>

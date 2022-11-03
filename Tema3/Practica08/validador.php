@@ -60,10 +60,23 @@
     }
 
     function imprimirInfo(){
-
-        foreach ($_REQUEST as $clave => $valor) {
-            echo "<p>" . $clave ." => " . $valor . "</p>";
-        }
+        echo "<p>Alfabetico: ". $_REQUEST["alfabetico"] . "</p>";
+        echo "<p>Alfabetico opcional: ". $_REQUEST["alfabeticoOpt"] . "</p>";
+        echo "<p>Alfanumerico: ". $_REQUEST["alfaNum"] . "</p>";
+        echo "<p>Alfanumerico opcional: ". $_REQUEST["alfaNumOpt"] . "</p>";
+        echo "<p>Fecha: ". $_REQUEST["fecha"] . "</p>";
+        echo "<p>Fecha opcional: ". $_REQUEST["fechaOpt"] . "</p>";
+        echo "<p>Opciones radio: ". $_REQUEST["radios"] . "</p>";
+        echo "<p>Opciones desplegable: ". $_REQUEST["selector"] . "</p>";
+        echo "<p>Check: ";
+        foreach ($_REQUEST["selector"] as $valor) {
+           echo $valor . " | ";
+        }   
+        echo "</p>";
+        echo "<p>Fichero: ". $_FILES["fichero"]['name'] . "</p>";
+        echo "<p>Telefono: ". $_REQUEST["telefono"] . "</p>";
+        echo "<p>mail: ". $_REQUEST["mail"] . "</p>";
+        echo "<p>contraseña: ". $_REQUEST["pass"] . "</p>";
         
     }
 ?>
