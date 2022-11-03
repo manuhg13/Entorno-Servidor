@@ -79,9 +79,6 @@
            echo $valor . "  ";
         }   
         echo "</p>";
-        if (!existe('fichero')) {
-            # code...
-        }
         echo "<p>Fichero: ". $_FILES["fichero"]['name'] . "</p>";
         echo "<p>Telefono: ". $_REQUEST["telefono"] . "</p>";
         echo "<p>Email: ". $_REQUEST["mail"] . "</p>";
