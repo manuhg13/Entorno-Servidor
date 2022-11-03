@@ -61,11 +61,17 @@
 
     function imprimirInfo(){
         echo "<p>Alfabetico: ". $_REQUEST["alfabetico"] . "</p>";
-        echo "<p>Alfabetico opcional: ". $_REQUEST["alfabeticoOpt"] . "</p>";
+        if (!existe('alfabeticoOpt')) {
+            echo "<p>Alfabetico opcional: ". $_REQUEST["alfabeticoOpt"] . "</p>";
+        }
         echo "<p>Alfanumerico: ". $_REQUEST["alfaNum"] . "</p>";
-        echo "<p>Alfanumerico opcional: ". $_REQUEST["alfaNumOpt"] . "</p>";
+        if (!existe('alfaNumOpt')) {
+            echo "<p>Alfanumerico opcional: ". $_REQUEST["alfaNumOpt"] . "</p>";
+        }
         echo "<p>Fecha: ". $_REQUEST["fecha"] . "</p>";
-        echo "<p>Fecha opcional: ". $_REQUEST["fechaOpt"] . "</p>";
+        if (!existe('fechaOpt')) {
+            echo "<p>Fecha opcional: ". $_REQUEST["fechaOpt"] . "</p>";
+        }
         echo "<p>Opciones radio: ". $_REQUEST["radios"] . "</p>";
         echo "<p>Opciones desplegable: ". $_REQUEST["selector"] . "</p>";
         echo "<p>Check: ";
@@ -73,10 +79,13 @@
            echo $valor . "  ";
         }   
         echo "</p>";
+        if (!existe('fichero')) {
+            # code...
+        }
         echo "<p>Fichero: ". $_FILES["fichero"]['name'] . "</p>";
         echo "<p>Telefono: ". $_REQUEST["telefono"] . "</p>";
-        echo "<p>mail: ". $_REQUEST["mail"] . "</p>";
-        echo "<p>contraseña: ". $_REQUEST["pass"] . "</p>";
+        echo "<p>Email: ". $_REQUEST["mail"] . "</p>";
+        echo "<p>Contraseña: ". $_REQUEST["pass"] . "</p>";
         
     }
 ?>

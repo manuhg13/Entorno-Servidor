@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practica 8 || Manuel Hernández Gómez</title>
+    <link rel="stylesheet" href="..">
 </head>
 <body>
     <h1>Formulario</h1>
