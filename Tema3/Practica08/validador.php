@@ -41,7 +41,7 @@
                     if (!vacio('fecha')) {
                         if (existe('radios')) {
                             if (existe('selector') && $_REQUEST['selector']!=0) {
-                               if (existe('box') && cuantos('box')) {
+                               if (existe('box') && !cuantos('box')) {
                                     if (!vacio('tel') && telefono('tel')) {
                                         return true;
                                     }
