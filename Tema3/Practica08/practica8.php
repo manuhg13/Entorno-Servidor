@@ -16,8 +16,7 @@
             echo "<p style='color: red'>Esta todo</p>"; 
             imprimirInfo();
         }else{
-
-        
+    
     ?>
     <form action="./practica8.php" method="post" enctype="multipart/form-data">
         <p>
