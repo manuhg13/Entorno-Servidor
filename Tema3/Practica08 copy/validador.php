@@ -20,7 +20,7 @@
     }
 
     function cuantos($array){
-        if (existe($_REQUEST[$array])) {
+        if (isset($_REQUEST[$array])) {
             if (count($_REQUEST[$array])>3){
                 return true;
             }
@@ -30,7 +30,7 @@
 
 
     function telefono($num){
-        if (existe($_REQUEST[$num])) {
+        if (isset($_REQUEST[$num])) {
             if (strlen($_REQUEST[$num])==9) {
                 return true;
             }
@@ -40,7 +40,7 @@
 
     function validarTodo(){
         if (enviado()) {
-           if (!vacio("alfabetico") && is_numeric($_REQUEST['alfabetico'])) {
+           if (!vacio("alfabetico") && !is_numeric($_REQUEST['alfabetico'])) {
                 if (!vacio('alfaNum')) {
                     if (!vacio('fecha')) {
                         if (existe('radios')) {
