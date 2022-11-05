@@ -217,7 +217,18 @@
 
         <input type="submit" value="Enviar" name="enviar" style="margin-left: 20px;">
     </form>
-    
+    <?php
+        echo "<div class='wrapper'>
+        <div id='intro'>
+                <li>
+                    <ul>
+                        <li class='dentro'><a href='ver4.php'>Ver fichero</a></li>
+                    </ul>                  
+                </li>
+                <br class='clear'/>
+            </div>
+        </div>";
+    ?>
     
     <?php
         }
