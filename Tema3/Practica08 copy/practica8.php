@@ -217,18 +217,7 @@
 
         <input type="submit" value="Enviar" name="enviar" style="margin-left: 20px;">
     </form>
-    <div class='wrapper'>
-        <div id='intro'>
-                <li>
-                    <ul>
-                        <li class='dentro'><a href='<?php
-                            highlight_file("./")
-                        ?>'>Ver fichero</a></li>
-                    </ul>                  
-                </li>
-                <br class='clear'/>
-            </div>
-        </div>
+    
     
     <?php
         }
