@@ -20,9 +20,46 @@
     }
 
     function cuantos($array){
-        if (count($_REQUEST[$array])>3){
+       if (count($_REQUEST[$array])>3){
             return true;
         }
         return false;
+    }
+
+
+    function telefono($num){
+        if (strlen($_REQUEST[$num])==9) {
+            return true;
+        }
+        return false;
+    }
+
+    function validarTodo(){
+        if (enviado()) {
+           if (!vacio("alfabetico") && is_numeric($_REQUEST['alfabetico'])) {
+                if (!vacio('alfaNum')) {
+                    if (!vacio('fecha')) {
+                        if (existe('radios')) {
+                            if (existe('selector') && $_REQUEST['selector']!=0) {
+                               if (existe('box') && cuantos('box')) {
+                                    if (!vacio('tel') && telefono('tel')) {
+                                        return true;
+                                    }
+                               }
+                            }
+                        }
+                    }
+                }
+           }
+        }
+        return false;
+    }
+
+    function imprimirInfo(){
+
+        foreach ($_REQUEST as $clave => $valor) {
+            echo "<p>" . $clave ." => " . $valor . "</p>";
+        }
+        
     }
 ?>
