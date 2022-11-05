@@ -10,7 +10,7 @@ body{
     color: #969393;  
 }
 
-h1, h2, text{
+h1, h2, text, p, label{
     color: #969393;  
     margin-left: 20px;
 
