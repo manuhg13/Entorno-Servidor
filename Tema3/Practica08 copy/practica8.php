@@ -217,7 +217,9 @@
 
         <input type="submit" value="Enviar" name="enviar" style="margin-left: 20px;">
     </form>
-    <input type="button" value="Ver fichero">
+    <input type="button" value="Ver fichero" onclick="<?php
+        highlight_file("./");
+    ?>">
     <?php
         }
     ?>
