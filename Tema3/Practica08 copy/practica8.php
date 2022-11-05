@@ -190,7 +190,7 @@
             ?>
         </p>
         <p>
-            <input type="file" name="fichero" id="idFichero">
+            <input type="file" name="fichero" id="idFichero" class="colorin">
         </p>
         <p>
             <label for="idEmail">Email: </label>
@@ -215,19 +215,10 @@
             ?>
         </p>
 
-        <input type="submit" value="Enviar" name="enviar" style="margin-left: 20px;">
-        <div class='wrapper'>
-        <div id='intro'>
-                <li>
-                    <ul>
-                        <li class='dentro'><a href='<?php
-                            highlight_file("./");
-                        ?>'>Ver fichero</a></li>
-                    </ul>                  
-                </li>
-                <br class='clear'/>
-            </div>
-        </div>
+        <input type="submit" value="Enviar" name="enviar" class="colorin">
+        <a href="verFor.php" class="colorin">Ver formulario</a>
+        <a href="verFor.php" class="colorin">Ver formulario</a>
+        
 
     </form>
     <?php
