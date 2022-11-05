@@ -190,8 +190,25 @@
         </p>
         <p>
             <label for="idEmail">Email: </label>
-            <input type="email" name="mail" id="idEmail">
-            
+            <input type="email" name="mail" id="idEmail" value="<?php
+                if (enviado() && !vacio('mail')) {
+                    echo $_REQUEST["mail"];
+                }
+            ?>">
+            <?php
+                if (vacio('mail') && enviado()) {
+                    echo "<p style='color: red'> Introduce un email</p>";
+                }
+            ?>
+        </p>
+        <p>
+            <label for="idContraseña">Contraseña</label>
+            <input type="password" name="pass" id="idContraseña">
+            <?php
+                if (vacio('pass') && enviado()) {
+                    echo "<p style='color: red'> Introduce un email</p>";
+                }
+            ?>
         </p>
 
         <input type="submit" value="Enviar" name="enviar">
