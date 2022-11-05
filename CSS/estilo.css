@@ -159,6 +159,19 @@ div.wrapper{
 #intro{
     padding:25px 0 15px 0;
 }
+.colorin{
+    background-color: #131313;
+    color: #FDC609;
+    border: 2px solid #FDC609;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+.colorin:hover{
+    background-color: #FDC609;
+    color: #131313;
+}
 #intro ul{
     margin:0; 
     padding:0; 
