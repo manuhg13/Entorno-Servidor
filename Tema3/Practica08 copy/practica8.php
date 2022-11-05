@@ -216,8 +216,9 @@
         </p>
 
         <input type="submit" value="Enviar" name="enviar" class="colorin">
+        <br><br>
         <a href="verFor.php" class="colorin">Ver formulario</a>
-        <a href="verFor.php" class="colorin">Ver formulario</a>
+        <a href="verFor.php" class="colorin">Ver validador</a>
         
 
     </form>
