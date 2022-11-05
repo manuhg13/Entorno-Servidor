@@ -20,16 +20,20 @@
     }
 
     function cuantos($array){
-       if (count($_REQUEST[$array])>3){
-            return true;
+        if (existe($_REQUEST[$array])) {
+            if (count($_REQUEST[$array])>3){
+                return true;
+            }
         }
         return false;
     }
 
 
     function telefono($num){
-        if (strlen($_REQUEST[$num])==9) {
-            return true;
+        if (existe($_REQUEST[$num])) {
+            if (strlen($_REQUEST[$num])==9) {
+                return true;
+            }
         }
         return false;
     }
@@ -41,8 +45,8 @@
                     if (!vacio('fecha')) {
                         if (existe('radios')) {
                             if (existe('selector') && $_REQUEST['selector']!=0) {
-                               if (existe('box') && cuantos('box')) {
-                                    if (!vacio('tel') && telefono('tel')) {
+                               if (existe('box') && !cuantos('box')) {
+                                    if (!vacio('telefono') && telefono('telefono')) {
                                         return true;
                                     }
                                }

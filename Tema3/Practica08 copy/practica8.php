@@ -165,13 +165,13 @@
             <?php
                 if (!existe('box') && enviado()) {
                     echo "<p style='color: red'> Introduce al menos una opción</p>";
-                }else if(cuantos('box')){
+                }elseif(cuantos('box')){
                     echo "<p style='color: red'> Introduce máximo 3 opciones</p>";
                 }
                 ?>
         </p>
         <p>
-            <label for="idTelefono">Nº de teléfono:</label>
+            <label for="idTelefono">Nº de teléfono: </label>
             <input type="tel" name="telefono" id="idTelefono" value="<?php
                 if (enviado() && !vacio("telefono")) {
                     echo $_REQUEST['telefono'];
@@ -187,6 +187,11 @@
         </p>
         <p>
             <input type="file" name="fichero" id="idFichero">
+        </p>
+        <p>
+            <label for="idEmail">Email: </label>
+            <input type="email" name="mail" id="idEmail">
+            
         </p>
 
         <input type="submit" value="Enviar" name="enviar">
