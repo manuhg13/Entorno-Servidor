@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Pruebas en PHP</h1>
-    <?
+    <?php
         print "<p>Hola mundo</p> \n";       
         print "Espacio";     
     ?>
@@ -40,10 +40,10 @@
 
     <h2>GET</h2>
     <?
-        var_dump ($_GET);
+        var_dump($_GET);
         echo "<br>";
         $valcia= null;
-        if (is_null($vacia)){
+        if (is_null($vacia)) {
             echo "<p>Es nula</p>";
         }
         echo "Mi variable es ". gettype($miVariable) . "<br>";
@@ -53,7 +53,7 @@
         echo "Número es ". gettype($numero) . "<br>";
         if (is_integer($numero)) {
             echo "Confirmo, es un " . gettype($numero) . "<br>";
-        }else{
+        } else {
             echo "Desmiento, es un " . gettype($numero) . "<br>";
 
         }

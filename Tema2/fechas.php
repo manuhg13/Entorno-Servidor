@@ -23,9 +23,9 @@
     //MKTime
     echo "<br><br>";
     echo "<h2>MKtime</h2>";
-    echo mktime(10,8,21,10,5,2010);
+    echo mktime(10, 8, 21, 10, 5, 2010);
     echo "<br><br>";
-    $primera = mktime(0,0,0,1,12,1997);
+    $primera = mktime(0, 0, 0, 1, 12, 1997);
     $segunda= strtotime("now");
     $dif =  $segunda-$primera;
     echo "<br>";
