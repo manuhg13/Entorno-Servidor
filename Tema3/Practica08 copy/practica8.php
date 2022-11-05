@@ -11,7 +11,7 @@
     <title>Practica 8 || Manuel Hernández Gómez</title>
 </head>
 <body>
-    
+    <input type="button" value="Ver fichero">
     <h1>Formulario</h1>
     <?php
         if (validarTodo()){
@@ -213,9 +213,7 @@
         </p>
 
         <input type="submit" value="Enviar" name="enviar" style="margin-left: 20px;">
-        <input type="button" value="Ver fichero" onclick="<?php
-            highlight_file("./");
-        ?>">
+        
     </form>
     <?php
         }
