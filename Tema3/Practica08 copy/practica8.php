@@ -216,10 +216,10 @@
         </p>
 
         <input type="submit" value="Enviar" name="enviar" style="margin-left: 20px;">
+        <input type="button" value="Ver fichero" onclick="<?php
+            highlight_file("./");
+        ?>">
     </form>
-    <input type="button" value="Ver fichero" onclick="<?php
-        highlight_file("./");
-    ?>">
     <?php
         }
     ?>
