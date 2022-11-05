@@ -11,9 +11,6 @@
     <title>Practica 8 || Manuel Hernández Gómez</title>
 </head>
 <body>
-    <?php 
-        include_once("../../CSS/cabecera.html");
-    ?>
     
     <h1>Formulario</h1>
     <?php
