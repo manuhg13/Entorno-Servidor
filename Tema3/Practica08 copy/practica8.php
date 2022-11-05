@@ -13,8 +13,8 @@
 <body>
     <?php 
         include_once("../../CSS/cabecera.html");
-        include_once("../../CSS/intro.html");
     ?>
+    
     <h1>Formulario</h1>
     <?php
         if (validarTodo()){
@@ -218,6 +218,7 @@
         <input type="submit" value="Enviar" name="enviar" style="margin-left: 20px;">
     </form>
     <?php
+        include_once("../../CSS/intro.html");
         echo "<div class='wrapper'>
         <div id='intro'>
                 <li>
