@@ -7,13 +7,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/estilo.css">
     <title>Practica 8 || Manuel Hernández Gómez</title>
 </head>
 <body>
+    <?php
+        include_once("../../CSS/cabecera.html");
+        include_once("../../CSS/intro.html");
+    ?>
     <h1>Formulario</h1>
     <?php
         if (validarTodo()){
-            echo "<p style='color: red'>Esta todo</p>"; 
             imprimirInfo();
         }else{
     
@@ -165,13 +169,13 @@
             <?php
                 if (!existe('box') && enviado()) {
                     echo "<p style='color: red'> Introduce al menos una opción</p>";
-                }else if(cuantos('box')){
+                }elseif(cuantos('box')){
                     echo "<p style='color: red'> Introduce máximo 3 opciones</p>";
                 }
                 ?>
         </p>
         <p>
-            <label for="idTelefono">Nº de teléfono:</label>
+            <label for="idTelefono">Nº de teléfono: </label>
             <input type="tel" name="telefono" id="idTelefono" value="<?php
                 if (enviado() && !vacio("telefono")) {
                     echo $_REQUEST['telefono'];
@@ -186,10 +190,37 @@
             ?>
         </p>
         <p>
-            <input type="file" name="fichero" id="idFichero">
+            <input type="file" name="fichero" id="idFichero" class="colorin">
+        </p>
+        <p>
+            <label for="idEmail">Email: </label>
+            <input type="email" name="mail" id="idEmail" value="<?php
+                if (enviado() && !vacio('mail')) {
+                    echo $_REQUEST["mail"];
+                }
+            ?>">
+            <?php
+                if (vacio('mail') && enviado()) {
+                    echo "<p style='color: red'> Introduce un email</p>";
+                }
+            ?>
+        </p>
+        <p>
+            <label for="idContraseña">Contraseña</label>
+            <input type="password" name="pass" id="idContraseña">
+            <?php
+                if (vacio('pass') && enviado()) {
+                    echo "<p style='color: red'> Introduce un email</p>";
+                }
+            ?>
         </p>
 
-        <input type="submit" value="Enviar" name="enviar">
+        <input type="submit" value="Enviar" name="enviar" class="colorin">
+        <br><br>
+        <a href="verFor.php" class="colorin">Ver formulario</a>
+        <a href="verFor.php" class="colorin">Ver validador</a>
+        
+
     </form>
     <?php
         }
