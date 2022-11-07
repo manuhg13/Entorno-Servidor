@@ -49,6 +49,15 @@
                 }
             ?>
         </p>
+        <p>
+            <label for="idFecha">Fecha</label>
+            <input type="text" name="fecha" id="idFecha" placeholder="dd/mm/aaaa" value="<?php
+                if (enviado() && !vacio('fecha')){
+                    echo $_REQUEST['fecha'];
+                }
+            ?>">
+
+        </p>
     </form>
     <?php
        // }
