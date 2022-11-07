@@ -1,3 +1,6 @@
+<?php
+    require("libreria.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,9 +16,9 @@
     ?>
     <h1>Formulario</h1>
     <?php
-        if (validarTodo()){
+        /*if (validarTodo()){
             imprimirInfo();
-        }else{
+        }else{*/
     
     ?>
     <form action="./practica09.php" method="post" enctype="multipart/form-data">
@@ -26,10 +29,30 @@
                     echo $_REQUEST['nombre'];
                 }
             ?>">
+
+            <?php
+                if(vacio('nombre') && enviado() && !patNombre()){
+                    echo "<p style='color: red'> Introduce un nombre correcto</p>";
+                }
+            ?>
+        </p>
+        <p>
+            <label for="idApellidos">Apellidos</label>
+            <input type="text" name="apellidos" id="idApellidos" placeholder="Apellidos" value="<?php
+                if (enviado() && !vacio('apellidos')){
+                    echo $_REQUEST['apellidos'];
+                }
+            ?>">
+            <?php
+                if(vacio('apellidos') && enviado() && !patApellidos()){
+                    echo "<p style='color: red'> Introduce correctamente los apellidos</p>";
+                }
+            ?>
+
         </p>
     </form>
     <?php
-        }
+       // }
     ?>
 </body>
 </html>
