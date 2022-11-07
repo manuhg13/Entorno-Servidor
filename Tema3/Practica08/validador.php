@@ -20,17 +20,17 @@
     }
 
     function cuantos($array){
-       if (isset($_REQUEST[$array])) {
-           if (count($_REQUEST[$array])>3){
-               return true;
-           }
-       }
+        if (isset($_REQUEST[$array])) {
+            if (count($_REQUEST[$array])>3){
+                return true;
+            }
+        }
         return false;
     }
 
 
     function telefono($num){
-        if (isset($_REQUEST[$num])) {           
+        if (isset($_REQUEST[$num])) {
             if (strlen($_REQUEST[$num])==9) {
                 return true;
             }
@@ -60,29 +60,33 @@
     }
 
     function imprimirInfo(){
-        echo "<p>Alfabetico: ". $_REQUEST["alfabetico"] . "</p>";
-        if (!existe('alfabeticoOpt')) {
-            echo "<p>Alfabetico opcional: ". $_REQUEST["alfabeticoOpt"] . "</p>";
+
+        echo "<p>Alfabético: ". $_REQUEST["alfabetico"] . "</p>";
+        if(existe($_REQUEST["alfabeticoOpt"])){
+            echo "<p>Alfabético opcional: ". $_REQUEST["alfabeticoOpt"] . "</p>";
         }
-        echo "<p>Alfanumerico: ". $_REQUEST["alfaNum"] . "</p>";
-        if (!existe('alfaNumOpt')) {
-            echo "<p>Alfanumerico opcional: ". $_REQUEST["alfaNumOpt"] . "</p>";
-        }
-        echo "<p>Fecha: ". $_REQUEST["fecha"] . "</p>";
-        if (!existe('fechaOpt')) {
+       echo "<p>Alfanumérico: ". $_REQUEST["alfaNum"] . "</p>";
+       if(existe($_REQUEST["alfaNumOpt"])){
+            echo "<p>Alfanumérico opcional: ". $_REQUEST["alfaNumOpt"] . "</p>";
+       }
+       echo "<p>Fecha: ". $_REQUEST["fecha"] . "</p>";
+       if(existe($_REQUEST["fechaOpt"])){
             echo "<p>Fecha opcional: ". $_REQUEST["fechaOpt"] . "</p>";
-        }
-        echo "<p>Opciones radio: ". $_REQUEST["radios"] . "</p>";
-        echo "<p>Opciones desplegable: ". $_REQUEST["selector"] . "</p>";
-        echo "<p>Check: ";
-        foreach ($_REQUEST["box"] as $valor) {
-           echo $valor . "  ";
-        }   
-        echo "</p>";
-        echo "<p>Fichero: ". $_FILES["fichero"]['name'] . "</p>";
-        echo "<p>Telefono: ". $_REQUEST["telefono"] . "</p>";
-        echo "<p>Email: ". $_REQUEST["mail"] . "</p>";
-        echo "<p>Contraseña: ". $_REQUEST["pass"] . "</p>";
+       }
+       echo "<p>Radios: ". $_REQUEST["radios"] . "</p>";
+       echo "<p>Desplegable: ". $_REQUEST["selector"] . "</p>";
+       echo "<p>";
+       echo "Check box: ";
+       foreach($_REQUEST["box"] as $valor){
+        echo "| $valor ";
+       }
+       echo "</p>";
+       echo "<p>Telefono: ". $_REQUEST["telefono"] . "</p>";
+       echo "<p>Email: ". $_REQUEST["mail"] . "</p>";
+       echo "<p>Contraseña: ". $_REQUEST["pass"] . "</p>";
+       echo "<p> fichero: ";
+       echo $_FILES['fichero']['name'];
+       echo "</p>";
         
     }
 ?>
