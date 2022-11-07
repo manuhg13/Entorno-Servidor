@@ -33,4 +33,15 @@
         }
         return false;
     }
+
+    function patFecha(){
+        $patron='/^([0-2][1-9]|3[0-1]\/[1-12]{1,2}\/\d{1,4})$/';
+        if(preg_match($patron,$_REQUEST['fecha'])==1){
+            $cortado=explode('/',$_REQUEST['fecha']);
+            if(checkdate($cortado[1],$cortado[0],$cortado[2])){
+                return true;
+            }
+        }
+        return false;
+    }
 ?>
