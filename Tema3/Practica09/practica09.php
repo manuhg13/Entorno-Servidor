@@ -48,7 +48,6 @@
                     echo "<p style='color: red'> Introduce correctamente los apellidos</p>";
                 }
             ?>
-
         </p>
     </form>
     <?php
