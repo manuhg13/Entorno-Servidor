@@ -66,11 +66,30 @@
         </p>
         <p>
             <label for="idDNI">Dni: </label>
-            <input type="text" name="dni" id="idDNI" value="<?php
+            <input type="text" name="dni" id="idDNI"  placeholder="NIF" value="<?php
                 if (enviado() && !vacio('dni')) {
                     echo $_REQUEST['dni'];
                 }
             ?>">
+
+            <?php
+                if (vacio('dni') && enviado() && !patDNI()){
+                    echo "<p style='color: red'>DNI incorrecto</p>";
+                }
+            ?>
+        </p>
+
+        <p>
+            <label for="idEmail">Email: </label>
+            <input type="text" name="mail" id="idEmail" placeholder="Email" value="<?php
+                if (enviado() && !vacio('mail')) {
+                    echo $_REQUEST['mail'];
+                }
+            ?>">
+
+            <?php
+                
+            ?>
         </p>
 
         <input type="submit" value="Enviar">

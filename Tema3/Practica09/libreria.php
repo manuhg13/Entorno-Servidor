@@ -55,4 +55,17 @@
         return false;
     }
 
+    function patDNI(){
+        $patron= '/\d{8}[T|R|W|A|G|M|Y|F|P|D|X|B|N|J|Z|S|Q|V|H|L|C|K|E]$/';
+        if (preg_match($patron,$_REQUEST['dni'])==1){
+            $letras = 'TRWAGMYFPDXBNJZSQVHLCKE';
+            $num= substr($_REQUEST['dni'],0,8);
+            $dni=$_REQUEST['dni'];
+            if ($dni[8] == $letras[$num%23]){
+                return true;
+            }
+        }
+        return false;
+    }
+
 ?>
