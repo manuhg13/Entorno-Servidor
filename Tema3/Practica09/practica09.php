@@ -59,12 +59,14 @@
             <?php
                 if (vacio('fecha') && enviado() && !patFecha()){
                     echo "<p style='color: red'>Fecha no valida</p>";
-                }elseif () {
-                    # code...
+                }elseif (!mayor()) {
+                    echo "<p style='color: red'>No es mayor</p>";
                 }
             ?>
 
         </p>
+
+        <input type="submit" value="Enviar">
     </form>
     <?php
        // }

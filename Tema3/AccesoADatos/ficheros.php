@@ -79,5 +79,10 @@
 
    }
 
+/*if (file_exists($request['fichero])) {
+   header('Location: ./leer.php?fichero='. $_REQUEST['fichero']);
+   exit();
+}
+*/
 
 ?>
