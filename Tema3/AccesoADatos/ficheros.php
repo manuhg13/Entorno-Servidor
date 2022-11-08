@@ -45,11 +45,21 @@
     //ESCRIBIR
     //Abrir fichero con 'w'
 
-    if ($fp== fopen('miarchivo.txt','w')){
+    if ($fp= fopen('miarchivo.txt','w')){
         $escribir= '08/11/22';
         fwrite($fp,$escribir,strlen($escribir));
         fclose($fp);
     }else{
         echo "<br>No existe";
     }
+
+    //Escribir al final
+    if ($fp= fopen('miarchivo.txt','a')){
+        $escribir= 'final';
+        fwrite($fp,$escribir,strlen($escribir));
+        fclose($fp);
+    }else{
+        echo "<br>No existe";
+    }
+
 ?>
