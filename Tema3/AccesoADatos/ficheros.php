@@ -23,8 +23,17 @@
         fclose($fp);
     }
 
-    
-
-
-
+    echo "<br><br>";
+?>
+<?php
+    //Leer línea por línea
+    if (!file_exists('miarchivo.txt')){
+        echo "<br>No existe";
+    }else{ 
+       if($fp=fopen('miarchivo.txt', 'r')){
+            while (($linea=fgets($fp,filesize('miarchivo.txt')))) {
+                echo "<br>"  . $linea;
+            }
+       }
+    }
 ?>
