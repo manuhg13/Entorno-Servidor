@@ -24,6 +24,7 @@
     }
 
     echo "<br><br>";
+    
 ?>
 <?php
     //Leer línea por línea
@@ -40,6 +41,7 @@
 ?>
 
 <?php
+    echo "<br><br>";
     //ESCRIBIR
     //Abrir fichero con 'w'
 
