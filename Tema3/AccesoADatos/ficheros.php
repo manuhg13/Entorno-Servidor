@@ -35,5 +35,19 @@
                 echo "<br>"  . $linea;
             }
        }
+       fclose($fp);
+    }
+?>
+
+<?php
+    //ESCRIBIR
+    //Abrir fichero con 'w'
+
+    if ($fp== fopen('miarchivo.txt','w')){
+        $escribir= '08/11/22';
+        fwrite($fp,$escribir,strlen($escribir));
+        fclose($fp);
+    }else{
+        echo "<br>No existe";
     }
 ?>
