@@ -56,6 +56,13 @@
                     echo $_REQUEST['fecha'];
                 }
             ?>">
+            <?php
+                if (vacio('fecha') && enviado() && !patFecha()){
+                    echo "<p style='color: red'>Fecha no valida</p>";
+                }elseif () {
+                    # code...
+                }
+            ?>
 
         </p>
     </form>

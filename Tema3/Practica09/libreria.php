@@ -44,4 +44,9 @@
         }
         return false;
     }
+
+    function mayor(){
+        
+    }
+
 ?>
