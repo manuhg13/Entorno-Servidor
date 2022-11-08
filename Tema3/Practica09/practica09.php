@@ -63,7 +63,14 @@
                     echo "<p style='color: red'>No es mayor</p>";
                 }
             ?>
-
+        </p>
+        <p>
+            <label for="idDNI">Dni: </label>
+            <input type="text" name="dni" id="idDNI" value="<?php
+                if (enviado() && !vacio('dni')) {
+                    echo $_REQUEST['dni'];
+                }
+            ?>">
         </p>
 
         <input type="submit" value="Enviar">
