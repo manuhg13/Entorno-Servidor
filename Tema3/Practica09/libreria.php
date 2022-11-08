@@ -68,4 +68,12 @@
         return false;
     }
 
+    function patMail(){
+        $patron='/.{1,}@.{1,}\..{2,}/';
+        if (preg_match($patron,$_REQUEST['mail'])==1){
+            return true;
+        }
+        return false;
+    }
+
 ?>
