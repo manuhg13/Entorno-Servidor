@@ -14,6 +14,13 @@
 
     if (!$fp = fopen('miarchivo.txt','r')){
         echo "<br> Ha habido un problema al abrir el fichero";
+    }else{
+        // Leer el fichero entero
+        $leer= fread($fp,filesize('miarchivo.txt'));
+
+        echo "<br>" . $leer;
+        //Es IMPORTANTE cerrarlo
+        fclose($fp);
     }
 
     
