@@ -5,10 +5,18 @@
     Comprobar que existe antes*/
     
     //Leer
-    if (file_exists('miarchivo.txt'))
+    if (file_exists('miarchivo.txt')){
         echo "<br> Existe";
-    else 
+    }else{ 
         echo "<br> No existe";
+    }
+
+
+    if (!$fp = fopen('miarchivo.txt','r')){
+        echo "<br> Ha habido un problema al abrir el fichero";
+    }
+
+    
 
 
 
