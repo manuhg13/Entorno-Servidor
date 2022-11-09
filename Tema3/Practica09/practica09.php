@@ -57,10 +57,13 @@
                 }
             ?>">
             <?php
-                if (vacio('fecha') && enviado() && !patFecha()){
-                    echo "<p style='color: red'>Fecha no valida</p>";
-                }elseif (!mayor()) {
-                    echo "<p style='color: red'>No es mayor</p>";
+                if (vacio('fecha') && enviado()){
+                    if (!patFecha()) {
+                        echo "<p style='color: red'>Fecha no valida</p>";
+                    }
+                    if (!mayor()) {
+                        echo "<p style='color: red'>No es mayor</p>";
+                    }
                 }
             ?>
         </p>
