@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/estilo.css">
     <title>Practica 09 || ManuelHG</title>
 </head>
 <body>
@@ -109,6 +110,10 @@
         </p>
 
         <input type="submit" value="Enviar" name="enviar" class="colorin">
+
+        <br><br>
+        <a href="verCodigo.php?fichero=practica09.php" class="colorin">Ver formulario</a>
+        <a href="verCodigo.php?fichero=libreria.php" class="colorin">Ver libreria</a>
     </form>
     <?php
        }

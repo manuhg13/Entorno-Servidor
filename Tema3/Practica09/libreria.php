@@ -81,7 +81,7 @@
     function validarTodo(){
         if (enviado()){
             if (!vacio('nombre') && patNombre()) {
-                if (!vacio('apelidos') && patApellidos()) {
+                if (vacio('apelidos') && patApellidos()) {
                     if (!vacio('fecha') && patFecha() && mayor()) {
                         if (!vacio('dni') && patDNI()) {
                             if (!vacio('mail') && patMail()) {
