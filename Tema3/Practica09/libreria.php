@@ -47,7 +47,7 @@
 
     function mayor(){
         if (existe('fecha')){
-            $fecha= new dateTime($_REQUEST['fecha']);
+            $fecha= new dateTime($_REQUEST["fecha"]);
             $actual= new dateTime();
             $diferecia= $actual->diff($fecha);
             if ($diferecia->y >=18){
