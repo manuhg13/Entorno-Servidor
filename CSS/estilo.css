@@ -160,6 +160,7 @@ div.wrapper{
     padding:25px 0 15px 0;
 }
 .colorin{
+    margin: 20px;
     background-color: #131313;
     color: #FDC609;
     border: 2px solid #FDC609;
