@@ -35,7 +35,7 @@
     }
 
     function patFecha(){
-        $patron='/^([0-2]?[0-9]|3[0-1])\/(1[0-2]?|[1-9]{1})\/([1-9]{1,4})$/';
+        $patron='/^([0-2]?[0-9]|3[0-1])\/(1[0-2]?|[1-9]{1})\/([0-9]{1,4})$/';
         if(preg_match($patron,$_REQUEST['fecha'])==1){
             $cortado=explode('/',$_REQUEST['fecha']);
             if(checkdate($cortado[1],$cortado[0],$cortado[2])){
@@ -47,7 +47,7 @@
 
     function mayor(){
         if (existe('fecha')){
-            $fecha= new dateTime($_REQUEST["fecha"]);
+            $fecha= DateTime::createFromFormat('d/m/Y', $_REQUEST['fecha']);
             $actual= new dateTime();
             $diferecia= $actual->diff($fecha);
             if ($diferecia->y >=18){
