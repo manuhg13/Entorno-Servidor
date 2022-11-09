@@ -105,7 +105,13 @@
             ?>">
 
             <?php
-                
+                if (enviado()) {
+                    if (vacio('mail')) {
+                        echo "<p style='color: red'>Introduce Email</p>";
+                    }elseif (!patMail()) {
+                        echo "<p style='color: red'>Introduce Email correcto</p>";     
+                    }
+                }
             ?>
         </p>
 
