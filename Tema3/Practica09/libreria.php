@@ -19,7 +19,7 @@
     }
 
     function patNombre(){
-        $patron='/\D{3,}/';
+        $patron='/\D{3,}$/';
         if (preg_match($patron,$_REQUEST['nombre'])==1){
             return true;
         }

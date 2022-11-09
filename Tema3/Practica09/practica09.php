@@ -76,8 +76,10 @@
             ?>">
 
             <?php
-                if (vacio('dni') && enviado() && !patDNI()){
-                    echo "<p style='color: red'>DNI incorrecto</p>";
+                if (enviado()){
+                    if(vacio('dni') && !patDNI()){
+                        echo "<p style='color: red'>DNI incorrecto</p>";
+                    }
                 }
             ?>
         </p>
@@ -95,7 +97,7 @@
             ?>
         </p>
 
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Enviar" name="enviar" class="colorin">
     </form>
     <?php
        // }
