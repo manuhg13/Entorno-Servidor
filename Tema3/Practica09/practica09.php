@@ -16,9 +16,9 @@
     ?>
     <h1>Formulario</h1>
     <?php
-        /*if (validarTodo()){
+        if (validarTodo()){
             imprimirInfo();
-        }else{*/
+        }else{
     
     ?>
     <form action="./practica09.php" method="post" enctype="multipart/form-data">
@@ -111,7 +111,7 @@
         <input type="submit" value="Enviar" name="enviar" class="colorin">
     </form>
     <?php
-       // }
+       }
     ?>
 </body>
 </html>
