@@ -71,11 +71,37 @@
     }
 
     function patMail(){
-        $patron='/.{1,}@.{1,}\..{2,}/';
+        $patron='/^.{1,}@.{1,}\..{2,}$/';
         if (preg_match($patron,$_REQUEST['mail'])==1){
             return true;
         }
         return false;
     }
+
+    function validarTodo(){
+        if (enviado()){
+            if (!vacio('nombre') && patNombre()) {
+                if (!vacio('apelidos') && patApellidos()) {
+                    if (!vacio('fecha') && patFecha() && mayor()) {
+                        if (!vacio('dni') && patDNI()) {
+                            if (!vacio('mail') && patMail()) {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    function imprimirInfo(){
+        echo "<p>Nombre: ". $_REQUEST["nombre"] . "</p>";
+        echo "<p>Apellidos: ". $_REQUEST["apellidos"] . "</p>";
+        echo "<p>Fecha: ". $_REQUEST["fecha"] . "</p>";
+        echo "<p>DNI: ". $_REQUEST["dni"] . "</p>";
+        echo "<p>Email: ". $_REQUEST["mail"] . "</p>";
+    }
+
 
 ?>
