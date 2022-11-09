@@ -86,8 +86,10 @@
 
             <?php
                 if (enviado()){
-                    if(vacio('dni') && !patDNI()){
-                        echo "<p style='color: red'>DNI incorrecto</p>";
+                    if(vacio('dni')){
+                        echo "<p style='color: red'>Introduce DNI</p>";
+                    }elseif (!patDNI()) {
+                        echo "<p style='color: red'>Introduce DNI correcto</p>";                      
                     }
                 }
             ?>
