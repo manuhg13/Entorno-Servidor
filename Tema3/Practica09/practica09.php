@@ -31,8 +31,12 @@
             ?>">
 
             <?php
-                if(vacio('nombre') && enviado() && !patNombre()){
-                    echo "<p style='color: red'> Introduce un nombre correcto</p>";
+                if(enviado()){
+                    if(vacio('nombre')){
+                        echo "<p style='color: red'> Introduce un nombre</p>";
+                    }elseif (!patNombre()) {
+                        echo "<p style='color: red'> Introduce un nombre correcto</p>";    
+                    }
                 }
             ?>
         </p>
@@ -44,8 +48,12 @@
                 }
             ?>">
             <?php
-                if(vacio('apellidos') && enviado() && !patApellidos()){
-                    echo "<p style='color: red'> Introduce correctamente los apellidos</p>";
+                if(enviado()){
+                    if (vacio('apellidos')) {
+                        echo "<p style='color: red'> Introduce los apellidos</p>";        
+                    }elseif (!patApellidos()) {
+                        echo "<p style='color: red'> Introduce los apellidos correctamente</p>";        
+                    }
                 }
             ?>
         </p>
@@ -57,11 +65,12 @@
                 }
             ?>">
             <?php
-                if (vacio('fecha') && enviado()){
-                    if (!patFecha()) {
+                if (enviado()){
+                    if (vacio('fecha')) {
+                        echo "<p style='color: red'>Introduce una fecha</p>";
+                    }elseif (!patFecha()) {
                         echo "<p style='color: red'>Fecha no valida</p>";
-                    }
-                    if (!mayor()) {
+                    }elseif (!mayor()) {
                         echo "<p style='color: red'>No es mayor</p>";
                     }
                 }
