@@ -86,14 +86,26 @@
         return false;
     }
 
+    function patPass(){
+        $patron='/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/';
+        if (preg_match($patron,$_REQUEST['pass'])) {
+            return true;
+        }
+        return false;
+    }
+
     function validarTodo(){
         if (enviado()){
             if (!vacio('nombre') && patNombre()) {
                 if (vacio('apelidos') && patApellidos()) {
-                    if (!vacio('fecha') && patFecha() && mayor()) {
-                        if (!vacio('dni') && patDNI()) {
-                            if (!vacio('mail') && patMail()) {
-                                return true;
+                    if (!vacio('pass') && !vacio('pass2') && patPass()) {
+                        if (!vacio('fecha') && patFecha() && mayor()) {
+                            if (!vacio('dni') && patDNI()) {
+                                if (!vacio('mail') && patMail()) {
+                                    if (file_exists($_REQUEST['foto']) && filesize($_REQUEST['foto'])!=0 && patFoto()) {
+                                        return true;
+                                    }
+                                }
                             }
                         }
                     }

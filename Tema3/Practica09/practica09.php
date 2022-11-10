@@ -56,8 +56,38 @@
                         echo "<p style='color: red'> Introduce los apellidos correctamente</p>";        
                     }
                 }
+                ?>
+        </p>
+        <p>
+            <label for="idContraseña">Contraseña</label>
+            <input type="text" name="pass" id="idContraseña" placeholder="Contraseña">
+            
+            <?php
+                if (enviado()) {
+                    if (vacio('pass')) {
+                        echo "<p style='color: red'> Introduce la contraseña</p>";        
+                    }elseif (!patPass()) {
+                        echo "<p style='color: red'> Al menos una mayuscula, una minuscula y un número/p>";                         
+                    }
+                }
+                
+                ?>
+        </p>
+        <p>
+            <label for="idContraseña2">Repite la contraseña:</label>
+            <input type="text" name="pass2" id="idContraseña2" placeholder="Repite contraseña">
+            
+            <?php
+                if (enviado()){
+                    if (vacio('pass2')) {
+                        echo "<p style='color: red'> Introduce de nuevo la contraseña</p>";            
+                    }elseif ($_REQUEST['pass']!=$_REQUEST['pass2']) {
+                        echo "<p style='color: red'> Introduce de nuevo la contraseña correctamente</p>";                              
+                    }
+                }
             ?>
         </p>
+
         <p>
             <label for="idFecha">Fecha</label>
             <input type="text" name="fecha" id="idFecha" placeholder="dd/mm/aaaa" value="<?php
