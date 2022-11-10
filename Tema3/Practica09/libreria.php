@@ -78,6 +78,14 @@
         return false;
     }
 
+    function patFoto(){
+        $patron='/^.\.[jpg|png|bmp]$/';
+        if (preg_match($patron,$_REQUEST['foto'])){
+            return true;
+        }
+        return false;
+    }
+
     function validarTodo(){
         if (enviado()){
             if (!vacio('nombre') && patNombre()) {
