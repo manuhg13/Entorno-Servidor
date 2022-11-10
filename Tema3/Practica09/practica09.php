@@ -42,7 +42,7 @@
             ?>
         </p>
         <p>
-            <label for="idApellidos">Apellidos</label>
+            <label for="idApellidos">Apellidos: </label>
             <input type="text" name="apellidos" id="idApellidos" placeholder="Apellidos" value="<?php
                 if (enviado() && !vacio('apellidos')){
                     echo $_REQUEST['apellidos'];
@@ -59,7 +59,7 @@
                 ?>
         </p>
         <p>
-            <label for="idContraseña">Contraseña</label>
+            <label for="idContraseña">Contraseña: </label>
             <input type="text" name="pass" id="idContraseña" placeholder="Contraseña">
             
             <?php
@@ -89,7 +89,7 @@
         </p>
 
         <p>
-            <label for="idFecha">Fecha</label>
+            <label for="idFecha">Fecha: </label>
             <input type="text" name="fecha" id="idFecha" placeholder="dd/mm/aaaa" value="<?php
                 if (enviado() && !vacio('fecha')){
                     echo $_REQUEST['fecha'];
@@ -146,7 +146,7 @@
         </p>
 
         <p>
-            <label for="idFoto">Imagen de perfil</label>
+            <label for="idFoto">Imágen de perfil: </label>
             <input type="text" name="foto" id="idFoto">
 
             <?php

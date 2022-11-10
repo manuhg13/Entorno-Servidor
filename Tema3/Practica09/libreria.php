@@ -118,9 +118,11 @@
     function imprimirInfo(){
         echo "<p>Nombre: ". $_REQUEST["nombre"] . "</p>";
         echo "<p>Apellidos: ". $_REQUEST["apellidos"] . "</p>";
+        echo "<p>Contraseña: ". $_REQUEST["pass"] . "</p>";
         echo "<p>Fecha: ". $_REQUEST["fecha"] . "</p>";
         echo "<p>DNI: ". $_REQUEST["dni"] . "</p>";
         echo "<p>Email: ". $_REQUEST["mail"] . "</p>";
+        echo '<img src="' . $_REQUEST['foto'] . '" widht="300px">';
     }
 
 
