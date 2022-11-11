@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/estilo.css">
     <title>Elegir fichero || ManuelHG</title>
 </head>
 <body>
 
 <?php
+    include("../../CSS/cabecera.html");
     require("validador.php");
     if (enviado()) {
         if (existe('leer')) {
@@ -33,14 +35,17 @@
             <input type="text" name="fichero" id="idFichero">
 
             <?php
-                if (!file_exists($_REQUEST['fichero']) && existe('leer')) {
-                    echo "<p style='color: red;'>Este fichero no existe</p>";
+                if (enviado()) {
+                    if (!file_exists($_REQUEST['fichero']) && existe('leer')) {
+                        echo "<p style='color: red;'>Este fichero no existe</p>";
+                    }
                 }
+
             ?>
 
 
-            <input type="submit" value="editar" name="editar">
-            <input type="submit" value="leer" name="leer">
+            <input type="submit" value="Editar" name="editar" class="colorin">
+            <input type="submit" value="Leer" name="leer" class="colorin">
         </p>
     </form>
 </body>
