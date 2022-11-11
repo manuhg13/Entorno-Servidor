@@ -8,6 +8,7 @@
 </head>
 <body>
     <form action="">
+        <input type="hidden" name="fichero">
         <textarea name="area" id="idArea" cols="30" rows="10" readonly>
             <?php
                 if($abierto=fopen($_REQUEST['fichero'],'r')){
@@ -17,6 +18,8 @@
                 }
             ?>
         </textarea>
+
+        
     </form>
 </body>
 </html>
