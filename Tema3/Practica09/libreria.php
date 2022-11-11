@@ -124,7 +124,7 @@
         echo "<p>Fecha: ". $_REQUEST["fecha"] . "</p>";
         echo "<p>DNI: ". $_REQUEST["dni"] . "</p>";
         echo "<p>Email: ". $_REQUEST["mail"] . "</p>";
-        echo '<img src="' . $_FILES['foto']['name'] . '" widht="300px">';
+        echo '<img src="./Imagenes/' . $_FILES['foto']['name'] . '" widht="300px">';
     }
 
 
