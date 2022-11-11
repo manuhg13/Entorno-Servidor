@@ -102,7 +102,7 @@
                         if (!vacio('fecha') && patFecha() && mayor()) {
                             if (!vacio('dni') && patDNI()) {
                                 if (!vacio('mail') && patMail()) {
-                                    if (file_exists($_FILES['foto']['name']) && filesize($_FILES['foto']['name'])!=0 && patFoto()) {
+                                    if (file_exists($_FILES['foto']['tmp_name']) && filesize($_FILES['foto']['name'])!=0 && patFoto()) {
                                         return true;
                                     }
                                 }
