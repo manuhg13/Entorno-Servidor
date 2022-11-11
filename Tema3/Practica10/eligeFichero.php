@@ -32,6 +32,13 @@
             <label for="idFichero">Nombre: </label>
             <input type="text" name="fichero" id="idFichero">
 
+            <?php
+                if (!file_exists($_REQUEST['fichero']) && existe('leer')) {
+                    echo "<p style='color: red;'>Este fichero no existe</p>";
+                }
+            ?>
+
+
             <input type="submit" value="editar" name="editar">
             <input type="submit" value="leer" name="leer">
         </p>
