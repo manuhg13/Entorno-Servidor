@@ -153,7 +153,7 @@
                 if (enviado()) {
                     if(!file_exists($_FILES['foto']['tmp_name'])){
                         echo "<p style='color: red'>No existe esta imagen</p>";
-                    }elseif (!filesize($_FILES['foto']['name'])) {
+                    }elseif ($_FILES['foto']['size']==0) {
                         echo "<p style='color: red'>Imagen vacia</p>";                  
                     }elseif (!patFoto()) {
                         echo "<p style='color: red'>Extension de archivo no soportada</p>";

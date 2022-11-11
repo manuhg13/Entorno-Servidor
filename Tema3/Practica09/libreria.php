@@ -79,7 +79,7 @@
     }
 
     function patFoto(){
-        $patron='/^.\.[jpg|png|bmp]$/';
+        $patron='/^[^.]+\.(jpg|png|bmp)$/';
         if (preg_match($patron,$_FILES['foto']['name'])){
             return true;
         }
