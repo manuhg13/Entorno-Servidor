@@ -102,7 +102,9 @@
                         if (!vacio('fecha') && patFecha() && mayor()) {
                             if (!vacio('dni') && patDNI()) {
                                 if (!vacio('mail') && patMail()) {
-                                    if (file_exists($_FILES['foto']['tmp_name']) && filesize($_FILES['foto']['name'])!=0 && patFoto()) {
+                                    if (file_exists($_FILES['foto']['tmp_name']) && ($_FILES['foto']['size'])!=0 && patFoto()){
+                                        $ubi= "./Imagenes/" . $_FILES['foto']['name'];
+                                        move_uploaded_file($_FILES['foto']['tmp_name'],$ubi);
                                         return true;
                                     }
                                 }
@@ -122,7 +124,7 @@
         echo "<p>Fecha: ". $_REQUEST["fecha"] . "</p>";
         echo "<p>DNI: ". $_REQUEST["dni"] . "</p>";
         echo "<p>Email: ". $_REQUEST["mail"] . "</p>";
-        echo '<img src="' . $_REQUEST['foto'] . '" widht="300px">';
+        echo '<img src="' . $_FILES['foto']['name'] . '" widht="300px">';
     }
 
 
