@@ -80,7 +80,7 @@
 
     function patFoto(){
         $patron='/^.\.[jpg|png|bmp]$/';
-        if (preg_match($patron,$_REQUEST['foto'])){
+        if (preg_match($patron,$_FILES['foto']['name'])){
             return true;
         }
         return false;
@@ -102,7 +102,7 @@
                         if (!vacio('fecha') && patFecha() && mayor()) {
                             if (!vacio('dni') && patDNI()) {
                                 if (!vacio('mail') && patMail()) {
-                                    if (file_exists($_REQUEST['foto']) && filesize($_REQUEST['foto'])!=0 && patFoto()) {
+                                    if (file_exists($_FILES['foto']['name']) && filesize($_FILES['foto']['name'])!=0 && patFoto()) {
                                         return true;
                                     }
                                 }

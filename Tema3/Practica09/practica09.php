@@ -147,17 +147,19 @@
 
         <p>
             <label for="idFoto">Imágen de perfil: </label>
-            <input type="text" name="foto" id="idFoto">
+            <input type="file" name="foto" id="idFoto">
 
             <?php
                 if (enviado()) {
-                    if(!file_exists($_REQUEST['foto'])){
+                    if(!file_exists($_FILES['foto']['name'])){
                         echo "<p style='color: red'>No existe esta imagen</p>";
-                    }elseif (!filesize($_REQUEST['foto'])) {
+                    }elseif (!filesize($_FILES['foto']['name'])) {
                         echo "<p style='color: red'>Imagen vacia</p>";                  
                     }elseif (!patFoto()) {
                         echo "<p style='color: red'>Extension de archivo no soportada</p>";
                     }
+
+                    
                 }
                 
             ?>
