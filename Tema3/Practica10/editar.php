@@ -31,14 +31,17 @@
                     }
                 }else{
                     if($abierto=fopen($_REQUEST['fichero'],'r+')){
-                        while($linea=fgets($abierto,filesize($_REQUEST['fichero']))){
-                            echo $linea;
+                        if (filesize($_REQUEST['fichero'])==0){
+                           echo "Esta vacio escribe algo:";
+                        }else {
+                            while($linea=fgets($abierto,filesize($_REQUEST['fichero']))){
+                                echo $linea;
+                            }
                         }
                         fclose($abierto);
                     }
                 }
-            ?>
-        </textarea>
+            ?></textarea>
         <input type="submit" value="leer" name="leer">
     </form>
 </body>
