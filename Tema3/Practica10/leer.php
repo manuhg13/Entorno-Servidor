@@ -10,7 +10,8 @@
     <?php
         require("validador.php");
         if (enviado()) {
-            
+            header('Location: ./editar.php?fichero='. $_REQUEST['fichero']);
+            exit();
         }
     ?>
     <form action="./leer.php" method="post" enctype="multipart/form-data">
