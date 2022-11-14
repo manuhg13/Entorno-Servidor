@@ -7,6 +7,27 @@
     <title>Editar fichero</title>
 </head>
 <body>
-    <form action=""></form>
+    <form action="./leer.php" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="fichero" value="<?php
+            echo $_REQUEST['fichero'];
+        ?>">
+        <textarea name="area" id="idArea" cols="30" rows="10"><?php
+                if (!file_exists($_REQUEST['fichero'])){
+                    if($abierto=fopen($_REQUEST['fichero'],'w')){
+                        while($linea=fgets($abierto,filesize($_REQUEST['fichero']))){
+                            echo $linea;
+                        }
+                    }
+                }else{
+                    if($abierto=fopen($_REQUEST['fichero'],'r+')){
+                        while($linea=fgets($abierto,filesize($_REQUEST['fichero']))){
+                            echo $linea;
+                        }
+                    }
+                }
+            ?>
+        </textarea>
+        <input type="submit" value="leer" name="leer">
+    </form>
 </body>
 </html>

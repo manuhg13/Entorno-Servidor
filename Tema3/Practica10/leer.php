@@ -17,6 +17,7 @@
                     while($linea=fgets($abierto,filesize($_REQUEST['fichero']))){
                         echo $linea;
                     }
+                    fclose($abierto);
                 }
             ?>
         </textarea>
