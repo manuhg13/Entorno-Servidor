@@ -7,8 +7,10 @@
     <title>Leer fichero</title>
 </head>
 <body>
-    <form action="">
-        <input type="hidden" name="fichero">
+    <form action="./editar.php" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="fichero" value="<?php
+            echo $_REQUEST['fichero'];
+        ?>">
         <textarea name="area" id="idArea" cols="30" rows="10" readonly>
             <?php
                 if($abierto=fopen($_REQUEST['fichero'],'r')){

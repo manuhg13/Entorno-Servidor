@@ -29,7 +29,7 @@
     // si no mensaje de error y formu 
     // si existe "header"
 ?>
-    <form action="./eligeFichero.php">
+    <form action="./eligeFichero.php" method="post">
         <p>
             <label for="idFichero">Nombre: </label>
             <input type="text" name="fichero" id="idFichero">
