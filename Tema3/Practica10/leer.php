@@ -25,17 +25,18 @@
         ?>">
         <textarea name="area" id="idArea" cols="30" rows="10" readonly><?php
                 if($abierto=fopen($_REQUEST['fichero'],'r')){
-                    if (condition) {
-                        
-                    }
-                    while($linea=fgets($abierto,filesize($_REQUEST['fichero']))){
-                        echo $linea;
+                    if (filesize($_REQUEST['fichero'])==0){
+                        echo "Esta vacio";
+                    }else{
+                        while($linea=fgets($abierto,filesize($_REQUEST['fichero']))){
+                            echo $linea;
+                        }
                     }
                     fclose($abierto);
                 }
             ?>
         </textarea>
-        <input type="submit" value="editar" name="editar">
+        <input type="submit" value="editar" name="editar" class="colorin">
         
     </form>
 </body>

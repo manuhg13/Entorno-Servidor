@@ -47,7 +47,8 @@
                     }
                 }
             ?></textarea>
-        <input type="submit" value="leer" name="leer">
+            <br>
+        <input type="submit" value="leer" name="leer" class="colorin">
     </form>
 </body>
 </html>
