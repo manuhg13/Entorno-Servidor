@@ -25,6 +25,9 @@
         ?>">
         <textarea name="area" id="idArea" cols="30" rows="10" readonly><?php
                 if($abierto=fopen($_REQUEST['fichero'],'r')){
+                    if (condition) {
+                        
+                    }
                     while($linea=fgets($abierto,filesize($_REQUEST['fichero']))){
                         echo $linea;
                     }
