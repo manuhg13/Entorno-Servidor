@@ -7,12 +7,17 @@
     <title>Leer fichero</title>
 </head>
 <body>
-    <form action="./editar.php" method="post" enctype="multipart/form-data">
+    <?php
+        require("validador.php");
+        if (enviado()) {
+            
+        }
+    ?>
+    <form action="./leer.php" method="post" enctype="multipart/form-data">
         <input type="hidden" name="fichero" value="<?php
             echo $_REQUEST['fichero'];
         ?>">
-        <textarea name="area" id="idArea" cols="30" rows="10" readonly>
-            <?php
+        <textarea name="area" id="idArea" cols="30" rows="10" readonly><?php
                 if($abierto=fopen($_REQUEST['fichero'],'r')){
                     while($linea=fgets($abierto,filesize($_REQUEST['fichero']))){
                         echo $linea;
@@ -21,7 +26,7 @@
                 }
             ?>
         </textarea>
-
+        <input type="submit" value="editar" name="editar">
         
     </form>
 </body>

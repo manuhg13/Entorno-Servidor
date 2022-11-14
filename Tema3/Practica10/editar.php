@@ -27,9 +27,6 @@
         <textarea name="area" id="idArea" cols="30" rows="10"><?php
                 if (!file_exists($_REQUEST['fichero'])){
                     if($abierto=fopen($_REQUEST['fichero'],'w')){
-                        while($linea=fgets($abierto,filesize($_REQUEST['fichero']))){
-                            echo $linea;
-                        }
                         fclose($abierto);
                     }
                 }else{
