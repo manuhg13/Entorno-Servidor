@@ -18,13 +18,14 @@
         <?php
         $fila=1;
             if (($abrir= fopen("notas.csv", "r"))){
+                $j=0;
                 while ($datos = fgetcsv($abrir,filesize('notas.csv'),';')){
                     $num= count($datos);
                     echo "<tr>";
                     for ($i=0; $i < $num; $i++) { 
                         echo "<td>" . $datos[$i] . "</td>";
                     }
-                    echo '<td> <input type="submit" name="editar" value="Editar"></td>';
+                    echo '<td> <input type="submit" name="editar' . $j++ .'" value="Editar"></td>';
                     echo "</tr>";
 
                 }
