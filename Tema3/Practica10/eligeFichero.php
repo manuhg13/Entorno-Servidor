@@ -46,6 +46,11 @@
 
             <input type="submit" value="Editar" name="editar" class="colorin">
             <input type="submit" value="Leer" name="leer" class="colorin">
+
+            <a href="verCodigo.php?fichero=eligeFichero.php" class="colorin">Ver este php</a>
+            <a href="verCodigo.php?fichero=leer.php" class="colorin">Ver leer.php</a>
+            <a href="verCodigo.php?fichero=editar.php" class="colorin">Ver editar.php</a>
+            <a href="verCodigo.php?fichero=validator.php" class="colorin">Ver validador.php</a>
         </p>
     </form>
 </body>
