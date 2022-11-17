@@ -8,12 +8,12 @@
 </head>
 <body>
     <?php
-
+        
     ?>
 
     <form action="./">
-        <input type="hidden" name="fila" value="<?php
-            echo $datos;
+        <input type="hidden" name="todos" value="<?php
+            echo $todos;
         ?>">
         <table border="1">
             <tr>
@@ -35,10 +35,12 @@
                         for ($i=0; $i < $num; $i++) { 
                             echo "<td>" . $datos[$i] . "</td>";
                         }
-                        echo '<td> <input type="submit" name="editar' . $j++ .'" value="Editar"></td>';
+                        //echo '<td> <input type="submit" name="' . $j++ .'" value="Editar"></td>';
+                        echo "<td><a href='./edita.php?numero='". $j++ . " ></td>";
                         echo "</tr>";
     
                     }
+                    fclose($abrir);
                 }
             ?>
         </table>
