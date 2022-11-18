@@ -8,6 +8,10 @@
 </head>
 <body>
     <?php
+        include("../../../CSS/cabecera.html");
+    ?>
+
+    <?php
         $fila=1;
         $todos=array();
         if (($abrir= fopen("notas.csv", "r"))){
