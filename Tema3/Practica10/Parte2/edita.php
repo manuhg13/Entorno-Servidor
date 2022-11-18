@@ -9,6 +9,7 @@
 <body>
     <?php
         include("../../../CSS/cabecera.html");
+        //funciones y validador
     ?>
 
     <?php
