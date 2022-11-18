@@ -43,6 +43,8 @@
                 echo $todos[$_REQUEST['indice']][3];
             ?>">
         </p>
+
+        <input type="submit" value="Guardar" name="guardar" class="colorin">
     </form>
 </body>
 </html>
