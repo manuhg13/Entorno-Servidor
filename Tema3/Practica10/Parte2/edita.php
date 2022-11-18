@@ -25,6 +25,24 @@
                 echo $todos[$_REQUEST['indice']][0];
             ?>">
         </p>
+        <p>
+            <label for="idNota1">Nota 1</label>
+            <input type="text" name="nota1" id="idNota1" value="<?php
+                echo $todos[$_REQUEST['indice']][1];
+            ?>">
+        </p>
+        <p>
+            <label for="idNota2">Nota2</label>
+            <input type="text" name="nota2" id="idNota2" value="<?php
+                echo $todos[$_REQUEST['indice']][2];
+            ?>">
+        </p>
+        <p>
+            <label for="idNota3">Nota3</label>
+            <input type="text" name="nota3" id="idNota3" value="<?php
+                echo $todos[$_REQUEST['indice']][3];
+            ?>">
+        </p>
     </form>
 </body>
 </html>
