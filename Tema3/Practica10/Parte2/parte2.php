@@ -32,7 +32,7 @@
                             echo "<td>" . $datos[$i] . "</td>";
                         }
                         //echo '<td> <input type="submit" name="' . $j++ .'" value="Editar"></td>';
-                        echo '<td><a href="./edita.php?numero='. $j++ . '" class="colorin">Editar</td>';
+                        echo '<td><a href="./edita.php?indice='. $j++ . '" class="colorin">Editar</td>';
                         echo "</tr>";
     
                     }
