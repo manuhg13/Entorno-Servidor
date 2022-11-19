@@ -23,7 +23,6 @@
             require("validador.php");
     
             if (enviado()){
-                $todos[$_REQUEST['indice']][0]=$_REQUEST['alumno'];
                 $todos[$_REQUEST['indice']][1]=$_REQUEST['nota1'];
                 $todos[$_REQUEST['indice']][2]=$_REQUEST['nota2'];
                 $todos[$_REQUEST['indice']][3]=$_REQUEST['nota3'];
