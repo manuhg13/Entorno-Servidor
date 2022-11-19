@@ -30,7 +30,7 @@
 
                 if ($abrir=fopen('notas.csv','w')){
                     foreach($todos as $campos){
-                        fputcsv($abrir,$campos);
+                        fputcsv($abrir,$campos,";");
                     }
                 }
                 fclose($abrir);
