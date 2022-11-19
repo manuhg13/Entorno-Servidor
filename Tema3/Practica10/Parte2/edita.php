@@ -8,11 +8,6 @@
 </head>
 <body>
     <?php
-        include("../../../CSS/cabecera.html");
-        //funciones y validador
-    ?>
-
-    <?php
         $fila=1;
         $todos=array();
         if (($abrir= fopen("notas.csv", "r"))){
@@ -22,8 +17,30 @@
             }
             fclose($abrir);
         }
-    ?>
-    <form action="">
+        ?>
+        <?php
+            include("../../../CSS/cabecera.html");
+            require("validador.php");
+    
+            if (enviado()){
+                $todos[$_REQUEST['indice']][0]=$_REQUEST['alumno'];
+                $todos[$_REQUEST['indice']][1]=$_REQUEST['nota1'];
+                $todos[$_REQUEST['indice']][2]=$_REQUEST['nota2'];
+                $todos[$_REQUEST['indice']][3]=$_REQUEST['nota3'];
+
+                if ($abrir=fopen('notas.csv','w')){
+                    foreach($todos as $campos){
+                        fputcsv($abrir,$campos);
+                    }
+                }
+                fclose($abrir);
+            }else{
+    
+        ?>
+    <form action="./edita.php" method="POST">
+        <input type="hidden" name="indice" value="<?php
+            echo $_REQUEST['indice'];
+        ?>">
         <p>
             <label for="idAlumno">Alumno</label>
             <input type="text" name="alumno" id="idAlumno" value="<?php
@@ -51,5 +68,9 @@
 
         <input type="submit" value="Guardar" name="guardar" class="colorin">
     </form>
+
+    <?php
+        }
+    ?>
 </body>
 </html>
