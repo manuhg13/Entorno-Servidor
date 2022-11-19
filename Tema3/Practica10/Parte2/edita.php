@@ -42,10 +42,10 @@
             echo $_REQUEST['indice'];
         ?>">
         <p>
-            <label for="idAlumno">Alumno</label>
-            <input type="text" name="alumno" id="idAlumno" value="<?php
-                echo $todos[$_REQUEST['indice']][0];
-            ?>">
+            <label for="idAlumno">Alumno: </label>
+            <?php
+                echo "<p>". $todos[$_REQUEST['indice']][0] . "</p>";
+            ?>
         </p>
         <p>
             <label for="idNota1">Nota 1</label>
