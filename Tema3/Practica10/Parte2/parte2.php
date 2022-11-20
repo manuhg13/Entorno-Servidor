@@ -40,5 +40,9 @@
                 }
             ?>
         </table>
+
+        <a href="verCodigo.php?fichero=parte2.php" class="colorin">Ver este php</a>
+        <a href="verCodigo.php?fichero=edita.php" class="colorin">Ver edita.php</a>
+        <a href="verCodigo.php?fichero=validador.php" class="colorin">Ver validador.php</a>
 </body>
 </html>
