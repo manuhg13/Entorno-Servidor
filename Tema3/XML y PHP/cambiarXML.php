@@ -5,7 +5,7 @@
 $dom = new DOMDocument();
 $dom->load('mundial.xml');
 
-$raiz= $dom->childNodes[0];
+/*$raiz= $dom->childNodes[0];
 //$raiz->childNodes[1]->childNodes[1]->nodeValue;
 
     //Buscar la etiqueta nombre que tenga el valor Francia 
@@ -27,5 +27,22 @@ $raiz= $dom->childNodes[0];
         echo "Todo bien";
     }else{
         echo "Fatal";
+    }*/
+
+    //Con ->getElementsByTagName
+
+    $nombres=$dom->getElementsByTagName('Nombre');
+
+    foreach ($nombres as $valor) {
+        if ($valor->nodeValue =='Francia'){
+            $valor->nextElementSibling->nodeValue="Ancelloti";
+        }
     }
+
+    if ($dom->save('mundial.xml')) {
+        echo "Todo bien";
+    }else{
+        echo "Fatal";
+    }
+
 ?>
