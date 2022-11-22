@@ -14,7 +14,8 @@ $raiz= $dom->childNodes[0];
         if ($elementos->nodeType ==1) {
             foreach ($elementos->childNodes as $datos) {
                 if ($datos->nodeType==1 && $datos->nodeValue=="Dechams"){
-                    $datos->nodevalue='Zidane';
+                    $nuevo=$dom->createElement("Entrenador","Zidane");
+                    $elementos->replaceChild($nuevo,$datos);
                 }
             }
         }
