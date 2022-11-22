@@ -11,10 +11,10 @@ $raiz= $dom->childNodes[0];
     //Buscar la etiqueta nombre que tenga el valor Francia 
 
     foreach ($raiz->childNodes as $elementos) {
-        if ($elementos->nodeType ==1 && $elementos->nodeValue=="Francia") {
+        if ($elementos->nodeType ==1) {
             foreach ($elementos->childNodes as $datos) {
-                if ($datos->nodeType==1){
-                    echo $datos->nodeName . ": " . $datos->nodeValue . "<br>";
+                if ($datos->nodeType==1 && $datos->nodeValue=="Dechams"){
+                    $datos->nodevalue='Zidane';
                 }
             }
         }
@@ -22,5 +22,9 @@ $raiz= $dom->childNodes[0];
     //Cambiar el value por Zidane
 
     //Salvar el documento
-
+    if ($dom->save('mundial.xml')) {
+        echo "Todo bien";
+    }else{
+        echo "Fatal";
+    }
 ?>
