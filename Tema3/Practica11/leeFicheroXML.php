@@ -9,7 +9,8 @@
 </head>
 <body>
     <?php
-        include_once("../../CSS/cabecera");
+        include_once("../../CSS/cabecera.html");
+        include_once("../../CSS/intro.html");
     ?>
     <table border="1">
             <tr>
@@ -20,7 +21,7 @@
                 <th></th>
             </tr>
             <?php
-                $notas=simplexml_load_file('notasXML.xml');
+                $notas=simplexml_load_file('notas.xml');
                 $j=0;
                 foreach($notas as $alumno){
                     echo "<tr>";
@@ -30,8 +31,6 @@
                     echo '<td><a href="./edita.php?indice='. $j++ . '" class="colorin">Editar</td>';
                     echo "</tr>";
                 }
-
-
             ?>
 
     </table>
