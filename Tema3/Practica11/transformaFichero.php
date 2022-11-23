@@ -46,7 +46,8 @@
         }
 
         if ($dom->save('notas.xml')){
-            echo "Fichero transformado";
+            header('Location: ./leeFicheroXML.php');
+            exit();
         }else{
             echo "No se ha hecho";
         }
