@@ -18,15 +18,16 @@
         }
 
         $dom= new DOMDocument("1.0","utf-8");
-
+        $dom->formatOutput=true;
         $raiz=$dom->createElement("notas");
         $dom->appendChild($raiz);
+
        
         $i=0;
-        foreach ($todos as $alumno) {
+        foreach ($todos as $alumnos) {
             $alumno=$raiz->appendChild($dom->createElement("alumno"));
             
-            foreach ($alumno as $dato) {
+            foreach ($alumnos as $dato) {
                 if ($i==0) {
                     $alumno->appendChild($dom->createElement("nombre",$dato));
                 }
