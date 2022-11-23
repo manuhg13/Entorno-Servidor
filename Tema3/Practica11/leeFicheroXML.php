@@ -28,7 +28,7 @@
                     foreach ($alumno as $dato) {
                         echo "<td>" . $dato . "</td>";                 
                     }
-                    echo '<td><a href="./edita.php?indice='. $j++ . '" class="colorin">Editar</td>';
+                    echo '<td><a href="./editaXML.php?indice='. $j++ . '" class="colorin">Editar</td>';
                     echo "</tr>";
                 }
             ?>
