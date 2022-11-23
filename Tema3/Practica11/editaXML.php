@@ -8,7 +8,25 @@
 </head>
 <body>
     <?php
-        $notas=simplexml_load_file('notas.xml')
+        include("../../../CSS/cabecera.html");
+        require("validador.php");
+        $notas=simplexml_load_file('notas.xml');
+    
+            if (validarTodo()){               
+                    $todos[$_REQUEST['indice']][1]=$_REQUEST['nota1'];
+                    $todos[$_REQUEST['indice']][2]=$_REQUEST['nota2'];
+                    $todos[$_REQUEST['indice']][3]=$_REQUEST['nota3'];
+
+                    if ($abrir=fopen('notas.csv','w')){
+                        foreach($todos as $campos){
+                            fputcsv($abrir,$campos,";");
+                        }
+                    }
+                    fclose($abrir);
+
+                    header('Location: ./parte2.php');
+                    exit();    
+            }else{
     ?>
     <form action="./editaXML.php" method="POST">
         <input type="hidden" name="indice" value="<?php
