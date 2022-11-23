@@ -6,24 +6,9 @@
     <nota2>6</nota2>
     <nota3>8</nota3>
   </alumno>
-  <alumno>
-    <nombre>david</nombre>
-    <nota1>5</nota1>
-    <nota2>5</nota2>
-    <nota3>5</nota3>
-  </alumno>
-  <alumno>
-    <nombre>ismael</nombre>
-    <nota1>4</nota1>
-    <nota2>7</nota2>
-    <nota3>3</nota3>
-  </alumno>
-  <alumno>
-    <nombre>uriel</nombre>
-    <nota1>3</nota1>
-    <nota2>6</nota2>
-    <nota3>5</nota3>
-  </alumno>
+  <alumno>9</alumno>
+  <alumno>6</alumno>
+  <alumno>2</alumno>
   <alumno>
     <nombre>aaron</nombre>
     <nota1>6</nota1>

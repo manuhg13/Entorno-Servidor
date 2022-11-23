@@ -4,28 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/estilo.css">
     <title>Edita XML || ManuelHG</title>
 </head>
 <body>
     <?php
-        include("../../../CSS/cabecera.html");
+        include("../../CSS/cabecera.html");
         require("validador.php");
         $notas=simplexml_load_file('notas.xml');
+        $alumno=$notas->children()[intval($_REQUEST['indice'])];
     
             if (validarTodo()){               
-                    $todos[$_REQUEST['indice']][1]=$_REQUEST['nota1'];
-                    $todos[$_REQUEST['indice']][2]=$_REQUEST['nota2'];
-                    $todos[$_REQUEST['indice']][3]=$_REQUEST['nota3'];
+                $alumno->children()[1]=$_REQUEST['nota1'];
+                $alumno->children()[2]=$_REQUEST['nota2'];
+                $alumno->children()[3]=$_REQUEST['nota3'];
+                    
+                $notas->asXML('notas.xml');
 
-                    if ($abrir=fopen('notas.csv','w')){
-                        foreach($todos as $campos){
-                            fputcsv($abrir,$campos,";");
-                        }
-                    }
-                    fclose($abrir);
 
-                    header('Location: ./parte2.php');
-                    exit();    
+                header('Location: ./leeFicheroXML.php');
+                exit();    
             }else{
     ?>
     <form action="./editaXML.php" method="POST">
@@ -35,13 +33,13 @@
         <p>
             <label for="idAlumno">Alumno: </label>
             <?php
-                echo "<p>". $notas->children()[$_REQUEST['indice']][0] . "</p>";
+                echo " ". $notas->children()[intval($_REQUEST['indice'])]->children()[0] ;
             ?>
         </p>
         <p>
             <label for="idNota1">Nota 1</label>
             <input type="text" name="nota1" id="idNota1" value="<?php
-                echo  $notas->children()[$_REQUEST['indice']][1];
+                echo  $notas->children()[intval($_REQUEST['indice'])]->children()[1];
             ?>">
 
             <?php
@@ -58,7 +56,7 @@
         <p>
             <label for="idNota2">Nota2</label>
             <input type="text" name="nota2" id="idNota2" value="<?php
-                echo  $notas->children()[$_REQUEST['indice']][2];
+                echo  $notas->children()[intval($_REQUEST['indice'])]->children()[2];
             ?>">
 
             <?php
@@ -75,7 +73,7 @@
         <p>
             <label for="idNota3">Nota3</label>
             <input type="text" name="nota3" id="idNota3" value="<?php
-                echo  $notas->children()[$_REQUEST['indice']][3];
+                echo  $notas->children()[intval($_REQUEST['indice'])]->children()[3];
             ?>">
 
             <?php
@@ -92,6 +90,8 @@
 
         <input type="submit" value="Guardar" name="guardar" class="colorin">
     </form>
-
+    <?php
+        }
+    ?>
 </body>
 </html>
