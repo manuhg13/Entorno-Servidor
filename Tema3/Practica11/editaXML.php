@@ -15,9 +15,9 @@
         $alumno=$notas->children()[intval($_REQUEST['indice'])];
     
             if (validarTodo()){               
-                $alumno->children()[1]=$_REQUEST['nota1'];
-                $alumno->children()[2]=$_REQUEST['nota2'];
-                $alumno->children()[3]=$_REQUEST['nota3'];
+                $alumno->nota1=$_REQUEST['nota1'];
+                $alumno->nota2=$_REQUEST['nota2'];
+                $alumno->nota3=$_REQUEST['nota3'];
                     
                 $notas->asXML('notas.xml');
 
