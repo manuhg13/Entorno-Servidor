@@ -25,11 +25,20 @@
         "2DAM" => array("DI", "SGE", "ACDA", "EIE", "PSP"),
         "2DAW" => array("DWES", "DWEC", "DIW", "EIE")
     );
-
-    
+  
+            
 
     ?>
-    <form action="./Examenhtml.php" method="post">
+    <?php
+        if (segundaValidacion()) {
+            header('Location: ./mostrar.php?nombre='.  $_REQUEST['nombre'] . '&exp=' . $_REQUEST['exp'] . '&curso=' . $_REQUEST['curso2'] . "&asignaturas=" . $_REQUEST['asignaturas']);
+            exit();
+        }else{
+
+        
+   
+    ?>
+        <form action="./Examenhtml.php" method="post" id="formulario">
         <label for="nombre">Nombre y apellidos:</label> 
         <input type="text" name="nombre" id="nombre" value="<?php
             if (enviado() && !vacio('nombre')){
@@ -78,17 +87,18 @@
                 if ($_REQUEST['curso']=="no"){
                     echo "<p style='color: red'>Selecciona un curso</p>";
                 }
+                
             }
         ?>
-        <input type="hidden" name="curso2" value="<?php 
-            if (enviado()) {
-                $_REQUEST['curso'];
-            }           
+        <input type="hidden" name="curso2" value="<?php          
+                if (enviado()) {
+                    echo $_REQUEST['curso'];         
+                }
         ?>">
         <br>
         <?php
             if (primeraValidacion()){
-                echo "<p>Asignaturas: </p>";
+                echo "<p>Asignaturas:</p>";
                 foreach ($array as $curso => $modulos) {
                     if ($curso==$_REQUEST['curso']){
                         foreach ($modulos as $valor) {
@@ -99,14 +109,20 @@
                         
                     }
                 }
+                if (!existe('asignaturas') && enviado()){
+                    echo "<p style='color: red'> Introduce al menos una opción</p>";
+                }
             }
+
+            print_r($_REQUEST)
         ?>
 
         <br><input type="submit" name="Enviado" value="Enviar">
     </form>
 
-
-
+    <?php
+        }
+    ?>
 </body>
 
 </html>

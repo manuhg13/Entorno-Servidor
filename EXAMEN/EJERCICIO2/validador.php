@@ -48,6 +48,22 @@
         }
         return false;
     }
+    function segundaValidacion(){
+        if (enviado()) {
+            if (!vacio('nombre') && patNombre()){
+                if (!vacio('exp') && patExp()) {
+                    if ($_REQUEST['curso2']!="no") {
+                        if (!existe('asignarturas')) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    
 
 
 
