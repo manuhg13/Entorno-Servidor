@@ -53,7 +53,7 @@
             if (!vacio('nombre') && patNombre()){
                 if (!vacio('exp') && patExp()) {
                     if ($_REQUEST['curso2']!="no") {
-                        if (!existe('asignarturas')) {
+                        if (existe('asignaturas')) {
                             return true;
                         }
                     }

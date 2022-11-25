@@ -8,11 +8,12 @@
 </head>
 <body>
     <?php
+        print_r($_REQUEST['asignaturas']);
         echo "<p>Nombre y apellidos: " . $_REQUEST['nombre'] . "</p>";
         echo "<p>Expediente: " . $_REQUEST['exp'] . "</p>";
         echo "<p>Curso: " . $_REQUEST['curso'] . "</p>";
         echo "<p>Asignaturas: " ;
-        foreach ($_REQUEST['asignaturas'] as $valor) {
+        foreach ($_REQUEST['asignaturas'] as $valor ) {
             echo $valor . "|" ;
         }
         echo "</p>";

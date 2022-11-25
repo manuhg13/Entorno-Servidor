@@ -31,7 +31,7 @@
     ?>
     <?php
         if (segundaValidacion()) {
-            header('Location: ./mostrar.php?nombre='.  $_REQUEST['nombre'] . '&exp=' . $_REQUEST['exp'] . '&curso=' . $_REQUEST['curso2'] . "&asignaturas=" . $_REQUEST['asignaturas']);
+            header('Location: ./mostrar.php?nombre='.  $_REQUEST['nombre'] . '&exp=' . $_REQUEST['exp'] . '&curso=' . $_REQUEST['curso2'] . "&asignaturas=".  $_REQUEST['asignaturas']);
             exit();
         }else{
 
@@ -114,7 +114,7 @@
                 }
             }
 
-            print_r($_REQUEST)
+            //print_r($_REQUEST)
         ?>
 
         <br><input type="submit" name="Enviado" value="Enviar">
