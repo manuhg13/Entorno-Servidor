@@ -8,13 +8,17 @@
 </head>
 <body>
     <?php
-       $dom= new DOMDocument('1.0','utf-8');
-       $dom->formatOutput=true;
-
-       $raiz=$dom->createElement("conexiones");
-       $dom->appendChild($raiz);
-
-       $dom->save('conexiones.xml');
+       if (!file_exists('conexiones.xml')){
+        $dom= new DOMDocument('1.0','utf-8');
+        $dom->formatOutput=true;
+ 
+        $raiz=$dom->createElement("conexiones");
+        $dom->appendChild($raiz);
+ 
+        $dom->save('conexiones.xml');
+       }
+       
+       
 
        /*---------------------------------------------- */
 
@@ -23,28 +27,41 @@
        
        $noEsta=false;
 
+       if (count($conexiones->children())==0){
+        $conexion=$conexiones->addChild('Conexion');
+        $conexion->addChild('ip', $_SERVER['REMOTE_ADDR']);
+        $conexion->addChild('veces', "0");
+        $conexion->addChild('fecha', date("D, j, M, Y, H:i:s +u", strtotime('now')));
+       }
+       
        foreach ($conexiones as $sesion) {
             if ($sesion->ip==$_SERVER['REMOTE_ADDR']) {
-                $sesion->veces=intval($sesion->veces)+1;
-                $sesion->fecha=date("D, j, M, Y, H:i:s +u", strtotime('now'));
+                $noEsta=false;
+                $conexion=$sesion;
             }else{
                 $noEsta=true;
             }
        }
 
        if ($noEsta){
-        $conexion=$conexiones->addChild('Conexion');
-        $conexion->addChild('ip', $_SERVER['REMOTE_ADDR']);
-        $conexion->addChild('veces', "0");
-        $conexion->addChild('fecha', date("D, j, M, Y, H:i:s +u", strtotime('now')));
+            $conexion=$conexiones->addChild('Conexion');
+            $conexion->addChild('ip', $_SERVER['REMOTE_ADDR']);
+            $conexion->addChild('veces', "0");
+            $conexion->addChild('fecha', date("D, j, M, Y, H:i:s +u", strtotime('now')));
+       }else{
+            $conexion->veces=intval($sesion->veces)+1;
+            $conexion->fecha=date("D, j, M, Y, H:i:s +u", strtotime('now'));
        }
 
        foreach ($conexiones as $sesion) {
             echo "<p><b>IP: </b>" . $sesion->ip ; 
             echo "&nbsp;&nbsp;<b>Veces: </b>" . $sesion->veces;
-            echo "&nbsp;&nbsp;<b>Fecha: </b>" . $sesion->veces . "</p>";
+            echo "&nbsp;&nbsp;<b>Fecha: </b>" . $sesion->fecha . "</p>";
        }
 
+       $conexiones->asXML('conexiones.xml');
+
+       
     ?>
 
     
