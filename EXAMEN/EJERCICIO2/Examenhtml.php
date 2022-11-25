@@ -19,21 +19,89 @@
         }
     </style>
     <?php
+    require('validador.php');
     $array = array(
         "1DAM" => array("ENDE", "BD", "LM", "SI", "FOL"),
         "2DAM" => array("DI", "SGE", "ACDA", "EIE", "PSP"),
         "2DAW" => array("DWES", "DWEC", "DIW", "EIE")
     );
 
-    ?>
-    <form action="./Examen2.php" method="post">
-        <label for="nombre">Nombre y apellidos:</label> <input type="text" name="nombre" id="nombre" value="">
-        <br> <label for="exp">Expediente</label> <input type="text" name="exp" id="exp" value="">
-        <br> <label for="curso">Curso:</label> <select name="curso" id="curso">
-            <option value="no">Selecione una opcion</option>
+    
 
+    ?>
+    <form action="./Examenhtml.php" method="post">
+        <label for="nombre">Nombre y apellidos:</label> 
+        <input type="text" name="nombre" id="nombre" value="<?php
+            if (enviado() && !vacio('nombre')){
+                echo $_REQUEST['nombre'];
+            }
+        ?>">
+        <?php
+            if(enviado()){
+                if(vacio('nombre')){
+                    echo "<p style='color: red'> Introduce un nombre y apellidos</p>";
+                }elseif (!patNombre()) {
+                    echo "<p style='color: red'> Introduce bien los datos</p>";    
+                }
+            }
+        ?>
+        <br>
+       <label for="exp">Expediente</label>
+        <input type="text" name="exp" id="exp" value="<?php
+            if (enviado() && !vacio('exp')){
+                echo $_REQUEST['exp'];
+            }
+        ?>">
+
+        <?php
+            if(enviado()){
+                if(vacio('exp')){
+                    echo "<p style='color: red'> Introduce nº de expediente</p>";
+                }elseif (!patExp()) {
+                    echo "<p style='color: red'> Introduce bien los datos</p>";    
+                }
+            }
+        ?>
+        <br>
+        <label for="curso">Curso:</label>
+        <select name="curso" id="curso">
+            <option value="no">Selecione una opcion</option>
+            <?php
+                foreach ($array as $key => $value) {
+                    echo "<option value='" . $key . "'>" . $key . "</option>";
+                }           
+            ?>
         </select>
-        <input type="hidden" name="curso" value="">
+
+        <?php
+            if (enviado()){
+                if ($_REQUEST['curso']=="no"){
+                    echo "<p style='color: red'>Selecciona un curso</p>";
+                }
+            }
+        ?>
+        <input type="hidden" name="curso2" value="<?php 
+            if (enviado()) {
+                $_REQUEST['curso'];
+            }           
+        ?>">
+        <br>
+        <?php
+            if (primeraValidacion()){
+                echo "<p>Asignaturas: </p>";
+                foreach ($array as $curso => $modulos) {
+                    if ($curso==$_REQUEST['curso']){
+                        foreach ($modulos as $valor) {
+                            echo '<input type="checkbox" name="asignaturas[]" id="' . $valor .'" value="' . $valor .'">';
+                            echo "<label for='" . $valor . "'>" . $valor . "</label>";
+                            
+                        }
+                        
+                    }
+                }
+            }
+        ?>
+
         <br><input type="submit" name="Enviado" value="Enviar">
     </form>
 
