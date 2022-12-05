@@ -5,7 +5,6 @@
     define('PASS', 'manuel');
     define('BBDD', '');
 
-    
 
 
 ?>
