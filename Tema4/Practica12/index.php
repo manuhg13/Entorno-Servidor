@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-        require_once();
+        require_once('Funciones/funcionesBD.php');
     ?>
 
     <form action="index.php" method="post">
