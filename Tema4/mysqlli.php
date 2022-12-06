@@ -175,9 +175,9 @@
         if ($ex->getCode()==1049){
             echo "No existe la base de datos no existe";
         }       
-        mysqli_rollback($conexion);
+        //mysqli_rollback($conexion);
     } finally{
-        mysqli_close($conexion);
+        //mysqli_close($conexion);
         
     }
 

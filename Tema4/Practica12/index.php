@@ -8,15 +8,22 @@
 </head>
 <body>
     <?php
-        require_once('Funciones/funcionesBD.php');
+        require('Funciones/funcionesBD.php');
+
+        if (enviarBBDD()){
+            $script=anadirBBDD();
+            $conexion2= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS);
+            mysqli_multi_query($conexion,$script);
+        }
     ?>
 
     <form action="index.php" method="post">
 
-        <?
+        <?php
             require_once('conexionBD.php');
             try {
-                $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
+                $conexion1= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
+                
             } catch (Exception $ex) {
                 if ($ex->getCode()==1045){
                     echo "Credenciales incorrectas";
@@ -26,9 +33,11 @@
                 }       
                 if ($ex->getCode()==1049){
                     echo "No existe la base de datos no existe";
-                    echo '<input type="submit" value="script" name="script" class="colorin">';
+                    echo '<input type="submit" value="Añadir BBDD" name="script" class="colorin">';
 
                 }      
+            }finally{
+                //mysqli_close($conexion1);
             }
         
         ?>

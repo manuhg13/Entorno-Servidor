@@ -1,6 +1,6 @@
-<?
-    define('USER', 'manuel');
-    define('PASS', 'manuel');
+<?php
+    define('USER', 'manu');
+    define('PASS', 'manu');
     define('BBDD', 'cine');
 
 ?>

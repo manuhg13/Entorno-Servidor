@@ -1,5 +1,5 @@
-<?
-    function sinBBDD(){
+<?php
+    function enviarBBDD(){
         if (isset($_REQUEST['script'])){
             return true;
         }
@@ -7,7 +7,6 @@
     }
 
     function anadirBBDD(){
-        $script= file_get_contents('./BBDD/cine.sql');
-        return $script;
+        return file_get_contents('./BBDD/cine.sql');
     }
 ?>
