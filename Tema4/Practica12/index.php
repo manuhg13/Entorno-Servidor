@@ -8,21 +8,21 @@
 </head>
 <body>
     <?php
+        require_once('conexionBD.php');
         require('Funciones/funcionesBD.php');
 
         if (enviarBBDD()){
             $script=anadirBBDD();
-            $conexion2= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS);
-            mysqli_multi_query($conexion,$script);
+            $conexion2= mysqli_connect('127.0.0.1',USER,PASS);
+            mysqli_multi_query($conexion2,$script);
         }
     ?>
 
     <form action="index.php" method="post">
 
         <?php
-            require_once('conexionBD.php');
             try {
-                $conexion1= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
+                $conexion1= mysqli_connect('127.0.0.1',USER,PASS,BBDD);
                 
             } catch (Exception $ex) {
                 if ($ex->getCode()==1045){
@@ -37,7 +37,7 @@
 
                 }      
             }finally{
-                //mysqli_close($conexion1);
+                mysqli_close($conexion1);
             }
         
         ?>
