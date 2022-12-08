@@ -3,9 +3,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/estilo.css">
     <title>Inicio || Practica 12</title>
 </head>
 <body>
+    <?
+        require("../../CSS/cabecera.html");
+        require("../../CSS/intro.html");
+
+    ?>
+
     <?php
         require('conexionBD.php');
         require('Funciones/funcionesBD.php');
@@ -17,7 +24,7 @@
 
             echo "<a class='colorin' href='leerTabla.php'>Leer tabla</a>";
             echo "<br><br>";
-            echo "<a class='colorin' href='insertar.php'>Insertar registro</a>";
+            echo "<a class='colorin' href='modificar.php?op=ins'>Insertar registro</a>";
         }
     ?>
 
