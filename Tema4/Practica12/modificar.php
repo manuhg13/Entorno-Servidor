@@ -14,24 +14,92 @@
             $orden='drop ';
         }elseif ($_REQUEST['op']=='mod' || $_REQUEST['operacion']=='mod') {
             if (enviado()){
-                
+                $orden="update mejorPelicula set ";
             }
         }elseif ($_REQUEST['op']=='ins' || $_REQUEST['operacion']=='ins') {
             if (enviado()){
-
+                $orden="insert into mejorPelicula values (" . $_REQUEST['titulo'] . "," . $_REQUEST['director'] . "," . $_REQUEST['genero'] . "," . $_REQUEST['estreno'] . "," . $_REQUEST['nominaciones'] . "," . $_REQUEST['nota'] . ");";
             }
         }
 
     ?>
+
+    <?
+        require('./conexionBD.php');
+        try {
+                
+            $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
+            
+            $sql="select * from mejorPelicula where titulo='" . $_REQUEST['clave'] . "';";
+            $resultado= mysqli_query($conexion,$sql);
+    
+    
+            while($fila = $resultado->fetch_array()){
+               
+
+            ?>
+            
+   
 
     <form action="./modificar.php" method="post">
         <input type="hidden" name="operacion" value="<?
             echo $_REQUEST['op'];
         ?>">
 
-        <input type="text" name="titulo" value="">
+        <input type="text" name="titulo" id="titulo" value="<?php
+            if ($_REQUEST['op']=='mod'){
+                echo $fila['titulo'];
+            }
+        ?>">
+
+        <input type="text" name="director" id="director" value="<?
+            if ($_REQUEST['op']=='mod'){
+                echo $fila['director'];
+            }
+        ?>">
+        <input type="text" name="genero" id="genero" value="<?
+            if ($_REQUEST['op']=='mod'){
+                echo $fila['genero'];
+            }
+        ?>">
+        <input type="date" name="estreno" id="estreno" value="<?
+            if ($_REQUEST['op']=='mod'){
+                echo $fila['estreno'];
+            }
+        ?>">
+
+        <input type="number" name="nominaciones" id="nominaciones" value="<?php
+            if ($_REQUEST['op']=='mod'){
+                echo $fila['nominaciones'];
+            }
+        ?>">
+
+        <input type="number" name="nota" id="nota" value="<?
+            if($_REQUEST['op']=='mod'){
+                echo $fila['nota'];
+            }
+        ?>">
+        
         <input type="submit" value="Guardar" name="enviado">
 
     </form>
+
+    <?
+        }
+            
+        mysqli_close($conexion);
+        
+    } catch (Exception $ex) {
+        if ($ex->getCode()==1045){
+            echo "Credenciales incorrectas";
+        }
+        if ($ex->getCode()==2002){
+            echo "Acabado tiempo de conexión";
+        }       
+        if ($ex->getCode()==1049){
+            echo "No existe la base de datos no existe";
+        }       
+    }
+    ?>
 </body>
 </html>
