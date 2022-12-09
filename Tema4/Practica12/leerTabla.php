@@ -48,6 +48,7 @@
                     echo "</tr>";
                 }
                 
+                
                 mysqli_close($conexion);
                 
             } catch (Exception $ex) {
@@ -65,5 +66,7 @@
         ?>
 
     </table>
+    <br><br>"
+    <a class='colorin' href='modificar.php?op=ins'>Insertar registro</a>";
 </body>
 </html>

@@ -33,6 +33,10 @@
         <?php
             try {
                 $conexion1= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
+
+                echo "<a class='colorin' href='leerTabla.php'>Leer tabla</a>";
+                echo "<br><br>";
+                echo "<a class='colorin' href='modificar.php?op=ins'>Insertar registro</a>";
                 
             } catch (Exception $ex) {
                 if ($ex->getCode()==1045){
@@ -47,10 +51,6 @@
                     echo '<input type="submit" value="Añadir BBDD cine" name="script" class="colorin">';
 
                 }      
-            }finally{
-                echo "<a class='colorin' href='leerTabla.php'>Leer tabla</a>";
-                echo "<br><br>";
-                echo "<a class='colorin' href='modificar.php?op=ins'>Insertar registro</a>";
             }
         
         ?>
