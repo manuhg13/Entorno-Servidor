@@ -11,10 +11,10 @@
         require('./Funciones/funcionesBD.php');
         
         if ($_REQUEST['op']=='eli'){
-            $orden='drop ';
+            $orden="delete from mejorPelicula where titulo='" . $_REQUEST['clave'] . "';";
         }elseif ($_REQUEST['op']=='mod' || $_REQUEST['operacion']=='mod') {
             if (enviado()){
-                $orden="update mejorPelicula set ";
+                $orden="update mejorPelicula set titulo='" . $_REQUEST['titulo'] . "',director='" . $_REQUEST['director'] . "',genero='" . $_REQUEST['genero'] . "',estreno='" . $_REQUEST['estreno'] . "',nominaciones='" . $_REQUEST['nominaciones'] . "',nota='" . $_REQUEST['nota'] . " where titulo='" . $_REQUEST['clave1'] . "';" ;
             }
         }elseif ($_REQUEST['op']=='ins' || $_REQUEST['operacion']=='ins') {
             if (enviado()){
@@ -44,6 +44,9 @@
     <form action="./modificar.php" method="post">
         <input type="hidden" name="operacion" value="<?
             echo $_REQUEST['op'];
+        ?>">
+        <input type="hidden" name="clave1" value="<?
+            echo $_REQUEST['clave'];
         ?>">
 
         <input type="text" name="titulo" id="titulo" value="<?php
