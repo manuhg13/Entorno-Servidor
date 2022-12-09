@@ -61,13 +61,11 @@
                 }
 
                 header("Location: ./leerTabla.php");
-            }
-        }elseif ($_REQUEST['op']=='ins' || $_REQUEST['operacion']=='ins') {
-            if (enviado()){
+            }elseif ($_REQUEST['operacion']=='ins') {
                 try {
                     $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
                     
-                    $orden="insert into mejorPelicula values (" . $_REQUEST['titulo'] . "," . $_REQUEST['director'] . "," . $_REQUEST['genero'] . "," . $_REQUEST['estreno'] . "," . $_REQUEST['nominaciones'] . "," . $_REQUEST['nota'] . ");";
+                    $orden="insert into mejorPelicula values ('" . $_REQUEST['titulo'] . "','" . $_REQUEST['director'] . "','" . $_REQUEST['genero'] . "','" . $_REQUEST['estreno'] . "','" . $_REQUEST['nominaciones'] . "','" . $_REQUEST['nota'] . "');";
                     
                     mysqli_query($conexion,$orden);
                     
@@ -86,7 +84,6 @@
                 }
 
                 header("Location: ./leerTabla.php");
-
             }
         }
 
@@ -101,16 +98,33 @@
                     $sql="select * from mejorPelicula where titulo='" . $_REQUEST['clave'] . "';";
                     $resultado= mysqli_query($conexion,$sql);
                     while($fila = $resultado->fetch_array()){
+                        $titulo=$fila['titulo'];
+                        $director=$fila['director'];
+                        $genero=$fila['genero'];
+                        $estreno=$fila['estreno'];
+                        $nominaciones=$fila['nominaciones'];
+                        $nota=$fila['nota'];
+                    }
                 }
-            
-            
-           
+                    mysqli_close($conexion);
         
+            } catch (Exception $ex) {
+                if ($ex->getCode()==1045){
+                    echo "Credenciales incorrectas";
+                }
+                if ($ex->getCode()==2002){
+                    echo "Acabado tiempo de conexión";
+                }       
+                if ($ex->getCode()==1049){
+                    echo "No existe la base de datos no existe";
+                }       
+            }     
     ?>
             
    
 
     <form action="./modificar.php" method="post">
+        
         <input type="hidden" name="operacion" value="<?
             echo $_REQUEST['op'];
         ?>">
@@ -120,37 +134,47 @@
             }
         ?>">
 
+
+        <label for="titulo">Titulo:</label>
         <input type="text" name="titulo" id="titulo" value="<?php
             if ($_REQUEST['op']=='mod'){
-                echo $fila['titulo'];
+                echo $titulo;
             }
         ?>">
-
+        <br>
+        <label for="director">Director:</label>
         <input type="text" name="director" id="director" value="<?
             if ($_REQUEST['op']=='mod'){
-                echo $fila['director'];
+                echo $director;
             }
         ?>">
+        <br>
+        <label for="genero">Género</label>
         <input type="text" name="genero" id="genero" value="<?
             if ($_REQUEST['op']=='mod'){
-                echo $fila['genero'];
+                echo $genero;
             }
         ?>">
-        <input type="date" name="estreno" id="estreno" value="<?
+        <br>
+        <label for="estreno">Estreno:</label>
+        <input type="text" name="estreno" id="estreno" value="<?
             if ($_REQUEST['op']=='mod'){
-                echo $fila['estreno'];
+                echo $estreno;
             }
         ?>">
+        <br>
 
+        <label for="nominaciones">Nominaciones:</label>
         <input type="number" name="nominaciones" id="nominaciones" value="<?php
             if ($_REQUEST['op']=='mod'){
-                echo $fila['nominaciones'];
+                echo $nominaciones;
             }
         ?>">
-
+        <br>
+        <label for="nota">Nota:</label>
         <input type="number" name="nota" id="nota" value="<?
             if($_REQUEST['op']=='mod'){
-                echo $fila['nota'];
+                echo $nota;
             }
         ?>">
         
@@ -158,22 +182,5 @@
 
     </form>
 
-    <?
-        }
-            
-        mysqli_close($conexion);
-        
-    } catch (Exception $ex) {
-        if ($ex->getCode()==1045){
-            echo "Credenciales incorrectas";
-        }
-        if ($ex->getCode()==2002){
-            echo "Acabado tiempo de conexión";
-        }       
-        if ($ex->getCode()==1049){
-            echo "No existe la base de datos no existe";
-        }       
-    }
-    ?>
 </body>
 </html>
