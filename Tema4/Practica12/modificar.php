@@ -36,7 +36,7 @@
                 }       
             }
 
-            header("Location: ");
+            header("Location: ./leerTabla.php");
         }elseif ($_REQUEST['op']=='mod' || $_REQUEST['operacion']=='mod') {
             if (enviado()){
                 try {
@@ -60,7 +60,7 @@
                     }       
                 }
 
-                header("Location: Location: ./leerTabla.php");
+                header("Location: ./leerTabla.php");
             }
         }elseif ($_REQUEST['op']=='ins' || $_REQUEST['operacion']=='ins') {
             if (enviado()){
@@ -85,7 +85,7 @@
                     }       
                 }
 
-                header("Location: ");
+                header("Location: ./leerTabla.php");
 
             }
         }
