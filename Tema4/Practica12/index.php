@@ -47,9 +47,15 @@
                     echo '<input type="submit" value="Añadir BBDD cine" name="script" class="colorin">';
 
                 }      
+            }finally{
+                echo "<a class='colorin' href='leerTabla.php'>Leer tabla</a>";
+                echo "<br><br>";
+                echo "<a class='colorin' href='modificar.php?op=ins'>Insertar registro</a>";
             }
         
         ?>
+
+        
     </form>
 </body>
 </html>
