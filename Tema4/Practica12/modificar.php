@@ -151,7 +151,7 @@
             }
         ?>">
         
-        <input type="submit" value="Guardar" name="enviado">
+        <input class="colorin" type="submit" value="Guardar" name="enviado">
 
     </form>
 
