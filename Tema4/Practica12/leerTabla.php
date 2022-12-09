@@ -66,7 +66,7 @@
         ?>
 
     </table>
-    <br><br>"
-    <a class='colorin' href='modificar.php?op=ins'>Insertar registro</a>";
+    <br><br>
+    <a class='colorin' href='modificar.php?op=ins'>Insertar registro</a>
 </body>
 </html>

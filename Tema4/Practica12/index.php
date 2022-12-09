@@ -22,9 +22,6 @@
             $conexion2= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS);
             mysqli_multi_query($conexion2,$script);
 
-            echo "<a class='colorin' href='leerTabla.php'>Leer tabla</a>";
-            echo "<br><br>";
-            echo "<a class='colorin' href='modificar.php?op=ins'>Insertar registro</a>";
         }
     ?>
 
