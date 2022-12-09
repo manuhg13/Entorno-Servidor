@@ -19,7 +19,7 @@
 
         if (enviarBBDD()){
             $script=anadirBBDD();
-            $conexion2= mysqli_connect('192.168.31.205',USER,PASS);
+            $conexion2= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS);
             mysqli_multi_query($conexion2,$script);
 
             echo "<a class='colorin' href='leerTabla.php'>Leer tabla</a>";
@@ -32,7 +32,7 @@
 
         <?php
             try {
-                $conexion1= mysqli_connect('192.168.31.205',USER,PASS,BBDD);
+                $conexion1= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
                 
             } catch (Exception $ex) {
                 if ($ex->getCode()==1045){

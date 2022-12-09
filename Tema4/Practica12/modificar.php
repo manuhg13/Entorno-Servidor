@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../CSS/estilo.css">
-    <title>Modificar</title>
+    <title>Modificar tabla || PR12</title>
 </head>
 <body>
     <?
@@ -21,7 +21,6 @@
                 $orden="delete from mejorPelicula where titulo='" . $_REQUEST['clave'] . "';";
 
                 mysqli_query($conexion,$orden);
-
 
                 mysqli_close($conexion);
 
@@ -61,7 +60,7 @@
                     }       
                 }
 
-                header("Location: ");
+                header("Location: Location: ./leerTabla.php");
             }
         }elseif ($_REQUEST['op']=='ins' || $_REQUEST['operacion']=='ins') {
             if (enviado()){
