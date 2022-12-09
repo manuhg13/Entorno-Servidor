@@ -4,28 +4,96 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/estilo.css">
     <title>Modificar</title>
 </head>
 <body>
     <?
+        require("../../CSS/cabecera.html");
+        require("../../CSS/intro.html");
         require('./Funciones/funcionesBD.php');
+        require('./conexionBD.php');
         
         if ($_REQUEST['op']=='eli'){
-            $orden="delete from mejorPelicula where titulo='" . $_REQUEST['clave'] . "';";
+            try {
+                $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
+
+                $orden="delete from mejorPelicula where titulo='" . $_REQUEST['clave'] . "';";
+
+                mysqli_query($conexion,$orden);
+
+
+                mysqli_close($conexion);
+
+            } catch (Exception $ex) {
+                if ($ex->getCode()==1045){
+                    echo "Credenciales incorrectas";
+                }
+                if ($ex->getCode()==2002){
+                    echo "Acabado tiempo de conexión";
+                }       
+                if ($ex->getCode()==1049){
+                    echo "No existe la base de datos no existe";
+                }       
+            }
+
+            header("Location: ");
         }elseif ($_REQUEST['op']=='mod' || $_REQUEST['operacion']=='mod') {
             if (enviado()){
-                $orden="update mejorPelicula set titulo='" . $_REQUEST['titulo'] . "',director='" . $_REQUEST['director'] . "',genero='" . $_REQUEST['genero'] . "',estreno='" . $_REQUEST['estreno'] . "',nominaciones='" . $_REQUEST['nominaciones'] . "',nota='" . $_REQUEST['nota'] . " where titulo='" . $_REQUEST['clave1'] . "';" ;
+                try {
+                    $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
+                    
+                    $orden="update mejorPelicula set titulo='" . $_REQUEST['titulo'] . "',director='" . $_REQUEST['director'] . "',genero='" . $_REQUEST['genero'] . "',estreno='" . $_REQUEST['estreno'] . "',nominaciones='" . $_REQUEST['nominaciones'] . "',nota='" . $_REQUEST['nota'] . " where titulo='" . $_REQUEST['clave1'] . "';" ;
+                    
+                    mysqli_query($conexion,$orden);
+                    
+                    mysqli_close($conexion);
+
+                } catch (Exception $ex) {
+                    if ($ex->getCode()==1045){
+                        echo "Credenciales incorrectas";
+                    }
+                    if ($ex->getCode()==2002){
+                        echo "Acabado tiempo de conexión";
+                    }       
+                    if ($ex->getCode()==1049){
+                        echo "No existe la base de datos no existe";
+                    }       
+                }
+
+                header("Location: ");
             }
         }elseif ($_REQUEST['op']=='ins' || $_REQUEST['operacion']=='ins') {
             if (enviado()){
-                $orden="insert into mejorPelicula values (" . $_REQUEST['titulo'] . "," . $_REQUEST['director'] . "," . $_REQUEST['genero'] . "," . $_REQUEST['estreno'] . "," . $_REQUEST['nominaciones'] . "," . $_REQUEST['nota'] . ");";
+                try {
+                    $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
+                    
+                    $orden="insert into mejorPelicula values (" . $_REQUEST['titulo'] . "," . $_REQUEST['director'] . "," . $_REQUEST['genero'] . "," . $_REQUEST['estreno'] . "," . $_REQUEST['nominaciones'] . "," . $_REQUEST['nota'] . ");";
+                    
+                    mysqli_query($conexion,$orden);
+                    
+                    mysqli_close($conexion);
+
+                } catch (Exception $ex) {
+                    if ($ex->getCode()==1045){
+                        echo "Credenciales incorrectas";
+                    }
+                    if ($ex->getCode()==2002){
+                        echo "Acabado tiempo de conexión";
+                    }       
+                    if ($ex->getCode()==1049){
+                        echo "No existe la base de datos no existe";
+                    }       
+                }
+
+                header("Location: ");
+
             }
         }
 
     ?>
 
     <?
-        require('./conexionBD.php');
         try {
                 
             $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
