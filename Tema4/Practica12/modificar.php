@@ -37,8 +37,8 @@
             }
 
             header("Location: ./leerTabla.php");
-        }elseif ($_REQUEST['op']=='mod' || $_REQUEST['operacion']=='mod') {
-            if (enviado()){
+        }elseif (enviado()) {
+            if ( $_REQUEST['operacion']=='mod'){
                 try {
                     $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
                     
@@ -93,18 +93,20 @@
     ?>
 
     <?
-        try {
+            try {
+                    
+                $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
                 
-            $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
+                if ($_REQUEST['op']=='mod'){
+                    $sql="select * from mejorPelicula where titulo='" . $_REQUEST['clave'] . "';";
+                    $resultado= mysqli_query($conexion,$sql);
+                    while($fila = $resultado->fetch_array()){
+                }
             
-            $sql="select * from mejorPelicula where titulo='" . $_REQUEST['clave'] . "';";
-            $resultado= mysqli_query($conexion,$sql);
-    
-    
-            while($fila = $resultado->fetch_array()){
-               
-
-            ?>
+            
+           
+        
+    ?>
             
    
 
@@ -113,7 +115,9 @@
             echo $_REQUEST['op'];
         ?>">
         <input type="hidden" name="clave1" value="<?
-            echo $_REQUEST['clave'];
+            if ($_REQUEST['op']=='mod') {
+                echo $_REQUEST['clave'];
+            }
         ?>">
 
         <input type="text" name="titulo" id="titulo" value="<?php
