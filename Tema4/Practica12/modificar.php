@@ -101,10 +101,10 @@
         
 
             try {
-                $clave=$_REQUEST['clave'];   
                 $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
                 
                 if ($operacion=='mod'){
+                    $clave=$_REQUEST['clave'];   
                     $sql="select * from mejorPelicula where titulo='" . $clave . "';";
                     $resultado= mysqli_query($conexion,$sql);
                     while($fila = $resultado->fetch_array()){
@@ -137,9 +137,8 @@
         
         <input type="hidden" name="op" value="<?
             echo $operacion;
-            
-
         ?>">
+
         <input type="hidden" name="clave" value="<?
             if ($operacion=='mod') {
                 echo $clave;
@@ -153,24 +152,57 @@
                 echo $titulo;
             }
         ?>">
+         <?php
+            if(enviado()){
+                if (vacio('titulo')) {
+                    echo "<p style='color: red'>Introduce el titulo</p>";
+                }
+            }
+        ?>
+
+
         <br>
         <br>
+
+
         <label for="director">Director:</label>
         <input type="text" name="director" id="director" value="<?
             if ($operacion=='mod'){
                 echo $director;
             }
         ?>">
+        <?php
+            if(enviado()){
+                if (vacio('director')) {
+                    echo "<p style='color: red'>Introduce el director</p>";
+                }
+            }
+        ?>
+
+
         <br>
         <br>
+
+
         <label for="genero">Género</label>
         <input type="text" name="genero" id="genero" value="<?
             if ($operacion=='mod'){
                 echo $genero;
             }
         ?>">
+        <?php
+            if(enviado()){
+                if (vacio('genero')) {
+                    echo "<p style='color: red'>Introduce el género</p>";
+                }
+            }
+        ?>
+
+
         <br>
         <br>
+
+
         <label for="estreno">Estreno:</label>
         <input type="text" name="estreno" id="estreno" value="<?
             if ($operacion=='mod'){
@@ -194,6 +226,7 @@
                 echo $nominaciones;
             }
         ?>">
+
         <br>
         <br>
         <label for="nota">Nota:</label>
@@ -201,8 +234,10 @@
             if($operacion=='mod'){
                 echo $nota;
             }
-        ?>">
+            ?>">
         
+        <br>
+        <br>
         <input class="colorin" type="submit" value="Guardar" name="enviado">
 
     </form>
