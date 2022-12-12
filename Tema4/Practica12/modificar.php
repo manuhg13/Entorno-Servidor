@@ -13,8 +13,12 @@
         require("../../CSS/intro.html");
         require('./Funciones/funcionesBD.php');
         require('./conexionBD.php');
+
+        if (!enviado()) {
+            $operacion=$_REQUEST['op'];
+        }
         
-        if ($_REQUEST['op']=='eli'){
+        if ($operacion=='eli'){
             try {
                 $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
 
@@ -38,7 +42,7 @@
 
             header("Location: ./leerTabla.php");
         }elseif (enviado() && patFecha()) {
-            if ($_REQUEST['operacion']=='mod'){
+            if ($operacion=='mod'){
 
                 try {
                     $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
@@ -62,7 +66,7 @@
                 }
 
                 header("Location: ./leerTabla.php");
-            }elseif ($_REQUEST['operacion']=='ins') {
+            }elseif ($operacion=='ins') {
                 try {
                     $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
                     
@@ -95,7 +99,7 @@
                     
                 $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
                 
-                if ($_REQUEST['op']=='mod'){
+                if ($operacion=='mod'){
                     $clave=$_REQUEST['clave'];
                     $sql="select * from mejorPelicula where titulo='" . $_REQUEST['clave'] . "';";
                     $resultado= mysqli_query($conexion,$sql);
@@ -125,18 +129,15 @@
             
    
 
-    <form action="./modificar.php" method="post">
+    <form action="./modificar.php?<?php echo $operacion ?>" method="post">
         
         <input type="hidden" name="operacion" value="<?
-            if (enviado() && !vacio('operacion')) {
-                echo $_REQUEST['operacion'];
-            }else {
-                echo $_REQUEST['op'];
-            }
+            echo $operacion;
+            
 
         ?>">
         <input type="hidden" name="clave1" value="<?
-            if ($_REQUEST['op']=='mod') {
+            if ($operacion=='mod') {
                 echo $clave;
             }
         ?>">
@@ -144,7 +145,7 @@
         
         <label for="titulo">Titulo:</label>
         <input type="text" name="titulo" id="titulo" value="<?php
-            if ($_REQUEST['op']=='mod'){
+            if ($operacion=='mod'){
                 echo $titulo;
             }
         ?>">
@@ -152,7 +153,7 @@
         <br>
         <label for="director">Director:</label>
         <input type="text" name="director" id="director" value="<?
-            if ($_REQUEST['op']=='mod'){
+            if ($operacion=='mod'){
                 echo $director;
             }
         ?>">
@@ -160,7 +161,7 @@
         <br>
         <label for="genero">Género</label>
         <input type="text" name="genero" id="genero" value="<?
-            if ($_REQUEST['op']=='mod'){
+            if ($operacion=='mod'){
                 echo $genero;
             }
         ?>">
@@ -168,7 +169,7 @@
         <br>
         <label for="estreno">Estreno:</label>
         <input type="text" name="estreno" id="estreno" value="<?
-            if ($_REQUEST['op']=='mod'){
+            if ($operacion=='mod'){
                 echo $estreno;
             }
         ?>">
@@ -185,7 +186,7 @@
 
         <label for="nominaciones">Nominaciones:</label>
         <input type="number" name="nominaciones" id="nominaciones" value="<?php
-            if ($_REQUEST['op']=='mod'){
+            if ($operacion=='mod'){
                 echo $nominaciones;
             }
         ?>">
@@ -193,7 +194,7 @@
         <br>
         <label for="nota">Nota:</label>
         <input type="number" step="0.1" name="nota" id="nota" value="<?
-            if($_REQUEST['op']=='mod'){
+            if($operacion=='mod'){
                 echo $nota;
             }
         ?>">
