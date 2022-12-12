@@ -12,7 +12,7 @@
             echo "Credenciales incorrectas";
         }
         if ($ex->getCode()==2002){
-            echo "Acabado tiempo de conexión";
+            echo "Acabado tiempo de conexión IP erronea";
         }       
         if ($ex->getCode()==1049){
             echo "No existe la base de datos no existe";
