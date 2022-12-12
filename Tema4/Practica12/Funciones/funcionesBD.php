@@ -11,6 +11,14 @@
         return file_get_contents('./BBDD/cine.sql');
     }
 
+    function vacio($dato){
+        if (empty($_REQUEST[$dato])) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
     /*------------Funciones para CRUD---------------------- */
     
     function existe($nom){

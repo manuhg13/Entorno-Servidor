@@ -37,8 +37,9 @@
             }
 
             header("Location: ./leerTabla.php");
-        }elseif (enviado()) {
-            if ( $_REQUEST['operacion']=='mod'){
+        }elseif (enviado() ) {
+            if ($_REQUEST['operacion']=='mod'){
+
                 try {
                     $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
                     
@@ -95,6 +96,7 @@
                 $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
                 
                 if ($_REQUEST['op']=='mod'){
+                    $clave=$_REQUEST['clave'];
                     $sql="select * from mejorPelicula where titulo='" . $_REQUEST['clave'] . "';";
                     $resultado= mysqli_query($conexion,$sql);
                     while($fila = $resultado->fetch_array()){
@@ -126,11 +128,16 @@
     <form action="./modificar.php" method="post">
         
         <input type="hidden" name="operacion" value="<?
-            echo $_REQUEST['op'];
+            if (enviado() && !vacio('operacion')) {
+                echo $_REQUEST['operacion'];
+            }else {
+                echo $_REQUEST['op'];
+            }
+
         ?>">
         <input type="hidden" name="clave1" value="<?
             if ($_REQUEST['op']=='mod') {
-                echo $_REQUEST['clave'];
+                echo $clave;
             }
         ?>">
 
