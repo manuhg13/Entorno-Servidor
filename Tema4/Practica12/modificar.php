@@ -134,13 +134,14 @@
             }
         ?>">
 
-
+        
         <label for="titulo">Titulo:</label>
         <input type="text" name="titulo" id="titulo" value="<?php
             if ($_REQUEST['op']=='mod'){
                 echo $titulo;
             }
         ?>">
+        <br>
         <br>
         <label for="director">Director:</label>
         <input type="text" name="director" id="director" value="<?
@@ -149,6 +150,7 @@
             }
         ?>">
         <br>
+        <br>
         <label for="genero">Género</label>
         <input type="text" name="genero" id="genero" value="<?
             if ($_REQUEST['op']=='mod'){
@@ -156,12 +158,14 @@
             }
         ?>">
         <br>
+        <br>
         <label for="estreno">Estreno:</label>
         <input type="text" name="estreno" id="estreno" value="<?
             if ($_REQUEST['op']=='mod'){
                 echo $estreno;
             }
         ?>">
+        <br>
         <br>
 
         <label for="nominaciones">Nominaciones:</label>
@@ -171,8 +175,9 @@
             }
         ?>">
         <br>
+        <br>
         <label for="nota">Nota:</label>
-        <input type="number" name="nota" id="nota" value="<?
+        <input type="number" step="0.1" name="nota" id="nota" value="<?
             if($_REQUEST['op']=='mod'){
                 echo $nota;
             }

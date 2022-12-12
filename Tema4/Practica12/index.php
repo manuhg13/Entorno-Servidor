@@ -52,6 +52,14 @@
         
         ?>
 
+        <h2>Ver código</h2>
+
+        <a class='colorin' href='verCodigo.php?fichero=index.php'>Ver index.php</a>
+        <a class='colorin' href='verCodigo.php?fichero=leerTabla.php'>Ver leerTabla.php</a>
+        <a class='colorin' href='verCodigo.php?fichero=modificar.php'>Ver modificar.php</a>
+        <a class='colorin' href='verCodigo.php?fichero=index.php'>Ver index.php</a>
+
+
         
     </form>
 </body>
