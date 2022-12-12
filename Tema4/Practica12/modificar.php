@@ -15,10 +15,11 @@
         require('./conexionBD.php');
 
        
+       
         $operacion=$_REQUEST['op'];
-        
     
         if ($operacion=='eli'){
+            $clave=$_REQUEST['clave'];
             try {
                 $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
 
@@ -43,11 +44,11 @@
             header("Location: ./leerTabla.php");
         }elseif (enviado() && patFecha()) {
             if ($operacion=='mod'){
-
+                $clave=$_REQUEST['clave'];
                 try {
                     $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
                     
-                    $orden="update mejorPelicula set titulo='" . $_REQUEST['titulo'] . "',director='" . $_REQUEST['director'] . "',genero='" . $_REQUEST['genero'] . "',estreno='" . $_REQUEST['estreno'] . "',nominaciones='" . $_REQUEST['nominaciones'] . "',nota='" . $_REQUEST['nota'] . "' where titulo='" . $_REQUEST['clave1'] . "';" ;
+                    $orden="update mejorPelicula set titulo='" . $_REQUEST['titulo'] . "',director='" . $_REQUEST['director'] . "',genero='" . $_REQUEST['genero'] . "',estreno='" . $_REQUEST['estreno'] . "',nominaciones='" . $_REQUEST['nominaciones'] . "',nota='" . $_REQUEST['nota'] . "' where titulo='" . $_REQUEST['clave'] . "';" ;
                     
                     mysqli_query($conexion,$orden);
                     
@@ -95,13 +96,16 @@
     ?>
 
     <?
+
+        
+        
+
             try {
-                    
+                $clave=$_REQUEST['clave'];   
                 $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
                 
                 if ($operacion=='mod'){
-                    $clave=$_REQUEST['clave'];
-                    $sql="select * from mejorPelicula where titulo='" . $_REQUEST['clave'] . "';";
+                    $sql="select * from mejorPelicula where titulo='" . $clave . "';";
                     $resultado= mysqli_query($conexion,$sql);
                     while($fila = $resultado->fetch_array()){
                         $titulo=$fila['titulo'];
@@ -129,14 +133,14 @@
             
    
 
-    <form action="./modificar.php?op=<?php echo $operacion ?>" method="post">
+    <form action="./modificar.php" method="post">
         
-        <input type="hidden" name="operacion" value="<?
+        <input type="hidden" name="op" value="<?
             echo $operacion;
             
 
         ?>">
-        <input type="hidden" name="clave1" value="<?
+        <input type="hidden" name="clave" value="<?
             if ($operacion=='mod') {
                 echo $clave;
             }

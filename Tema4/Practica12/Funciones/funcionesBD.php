@@ -36,7 +36,7 @@
     }
 
     function patFecha(){
-        $patron='/^([0-9]{1,4})-(1[0-2]?|[1-9]{1})-([0-2]?[0-9]|3[0-1])$/';
+        $patron='/^([0-9]{1,4})-(1[0-2]?|[1-9])-([0-2]?[0-9]|3[0-1])$/';
         if(preg_match($patron,$_REQUEST['estreno'])==1){
 
             return true;
