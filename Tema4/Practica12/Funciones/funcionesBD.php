@@ -26,4 +26,15 @@
         }
         return false;
     }
+
+    function patFecha(){
+        $patron='/^([0-9]{1,4})-(1[0-2]?|[1-9]{1})-([0-2]?[0-9]|3[0-1])$/';
+        if(preg_match($patron,$_REQUEST['estreno'])==1){
+            $cortado=explode('-',$_REQUEST['estreno']);
+            if(checkdate($cortado[1],$cortado[0],$cortado[2])){
+                return true;
+            }
+        }
+        return false;
+    }
 ?>

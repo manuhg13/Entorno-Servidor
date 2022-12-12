@@ -165,6 +165,14 @@
                 echo $estreno;
             }
         ?>">
+        <?php
+            if(enviado()){
+                if (!patFecha()) {
+                    echo "<p style='color: red'>Introduce la fecha de manera correcta, en formato (aaaa-mm-dd)</p>";
+                }
+            }
+        ?>
+
         <br>
         <br>
 
