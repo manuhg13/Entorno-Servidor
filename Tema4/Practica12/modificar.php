@@ -14,10 +14,10 @@
         require('./Funciones/funcionesBD.php');
         require('./conexionBD.php');
 
-        if (!enviado()) {
-            $operacion=$_REQUEST['op'];
-        }
+       
+        $operacion=$_REQUEST['op'];
         
+    
         if ($operacion=='eli'){
             try {
                 $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
@@ -129,7 +129,7 @@
             
    
 
-    <form action="./modificar.php?<?php echo $operacion ?>" method="post">
+    <form action="./modificar.php?op<?php echo $operacion ?>" method="post">
         
         <input type="hidden" name="operacion" value="<?
             echo $operacion;
