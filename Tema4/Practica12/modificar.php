@@ -37,7 +37,7 @@
             }
 
             header("Location: ./leerTabla.php");
-        }elseif (enviado() ) {
+        }elseif (enviado() && patFecha()) {
             if ($_REQUEST['operacion']=='mod'){
 
                 try {
