@@ -129,7 +129,7 @@
             
    
 
-    <form action="./modificar.php?op<?php echo $operacion ?>" method="post">
+    <form action="./modificar.php?op=<?php echo $operacion ?>" method="post">
         
         <input type="hidden" name="operacion" value="<?
             echo $operacion;
