@@ -20,31 +20,14 @@
     
         if ($operacion=='eli'){
             $clave=$_REQUEST['clave'];
-            try {
-                $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
-
-                $orden="delete from mejorPelicula where titulo='" . $_REQUEST['clave'] . "';";
-
-                mysqli_query($conexion,$orden);
-
-                mysqli_close($conexion);
-
-            } catch (Exception $ex) {
-                if ($ex->getCode()==1045){
-                    echo "Credenciales incorrectas";
-                }
-                if ($ex->getCode()==2002){
-                    echo "Acabado tiempo de conexión";
-                }       
-                if ($ex->getCode()==1049){
-                    echo "No existe la base de datos no existe";
-                }       
-            }
-
+            eliminar();
+            
             header("Location: ./leerTabla.php");
         }elseif (enviado() && patFecha()) {
             if ($operacion=='mod'){
                 $clave=$_REQUEST['clave'];
+
+                actualizar();
                 try {
                     $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
                     
