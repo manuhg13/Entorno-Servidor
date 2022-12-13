@@ -36,7 +36,7 @@ div.wrapper{
     padding:0; 
     text-align:left;
 }
-#header, #intro, #latest, #breadcrumb, #container, #footer, #copyright{
+#header, #intro, #latest, #footer {
     display:block; 
     position:relative; 
     width:100%; 
@@ -75,14 +75,15 @@ div.wrapper{
 }
 #header #topnav{
     display:block; 
-    float:left; 
-    width: 950px; 
+    float:right; 
+    width:900px; 
     margin:50px 0 0 0; 
     padding:0; 
     font-size:15px;  
-    text-align:right;
+    text-align:center;
 }
-#header ul{margin:0; 
+#header ul{
+    margin:0; 
     padding:0; 
     list-style:none;
 }
@@ -107,7 +108,7 @@ div.wrapper{
 #header #topnav li.last{
     margin-right:0;
 }
-
+/*-------------------------------------------------------------------------------------------------------*/
 .fl_left, .imgl{
     float:left;
 }
@@ -160,20 +161,6 @@ div.wrapper{
 #intro{
     padding:25px 0 15px 0;
 }
-.colorin{
-    margin: 20px;
-    background-color: #CDD2CC;
-    color: #D12E25;
-    border: 2px solid #D12E25;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-}
-.colorin:hover{
-    background-color: #D12E25;
-    color: #CDD2CC;
-}
 #intro ul{
     margin:0; 
     padding:0; 
@@ -182,7 +169,7 @@ div.wrapper{
 #intro li{
     display:block; 
     float:left; 
-    width:300px; 
+    width:50%; 
     margin:0 30px 0 30px; 
     padding:0;
 }
@@ -190,21 +177,21 @@ div.wrapper{
     display:block; 
     float:left; 
     width:300px; 
-    margin:8px 0 10px 0; 
+    margin:5px; 
     padding:0;
 }
 #intro li.last{
     margin-right:0;
 }
 #intro h2, #intro p{
-    margin:5px 0 5px 0; 
+    margin:0 0 15px 0; 
     padding:0;
 }
 #intro h2{
     padding-bottom:8px; 
     color:#D12E25; 
     background-color:#CDD2CC;
-    border-bottom: 2px dotted #C0A584;
+    border-bottom: 5px dotted #C0A584;
 }
 #intro a:link, a:visited{
     background-color: #CDD2CC;
@@ -219,6 +206,20 @@ div.wrapper{
     background-color: #D12E25;
     color: #CDD2CC;
 }
+button{
+    background-color: #131313;
+    color: #CDD2CC;
+    border: 2px solid #A5D825;
+    padding: 10px 20px;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;  
+}
+button:hover{
+    background-color: #A5D825;
+    color: #131313;
+}
 
 /*------------------------------------------Footer-----------------------------------------*/
 
@@ -230,7 +231,7 @@ div.wrapper{
     padding:20px;
     margin-top: 50px;
     color:#98989A; 
-    background-color:#152F52;
+    background-color:#232323;
 }
 
 #footer a{
