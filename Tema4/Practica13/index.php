@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../CSS/estilo.css">
-    <title>Inicio || Practica 12</title>
+    <title>Inicio || Practica 13</title>
 </head>
 <body>
     <?
@@ -19,8 +19,8 @@
 
         if (enviarBBDD()){
             $script=anadirBBDD();
-            $conexion2= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS);
-            mysqli_multi_query($conexion2,$script);
+            $conexion2= new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .USER,PASS);
+            $conexion2->exec($script);
 
         }
     ?>
@@ -29,7 +29,7 @@
 
         <?php
             try {
-                $conexion1= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
+                $conexion1= new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS);
 
                 echo "<a class='colorin' href='leerTabla.php'>Leer tabla</a>";
                 echo "<br><br>";

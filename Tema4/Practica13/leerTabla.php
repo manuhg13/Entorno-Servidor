@@ -27,13 +27,13 @@
             require('conexionBD.php');
             try {
                 
-                $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
+                $conexion= new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS);
                 
                 $sql='select * from mejorPelicula';
-                $resultado= mysqli_query($conexion,$sql);
+                $resultado= $conexion->query($sql);
         
         
-                while($fila = $resultado->fetch_array()){
+                while($fila = $resultado->fetch(PDO::FETCH_ASSOC)){
                     echo "<tr>";
                     echo "<td>". $fila['titulo'] . "</td> ";
                     echo "<td>". $fila['director'] . "</td> ";
@@ -47,9 +47,6 @@
                     echo "</td>";
                     echo "</tr>";
                 }
-                
-                
-                mysqli_close($conexion);
                 
             } catch (Exception $ex) {
                 if ($ex->getCode()==1045){
