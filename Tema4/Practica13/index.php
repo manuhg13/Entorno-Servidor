@@ -19,7 +19,8 @@
 
         if (enviarBBDD()){
             $script=anadirBBDD();
-            $conexion2= new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .USER,PASS);
+            $conexion2= new PDO('mysql:host='. $_SERVER['SERVER_ADDR'] ,USER,PASS);
+            
             $conexion2->exec($script);
 
         }
