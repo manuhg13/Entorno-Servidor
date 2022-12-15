@@ -28,49 +28,11 @@
                 $clave=$_REQUEST['clave'];
 
                 actualizar();
-                try {
-                    $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
-                    
-                    $orden="update mejorPelicula set titulo='" . $_REQUEST['titulo'] . "',director='" . $_REQUEST['director'] . "',genero='" . $_REQUEST['genero'] . "',estreno='" . $_REQUEST['estreno'] . "',nominaciones='" . $_REQUEST['nominaciones'] . "',nota='" . $_REQUEST['nota'] . "' where titulo='" . $_REQUEST['clave'] . "';" ;
-                    
-                    mysqli_query($conexion,$orden);
-                    
-                    mysqli_close($conexion);
-
-                } catch (Exception $ex) {
-                    if ($ex->getCode()==1045){
-                        echo "Credenciales incorrectas";
-                    }
-                    if ($ex->getCode()==2002){
-                        echo "Acabado tiempo de conexión";
-                    }       
-                    if ($ex->getCode()==1049){
-                        echo "No existe la base de datos no existe";
-                    }       
-                }
+                
 
                 header("Location: ./leerTabla.php");
             }elseif ($operacion=='ins') {
-                try {
-                    $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
-                    
-                    $orden="insert into mejorPelicula values ('" . $_REQUEST['titulo'] . "','" . $_REQUEST['director'] . "','" . $_REQUEST['genero'] . "','" . $_REQUEST['estreno'] . "','" . $_REQUEST['nominaciones'] . "','" . $_REQUEST['nota'] . "');";
-                    
-                    mysqli_query($conexion,$orden);
-                    
-                    mysqli_close($conexion);
-
-                } catch (Exception $ex) {
-                    if ($ex->getCode()==1045){
-                        echo "Credenciales incorrectas";
-                    }
-                    if ($ex->getCode()==2002){
-                        echo "Acabado tiempo de conexión";
-                    }       
-                    if ($ex->getCode()==1049){
-                        echo "No existe la base de datos no existe";
-                    }       
-                }
+                modificar();
 
                 header("Location: ./leerTabla.php");
             }
@@ -79,18 +41,14 @@
     ?>
 
     <?
-
-        
-        
-
             try {
-                $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS,BBDD);
+                $conexion= new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS);
                 
                 if ($operacion=='mod'){
                     $clave=$_REQUEST['clave'];   
                     $sql="select * from mejorPelicula where titulo='" . $clave . "';";
-                    $resultado= mysqli_query($conexion,$sql);
-                    while($fila = $resultado->fetch_array()){
+                    $resultado= $conexion->query($sql);
+                    while($fila = $resultado->fetch(PDO::FETCH_ASSOC)){
                         $titulo=$fila['titulo'];
                         $director=$fila['director'];
                         $genero=$fila['genero'];
@@ -99,7 +57,7 @@
                         $nota=$fila['nota'];
                     }
                 }
-                    mysqli_close($conexion);
+                    
         
             } catch (Exception $ex) {
                 if ($ex->getCode()==1045){

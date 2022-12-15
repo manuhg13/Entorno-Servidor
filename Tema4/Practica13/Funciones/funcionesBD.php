@@ -1,5 +1,4 @@
 <?php
-    require('../conexionBD.php');
 
     /* ------------Funciones del index------------------*/ 
     function enviarBBDD(){
@@ -66,6 +65,28 @@
             }       
         }
     }
+
+    function modificar(){
+        try {
+            $conexion= new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS);
+            
+            $orden="insert into mejorPelicula values ('" . $_REQUEST['titulo'] . "','" . $_REQUEST['director'] . "','" . $_REQUEST['genero'] . "','" . $_REQUEST['estreno'] . "','" . $_REQUEST['nominaciones'] . "','" . $_REQUEST['nota'] . "');";
+            
+            $conexion->exec($orden);
+
+        } catch (Exception $ex) {
+            if ($ex->getCode()==1045){
+                echo "Credenciales incorrectas";
+            }
+            if ($ex->getCode()==2002){
+                echo "Acabado tiempo de conexión";
+            }       
+            if ($ex->getCode()==1049){
+                echo "No existe la base de datos no existe";
+            }       
+        }
+    }
+
 
     /*------------Funciones para CRUD---------------------- */
     
