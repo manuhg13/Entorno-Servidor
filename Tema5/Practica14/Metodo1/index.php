@@ -34,7 +34,7 @@
 
                 echo "<a class='colorin' href='leerTabla.php'>Leer tabla</a>";
                 echo "<br><br>";
-                echo "<a class='colorin' href='modificar.php?op=ins'>Insertar registro</a>";
+                echo "<a class='colorin' href='users/mod.php?op=ins'>Insertar registro</a>";
                 
             } catch (Exception $ex) {
                 if ($ex->getCode()==1045){
