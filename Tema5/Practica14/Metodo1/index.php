@@ -10,11 +10,11 @@
     <?
         require("../../../CSS/cabecera.html");
         require("../../../CSS/intro.html");
+        require('conexionBD.php');
 
     ?>
 
     <?php
-        require('conexionBD.php');
         require('Funciones/funcionesBD.php');
 
         if (enviarBBDD()){
