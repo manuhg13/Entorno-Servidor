@@ -1,5 +1,6 @@
 <?php
 
+    
     /* ------------Funciones del index------------------*/ 
     function enviarBBDD(){
         if (isset($_REQUEST['script'])){

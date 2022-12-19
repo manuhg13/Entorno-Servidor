@@ -28,7 +28,7 @@
                 break;
             
             default:
-                # code...
+                echo "Instruccion incorrecta";
                 break;
         }
     }

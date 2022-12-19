@@ -42,8 +42,8 @@
                     echo "<td>". $fila['nominaciones'] . "</td> ";
                     echo "<td>". $fila['nota'] . "</td> ";
                     echo "<td>";
-                    echo "<a class='colorin' href='modificar.php?op=eli&clave=". $fila['titulo'] . "'>ELIMINAR</a>";
-                    echo "<a class='colorin' href='modificar.php?op=mod&clave=". $fila['titulo'] . "'>MODIFICAR</a>";
+                    echo "<a class='colorin' href='autentificador.php?op=eli&clave=". $fila['titulo'] . "'>ELIMINAR</a>";
+                    echo "<a class='colorin' href='autentificador.php?op=mod&clave=". $fila['titulo'] . "'>MODIFICAR</a>";
                     echo "</td>";
                     echo "</tr>";
                 }
