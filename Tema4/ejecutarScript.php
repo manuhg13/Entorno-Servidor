@@ -4,7 +4,7 @@
          
          $conexion= mysqli_connect($_SERVER['SERVER_ADDR'],USER,PASS);
          
-         $script= file_get_contents('banco.sql');
+         $script= file_get_contents('sesiones.sql');
 
          mysqli_multi_query($conexion,$script);
          mysqli_close($conexion);
