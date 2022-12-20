@@ -10,6 +10,7 @@
     ?>
 </head>
 <body>
+    <br>
     <form action="./funciones/validaciones.php" method="post">
         <label for="user">Usuario</label>
         <input type="text" name="user" id="idUser">
