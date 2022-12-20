@@ -14,7 +14,7 @@
     ?>
 
     <?php
-        require('conexionBD.php');
+        require('./conexionBD.php');
         require('Funciones/funcionesBD.php');
 
         if (enviarBBDD()){

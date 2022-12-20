@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador</title>
 </head>
+<?
+    session_start();
+    require('../funciones/funciones.php');
+
+    if(!estaValidado() || !esAdmin()){
+        header('Location: ../');
+    }
+?>
 <body>
     <h1>Administrador</h1>
 </body>
