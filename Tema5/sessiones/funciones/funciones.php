@@ -1,6 +1,6 @@
 <?
      function estaValidado(){
-        if (isset($_SESSION['validada'])){
+        if (isset($_SESSION['validado'])){
             return true;
         }
 

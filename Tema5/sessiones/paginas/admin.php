@@ -11,10 +11,15 @@
     require('../funciones/funciones.php');
 
     if(!estaValidado() || !esAdmin()){
-        header('Location: ../');
+        header('Location: ../login.php');
+        exit;
     }
 ?>
 <body>
+    <header>
+        <h2><?echo $_SESSION['nombre']?></h2>
+        <a href="../logout.php">Log Out</a>
+    </header>
     <h1>Administrador</h1>
 </body>
 </html>
