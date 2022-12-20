@@ -10,21 +10,18 @@
     ?>
 </head>
 <body>
-    <?
-        if(isset($_SESSION['error'])){
-            echo $_SESSION['error'];
-        }
-        unset($_SESSION['error']);
-    ?>
     <form action="./funciones/validaciones.php" method="post">
         <label for="user">Usuario</label>
         <input type="text" name="user" id="idUser">
-        <?
-           
-        ?>
         <label for="pass">Contraseña</label>
         <input type="password" name="pass" id="idPass">
         <input type="submit" value="Enviar" name="enviar">
     </form>
+    <?
+        if(isset($_SESSION['error'])){
+            echo "<p style='padding: 10px; color: red'>" . $_SESSION['error'] . "</p>";
+        }
+        unset($_SESSION['error']);
+    ?>
 </body>
 </html>

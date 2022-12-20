@@ -7,6 +7,11 @@
         $_SESSION['error']='Debe rellenar el nombre';
         header("Location: ../login.php");
         exit;
+    }
+    if (empty($pass)) {
+        $_SESSION['error']='Debe rellenar la contraseña';
+        header("Location: ../login.php");
+        exit;
     }else{
         if (validaUser($user,$pass)){
             if ($_SESSION['perfil']=='ADM01') {
