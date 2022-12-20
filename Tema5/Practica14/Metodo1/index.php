@@ -10,7 +10,7 @@
     <?
         require("../../../CSS/cabecera.html");
         require("../../../CSS/intro.html");
-        require('conexionBD.php');
+        require('./conexionBD.php');
 
     ?>
 

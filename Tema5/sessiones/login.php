@@ -7,7 +7,7 @@
     <title>Login</title>
 </head>
 <body>
-    <form action="" method="get">
+    <form action="./funciones/validaciones.php" method="get">
         <label for="user">Usuario</label>
         <input type="text" name="user" id="idUser">
         <label for="pass">Contraseña</label>

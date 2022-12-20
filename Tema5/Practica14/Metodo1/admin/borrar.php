@@ -1,4 +1,5 @@
 <?
+    require('../conexionBD.php');
     require('../Funciones/funcionesBD.php');
 
     eliminar();

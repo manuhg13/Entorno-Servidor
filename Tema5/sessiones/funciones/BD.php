@@ -9,7 +9,7 @@
             $pass_e=sha1($pass);
 
             $array= array($user,$pass_e);
-            $sql_prepa->execute();
+            $sql_prepa->execute($array);
 
             //si devuelve algo hacemos un Login
             if ($sql_prepa->rowCount()==1) {
