@@ -1,5 +1,5 @@
 <?php
-    //require('./conexionBD.php');
+    require_once('../conexionBD.php');
 
     /* ------------Funciones del index------------------*/ 
     function enviarBBDD(){

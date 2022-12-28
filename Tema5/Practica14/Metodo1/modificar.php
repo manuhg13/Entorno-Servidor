@@ -11,8 +11,8 @@
     <?
         require("../../../CSS/cabecera.html");
         require("../../../CSS/intro.html");
-        require('./Funciones/funcionesBD.php');
-        require('./conexionBD.php');
+        require('Funciones/funcionesBD.php');
+        require('conexionBD.php');
 
        
        
