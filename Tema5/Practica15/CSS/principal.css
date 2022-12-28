@@ -1,3 +1,64 @@
 *{
     box-sizing: border-box;
 }
+body{
+    background-color: #fadcdc;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    display: grid;
+
+    align-content: center;
+    grid-template-columns: auto auto auto auto;
+}
+
+/*----Header-----*/
+header{
+    padding: 20px;
+    background-color: #07151B;
+    color: white;
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    align-items: center;
+    grid-area: 1 / 1 / 2 / 6;
+}
+
+header > div.search{
+    padding: 10px;
+    margin: 5px;
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+header > div.botones{
+    padding: 10px;
+    margin: 5px;
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+header .buscar{
+    background-color: #ca3925;
+    height: 30px;
+    text-align: center;
+}
+
+header #buscador{
+    margin-left: 10px;
+    height: 30px;
+    border: 1px solid #ca3925;
+}
+
+header  .boton{
+    background-color: #ca3925;
+    color: white;
+    width: 100px;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+header  .boton:hover{
+    background-color: #fadcdc;
+    color: #ca3925;
+}
