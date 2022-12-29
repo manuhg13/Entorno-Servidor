@@ -8,6 +8,50 @@
     <title>INICIO || PR 15</title>
 </head>
 <body>
+    <?
+    try {
+        $conexion=new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS);
+        
+    } catch (Exception $ex) {
+        if ($ex->getCode()==1045){
+            echo "Credenciales incorrectas";
+        }
+        if ($ex->getCode()==2002){
+            echo "Acabado tiempo de conexión";
+        }       
+        if ($ex->getCode()==1049){
+            $NoHabia=true;
+            $script=anadirBBDD();
+            $conexion2= new PDO('mysql:host='. $_SERVER['SERVER_ADDR'] ,USER,PASS);
+            
+            $conexion2->exec($script);
+
+        }      
+    }
+    ?>
+    <?
+        if($NoHabia){
+            try {
+                $conexion=new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS);
+
+                $consulta= $conexion->prepare("SELECT * FROM productos");
+                
+            } catch (Exception $ex) {
+                if ($ex->getCode()==1045){
+                    echo "Credenciales incorrectas";
+                }
+                if ($ex->getCode()==2002){
+                    echo "Acabado tiempo de conexión";
+                }       
+                if ($ex->getCode()==1049){
+                    echo "No hay BBDD";
+        
+                }      
+            }
+        }
+    ?>
+
+
     <header>
         <div class="logo">
             <img src="" alt="">
@@ -24,5 +68,12 @@
             <li><a href="./index.php">Ayuda</a></li>
         </ul>
     </nav>
+    <div class="ordenar">
+        <main>
+            <section>
+                
+            </section>
+        </main>
+    </div>
 </body>
 </html>
