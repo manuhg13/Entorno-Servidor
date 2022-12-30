@@ -18,7 +18,7 @@
                 $row=$sql_prepa->fetch();
                 $_SESSION['user']=$user;
                 $_SESSION['nombre']=$row['nombre'];
-                $_SESSION['perfil']=$row['perfil'];
+                $_SESSION['perfil']=$row['roles'];
 
                 unset($conexion);
                 return true;
