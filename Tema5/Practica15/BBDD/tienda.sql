@@ -24,17 +24,18 @@ create table usuarios(
 create table productos(
     idProducto int primary key auto_increment,
     nombre char(60) not null,
-    precio numeric(5) not null,
-    descripcion char(60) not null,
-    stock int(3) not null
+    precio numeric(5,2) not null,
+    descripcion char(85) not null,
+    stock int(3) not null,
+    url char(30) not null
 )engine=innodb;
 
-INSERT INTO productos (nombre,precio,descripcion,stock) VALUES ('Paleta de bellota 5 Jotas','167.45','Paleta de bellota 100% ibérica 5 Jotas Jabugo Pata Negra','10'),
-INSERT INTO productos (nombre,precio,descripcion,stock) VALUES ('Jamón Eti. Negra Benito','133.65','El jamón Benito Etiqueta Negra Selección de Autor','3'),
-INSERT INTO productos (nombre,precio,descripcion,stock) VALUES ('Paletilla Serrana Manuel Díaz','28.00','Prestigiosa marca Manuel Díaz 50% raza Duroc','5'),
-INSERT INTO productos (nombre,precio,descripcion,stock) VALUES ('Jamón Reserva El Pozo','66.00','Jamón serrano Reserva Serie Oro  El Pozo. Satisfación Garantizada','12'),
-INSERT INTO productos (nombre,precio,descripcion,stock) VALUES ('Jamón Joselito 100%','475.00','Jamón Joselito 100% natural con más de 48 meses de curación.','2'),
-INSERT INTO productos (nombre,precio,descripcion,stock) VALUES ('Paletilla Bodega Los Romeros','30.00','Paleta Serrana Bodega Los Romeros','20');
+INSERT INTO productos (nombre,precio,descripcion,stock,url) VALUES ('Paleta de bellota 5 Jotas','167.45','Bellota 100% ibérica 5 J ','10','./img/bellota5j.png');
+INSERT INTO productos (nombre,precio,descripcion,stock,url) VALUES ('Jamon Benito','133.65','El jamon Benito Etiqueta Negra Seleccion de Autor','3','./img/benito.png');
+INSERT INTO productos (nombre,precio,descripcion,stock,url) VALUES ('Paletilla Serrana Manuel Diaz','28.00','Prestigiosa marca Manuel Diaz 50% raza Duroc','5','./img/manuel.jpg');
+INSERT INTO productos (nombre,precio,descripcion,stock,url) VALUES ('Jamon Reserva El Pozo','66.00','Jamón serrano Reserva Serie Oro  El Pozo.','12','./img/elpozo.jpg');
+INSERT INTO productos (nombre,precio,descripcion,stock,url) VALUES ('Jamon Joselito 100%','475.00','Jamon Joselito 100% natural con mas de 48 meses de curacion.','2','./img/joselito.jpg');
+INSERT INTO productos (nombre,precio,descripcion,stock,url) VALUES ('Paletilla Bodega Los Romeros','30.00','Paleta Serrana Bodega Los Romeros','20','./img/romeros.jpg');
 
 create table ventas(
     idVenta int primary key auto_increment,
@@ -42,7 +43,7 @@ create table ventas(
     fechaVent date not null,
     idProducto int not null,
     cantidad int not null,
-    precioTotal numeric(7) not null,
+    precioTotal numeric(7,2) not null,
     index(cliente),
     foreign key (cliente) references usuarios(usuario),
     index(idProducto),
