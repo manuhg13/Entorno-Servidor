@@ -93,9 +93,9 @@
         <main>
             <section>
                 <?
-                    foreach ($arrayJamones as $key => $value) {
+                    /*foreach ($arrayJamones as $key => $value) {
                         
-                    }
+                    }*/
 
                 ?>
             </section>
