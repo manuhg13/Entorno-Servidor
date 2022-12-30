@@ -101,6 +101,7 @@
                             echo '<img src="'. $jamon['url'].'" alt="jiji">';
 
                             echo '<h3>'. $jamon['nombre']. '</h3>';
+                            echo '<p>Precio: '.$jamon['precio'].'€</p>';
                         
                         echo "</article>";
                     }
