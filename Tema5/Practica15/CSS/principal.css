@@ -98,18 +98,28 @@ nav > ul > li a.activo{
 main{
     display: flex;
     padding: 10px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 section{
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap:wrap;
+    flex: 100%;
 }
 article{
     display: flex;
     padding: 10px;
     margin: 10px;
     background-color: #07151B;
+    color: #fadcdc;
     border-radius: 10px;
-    flex: 50%;
+    flex: 30%;
+    align-items: center;
+    flex-direction: column;
     flex-wrap: wrap; 
+}
+
+article > img{
+    width: 350px;
 }

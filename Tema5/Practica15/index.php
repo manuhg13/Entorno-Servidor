@@ -93,11 +93,14 @@
         <main>
             
             <section>
+                
                 <?
                     foreach ($arrayJamones as $jamon) {
                         echo "<article>";
                         
-                            echo '<img src="'. $jamon['url'].'" alt="jiji"  width="500px">';
+                            echo '<img src="'. $jamon['url'].'" alt="jiji">';
+
+                            echo '<h3>'. $jamon['nombre']. '</h3>';
                         
                         echo "</article>";
                     }
