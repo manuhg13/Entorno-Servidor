@@ -9,9 +9,23 @@
 </head>
 <body>
     <?
+
+    require("Funciones/conexionBD.php");
+    require("Funciones/funciones.php");
+
+    $NoHabia=false;
     try {
         $conexion=new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS);
         
+        $consulta= $conexion->query("SELECT * FROM productos");
+
+        $arrayJamones=array();
+
+        while ($fila= $consulta->fetch(PDO::FETCH_ASSOC)) {
+            array_push($arrayJamones,$fila);
+        }
+
+
     } catch (Exception $ex) {
         if ($ex->getCode()==1045){
             echo "Credenciales incorrectas";
