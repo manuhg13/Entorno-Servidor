@@ -22,12 +22,20 @@
     }
     function esModerador(){
         if(isset($_SESSION['perfil'])){
-            if ($_SESSION['perfil']==''){
+            if ($_SESSION['perfil']=='MOD02'){
                 return true;
             }
             return false;
         }
     }
-
+    function esNormal(){
+        if(isset($_SESSION['perfil'])){
+            if ($_SESSION['perfil']=='NOR03'){
+                return true;
+            }
+            return false;
+        }
+    }
+    
 
 ?>

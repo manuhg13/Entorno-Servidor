@@ -18,5 +18,12 @@
             <input type="password" name="pass" id="idPass">
             <input type="submit" value="Enviar" name="enviar">
         </form>
+
+    <?
+        if(isset($_SESSION['error'])){
+            echo "<p style='padding: 10px; color: red'>" . $_SESSION['error'] . "</p>";
+        }
+        unset($_SESSION['error']);
+    ?>
 </body>
 </html>
