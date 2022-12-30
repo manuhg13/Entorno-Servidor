@@ -25,7 +25,7 @@ create table productos(
     idProducto int primary key auto_increment,
     nombre char(60) not null,
     precio numeric(5) not null,
-    descripcion char(60),
+    descripcion char(60) not null,
     stock int(3) not null
 )engine=innodb;
 
