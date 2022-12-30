@@ -78,7 +78,12 @@
     <div class="ordenar">
         <main>
             <section>
-                
+                <?
+                    foreach ($arrayJamones as $key => $value) {
+                        
+                    }
+
+                ?>
             </section>
         </main>
     </div>
