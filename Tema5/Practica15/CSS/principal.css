@@ -124,3 +124,23 @@ article > img{
     border-radius: 5%;
     width: 350px;
 }
+
+article  a.boton{
+    
+    margin: 5px;
+    text-decoration: none;
+    background-color: #ca3925;
+    color: white;
+    width: 100px;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+article  .boton:hover{
+    background-color: #fadcdc;
+    color: #ca3925;
+}
+
+
