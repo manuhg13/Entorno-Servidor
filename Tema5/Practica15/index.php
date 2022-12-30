@@ -91,11 +91,16 @@
     </nav>
     <div class="ordenar">
         <main>
+            
             <section>
                 <?
-                    /*foreach ($arrayJamones as $key => $value) {
+                    foreach ($arrayJamones as $jamon) {
+                        echo "<article>";
                         
-                    }*/
+                            echo '<img src="'. $jamon['url'].'" alt="jiji"  width="500px">';
+                        
+                        echo "</article>";
+                    }
 
                 ?>
             </section>
