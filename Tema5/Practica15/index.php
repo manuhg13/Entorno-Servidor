@@ -93,7 +93,7 @@
         <main>
             
             <section>
-                <a href="" class="boton">COMPRAR YA</a>
+                
                 <?
                     foreach ($arrayJamones as $jamon) {
                         echo "<article>";
@@ -102,6 +102,8 @@
 
                             echo '<h3>'. $jamon['nombre']. '</h3>';
                             echo '<p>Precio: '.$jamon['precio'].'€</p>';
+
+                            echo '<a href="" class="boton">COMPRAR YA</a>';
                         
                         echo "</article>";
                     }
