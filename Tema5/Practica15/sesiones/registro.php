@@ -47,6 +47,8 @@
                 <?php
                     if (vacio("user") && enviado()){
                         echo "<p style='color: red'> Introduce el usuario</p>";
+                    }elseif (!usuarioValido()) {
+                        echo "<p style='color: red'>Este usuario ya esta registrado</p>";
                     }
                 ?>
         </p>
