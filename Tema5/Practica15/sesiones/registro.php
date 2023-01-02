@@ -7,6 +7,12 @@
     <title>Nuevo usuario</title>
 </head>
 <body>
+    <?php
+        if (validarTodo()){
+            imprimirInfo();
+        }else{
+    
+    ?>
     <form action="./registro.php" method="post">
         <p>
                 <label for="idUser">User</label>
@@ -71,6 +77,11 @@
                 }
             ?>
         </p>
+
+        <input type="submit" value="Enviar" name="enviar">
     </form>
+    <?php
+       }
+    ?>
 </body>
 </html>
