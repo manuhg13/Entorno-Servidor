@@ -53,7 +53,7 @@
 
         <p>
             <label for="idContraseña">Contraseña: </label>
-            <input type="text" name="pass" id="idContraseña" placeholder="Contraseña">
+            <input type="password" name="pass" id="idContraseña" placeholder="Contraseña">
                 
             <?php
                 if (enviado()) {
@@ -69,7 +69,7 @@
 
         <p>
             <label for="idContraseña2">Repite la contraseña: </label>
-            <input type="text" name="pass2" id="idContraseña2" placeholder="Repite contraseña">
+            <input type="password" name="pass2" id="idContraseña2" placeholder="Repite contraseña">
             
             <?php
                 if (enviado()){

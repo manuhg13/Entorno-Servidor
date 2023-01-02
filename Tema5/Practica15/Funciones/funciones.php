@@ -74,9 +74,20 @@
     }
 
     function patPass(){
-        $patron='/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d){8,}/';
+        $patron='/(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,}$/';
         if (preg_match($patron,$_REQUEST['pass'])) {
             return true;
+        }
+        return false;
+    }
+
+    function patFecha(){
+        $patron='/^([0-2]?[0-9]|3[0-1])\/(1[0-2]?|[1-9]{1})\/([0-9]{1,4})$/';
+        if(preg_match($patron,$_REQUEST['fecha'])==1){
+            $cortado=explode('/',$_REQUEST['fecha']);
+            if(checkdate($cortado[1],$cortado[0],$cortado[2])){
+                return true;
+            }
         }
         return false;
     }
