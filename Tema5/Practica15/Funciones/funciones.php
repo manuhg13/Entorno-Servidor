@@ -36,6 +36,47 @@
             return false;
         }
     }
+
+    /*--------------Registro-------------------*/ 
     
+    function vacio($dato){
+        if (empty($_REQUEST[$dato])) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    function enviado(){
+        if (isset($_REQUEST['enviar']))
+            return true;
+        return false;
+    }
+    function existe($nombre){
+        if (isset($_REQUEST[$nombre]))
+            return true;
+        return false;
+    }
+    
+    function patMail(){
+        $patron='/^.{1,}@.{1,}\..{2,}$/';
+        if (preg_match($patron,$_REQUEST['mail'])==1){
+            return true;
+        }
+        return false;
+    }
+
+    function patPass(){
+        $patron='/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d){8,}/';
+        if (preg_match($patron,$_REQUEST['pass'])) {
+            return true;
+        }
+        return false;
+    }
+
+    function validarTodo(){
+        
+    }
+
 
 ?>

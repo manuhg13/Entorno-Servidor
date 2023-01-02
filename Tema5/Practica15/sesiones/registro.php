@@ -7,6 +7,9 @@
     <title>Nuevo usuario</title>
 </head>
 <body>
+    <?
+        require("");
+    ?>
     <?php
         if (validarTodo()){
             imprimirInfo();
@@ -73,6 +76,26 @@
                         echo "<p style='color: red'>Introduce Email</p>";
                     }elseif (!patMail()) {
                         echo "<p style='color: red'>Introduce Email correcto</p>";     
+                    }
+                }
+            ?>
+        </p>
+
+        <p>
+            <label for="idFecha">Fecha: </label>
+            <input type="text" name="fecha" id="idFecha" placeholder="dd/mm/aaaa" value="<?php
+                if (enviado() && !vacio('fecha')){
+                    echo $_REQUEST['fecha'];
+                }
+            ?>">
+            <?php
+                if (enviado()){
+                    if (vacio('fecha')) {
+                        echo "<p style='color: red'>Introduce una fecha</p>";
+                    }elseif (!patFecha()) {
+                        echo "<p style='color: red'>Fecha no valida</p>";
+                    }elseif (!mayor()) {
+                        echo "<p style='color: red'>No es mayor</p>";
                     }
                 }
             ?>
