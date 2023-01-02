@@ -13,7 +13,7 @@
     ?>
     <?php
         if (validarTodo()){
-            
+            nuevoUsuario();
         }else{
     
     ?>
