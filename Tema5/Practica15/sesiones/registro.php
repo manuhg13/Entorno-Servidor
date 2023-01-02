@@ -4,9 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/formulario.css">
     <title>Nuevo usuario</title>
 </head>
 <body>
+    <header>
+        <div class="logo">
+            <img src="" alt="">
+        </div>
+        <div class="botones">
+            <a href="./sesiones/login.php" class="boton">Iniciar sesion</a>
+            <a href="./sesiones/registro.php" class="boton">Registrarse</a>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="./index.php" class="activo">Inicio</a></li>
+            <li><a href="./index.php">Tienda</a></li>
+            <li><a href="./index.php">Ayuda</a></li>
+        </ul>
+    </nav>
+
     <?
         require("../Funciones/funciones.php");
         require("../Funciones/BD.php")
@@ -14,6 +32,7 @@
     <?php
         if (validarTodo()){
             nuevoUsuario();
+            echo "<p>Todo correcto</p>";
         }else{
     
     ?>

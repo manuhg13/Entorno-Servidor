@@ -1,0 +1,97 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #fadcdc;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    display: grid;
+
+    align-content: center;
+    grid-template-columns: auto auto auto auto;
+}
+
+/*----Header-----*/
+header{
+    padding: 20px;
+    background-color: #07151B;
+    color: white;
+
+    display: grid;
+    grid-template-columns: auto auto;
+
+    align-items: center;
+    grid-area: 1 / 1 / 2 / 6;
+}
+header > div.logo{
+    padding: 10px;
+    margin: 10px;
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+header > div.botones{
+    padding: 10px;
+    margin: 5px;
+   
+    
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+header  a.boton{
+    
+    margin: 5px;
+    text-decoration: none;
+    background-color: #ca3925;
+    color: white;
+    width: 100px;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+header  .boton:hover{
+    background-color: #fadcdc;
+    color: #ca3925;
+}
+
+/*-----Navegador-----*/
+
+nav{
+    padding-top: 1px;
+    grid-area: 2 / 1 / 3 / 6;
+}
+nav > ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ca3925;
+}
+nav > ul > li{
+    float: left;
+}
+nav > ul > li a{
+    display: block;
+    color: #fadcdc;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+nav > ul > li a:hover:not(.activo){
+    background-color: #fadcdc;
+    color: #ca3925;
+}
+
+nav > ul > li a.activo{
+    background-color: #07151B;
+    color: #ca3925;
+}
+
+/*------Ordenar el body-----*/
+
+.ordenar{
+    grid-area: 3 / 1 / 5 / 6;
+    display: flex;
+    flex-wrap: wrap;
+}
