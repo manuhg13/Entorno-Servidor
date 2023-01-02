@@ -64,6 +64,23 @@
         </p>
 
         <p>
+            <label for="idNombre">Nombre: </label>
+            <input type="text" name="nombre" id="idNombre" placeholder="Nombre" value="<?php
+                if (enviado() && !vacio('nombre')){
+                    echo $_REQUEST['nombre'];
+                }
+            ?>">
+
+            <?php
+                if(enviado()){
+                    if(vacio('nombre')){
+                        echo "<p style='color: red'> Introduce un nombre</p>";
+                    }
+                }
+            ?>
+        </p>
+
+        <p>
             <label for="idEmail">Email: </label>
             <input type="text" name="mail" id="idEmail" placeholder="Email" value="<?php
                 if (enviado() && !vacio('mail')) {
