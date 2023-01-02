@@ -117,6 +117,21 @@
             ?>
         </p>
 
+        <p>
+            <label for="idSelector">Elige una opción</label>
+            <select name="roles" id="idSelector">
+                <option value="0">Seleccione una opción</option>
+                <option value="ADM01">Administrador</option>
+                <option value="MOD02">Moderador</option>
+                <option value="NOR03">Usuario normal</option>
+            </select>
+            <?php
+                if(existe('roles') && $_REQUEST['roles']==0){
+                    echo "<p style='color: red'> Introduce una opción</p>";
+                }
+            ?>
+        </p>
+
         <input type="submit" value="Enviar" name="enviar">
     </form>
     <?php
