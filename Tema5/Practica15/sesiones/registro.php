@@ -8,7 +8,8 @@
 </head>
 <body>
     <?
-        require("");
+        require("../Funciones/funciones.php");
+        require("../Funciones/BD.php")
     ?>
     <?php
         if (validarTodo()){
@@ -18,7 +19,7 @@
     ?>
     <form action="./registro.php" method="post">
         <p>
-                <label for="idUser">User</label>
+                <label for="idUser">Usuario</label>
                 <input type="text" name="user" id="user" placeholder="Usuario" value="<?php
                     if (enviado() && !vacio("user")) {
                         echo $_REQUEST['user'];
@@ -94,8 +95,6 @@
                         echo "<p style='color: red'>Introduce una fecha</p>";
                     }elseif (!patFecha()) {
                         echo "<p style='color: red'>Fecha no valida</p>";
-                    }elseif (!mayor()) {
-                        echo "<p style='color: red'>No es mayor</p>";
                     }
                 }
             ?>

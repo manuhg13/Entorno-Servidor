@@ -57,6 +57,13 @@
             return true;
         return false;
     }
+
+    function usuarioValido(){
+        if(validaSoloUser($_REQUEST['user'])){
+            return true;
+        }
+        return false;
+    }
     
     function patMail(){
         $patron='/^.{1,}@.{1,}\..{2,}$/';
@@ -75,7 +82,17 @@
     }
 
     function validarTodo(){
-        
+        if(enviado()){
+            if(!vacio('user') && usuarioValido()){
+                if(!vacio('pass') && !vacio('pass2') && patPass() && $_REQUEST['pass']==$_REQUEST['pass2']){
+                    if (!vacio('mail') && patMail()) {
+                        if (!vacio('fecha') && patFecha()) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
     }
 
 

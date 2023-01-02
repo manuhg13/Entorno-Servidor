@@ -35,5 +35,34 @@
             
         }
     }
+    function validaSoloUser($user){
+        try {
+            $conexion= new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS);
+            $sql="select * from usuarios where usuario= ? ;";
+            $sql_prepa= $conexion->prepare($sql);
+
+            $array= array($user);
+            $sql_prepa->execute($array);
+
+            //si devuelve algo hacemos un Login
+            if ($sql_prepa->rowCount()==0) {
+                
+                unset($conexion);
+                return true;
+            }else{
+                unset($conexion);
+                return false;
+
+            }
+            
+
+        } catch (Exception $ex) {
+            print_r($ex);
+            unset($conexion);
+            
+        }
+    }
+
+    
 
 ?>
