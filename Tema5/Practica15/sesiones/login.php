@@ -11,7 +11,7 @@
 </head>
 <body>
     <br>
-        <form action="./" method="post">
+        <form action="../Funciones/validaciones.php" method="post">
             <label for="user">Usuario</label>
             <input type="text" name="user" id="idUser">
             <label for="pass">Contraseña</label>

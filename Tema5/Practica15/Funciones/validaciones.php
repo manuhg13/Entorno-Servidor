@@ -14,7 +14,7 @@
         exit;
     }else{
         if (validaUser($user,$pass)){
-            if ($_SESSION['perfil']=='ADM01') {
+            if ($_SESSION['roles']=='ADM01') {
                 header("Location: ./index.php");
                 exit;
             }else{
