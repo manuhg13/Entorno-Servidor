@@ -6,9 +6,9 @@
             $conexion= new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS);
             $sql="select * from usuarios where usuario= ? and clave= ?;";
             $sql_prepa= $conexion->prepare($sql);
-            //$pass_e=sha1($pass);
+            $pass_e=sha1($pass);
 
-            $array= array($user,$pass);
+            $array= array($user,$pass_e);
             $sql_prepa->execute($array);
 
             //si devuelve algo hacemos un Login
@@ -69,7 +69,7 @@
             $sql="insert into usuarios values (:usuario,:clave,:nombre,:correo,:fecha,:roles);";
 
             $preparada=$conexion->prepare($sql);
-            $array= array(":usuario"=>$_REQUEST['user'],":clave"=>$_REQUEST['pass'],":nombre"=>$_REQUEST['nombre'],":correo"=>$_REQUEST['mail'],":fecha"=>$_REQUEST['fecha'],":roles"=>$_REQUEST['roles']);
+            $array= array(":usuario"=>$_REQUEST['user'],":clave"=>sha1($_REQUEST['pass']),":nombre"=>$_REQUEST['nombre'],":correo"=>$_REQUEST['mail'],":fecha"=>$_REQUEST['fecha'],":roles"=>$_REQUEST['roles']);
             $preparada->execute($array);
         } catch (Exception $ex) {
             print_r($ex);
