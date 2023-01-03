@@ -19,7 +19,7 @@
     </header>
     <nav>
         <ul>
-            <li><a href="./index.php" class="activo">Inicio</a></li>
+            <li><a href="../index.php" class="activo">Inicio</a></li>
             <li><a href="./index.php">Tienda</a></li>
             <li><a href="./index.php">Ayuda</a></li>
         </ul>
@@ -45,11 +45,13 @@
                     }
                 ?>">
                 <?php
-                    if (vacio("user") && enviado()){
+                if (enviado()){
+                    if (vacio("user") ){
                         echo "<p style='color: red'> Introduce el usuario</p>";
                     }elseif (!usuarioValido()) {
                         echo "<p style='color: red'>Este usuario ya esta registrado</p>";
-                    }
+                    }                
+                }
                 ?>
         </p>
 

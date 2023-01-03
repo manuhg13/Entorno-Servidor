@@ -6,9 +6,9 @@
             $conexion= new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS);
             $sql="select * from usuarios where usuario= ? and clave= ?;";
             $sql_prepa= $conexion->prepare($sql);
-            $pass_e=sha1($pass);
+            //$pass_e=sha1($pass);
 
-            $array= array($user,$pass_e);
+            $array= array($user,$pass);
             $sql_prepa->execute($array);
 
             //si devuelve algo hacemos un Login

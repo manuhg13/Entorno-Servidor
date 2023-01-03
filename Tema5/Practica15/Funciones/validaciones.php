@@ -15,15 +15,15 @@
     }else{
         if (validaUser($user,$pass)){
             if ($_SESSION['roles']=='ADM01') {
-                header("Location: ./index.php");
+                header("Location: ../index.php");
                 exit;
             }else{
-                header("Location: ./index.php");
+                header("Location: ../index.php");
                 exit;
             }
         }else{
             $_SESSION['error']='No existe el usuario';
-            header("Location: ../login.php");
+            header("Location: ./login.php");
             exit;
         }
     }   
