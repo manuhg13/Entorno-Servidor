@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="logo">
-            <img src="" alt="">
+            <img src="../img/logo.png" alt="logo">
         </div>
         <div class="botones">
             <a href="./sesiones/login.php" class="boton">Iniciar sesion</a>
