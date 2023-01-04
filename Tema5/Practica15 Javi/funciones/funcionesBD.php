@@ -1,5 +1,6 @@
 <?php
 
+ 
 // sesiones
 
 function estaValidado() {
@@ -44,9 +45,9 @@ function enviadoGuardar(){
 
 function crearBD(){ 
     $conexion = new PDO('mysql:host='.$_SERVER['SERVER_ADDR'], USER, PASS);
-    $script = file_get_contents("../sql/zapatillas.sql");
-    $consulta = $conexion->prepare($script);
-    $consulta->execute();
+    $script = (file_get_contents("../sql/zapatillas.sql"));
+    //$consulta = $conexion->prepare($script);
+    $conexion->exec($script);
 }
 
 // modificar BD

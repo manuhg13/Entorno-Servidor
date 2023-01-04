@@ -13,24 +13,24 @@
         return false;
     }
     function esAdmin(){
-        if(isset($_SESSION['perfil'])){
-            if ($_SESSION['perfil']=='ADM01'){
+        if(isset($_SESSION['roles'])){
+            if ($_SESSION['roles']=='ADM01'){
                 return true;
             }
             return false;
         }
     }
     function esModerador(){
-        if(isset($_SESSION['perfil'])){
-            if ($_SESSION['perfil']=='MOD02'){
+        if(isset($_SESSION['roles'])){
+            if ($_SESSION['roles']=='MOD02'){
                 return true;
             }
             return false;
         }
     }
     function esNormal(){
-        if(isset($_SESSION['perfil'])){
-            if ($_SESSION['perfil']=='NOR03'){
+        if(isset($_SESSION['roles'])){
+            if ($_SESSION['roles']=='NOR03'){
                 return true;
             }
             return false;
