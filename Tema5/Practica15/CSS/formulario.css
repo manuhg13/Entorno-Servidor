@@ -95,3 +95,21 @@ nav > ul > li a.activo{
     display: flex;
     flex-wrap: wrap;
 }
+
+a.boton{
+    
+    margin: 5px;
+    text-decoration: none;
+    background-color: #ca3925;
+    color: white;
+    width: 100px;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.boton:hover{
+    background-color: #fadcdc;
+    color: #ca3925;
+}
