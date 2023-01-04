@@ -111,7 +111,7 @@
                             echo '<img src="'. $jamon['url'].'" alt="fotoJamón">';
                             echo '<h3>'. $jamon['nombre']. '</h3>';
                             echo '<p>Precio: '.$jamon['precio'].'€</p>';
-                            echo '<a href="" class="boton">COMPRAR YA</a>';                        
+                            echo '<a href="../Paginas/producto.php?id='.$jamon['idProducto'].'" class="boton">COMPRAR YA</a>';                        
                         echo "</article>";
                     }
 
