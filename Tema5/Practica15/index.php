@@ -81,7 +81,7 @@
             <?
                 session_start();
                 if (estaValidado()) {
-                    echo '<a href="./sesiones/login.php" class="boton">'.$_SESSION['user'].'</a>';
+                    echo '<a href="./Paginas/perfil.php" class="boton">'.$_SESSION['user'].'</a>';
                     echo '<a href="./sesiones/logout.php" class="boton">Cerrar sesión</a>';
                 }else {
                     

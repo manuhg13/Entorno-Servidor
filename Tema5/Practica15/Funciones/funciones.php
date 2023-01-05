@@ -110,6 +110,24 @@
         }
         return false;
     }
+    function validarTodoActualizar(){
+        if(enviado()){
+            if(!vacio('user')){
+                if(!vacio('pass') && !vacio('pass2') && patPass() && $_REQUEST['pass']==$_REQUEST['pass2']){
+                    if (!vacio('mail') && patMail()) {
+                        if (!vacio('fecha') && patFecha()) {
+                            if (!vacio('nombre')) {
+                                if (existe('roles') && $_REQUEST['roles']!=0) {
+                                    return true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
 
 
 ?>

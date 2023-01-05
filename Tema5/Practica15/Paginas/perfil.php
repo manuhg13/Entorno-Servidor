@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/formulario.css">
     <title>Mi perfil</title>
 </head>
 <body>
     
     <?
-        require("Funciones/conexionBD.php");
-        require("Funciones/funciones.php");
-        session_start();
+        //require("../Funciones/conexionBD.php");
+        require("../Funciones/funciones.php");
+        require("../Funciones/BD.php");
+        //session_start();
 
     ?>
     <header>
@@ -33,19 +35,28 @@
             ?>
         </div>
     </header>
+    <nav>
+        <ul>
+            <li><a href="../index.php" class="activo">Inicio</a></li>
+            <li><a href="./index.php">Tienda</a></li>
+            <li><a href="./index.php">Ayuda</a></li>
+        </ul>
+    </nav>
     
     <div class="ordenar">
+        
     <?
-        if (validarTodo()){
+        if (validarTodoActualizar()){
             actualizarUsuario();
-            echo "<p>Todo correcto</p>";
+            echo "<p>Perfil actualizado</p>";
+            echo '<a href="../index.php" class="boton">Volver al inicio</a>';
         }else{
     ?>
     <form action="./perfil.php" method="post">
         <p>
                 <label for="idUser">Usuario</label>
                 <input type="text" name="user" id="user" readonly value="<?php
-                    if (enviado() && !vacio("user")) {
+                    if (!enviado() && vacio("user")) {
                         echo $_SESSION['user'];
                     }
                 ?>">
@@ -94,7 +105,7 @@
         <p>
             <label for="idNombre">Nombre: </label>
             <input type="text" name="nombre" id="idNombre" placeholder="Nombre" value="<?php
-                if (enviado() && !vacio('nombre')){
+                if (!enviado() && vacio('nombre')){
                     echo $_SESSION['nombre'];
                 }
             ?>">
@@ -111,7 +122,7 @@
         <p>
             <label for="idEmail">Email: </label>
             <input type="text" name="mail" id="idEmail" placeholder="Email" value="<?php
-                if (enviado() && !vacio('mail')) {
+                if (!enviado() && vacio('mail')) {
                     echo $_SESSION['mail'];
                 }
             ?>">
@@ -130,7 +141,7 @@
         <p>
             <label for="idFecha">Fecha: </label>
             <input type="text" name="fecha" id="idFecha" placeholder="dd/mm/aaaa" value="<?php
-                if (enviado() && !vacio('fecha')){
+                if (!enviado() && vacio('fecha')){
                     echo $_SESSION['fecha'];
                 }
             ?>">

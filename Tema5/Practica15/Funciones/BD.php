@@ -80,6 +80,7 @@
             
         }
     }
+    
     function actualizarUsuario(){
         try {
             $conexion= new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS); 
