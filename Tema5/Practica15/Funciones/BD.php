@@ -17,8 +17,11 @@
                 $_SESSION['validado']=true;
                 $row=$sql_prepa->fetch();
                 $_SESSION['user']=$user;
+                $_SESSION['pass']=$pass;
                 $_SESSION['nombre']=$row['nombre'];
-                $_SESSION['perfil']=$row['roles'];
+                $_SESSION['mail']=$row['correo'];
+                $_SESSION['fecha']=$row['fecha'];
+                $_SESSION['roles']=$row['roles'];
 
                 unset($conexion);
                 return true;
@@ -64,6 +67,20 @@
     }
 
     function nuevoUsuario(){
+        try {
+            $conexion= new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS); 
+            $sql="insert into usuarios values (:usuario,:clave,:nombre,:correo,:fecha,:roles);";
+
+            $preparada=$conexion->prepare($sql);
+            $array= array(":usuario"=>$_REQUEST['user'],":clave"=>sha1($_REQUEST['pass']),":nombre"=>$_REQUEST['nombre'],":correo"=>$_REQUEST['mail'],":fecha"=>$_REQUEST['fecha'],":roles"=>$_REQUEST['roles']);
+            $preparada->execute($array);
+        } catch (Exception $ex) {
+            print_r($ex);
+            unset($conexion);
+            
+        }
+    }
+    function actualizarUsuario(){
         try {
             $conexion= new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS); 
             $sql="insert into usuarios values (:usuario,:clave,:nombre,:correo,:fecha,:roles);";
