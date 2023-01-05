@@ -83,7 +83,7 @@
     function actualizarUsuario(){
         try {
             $conexion= new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS); 
-            $sql="insert into usuarios values (:usuario,:clave,:nombre,:correo,:fecha,:roles);";
+            $sql="UPDATE usuarios SET clave=:clave,nombre=:nombre,correo=:correo,fecha=:fecha,roles=:roles WHERE usuario=:usuario;";
 
             $preparada=$conexion->prepare($sql);
             $array= array(":usuario"=>$_REQUEST['user'],":clave"=>sha1($_REQUEST['pass']),":nombre"=>$_REQUEST['nombre'],":correo"=>$_REQUEST['mail'],":fecha"=>$_REQUEST['fecha'],":roles"=>$_REQUEST['roles']);
