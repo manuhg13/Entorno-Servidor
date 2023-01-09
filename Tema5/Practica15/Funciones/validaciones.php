@@ -23,7 +23,7 @@
             }
         }else{
             $_SESSION['error']='No existe el usuario';
-            header("Location: ./login.php");
+            header("Location: ../sesiones/login.php");
             exit;
         }
     }   

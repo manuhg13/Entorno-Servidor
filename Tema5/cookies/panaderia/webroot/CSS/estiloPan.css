@@ -1,0 +1,16 @@
+.productos{
+    position: relative;
+    float: left;
+    
+}
+.card{
+    display: flex;
+    margin: 50px;
+}
+.card *{
+    margin: 5px;
+}
+.vistos{
+    position: relative;
+    float: right;
+}

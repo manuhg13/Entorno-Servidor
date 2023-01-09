@@ -16,8 +16,8 @@
             <img src="../img/logo.png" alt="logo">
         </div>
         <div class="botones">
-            <a href="./sesiones/login.php" class="boton">Iniciar sesion</a>
-            <a href="./sesiones/registro.php" class="boton">Registrarse</a>
+            <a href="login.php" class="boton">Iniciar sesion</a>
+            <a href="registro.php" class="boton">Registrarse</a>
         </div>
     </header>
     <nav>
