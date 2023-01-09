@@ -25,7 +25,7 @@
             $resultado=$prepare->execute(array($id));
             if ($resultado) {
                 $resultado->fetchAll();
-                //return 
+                
             }else{
                 return false;
             }
