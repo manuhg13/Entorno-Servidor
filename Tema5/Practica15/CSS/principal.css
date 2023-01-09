@@ -93,12 +93,13 @@ nav > ul > li a.activo{
 .ordenar{
     grid-area: 3 / 1 / 5 / 6;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    
 }
 main{
     display: flex;
     padding: 10px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 section{
     display: flex;

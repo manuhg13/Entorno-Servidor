@@ -66,7 +66,9 @@
             <li><a href="../index.php">Ayuda</a></li>
         </ul>
     </nav>
+    
     <div class="ordenar">
+        
         <main>            
             <section>
                 
@@ -78,6 +80,7 @@
                                 echo '<h3>'. $jamon['nombre']. '</h3>';
                                 echo '<p>Descripcion: '.$jamon['descripcion'].'</p>';
                                 echo '<p>Precio: '.$jamon['precio'].'€</p>';
+                                echo '<p>Quedan: '.$jamon['stock'].' disponibles</p>';
                                 echo '<a href="../Paginas/producto.php?id='.$jamon['idProducto'].'" class="boton">COMPRAR YA</a>';                        
                             echo "</article>";
                         }
