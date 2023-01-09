@@ -81,7 +81,7 @@
                                 echo '<p>Descripcion: '.$jamon['descripcion'].'</p>';
                                 echo '<p>Precio: '.$jamon['precio'].'€</p>';
                                 echo '<p>Quedan: '.$jamon['stock'].' disponibles</p>';
-                                echo '<a href="../Paginas/producto.php?id='.$jamon['idProducto'].'" class="boton">COMPRAR YA</a>';                        
+                                echo '<a href="../Paginas/carrito.php?id='.$jamon['idProducto'].'" class="boton">COMPRAR YA</a>';                        
                             echo "</article>";
                         }
                     }
