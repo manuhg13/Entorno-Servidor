@@ -18,6 +18,22 @@
     }
 
     function findById($id){
+        try {
+            $conexion=new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS);
+            $sql="select * from producto where codigo=?";
+            $prepare= $conexion->prepare($sql);
+            $resultado=$prepare->execute(array($id));
+            if ($resultado) {
+                $resultado->fetchAll();
+                //return 
+            }else{
+                return false;
+            }
+            unset($conexion);
+        } catch (\Throwable $th) {
+            
+        }
+
 
     }
 
