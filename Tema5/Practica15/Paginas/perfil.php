@@ -48,6 +48,9 @@
     <?
         if (validarTodoActualizar()){
             actualizarUsuario();
+            session_destroy();
+            validaUser($_REQUEST['user'],$_REQUEST['pass']);
+            session_start();
             echo "<p>Perfil actualizado</p>";
             echo '<a href="../index.php" class="boton">Volver al inicio</a>';
         }else{
