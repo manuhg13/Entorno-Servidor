@@ -179,16 +179,19 @@
     <div class="ordenar">
         
         <main>            
+            <h1>Los más deseados</h1>
             <section>
-                
+                <br>
                 <?
                     foreach ($arrayJamones as $jamon) {
-                        echo "<article>";
-                            echo '<img src="'. $jamon['url'].'" alt="fotoJamón">';
-                            echo '<h3>'. $jamon['nombre']. '</h3>';
-                            echo '<p>Precio: '.$jamon['precio'].'€</p>';
-                            echo '<a href="./Paginas/producto.php?id='.$jamon['idProducto'].'"><button type="button" class="btn btn-primary" style="background-color:#ca3925; border: 1px solid black;">Comprar</button></a>';                        
-                        echo "</article>";
+                        if ($jamon['precio']>=100) {
+                            echo "<article>";
+                                echo '<img src="'. $jamon['url'].'" alt="fotoJamón">';
+                                echo '<h3>'. $jamon['nombre']. '</h3>';
+                                echo '<p>Precio: '.$jamon['precio'].'€</p>';
+                                echo '<a href="./Paginas/producto.php?id='.$jamon['idProducto'].'"><button type="button" class="btn btn-primary" style="background-color:#ca3925; border: 1px solid black;">Comprar</button></a>';                        
+                            echo "</article>";
+                        }
                     }
 
                 ?>
