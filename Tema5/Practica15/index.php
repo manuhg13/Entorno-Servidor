@@ -176,12 +176,11 @@
   </div>
     
     
-    <div class="ordenar">
+  <div class="ordenar">
+        <h1>Los más deseados</h1>
         
         <main>            
-            <h1>Los más deseados</h1>
             <section>
-                <br>
                 <?
                     foreach ($arrayJamones as $jamon) {
                         if ($jamon['precio']>=100) {

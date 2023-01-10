@@ -90,18 +90,16 @@ nav > ul > li a.activo{
 
 .ordenar{
     grid-area: 3 / 1 / 5 / 6;
-    display: flex;
-    flex-wrap: nowrap;
     
 }
 main{
     display: flex;
     padding: 10px;
-    flex-wrap: wrap;
+    flex: 100%;
 }
 section{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-wrap:wrap;
     flex: 100%;
