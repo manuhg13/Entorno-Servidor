@@ -4,67 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link rel="stylesheet" href="CSS/principal.css">-->
+    <link rel="stylesheet" href="CSS/principal.css">
     <link href="./CSS/bootstrap.min.css" rel="stylesheet">
-    <title>INICIO || PR 15</title>
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .b-example-divider {
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
     <link href="./CSS/headers.css" rel="stylesheet">
+    <title>INICIO || PR 15</title>
+ 
+   
 </head>
-<body>
+<body style="background-color: #fadcdc;">
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="people-circle" viewBox="0 0 16 16">
+    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+  </symbol>
+</svg>
+
     <?
 
     require("Funciones/conexionBD.php");
@@ -129,65 +84,53 @@
         }
     ?>
 
-<header class="p-3 mb-3 border-bottom">
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
-        </a>
+    <header class="p-3 mb-3 border-bottom">
+        <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                <img src="img/logo.png" alt="logo">
+            </a>
 
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 link-secondary">Overview</a></li>
-          <li><a href="#" class="nav-link px-2 link-dark">Inventory</a></li>
-          <li><a href="#" class="nav-link px-2 link-dark">Customers</a></li>
-          <li><a href="#" class="nav-link px-2 link-dark">Products</a></li>
-        </ul>
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="#" class="nav-link px-2 link-danger" >Inicio</a></li>
+            <li><a href="#" class="nav-link px-2 link-light">Tienda</a></li>
+            <li><a href="#" class="nav-link px-2 link-light">Ayuda</a></li>
+            
+            </ul>
+                <?
+                    session_start();
+                    if (estaValidado()) {
+                    echo '<div class="dropdown text-end">
+                            <p>Hola '.$_SESSION['user'].'!</p>
+                            <a href="#" class="d-block link-danger text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg class="bi d-block mx-auto mb-1" width="24" height="24" style="color: white;"><use xlink:href="#people-circle"/></svg>
+                            </a>
+                            <ul class="dropdown-menu text-small">
+                                <li><a class="dropdown-item" href="./Paginas/perfil.php">Perfil</a></li>';
+                                if (esAdmin() || esModerador()) {
+                                    echo '<li><a class="dropdown-item" href="#">Almacen</a></li>
+                                    <li><a class="dropdown-item" href="#">Ventas</a></li>';
+                                }
+                                
+                    echo  '<li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="./sesiones/logout.php">Sign out</a></li>
+                            </ul>
+                        </div>';
+                    }else {
+                        
+                        ?>
+                            <a href="./sesiones/login.php"><button type="button" class="btn btn-light text-dark me-2">Login</button></a>
+                            <a href="./sesiones/registro.php"><button type="button" class="btn btn-primary" style="background-color:#ca3925; border: 1px solid black;">Resgistrarse</button></a>
+                            
+                        <?
+                    }
+                ?>
+            
+    </header>
 
-        <div class="dropdown text-end">
-          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-          </a>
-          <ul class="dropdown-menu text-small">
-            <li><a class="dropdown-item" href="#">New project...</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </header>
 
-
-    <header>
-        <div class="logo">
-            <img src="img/logo.png" alt="logo">
-        </div>
-        <div class="botones">
-            /*<?
-                session_start();
-                if (estaValidado()) {
-                    echo '<a href="./Paginas/perfil.php" class="boton">'.$_SESSION['user'].'</a>';
-                    echo '<a href="./sesiones/logout.php" class="boton">Cerrar sesión</a>';
-                }else {
-                    
-                
-            ?>
-                <a href="./sesiones/login.php" class="boton">Iniciar sesion</a>
-                <a href="./sesiones/registro.php" class="boton">Registrarse</a>
-            <?
-                }
-            ?>
-        </div>
-    </header>-->
-    <nav>
-        <ul>
-            <li><a href="./index.php" class="activo">Inicio</a></li>
-            <li><a href="./index.php">Tienda</a></li>
-            <li><a href="./index.php">Ayuda</a></li>
-        </ul>
-    </nav>
+    
+    
     <div class="ordenar">
         
         <main>            
@@ -199,12 +142,13 @@
                             echo '<img src="'. $jamon['url'].'" alt="fotoJamón">';
                             echo '<h3>'. $jamon['nombre']. '</h3>';
                             echo '<p>Precio: '.$jamon['precio'].'€</p>';
-                            echo '<a href="./Paginas/producto.php?id='.$jamon['idProducto'].'" class="boton">COMPRAR YA</a>';                        
+                            echo '<a href="./Paginas/producto.php?id='.$jamon['idProducto'].'"><button type="button" class="btn btn-primary" style="background-color:#ca3925; border: 1px solid black;">Comprar</button></a>';                        
                         echo "</article>";
                     }
 
                 ?>
             </section>
+            <script src="./JS/bootstrap.bundle.min.js"></script>
         </main>
     </div>
 </body>
