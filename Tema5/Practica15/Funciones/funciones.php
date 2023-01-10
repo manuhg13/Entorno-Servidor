@@ -132,7 +132,7 @@
 
     function vendido(){
         try {
-            //code...
+           
         } catch (\Throwable $th) {
             //throw $th;
         }

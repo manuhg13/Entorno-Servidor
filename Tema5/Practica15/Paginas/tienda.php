@@ -107,7 +107,7 @@
                                 <svg class="bi d-block mx-auto mb-1" width="24" height="24" style="color: white;"><use xlink:href="#people-circle"/></svg>
                             </a>
                             <ul class="dropdown-menu text-small">
-                                <li><a class="dropdown-item" href="./Paginas/perfil.php">Perfil</a></li>';
+                                <li><a class="dropdown-item" href="../Paginas/perfil.php">Perfil</a></li>';
                                 if (esAdmin() || esModerador()) {
                                     echo '<li><a class="dropdown-item" href="#">Almacen</a></li>
                                     <li><a class="dropdown-item" href="#">Ventas</a></li>';
@@ -120,8 +120,8 @@
                     }else {
                         
                         ?>
-                            <a href="./sesiones/login.php"><button type="button" class="btn btn-light text-dark me-2">Login</button></a>
-                            <a href="./sesiones/registro.php"><button type="button" class="btn btn-primary" style="background-color:#ca3925; border: 1px solid black;">Resgistrarse</button></a>
+                            <a href="../sesiones/login.php"><button type="button" class="btn btn-light text-dark me-2">Login</button></a>
+                            <a href="../sesiones/registro.php"><button type="button" class="btn btn-primary" style="background-color:#ca3925; border: 1px solid black;">Resgistrarse</button></a>
                             
                         <?
                     }
