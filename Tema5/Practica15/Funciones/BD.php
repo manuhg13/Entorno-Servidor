@@ -1,5 +1,5 @@
 <?
-    require('conexionBD.php');
+    
 
     function validaUser($user,$pass){
         try {
