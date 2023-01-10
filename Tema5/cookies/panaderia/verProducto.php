@@ -31,7 +31,7 @@
             echo '<p>'.$producto['nombre'].'</p>';
             echo '</article>';
         ?>
-
+    <a href="./index.php">Volver</a>
     </section>
     <section class="vistos">
             <h3>Últimos vistos</h3>

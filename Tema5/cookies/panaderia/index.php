@@ -1,6 +1,7 @@
 <?
     require("seguro/conexion.php");
     require('funciones/funciones.php');
+    require('funciones/funcionesCookies.php');
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -32,6 +33,12 @@
 
         <section class="vistos">
             <h3>Últimos vistos</h3>
+            
+            <?
+                mostrarUltimos()
+            ?>
+            
+            
         </section>
     </main>
 </body>

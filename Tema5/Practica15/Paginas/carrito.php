@@ -8,35 +8,16 @@
     <title>Carrito</title>
 </head>
 <body>
-<header>
-        <div class="logo">
-            <img src="../img/logo.png" alt="logo">
-        </div>
-        <div class="botones">
             <?
                 session_start();
                 if (estaValidado()) {
-                    echo '<a href="../sesiones/login.php" class="boton">'.$_SESSION['user'].'</a>';
-                    echo '<a href="../sesiones/logout.php" class="boton">Cerrar sesión</a>';
+                    vendido();
                 }else {
-                    
-                
-            ?>
-                <a href="../sesiones/login.php" class="boton">Iniciar sesion</a>
-                <a href="../sesiones/registro.php" class="boton">Registrarse</a>
-            <?
+                    header('Location: ../sesiones/login.php');
+                    exit;
                 }
             ?>
-        </div>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="../index.php">Inicio</a></li>
-            <li><a href="../index.php" class="activo">Tienda</a></li>
-            <li><a href="../index.php">Ayuda</a></li>
-        </ul>
-    </nav>
-    <div class="ordenar">
+        
         <?
             try {
                 $conexion=new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS);
