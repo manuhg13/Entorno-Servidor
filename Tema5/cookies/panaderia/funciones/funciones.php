@@ -24,8 +24,9 @@
             $prepare= $conexion->prepare($sql);
             $resultado=$prepare->execute(array($id));
             if ($resultado) {
-                $resultado->fetchAll();
-                
+                $producto=$prepare->fetchAll(PDO::FETCH_ASSOC);
+                unset($conexion);
+                return $producto;
             }else{
                 return false;
             }

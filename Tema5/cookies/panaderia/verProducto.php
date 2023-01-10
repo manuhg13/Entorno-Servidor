@@ -1,6 +1,15 @@
 <?
     require("seguro/conexion.php");
     require('funciones/funciones.php');
+    require('funciones/funcionesCookies.php');
+
+    if(!isset($_REQUEST['cod'])){
+        header('Location: ./index.php');
+        exit;
+    }else{
+        $id=$_REQUEST['cod'];
+        productoVisto($id);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +24,12 @@
     <section class="producto">
         <h1>Producto</h1>
         <?
-            
+            $producto=findById($id);
+            $producto=$producto[0];
+            echo '<article  class="card">';
+            echo '<img src="webroot/'.$producto['baja'].'" alt="pan"></a>';
+            echo '<p>'.$producto['nombre'].'</p>';
+            echo '</article>';
         ?>
 
     </section>
