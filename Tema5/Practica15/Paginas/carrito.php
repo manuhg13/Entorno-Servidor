@@ -9,6 +9,10 @@
 </head>
 <body>
             <?
+                
+            require("../Funciones/conexionBD.php");
+            require("../Funciones/funciones.php");
+            
                 session_start();
                 if (estaValidado()) {
                     vendido();
