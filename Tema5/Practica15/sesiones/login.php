@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../CSS/formulario.css">
     <link href="../CSS/bootstrap.min.css" rel="stylesheet">
     <link href="../CSS/headers.css" rel="stylesheet">
+    <link href="../CSS/signin.css" rel="stylesheet">
     <title>Iniciar Sesión</title>
     <?
         session_start();
@@ -69,24 +70,18 @@
     <div class="ordenar">
         <div class="caja">
 
-        <form>
+        <form action="../Funciones/validaciones.php" method="post">
     <h1 class="h3 mb-3 fw-normal">Iniciar sesión</h1>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input type="text" class="form-control" id="floatingInput" placeholder="usuario" name="user">
       <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="pass">
       <label for="floatingPassword">Password</label>
     </div>
-
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <button class="w-100 btn btn-lg btn-danger" type="submit" name="enviar">Aceptar</button>
     <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
   </form>
             <!--<form action="../Funciones/validaciones.php" method="post">
