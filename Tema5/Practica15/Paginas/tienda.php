@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/principal.css">
-    <link href="./CSS/bootstrap.min.css" rel="stylesheet">
-    <link href="./CSS/headers.css" rel="stylesheet">
-    <link href="./CSS/carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/principal.css">
+    <link href="../CSS/bootstrap.min.css" rel="stylesheet">
+    <link href="../CSS/headers.css" rel="stylesheet">
+    <link href="../CSS/carousel.css" rel="stylesheet">
     <title>INICIO || PR 15</title>
  
    
@@ -23,8 +23,8 @@
 
     <?
 
-    require("Funciones/conexionBD.php");
-    require("Funciones/funciones.php");
+    require("../Funciones/conexionBD.php");
+    require("../Funciones/funciones.php");
 
     $NoHabia=false;
     try {
@@ -88,13 +88,13 @@
     <header class="p-3 mb-3 border-bottom">
         <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="./index.php" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-                <img src="img/logo.png" alt="logo">
+            <a href="../index.php" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                <img src="../img/logo.png" alt="logo">
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="./index.php" class="nav-link px-2 link-danger" >Inicio</a></li>
-            <li><a href="./Paginas/tienda.php" class="nav-link px-2 link-light">Tienda</a></li>
+            <li><a href="../index.php" class="nav-link px-2 link-light" >Inicio</a></li>
+            <li><a href="./tienda.php" class="nav-link px-2 link-danger">Tienda</a></li>
             <li><a href="#" class="nav-link px-2 link-light">Ayuda</a></li>
             
             </ul>
@@ -128,69 +128,21 @@
                 ?>
             
     </header>
-
-    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="./img/cerdis.jpg" alt="Los Angeles" class="d-block w-100">
-        <div class="container">
-            <div class="carousel-caption text-start">
-            <h1>Criados con cariño</h1>
-        </div>
-    </div>
-      </div>
-      <div class="carousel-item">
-      <img src="./img/dehesa.jpg" alt="Los Angeles" class="d-block w-100">
-
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>100% raza Iberica</h1>
-            <p>Alimentados en las mejores dehesas</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Leer más</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-      <img src="./img/curando.jpg" alt="curando Jamones" class="d-block w-100">
-        <div class="container">
-          <div class="carousel-caption text-end">
-            <h1>Proceso de curacion natural</h1>
-            <p>Al más puro estilo tradicional</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
     
     
   <div class="ordenar">
-        <h1>Los más deseados</h1>
-        
         <main>            
             <section>
                 <?
                     foreach ($arrayJamones as $jamon) {
-                        if ($jamon['precio']>=100) {
-                            echo "<article>";
-                                echo '<img src="'. $jamon['url'].'" alt="fotoJamón">';
-                                echo '<h3>'. $jamon['nombre']. '</h3>';
-                                echo '<p>Precio: '.$jamon['precio'].'€</p>';
-                                echo '<a href="./Paginas/producto.php?id='.$jamon['idProducto'].'"><button type="button" class="btn btn-primary" style="background-color:#ca3925; border: 1px solid black;">Comprar</button></a>';                        
-                            echo "</article>";
-                        }
+                        
+                        echo "<article>";
+                            echo '<img src="../'. $jamon['url'].'" alt="fotoJamón">';
+                            echo '<h3>'. $jamon['nombre']. '</h3>';
+                            echo '<p>Precio: '.$jamon['precio'].'€</p>';
+                            echo '<a href="./producto.php?id='.$jamon['idProducto'].'"><button type="button" class="btn btn-primary" style="background-color:#ca3925; border: 1px solid black;">Comprar</button></a>';                        
+                        echo "</article>";
+                        
                     }
 
                 ?>

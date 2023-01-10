@@ -53,39 +53,6 @@ header  .boton:hover{
     color: #ca3925;
 }
 
-/*-----Navegador-----*/
-
-nav{
-    padding-top: 1px;
-    grid-area: 2 / 1 / 3 / 6;
-}
-nav > ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #ca3925;
-}
-nav > ul > li{
-    float: left;
-}
-nav > ul > li a{
-    display: block;
-    color: #fadcdc;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-nav > ul > li a:hover:not(.activo){
-    background-color: #fadcdc;
-    color: #ca3925;
-}
-
-nav > ul > li a.activo{
-    background-color: #07151B;
-    color: #ca3925;
-}
-
 /*------Ordenar el body-----*/
 
 .ordenar{
