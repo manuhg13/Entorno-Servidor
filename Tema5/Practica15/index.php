@@ -115,7 +115,7 @@
                                 }
                                 
                     echo  '<li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="./sesiones/logout.php">Sign out</a></li>
+                                <li><a class="dropdown-item" href="./logout.php">Cerrar sesión</a></li>
                             </ul>
                         </div>';
                     }else {
