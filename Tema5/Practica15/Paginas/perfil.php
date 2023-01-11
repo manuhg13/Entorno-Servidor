@@ -70,7 +70,7 @@
             actualizarUsuario();
             session_destroy();
             validaUser($_REQUEST['user'],$_REQUEST['pass']);
-            session_start();
+            //session_start();
             echo "<p>Perfil actualizado</p>";
             echo '<a href="../index.php" class="boton">Volver al inicio</a>';
         }else{
@@ -81,7 +81,7 @@
         <h1 class="h3 mb-3 fw-normal">Nuevo usuario</h1>
             <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">@</span>
-                    <input type="text" class="form-control" id="floatingInput" placeholder="Usuario" aria-label="Usuario" name="user" aria-describedby="basic-addon1"value="<?php
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Usuario" aria-label="Usuario" name="user" aria-describedby="basic-addon1" readonly value="<?php
                         if (!enviado() && vacio("user")) {
                             echo $_SESSION['user'];
                         }
@@ -119,7 +119,7 @@
             
             <div class="form-floating">
                 
-                    <input type="password" name="pass" class="form-control" id="floatingPassword" placeholder="Password"> 
+                    <input type="password" name="pass2" class="form-control" id="floatingPassword" placeholder="Password"> 
                     <label for="floatingPassword">Repite contraseña</label>  
                     
                     <?php
@@ -158,7 +158,7 @@
             
             <div class="form-floating">
             
-            <input type="mail" class="form-control" id="floatingInput" placeholder="name@example.com" value="<?php
+            <input type="mail" class="form-control" id="floatingInput" name="mail" placeholder="name@example.com" value="<?php
                 if (!enviado() && vacio('mail')) {
                     echo $_SESSION['mail'];
                 }

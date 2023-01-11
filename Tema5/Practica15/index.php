@@ -111,7 +111,7 @@
                                 <li><a class="dropdown-item" href="./Paginas/perfil.php">Perfil</a></li>';
                                 if (esAdmin() || esModerador()) {
                                     echo '<li><a class="dropdown-item" href="#">Almacen</a></li>
-                                    <li><a class="dropdown-item" href="#">Ventas</a></li>';
+                                    <li><a class="dropdown-item" href="./Paginas/ventas.php">Ventas</a></li>';
                                 }
                                 
                     echo  '<li><hr class="dropdown-divider"></li>

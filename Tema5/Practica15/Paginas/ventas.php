@@ -31,8 +31,8 @@
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2 link-danger" >Inicio</a></li>
-            <li><a href="#" class="nav-link px-2 link-light">Tienda</a></li>
+            <li><a href="../index.php" class="nav-link px-2 link-danger" >Inicio</a></li>
+            <li><a href="../Paginas/tienda.php" class="nav-link px-2 link-light">Tienda</a></li>
             <li><a href="#" class="nav-link px-2 link-light">Ayuda</a></li>
             
             </ul>
@@ -65,42 +65,45 @@
                     }
                 ?>           
     </header>
-    
-    <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">idVenta</th>
-            <th scope="col">Cliente</th>
-            <th scope="col">Fecha de Venta</th>
-            <th scope="col">idProducto</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">TOTAL</th>
-          </tr>
-        </thead>
-        <tbody>
+    <div class="bd-example">
 
-            <?
-            $ventas=findAll();
-            
-            foreach ($ventas as $valor) {
-                echo "<tr>";
-                    echo "<th scope='col'>". $valor['idVenta'] . "</th> ";
-                    echo "<td>". $valor['cliente'] . "</td> ";
-                    echo "<td>". $valor['fechaVent'] . "</td> ";
-                    echo "<td>". $valor['idProducto'] . "</td> ";
-                    echo "<td>". $valor['cantidad'] . "</td> ";
-                    echo "<td>". $valor['precioTotal'] . "</td> ";
-                    if (esAdmin()) {
-                        echo "<td>";
-                        echo '<button type="button" class="btn btn-outline-danger">Eliminar</button>';
-                        echo '<button type="button" class="btn btn-outline-danger">Modificar</button>';
-                        echo "</td>";     
-                    }
-                echo "</tr>";
-            }
-            ?>
-        </tbody>
-    </table>
+        <table class="table table-dark table-hover">
+            <thead>
+              <tr class="aling-text-center">
+                <th scope="col">idVenta</th>
+                <th scope="col">Cliente</th>
+                <th scope="col">Fecha de Venta</th>
+                <th scope="col">idProducto</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">TOTAL</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+    
+                <?
+                $ventas=findAll();
+                
+                foreach ($ventas as $valor) {
+                    echo "<tr>";
+                        echo "<th scope='col'>". $valor['idVenta'] . "</th> ";
+                        echo "<td>". $valor['cliente'] . "</td> ";
+                        echo "<td>". $valor['fechaVent'] . "</td> ";
+                        echo "<td>". $valor['idProducto'] . "</td> ";
+                        echo "<td>". $valor['cantidad'] . "</td> ";
+                        echo "<td>". $valor['precioTotal'] . "</td> ";
+                        if (esAdmin()) {
+                            echo "<td>";
+                            echo '<button type="button" class="btn btn-outline-danger">Eliminar</button>';
+                            echo '<button type="button" class="btn btn-outline-danger">Modificar</button>';
+                            echo "</td>";     
+                        }
+                    echo "</tr>";
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
     
 </body>
 </html>
