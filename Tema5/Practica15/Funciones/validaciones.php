@@ -1,5 +1,6 @@
 <?
-    
+    //require("./BD.php");
+    //require("./conexionBD.php.php");
     session_start();
     $user=$_REQUEST['user'];
     $pass=$_REQUEST['pass'];

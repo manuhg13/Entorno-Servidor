@@ -36,9 +36,8 @@
             </ul>
                 <?
                     require("../Funciones/conexionBD.php");
-                    require("../Funciones/funciones.php");
-                    require("../Funciones/validaciones.php");
-                    require("../Funciones/BD.php");
+                    require("../Funciones/funciones.php");                
+                    //require("../Funciones/BD.php");
                     if (estaValidado()) {
                     echo '<div class="dropdown text-end">
                             <p>Hola '.$_SESSION['user'].'!</p>
