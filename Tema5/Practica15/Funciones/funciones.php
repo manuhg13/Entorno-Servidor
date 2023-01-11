@@ -130,12 +130,4 @@
     }
 
 
-    function vendido(){
-        try {
-           
-        } catch (\Throwable $th) {
-            //throw $th;
-        }
-    }
-
 ?>

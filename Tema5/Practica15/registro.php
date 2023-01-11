@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/principal.css">
-    <link href="../CSS/headers.css" rel="stylesheet">
-    <link href="../CSS/bootstrap.min.css" rel="stylesheet">
-    <link href="../CSS/cheatsheet.css" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/formulario.css">
+    <link href="./CSS/headers.css" rel="stylesheet">
+    <link href="./CSS/bootstrap.min.css" rel="stylesheet">
+    <link href="./CSS/cheatsheet.css" rel="stylesheet">
     
     <title>Nuevo usuario</title>
 </head>
@@ -22,19 +22,19 @@
 <header class="p-3 mb-3 border-bottom">
         <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="../index.php" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-                <img src="../img/logo.png" alt="logo">
+            <a href="./index.php" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                <img src="./img/logo.png" alt="logo">
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="../index.php" class="nav-link px-2 link-light" >Inicio</a></li>
-            <li><a href="./tienda.php" class="nav-link px-2 link-danger">Tienda</a></li>
+            <li><a href="./index.php" class="nav-link px-2 link-light" >Inicio</a></li>
+            <li><a href="./Paginas/tienda.php" class="nav-link px-2 link-danger">Tienda</a></li>
             <li><a href="#" class="nav-link px-2 link-light">Ayuda</a></li>
             
             </ul>
                 <?
-                    require("../Funciones/BD.php");
-                    require("../Funciones/funciones.php");
+                   require("./seguro/conexionBD.php");
+                   require("./Funciones/funciones.php");
                     session_start();
                     if (estaValidado()) {
                     echo '<div class="dropdown text-end">
@@ -43,21 +43,21 @@
                                 <svg class="bi d-block mx-auto mb-1" width="24" height="24" style="color: white;"><use xlink:href="#people-circle"/></svg>
                             </a>
                             <ul class="dropdown-menu text-small">
-                                <li><a class="dropdown-item" href="../Paginas/perfil.php">Perfil</a></li>';
+                                <li><a class="dropdown-item" href="./Paginas/perfil.php">Perfil</a></li>';
                                 if (esAdmin() || esModerador()) {
                                     echo '<li><a class="dropdown-item" href="#">Almacen</a></li>
                                     <li><a class="dropdown-item" href="#">Ventas</a></li>';
                                 }
                                 
                     echo  '<li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="./sesiones/logout.php">Sign out</a></li>
+                                <li><a class="dropdown-item" href="./logout.php">Sign out</a></li>
                             </ul>
                         </div>';
                     }else {
                         
                         ?>
-                            <a href="../sesiones/login.php"><button type="button" class="btn btn-light text-dark me-2">Login</button></a>
-                            <a href="../sesiones/registro.php"><button type="button" class="btn btn-primary" style="background-color:#ca3925; border: 1px solid black;">Resgistrarse</button></a>
+                            <a href="./login.php"><button type="button" class="btn btn-light text-dark me-2">Login</button></a>
+                            <a href="./registro.php"><button type="button" class="btn btn-primary" style="background-color:#ca3925; border: 1px solid black;">Resgistrarse</button></a>
                             
                         <?
                     }
@@ -65,10 +65,7 @@
             
     </header>
     
-    <?
-        
-        require("../Funciones/BD.php");
-    ?>
+    
     <?php
         if (validarTodo()){
             nuevoUsuario();
@@ -76,130 +73,147 @@
         }else{
     
     ?>
-    <form action="./registro.php" method="post">
-        
-        <label for="idUser" class="form-label">Usuario</label>
-        <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">@</span>
-                <input type="text" class="form-control" id="idUser" placeholder="Usuario" aria-label="Usuario" name="user" aria-describedby="basic-addon1"value="<?php
-                    if (enviado() && !vacio("user")) {
-                        echo $_REQUEST['user'];
+    <div class="ordenar">
+
+        <div class="caja" style="text-align: center; margin: 7px">
+        <form action="./registro.php" method="post">
+            <h1 class="h3 mb-3 fw-normal">Nuevo usuario</h1>
+            <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Usuario" aria-label="Usuario" name="user" aria-describedby="basic-addon1"value="<?php
+                        if (enviado() && !vacio("user")) {
+                            echo $_REQUEST['user'];
+                        }
+                    ?>">
+                    
+                    <?php
+                    if (enviado()){
+                        if (vacio("user") ){
+                            echo '<div class="invalid-feedback">Introduce el usuario</div>';
+                        }elseif (!usuarioValido()) {
+                            echo '<div class="invalid-feedback">Este usuario ya esta registrado</div>';
+                        }                
+                    }
+                    ?>
+            </div>
+            <div class="form-floating">
+                <input type="password" name="pass" class="form-control" id="floatingPassword" placeholder="Password"> 
+                <label for="floatingPassword">Contraseña</label>  
+            
+                <?php
+                    if (enviado()) {
+                        if (vacio('pass')) {
+                            echo '<div class="invalid-feedback">Introduce la contraseña</div>';
+                        }elseif (!patPass()) {
+                            echo '<div class="invalid-feedback">Al menos una mayuscula, una minuscula y un número</div>';
+                                                    
+                        }
+                    }
+                        
+                ?>
+            </div>
+            <div class="form-floating">
+                <br>
+            </div>
+            <div class="form-floating">
+                
+                    <input type="password" name="pass" class="form-control" id="floatingPassword" placeholder="Password"> 
+                    <label for="floatingPassword">Repite contraseña</label>  
+                    
+                    <?php
+                        if (enviado()){
+                            if (vacio('pass2')) {
+                                echo '<div class="invalid-feedback">Introduce de nuevo la contraseña correctamente</div>';                              
+                            }elseif ($_REQUEST['pass']!=$_REQUEST['pass2']) {
+                                echo '<div class="invalid-feedback">Introduce de nuevo la contraseña correctamente</div>';                              
+                            }
+                        }
+                    ?>
+                
+                
+            </div>
+            <br>
+            <div class="form-floating">
+                <input type="text" name="nombre" class="form-control" id="floatingInput" placeholder="Nombre" value="<?php
+                    if (enviado() && !vacio('nombre')){
+                        echo $_REQUEST['nombre'];
                     }
                 ?>">
+                <label for="floatingInput">Nombre</label>
+                
                 
                 <?php
-                if (enviado()){
-                    if (vacio("user") ){
-                        echo "<p style='color: red'> Introduce el usuario</p>";
-                    }elseif (!usuarioValido()) {
-                        echo "<p style='color: red'>Este usuario ya esta registrado</p>";
-                    }                
-                }
+                    if(enviado()){
+                        if(vacio('nombre')){
+                            echo '<div class="invalid-feedback">Introduce un nombre</div>';
+                        }
+                    }
                 ?>
-        </div>
-
-        <p>
-            <label for="idContraseña">Contraseña: </label>
-            <input type="password" name="pass" id="idContraseña" placeholder="Contraseña">
-                
-            <?php
-                if (enviado()) {
-                    if (vacio('pass')) {
-                        echo "<p style='color: red'> Introduce la contraseña</p>";        
-                    }elseif (!patPass()) {
-                        echo "<p style='color: red'> Al menos una mayuscula, una minuscula y un número/p>";                         
-                    }
-                }
-                    
-            ?>
-        </p>
-
-        <p>
-            <label for="idContraseña2">Repite la contraseña: </label>
-            <input type="password" name="pass2" id="idContraseña2" placeholder="Repite contraseña">
             
-            <?php
-                if (enviado()){
-                    if (vacio('pass2')) {
-                        echo "<p style='color: red'> Introduce de nuevo la contraseña</p>";            
-                    }elseif ($_REQUEST['pass']!=$_REQUEST['pass2']) {
-                        echo "<p style='color: red'> Introduce de nuevo la contraseña correctamente</p>";                              
+            </div>
+            <br>
+            <div class="form-floating">
+            
+                <input type="mail" class="form-control" id="floatingInput" placeholder="name@example.com" value="<?php
+                    if (enviado() && !vacio('mail')) {
+                        echo $_REQUEST['mail'];
                     }
-                }
-            ?>
-        </p>
+                ?>">
+                <label for="floatingInput">Email</label>
+          
+                <?php
+                    if (enviado()) {
+                        if (vacio('mail')) {
+                            echo '<div class="invalid-feedback">Introduce Email</div>';     
 
-        <p>
-            <label for="idNombre">Nombre: </label>
-            <input type="text" name="nombre" id="idNombre" placeholder="Nombre" value="<?php
-                if (enviado() && !vacio('nombre')){
-                    echo $_REQUEST['nombre'];
-                }
-            ?>">
-
-            <?php
-                if(enviado()){
-                    if(vacio('nombre')){
-                        echo "<p style='color: red'> Introduce un nombre</p>";
+                        }elseif (!patMail()) {
+                            echo '<div class="invalid-feedback">Introduce Email correcto</div>';     
+                        }
                     }
-                }
-            ?>
-        </p>
-
-        <p>
-            <label for="idEmail">Email: </label>
-            <input type="text" name="mail" id="idEmail" placeholder="Email" value="<?php
-                if (enviado() && !vacio('mail')) {
-                    echo $_REQUEST['mail'];
-                }
-            ?>">
-
-            <?php
-                if (enviado()) {
-                    if (vacio('mail')) {
-                        echo "<p style='color: red'>Introduce Email</p>";
-                    }elseif (!patMail()) {
-                        echo "<p style='color: red'>Introduce Email correcto</p>";     
+                ?>
+            </div>
+            <br>
+            <div class="form-floating">
+                <input type="text" name="fecha" class="form-control" id="floatingInput" placeholder="Fecha" value="<?php
+                    if (enviado() && !vacio('fecha')){
+                        echo $_REQUEST['fecha'];
                     }
-                }
-            ?>
-        </p>
-
-        <p>
-            <label for="idFecha">Fecha: </label>
-            <input type="text" name="fecha" id="idFecha" placeholder="dd/mm/aaaa" value="<?php
-                if (enviado() && !vacio('fecha')){
-                    echo $_REQUEST['fecha'];
-                }
-            ?>">
-            <?php
-                if (enviado()){
-                    if (vacio('fecha')) {
-                        echo "<p style='color: red'>Introduce una fecha</p>";
-                    }elseif (!patFecha()) {
-                        echo "<p style='color: red'>Fecha no valida</p>";
+                ?>">
+                <label for="floatingInput">Fecha (aaaa-mm-dd)</label>
+                <?php
+                    if (enviado()){
+                        if (vacio('fecha')) {
+                            echo '<div class="invalid-feedback">Introduce una fecha</div>';
+                        }elseif (!patFecha()) {
+                            echo '<div class="invalid-feedback">Fecha no valida</div>';
+                        }
                     }
-                }
-            ?>
-        </p>
-
-        <p>
-            <label for="idSelector">Elige una opción</label>
-            <select name="roles" id="idSelector">
-                <option value="0">Seleccione una opción</option>
-                <option value="ADM01">Administrador</option>
-                <option value="MOD02">Moderador</option>
-                <option value="NOR03">Usuario normal</option>
-            </select>
-            <?php
-                if(existe('roles') && $_REQUEST['roles']==0){
-                    echo "<p style='color: red'> Introduce una opción</p>";
-                }
-            ?>
-        </p>
-
-        <input type="submit" value="Enviar" name="enviar">
-    </form>
+                ?>
+            </div>
+            <br>
+            <div class="form-floating">
+                <p>
+                    <select name="roles" id="idSelector" class="form-select">
+                        <option value="0">Seleccione una opción</option>
+                        <option value="ADM01">Administrador</option>
+                        <option value="MOD02">Moderador</option>
+                        <option value="NOR03">Usuario normal</option>
+                    </select>
+                    <?php
+                        if(existe('roles') && $_REQUEST['roles']==0){
+                            echo '<div class="invalid-feedback">Introduce una opción</div>';                        
+                        }
+                    ?>
+                </p>
+                
+            </div>
+            
+    
+    
+            <input type="submit" value="Enviar" name="enviar">
+        </form>
+        </div>
+    </div>
     <?php
        }
     ?>

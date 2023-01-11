@@ -29,8 +29,8 @@
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="../index.php" class="nav-link px-2 link-danger" >Inicio</a></li>
-            <li><a href="../Paginas/tienda.php" class="nav-link px-2 link-light">Tienda</a></li>
+            <li><a href="./index.php" class="nav-link px-2 link-danger" >Inicio</a></li>
+            <li><a href="./Paginas/tienda.php" class="nav-link px-2 link-light">Tienda</a></li>
             <li><a href="#" class="nav-link px-2 link-light">Ayuda</a></li>
             
             </ul>
@@ -51,14 +51,14 @@
                                 }
                                 
                     echo  '<li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="./sesiones/logout.php">Sign out</a></li>
+                                <li><a class="dropdown-item" href="./logout.php">Cerrar sesión</a></li>
                             </ul>
                         </div>';
                     }else {
                         
                         ?>
-                            <a href="./sesiones/login.php"><button type="button" class="btn btn-light text-dark me-2">Login</button></a>
-                            <a href="./sesiones/registro.php"><button type="button" class="btn btn-primary" style="background-color:#ca3925; border: 1px solid black;">Resgistrarse</button></a>
+                            <a href="./login.php"><button type="button" class="btn btn-light text-dark me-2">Login</button></a>
+                            <a href="./registro.php"><button type="button" class="btn btn-primary" style="background-color:#ca3925; border: 1px solid black;">Resgistrarse</button></a>
                             
                         <?
                     }
