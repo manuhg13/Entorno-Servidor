@@ -37,6 +37,8 @@
                 <?
                     require("../Funciones/conexionBD.php");
                     require("../Funciones/funciones.php");
+                    require("../Funciones/validaciones.php");
+                    require("../Funciones/BD.php");
                     if (estaValidado()) {
                     echo '<div class="dropdown text-end">
                             <p>Hola '.$_SESSION['user'].'!</p>
@@ -82,7 +84,7 @@
       <label for="floatingPassword">Password</label>
     </div>
     <button class="w-100 btn btn-lg btn-danger" type="submit" name="enviar">Aceptar</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+    <p class="mt-5 mb-3 text-muted">&copy; 1997–2023</p>
   </form>
             <!--<form action="../Funciones/validaciones.php" method="post">
                 <label for="user">Usuario</label>

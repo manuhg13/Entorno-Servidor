@@ -1,6 +1,6 @@
 <?
+    
     session_start();
-    require("./BD.php");
     $user=$_REQUEST['user'];
     $pass=$_REQUEST['pass'];
     if (empty($user)) {

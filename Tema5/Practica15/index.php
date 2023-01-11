@@ -23,8 +23,9 @@
 
     <?
 
-    require("Funciones/conexionBD.php");
-    require("Funciones/funciones.php");
+    require("./Funciones/conexionBD.php");
+    require("./Funciones/funciones.php");
+    
 
     $NoHabia=false;
     try {
