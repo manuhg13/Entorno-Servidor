@@ -1,5 +1,6 @@
 <?
-    
+    require('../seguro/conexionBD.php');
+
 
     function validaUser($user,$pass){
         try {

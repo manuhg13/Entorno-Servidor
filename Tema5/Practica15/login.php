@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/formulario.css">
-    <link href="../CSS/bootstrap.min.css" rel="stylesheet">
-    <link href="../CSS/headers.css" rel="stylesheet">
-    <link href="../CSS/signin.css" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/formulario.css">
+    <link href="./CSS/bootstrap.min.css" rel="stylesheet">
+    <link href="./CSS/headers.css" rel="stylesheet">
+    <link href="./CSS/signin.css" rel="stylesheet">
     <title>Iniciar Sesión</title>
     <?
         session_start();
@@ -24,8 +24,8 @@
 <header class="p-3 mb-3 border-bottom">
         <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="../index.php" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-                <img src="../img/logo.png" alt="logo">
+            <a href="./index.php" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                <img src="./img/logo.png" alt="logo">
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
@@ -35,9 +35,8 @@
             
             </ul>
                 <?
-                    require("../Funciones/conexionBD.php");
-                    require("../Funciones/funciones.php");                
-                    //require("../Funciones/BD.php");
+                    require("./Funciones/funciones.php");                
+                   
                     if (estaValidado()) {
                     echo '<div class="dropdown text-end">
                             <p>Hola '.$_SESSION['user'].'!</p>
@@ -69,19 +68,21 @@
     
     <br>
     <div class="ordenar">
-        <div class="caja">
+        <div class="caja" style="text-align: center; margin: 7px;">
 
-        <form action="../Funciones/validaciones.php" method="post">
+        <form action="./Funciones/validaciones.php" method="post">
     <h1 class="h3 mb-3 fw-normal">Iniciar sesión</h1>
 
     <div class="form-floating">
       <input type="text" class="form-control" id="floatingInput" placeholder="usuario" name="user">
-      <label for="floatingInput">Email address</label>
+      <label for="floatingInput">Usuario</label>
     </div>
+    <br>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="pass">
-      <label for="floatingPassword">Password</label>
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" name="pass">
+      <label for="floatingPassword">Contraseña</label>
     </div>
+    <br>
     <button class="w-100 btn btn-lg btn-danger" type="submit" name="enviar">Aceptar</button>
     <p class="mt-5 mb-3 text-muted">&copy; 1997–2023</p>
   </form>
@@ -102,7 +103,7 @@
         ?>  
         </div>
     </div>
-    <script src="../JS/bootstrap.bundle.min.js"></script>
+    <script src="./JS/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

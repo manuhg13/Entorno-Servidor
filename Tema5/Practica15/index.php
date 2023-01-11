@@ -23,7 +23,7 @@
 
     <?
 
-    require("./Funciones/conexionBD.php");
+    require("./seguro/conexionBD.php");
     require("./Funciones/funciones.php");
     
 
@@ -121,8 +121,8 @@
                     }else {
                         
                         ?>
-                            <a href="./sesiones/login.php"><button type="button" class="btn btn-light text-dark me-2">Login</button></a>
-                            <a href="./sesiones/registro.php"><button type="button" class="btn btn-primary" style="background-color:#ca3925; border: 1px solid black;">Resgistrarse</button></a>
+                            <a href="./login.php"><button type="button" class="btn btn-light text-dark me-2">Login</button></a>
+                            <a href="./registro.php"><button type="button" class="btn btn-primary" style="background-color:#ca3925; border: 1px solid black;">Resgistrarse</button></a>
                             
                         <?
                     }

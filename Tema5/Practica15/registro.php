@@ -33,7 +33,7 @@
             
             </ul>
                 <?
-                    require("../Funciones/conexionBD.php");
+                    require("../Funciones/BD.php");
                     require("../Funciones/funciones.php");
                     session_start();
                     if (estaValidado()) {

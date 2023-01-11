@@ -1,6 +1,6 @@
 <?
     
-    //require("./conexionBD.php.php");
+    require("./BD.php");
     session_start();
     $user=$_REQUEST['user'];
     $pass=$_REQUEST['pass'];
@@ -24,7 +24,7 @@
             }
         }else{
             $_SESSION['error']='No existe el usuario';
-            header("Location: ../sesiones/login.php");
+            header("Location: ../login.php");
             exit;
         }
     }   
