@@ -97,6 +97,30 @@
         }
     }
 
+    function vendido(){
+        try {
+            //session_start();
+            $conexion= new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS); 
+
+            $sql="insert into ventas values (:cliente,:fechaVent,:idProducto,:cantidad,:precioTotal);";
+            $sql2="update productos set stock=:stock where idProducto=:idProducto;";
+            $nstock=$_REQUEST['stock']-$_REQUEST['cantidad'];
+
+            $preparada=$conexion->prepare($sql);
+            $preparada2=$conexion->prepare($sql2);
+
+            $array= array(":cliente"=>$_SESSION['user'],":fechaVent"=>date('Y-m-d'),":idProducto"=>$_REQUEST['id'],":cantidad"=>$_REQUEST['cantidad'],":precioTotal"=> floatval($_REQUEST['precio'])*(floatval($_REQUEST['cantidad'])));
+            $array2= array(":idProducto"=>$_REQUEST['id'],":stock"=>$nstock);
+
+            $preparada->execute($array);
+            $preparada2->execute($array2);
+        } catch (Exception $ex) {
+            print_r($ex);
+            unset($conexion);
+            
+        }
+    }
+
     
 
 ?>

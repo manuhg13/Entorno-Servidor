@@ -10,14 +10,16 @@
 <body>
             <?
                 
-            
+            require("../seguro/conexionBD.php");
             require("../Funciones/funciones.php");
             
                 session_start();
                 if (estaValidado()) {
                     vendido();
+                    header('Location: ../index.php');
+                    exit;
                 }else {
-                    header('Location: ../sesiones/login.php');
+                    header('Location: ../login.php');
                     exit;
                 }
             ?>

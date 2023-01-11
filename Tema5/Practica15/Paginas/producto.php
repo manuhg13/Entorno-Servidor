@@ -18,7 +18,7 @@
   </symbol>
 </svg>
     <?
-         require("../Funciones/conexionBD.php");
+         require("../seguro/conexionBD.php");
          require("../Funciones/funciones.php");
 
         try {
@@ -90,14 +90,6 @@
                 ?>
             
         </header>
-
-    <nav>
-        <ul>
-            <li><a href="../index.php">Inicio</a></li>
-            <li><a href="../index.php" class="activo">Tienda</a></li>
-            <li><a href="../index.php">Ayuda</a></li>
-        </ul>
-    </nav>
     
     <div class="ordenar">
         
@@ -113,14 +105,20 @@
                                     echo '<p>Descripcion: '.$jamon['descripcion'].'</p>';
                                     echo '<p>Precio: '.$jamon['precio'].'€</p>';
                                     echo '<p>Quedan: '.$jamon['stock'].' disponibles</p>';
+                                    echo '<select name="cantidad" id="idSelector" class="form-select form-select-sm">';
+                                        for ($i=1; $i <= $jamon['stock']; $i++) { 
+                                            echo '<option value="'.$i.'">'.$i.'</option>';
+                                        }
+                                    echo '</select><br>';
                                     echo '<input type="hidden" name="id" value="'.$jamon['idProducto'].'">';
+                                    echo '<input type="hidden" name="precio" value="'.$jamon['precio'].'">';
+                                    echo '<input type="hidden" name="stock" value="'.$jamon['stock'].'">';
                                     echo '<input type="submit" name="venta" value="COMPRAR YA">';                        
                                 echo "</article>";
                             }
                         }
 
                     ?>
-                    <input type="hidden" name="id" value="">
                 </form>
             </section>
         </main>
