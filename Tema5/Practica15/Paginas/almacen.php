@@ -4,16 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/principal.css">
-    <link href="../CSS/bootstrap.min.css" rel="stylesheet">
-    <link href="../CSS/headers.css" rel="stylesheet">
-    <link href="../CSS/cheatsheet.css" rel="stylesheet">
-    <title>Ventas</title>
+    <title>Almacén</title>
 </head>
-<?
-    require("../seguro/conexionBD.php");
-    require("../Funciones/funciones.php");
-?>
 <body style="background-color: #fadcdc;">
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -31,7 +23,7 @@
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="../index.php" class="nav-link px-2 link-danger" >Inicio</a></li>
+            <li><a href="../index.php" class="nav-link px-2 link-danger">Inicio</a></li>
             <li><a href="./tienda.php" class="nav-link px-2 link-light">Tienda</a></li>
             <li><a href="#" class="nav-link px-2 link-light">Ayuda</a></li>
             
@@ -104,6 +96,7 @@
             </tbody>
         </table>
     </div>
+    
     
 </body>
 </html>

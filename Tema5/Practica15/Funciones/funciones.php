@@ -235,10 +235,10 @@
         }
     }
 
-    function findAll(){
+    function findAll($tabla){
         try{
             $conexion=new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS);
-            $sql="select * from ventas";
+            $sql="select * from ".$tabla.";";
             $resultado=$conexion->query($sql);
             $array=$resultado->fetchAll(PDO::FETCH_ASSOC);
            

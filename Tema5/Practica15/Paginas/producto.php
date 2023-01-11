@@ -50,13 +50,13 @@
     <header class="p-3 mb-3 border-bottom">
         <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+            <a href="../index.php" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
                 <img src="../img/logo.png" alt="logo">
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2 link-danger" >Inicio</a></li>
-            <li><a href="#" class="nav-link px-2 link-light">Tienda</a></li>
+            <li><a href="../index.php" class="nav-link px-2 link-danger" >Inicio</a></li>
+            <li><a href="./tienda.php" class="nav-link px-2 link-light">Tienda</a></li>
             <li><a href="#" class="nav-link px-2 link-light">Ayuda</a></li>
             
             </ul>
@@ -69,21 +69,21 @@
                                 <svg class="bi d-block mx-auto mb-1" width="24" height="24" style="color: white;"><use xlink:href="#people-circle"/></svg>
                             </a>
                             <ul class="dropdown-menu text-small">
-                                <li><a class="dropdown-item" href="./Paginas/perfil.php">Perfil</a></li>';
+                                <li><a class="dropdown-item" href="./perfil.php">Perfil</a></li>';
                                 if (esAdmin() || esModerador()) {
-                                    echo '<li><a class="dropdown-item" href="#">Almacen</a></li>
-                                    <li><a class="dropdown-item" href="#">Ventas</a></li>';
+                                    echo '<li><a class="dropdown-item" href="./almacen.php">Almacen</a></li>
+                                    <li><a class="dropdown-item" href="./ventas.php">Ventas</a></li>';
                                 }
                                 
                     echo  '<li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="./sesiones/logout.php">Sign out</a></li>
+                                <li><a class="dropdown-item" href="../logout.php">Cerrar sesión</a></li>
                             </ul>
                         </div>';
                     }else {
                         
                         ?>
-                            <a href="./sesiones/login.php"><button type="button" class="btn btn-light text-dark me-2">Login</button></a>
-                            <a href="./sesiones/registro.php"><button type="button" class="btn btn-primary" style="background-color:#ca3925; border: 1px solid black;">Resgistrarse</button></a>
+                            <a href="../login.php"><button type="button" class="btn btn-light text-dark me-2">Login</button></a>
+                            <a href="../registro.php"><button type="button" class="btn btn-primary" style="background-color:#ca3925; border: 1px solid black;">Resgistrarse</button></a>
                             
                         <?
                     }
