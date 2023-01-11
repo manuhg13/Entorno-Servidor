@@ -39,8 +39,8 @@
                             <ul class="dropdown-menu text-small">
                                 <li><a class="dropdown-item" href="./perfil.php">Perfil</a></li>';
                                 if (esAdmin() || esModerador()) {
-                                    echo '<li><a class="dropdown-item" href="./almacen">Almacen</a></li>
-                                    <li><a class="dropdown-item" href="./ventas">Ventas</a></li>';
+                                    echo '<li><a class="dropdown-item" href="./almacen.php">Almacen</a></li>
+                                    <li><a class="dropdown-item" href="./ventas.php">Ventas</a></li>';
                                 }
                                 
                     echo  '<li><hr class="dropdown-divider"></li>
@@ -62,41 +62,46 @@
         <table class="table table-dark table-hover">
             <thead>
               <tr class="aling-text-center">
-                <th scope="col">idVenta</th>
-                <th scope="col">Cliente</th>
-                <th scope="col">Fecha de Venta</th>
                 <th scope="col">idProducto</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">TOTAL</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Stock</th>
                 <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
     
                 <?
-                $ventas=findAll('ventas');
+                $jamones=findAll('productos');
                 
-                foreach ($ventas as $valor) {
+                foreach ($jamones as $valor) {
                     echo "<tr>";
-                        echo "<th scope='col'>". $valor['idVenta'] . "</th> ";
-                        echo "<td>". $valor['cliente'] . "</td> ";
-                        echo "<td>". $valor['fechaVent'] . "</td> ";
-                        echo "<td>". $valor['idProducto'] . "</td> ";
-                        echo "<td>". $valor['cantidad'] . "</td> ";
-                        echo "<td>". $valor['precioTotal'] . "</td> ";
-                        if (esAdmin()) {
-                            echo "<td>";
-                            echo '<button type="button" class="btn btn-outline-danger">Eliminar</button>';
-                            echo '<button type="button" class="btn btn-outline-danger">Modificar</button>';
-                            echo "</td>";     
+                        echo "<th scope='col'>". $valor['idProducto'] . "</th> ";
+                        echo "<td>". $valor['nombre'] . "</td> ";
+                        echo "<td>". $valor['precio'] . "</td> ";
+                        echo "<td>". $valor['descripción'] . "</td> ";
+                        echo "<td>". $valor['stock'] . "</td> ";
+                        echo "<td>";
+                        if (esAdmin() || esModerador()) {
+                            echo '<button type="button" class="btn btn-outline-danger">Añadir stock</button>';
                         }
+                        if (esAdmin()) {
+                            echo '<button type="button" class="btn btn-outline-danger">Modificar producto</button>';
+                        }
+                            echo "</td>";     
                     echo "</tr>";
                 }
                 ?>
             </tbody>
         </table>
+        <?
+            if (esAdmin()) {
+                echo '<button type="button" class="btn btn-outline-danger">Añadir nuevo producto</button>';
+            }
+        ?>
     </div>
     
-    
+    <script src="../JS/bootstrap.bundle.min.js"></script>
 </body>
 </html>

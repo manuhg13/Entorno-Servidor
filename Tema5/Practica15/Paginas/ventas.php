@@ -47,8 +47,8 @@
                             <ul class="dropdown-menu text-small">
                                 <li><a class="dropdown-item" href="./perfil.php">Perfil</a></li>';
                                 if (esAdmin() || esModerador()) {
-                                    echo '<li><a class="dropdown-item" href="./almacen">Almacen</a></li>
-                                    <li><a class="dropdown-item" href="./ventas">Ventas</a></li>';
+                                    echo '<li><a class="dropdown-item" href="./almacen.php">Almacen</a></li>
+                                    <li><a class="dropdown-item" href="./ventas.php">Ventas</a></li>';
                                 }
                                 
                     echo  '<li><hr class="dropdown-divider"></li>
@@ -65,9 +65,9 @@
                     }
                 ?>           
     </header>
-    <div class="bd-example">
-
-        <table class="table table-dark table-hover">
+    <div class="ordenar">
+        <p class="display-1 m-2">Ventas</p>
+        <table class="table table-dark table-hover align-middle">
             <thead>
               <tr class="aling-text-center">
                 <th scope="col">idVenta</th>
@@ -94,8 +94,9 @@
                         echo "<td>". $valor['precioTotal'] . "</td> ";
                         if (esAdmin()) {
                             echo "<td>";
-                            echo '<button type="button" class="btn btn-outline-danger">Eliminar</button>';
-                            echo '<button type="button" class="btn btn-outline-danger">Modificar</button>';
+                            echo '<a name="" id="" class="btn btn-danger m-2" href="#" role="button">Eliminar</a>';
+                            echo '<a name="" id="" class="btn btn-danger" href="#" role="button">Modificar</a>';
+                            
                             echo "</td>";     
                         }
                     echo "</tr>";
@@ -104,6 +105,7 @@
             </tbody>
         </table>
     </div>
+    <script src="../JS/bootstrap.bundle.min.js"></script>
     
 </body>
 </html>
