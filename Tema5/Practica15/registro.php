@@ -112,9 +112,9 @@
                         
                 ?>
             </div>
-            <div class="form-floating">
+            
                 <br>
-            </div>
+            
             <div class="form-floating">
                 
                     <input type="password" name="pass" class="form-control" id="floatingPassword" placeholder="Password"> 
