@@ -83,9 +83,7 @@
             <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">@</span>
                     <input type="text" class="form-control" id="floatingInput" placeholder="Usuario" aria-label="Usuario" name="user" aria-describedby="basic-addon1" readonly value="<?php
-                        if (!enviado() && vacio("user")) {
-                            echo $_SESSION['user'];
-                        }
+                        echo $_SESSION['user'];
                     ?>">
                     
                     <?php
@@ -138,10 +136,8 @@
             
         <br>
             <div class="form-floating">
-                <input type="text" name="nombre" class="form-control" id="floatingInput" placeholder="Nombre" value="<?php
-                    if (!enviado() && vacio('nombre')){
-                        echo $_SESSION['nombre'];
-                    }
+                <input type="text" name="nombre" class="form-control" id="floatingInput" placeholder="Nombre" value="<?php 
+                    echo $_SESSION['nombre'];
                 ?>">
                 <label for="floatingInput">Nombre</label>
                 
@@ -160,9 +156,7 @@
             <div class="form-floating">
             
             <input type="mail" class="form-control" id="floatingInput" name="mail" placeholder="name@example.com" value="<?php
-                if (!enviado() && vacio('mail')) {
-                    echo $_SESSION['mail'];
-                }
+                echo $_SESSION['mail'];
             ?>">
             <label for="floatingInput">Email</label>
       
@@ -181,9 +175,7 @@
         <br>
             <div class="form-floating">
                 <input type="text" name="fecha" class="form-control" id="floatingInput" placeholder="Fecha" value="<?php
-                    if (!enviado() && vacio('fecha')){
-                        echo $_SESSION['fecha'];
-            }
+                    echo $_SESSION['fecha'];
                 ?>">
                 <label for="floatingInput">Fecha (aaaa-mm-dd)</label>
                 <?php
