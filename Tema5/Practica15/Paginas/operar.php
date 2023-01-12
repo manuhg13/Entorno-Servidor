@@ -8,7 +8,7 @@
     <link href="../CSS/bootstrap.min.css" rel="stylesheet">
     <link href="../CSS/headers.css" rel="stylesheet">
     <link href="../CSS/cheatsheet.css" rel="stylesheet">
-    <title>Ventas</title>
+    <title>Document</title>
 </head>
 <?
     require("../seguro/conexionBD.php");
@@ -65,46 +65,42 @@
                     }
                 ?>           
     </header>
-    <div class="ordenar">
-        <p class="display-1 m-2">Ventas</p>
-        <table class="table table-dark table-hover align-middle">
-            <thead>
-              <tr class="aling-text-center">
-                <th scope="col">idVenta</th>
-                <th scope="col">Cliente</th>
-                <th scope="col">Fecha de Venta</th>
-                <th scope="col">idProducto</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">TOTAL</th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody>
+
+    <?
+        $operacion=$_REQUEST['op'];
+        $tabla=$_REQUEST['tabla'];
     
-                <?
-                $ventas=findAll('ventas');
+        if ($operacion=='eli'){
+            $id=$_REQUEST['id'];
+            switch ($tabla) {
+                case 'ventas':
+                    eliminarVenta();
+                    header("Location: ./ventas.php");
+                    break;
+                case 'albaran':
+                    eliminarAlbaran();
+                    header("Location: ./almacen.php");
+                    break;
                 
-                foreach ($ventas as $valor) {
-                    echo "<tr>";
-                        echo "<th scope='col'>". $valor['idVenta'] . "</th> ";
-                        echo "<td>". $valor['cliente'] . "</td> ";
-                        echo "<td>". $valor['fechaVent'] . "</td> ";
-                        echo "<td>". $valor['idProducto'] . "</td> ";
-                        echo "<td>". $valor['cantidad'] . "</td> ";
-                        echo "<td>". $valor['precioTotal'] . "</td> ";
-                        if (esAdmin()) {
-                            echo "<td>";
-                            echo '<a class="btn btn-danger m-2" href="./operar.php?op=eli&id='.$valor['idVenta'].'" role="button">Eliminar</a>';
-                            echo '<a class="btn btn-danger" href="op=mod&id='.$valor['idVenta'].'" role="button">Modificar</a>';                            
-                            echo "</td>";     
-                        }
-                    echo "</tr>";
-                }
-                ?>
-            </tbody>
-        </table>
-    </div>
-    <script src="../JS/bootstrap.bundle.min.js"></script>
+                default:
+                    break;
+            }
+            
+        }elseif (enviado() && patFecha()) {
+            if ($operacion=='mod'){
+                $clave=$_REQUEST['clave'];
+
+                actualizar();
+                
+
+                header("Location: ./leerTabla.php");
+            }elseif ($operacion=='ins') {
+                modificar();
+
+                header("Location: ./leerTabla.php");
+            }
+        }
+    ?>
     
 </body>
 </html>

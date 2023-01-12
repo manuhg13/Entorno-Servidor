@@ -100,11 +100,48 @@
                 ?>
             </tbody>
         </table>
+
         <?
             if (esAdmin()) {
                 echo '<button type="button" class="btn btn-outline-danger">Añadir nuevo producto</button>';
             }
         ?>
+
+        <table class="table table-dark table-hover">
+            <thead>
+              <tr class="aling-text-center">
+                <th scope="col">idAlbaran</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">idProducto</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Usuario</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+    
+                <?
+                $repo=findAll('albaran');
+                
+                foreach ($repo as $valor) {
+                    echo "<tr>";
+                        echo "<th scope='col'>". $valor['idAlbaran'] . "</th> ";
+                        echo "<td>". $valor['fechaAlbaran'] . "</td> ";
+                        echo "<td>". $valor['idProducto'] . "</td> ";
+                        echo "<td>". $valor['cantidad'] . "</td> ";
+                        echo "<td>". $valor['usuario'] . "</td> ";
+                        echo "<td>";
+                        if (esAdmin()) {
+                            echo '<button type="button" class="btn btn-outline-danger">Modificar registro</button>';
+                            echo '<a class="btn btn-danger m-2" href="./operar.php?tabla=albaran&op=eli&id='.$valor['idAlbaran'].'" role="button">Eliminar</a>';
+                        }
+                        echo "</td>";     
+                    echo "</tr>";
+                }
+                ?>
+            </tbody>
+        </table>
+        
     </div>
     
     <script src="../JS/bootstrap.bundle.min.js"></script>
