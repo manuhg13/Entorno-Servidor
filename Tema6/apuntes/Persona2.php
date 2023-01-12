@@ -3,41 +3,29 @@
         private $nombre;
         private $edad;
         private $email;
-        private $id;
+        public static $id=0;
         /*----------------------*/ 
         
         public function __construct($nombre,$edad,$email)
         {
-            $this->id= 1;
+            self::$id= self::$id +1;
             $this->nombre=$nombre;
             $this->edad=$edad;
             $this->email=$email;
         }
 
-
-
-        /*----------------------*/ 
-        public function getNombre(){
-            return $this->nombre;
+        public function __get($get)
+        {
+            return $this->$get;
         }
-        public function getEdad(){
-            return $this->edad;
-        }
-        public function getEmail(){
-            return $this->email;
+
+        public function __set($clave, $valor)
+        {
+            return $this->$clave=$valor;
         }
 
         /*----------------------*/ 
 
-        public function setNombre($nombre){
-            $this->nombre=$nombre;
-        }
-        public function setEdad($edad){
-            $this->edad=$edad;
-        }
-        public function setEmail($email){
-            $this->email=$email;
-        }
 
         public function __toString()
         {
@@ -51,9 +39,9 @@
             //$this->id=$this->id +1;
         }
 
-        public function __destruct()
+       /* public function __destruct()
         {
             echo "se destruye " . $this;
-        }
+        }*/
     }
 ?>
