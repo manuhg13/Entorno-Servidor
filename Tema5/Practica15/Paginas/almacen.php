@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../CSS/bootstrap.min.css" rel="stylesheet">
     <link href="../CSS/headers.css" rel="stylesheet">
+    <link href="../CSS/principal.css" rel="stylesheet">
     <title>Almacén</title>
 </head>
 <body style="background-color: #fadcdc;">
@@ -84,7 +85,7 @@
                         echo "<th scope='col'>". $valor['idProducto'] . "</th> ";
                         echo "<td>". $valor['nombre'] . "</td> ";
                         echo "<td>". $valor['precio'] . "</td> ";
-                        echo "<td>". $valor['descripción'] . "</td> ";
+                        echo "<td>". $valor['descripcion'] . "</td> ";
                         echo "<td>". $valor['stock'] . "</td> ";
                         echo "<td>";
                         if (esAdmin() || esModerador()) {
