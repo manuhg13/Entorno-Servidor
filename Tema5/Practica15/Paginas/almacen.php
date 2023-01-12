@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../CSS/bootstrap.min.css" rel="stylesheet">
+    <link href="../CSS/headers.css" rel="stylesheet">
     <title>Almacén</title>
 </head>
 <body style="background-color: #fadcdc;">
@@ -29,6 +31,8 @@
             
             </ul>
                 <?
+                    require("../seguro/conexionBD.php");
+                    require("../Funciones/funciones.php");
                     session_start();
                     if (estaValidado()) {
                     echo '<div class="dropdown text-end">

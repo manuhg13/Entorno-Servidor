@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../CSS/formulario.css">
     <link href="../CSS/bootstrap.min.css" rel="stylesheet">
     <link href="../CSS/headers.css" rel="stylesheet">
+    <link href="../CSS/cheatsheet.css" rel="stylesheet">
     <title>Mi perfil</title>
 </head>
 <body style="background-color: #fadcdc;">    
