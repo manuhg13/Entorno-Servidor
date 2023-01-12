@@ -89,7 +89,16 @@
                         echo "<td>". $valor['stock'] . "</td> ";
                         echo "<td>";
                         if (esAdmin() || esModerador()) {
-                            echo '<button type="button" class="btn btn-outline-danger">Añadir stock</button>';
+                            echo '<form action="./operar.php">
+                            <div class="form-group">
+                              <input type="number" name="cantidad" class="form-control" size="3" value="1">
+                              <input type="hidden" name="op" value="aum">
+                              <input type="hidden" name="id" value="'.$valor['idProducto'].'">
+                              <input type="hidden" name="stock" value="'.$valor['stock'].'">
+                              <button type="submit" name="enviar" class="btn btn-outline-danger mb-1 mt-1">Añadir</button>
+                            </div>
+                          </form>
+                          ';
                         }
                         if (esAdmin()) {
                             echo '<button type="button" class="btn btn-outline-danger">Modificar producto</button>';
@@ -103,7 +112,7 @@
 
         <?
             if (esAdmin()) {
-                echo '<button type="button" class="btn btn-outline-danger">Añadir nuevo producto</button>';
+                echo '<button type="button" class="btn btn-danger mb-5">Añadir nuevo producto</button>';
             }
         ?>
 

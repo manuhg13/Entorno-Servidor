@@ -292,5 +292,31 @@
             }       
         } 
     }
+    function actualizarStock($nuevo,$cantidad){
+        try {
+            $conexion= new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS);
+            
+            $orden1="update productos set stock='".$nuevo."' where idProducto='" . $_REQUEST['id'] ."';" ;
+            $orden2="insert into albaran (fechaAlbaran,idProducto,cantidad,usuario) values (:fechaAlbaran,:idProducto,:cantidad,:usuario);" ;
+            
+            $preparada=$conexion->prepare($orden2);
+
+            $array=array(":fechaAlabaran"=>date('Y-m-d'),":idProducto"=>$_REQUEST['id'],":cantidad"=>$cantidad,":usuario"=>$_SESSION['user']);
+            $conexion->exec($orden1);
+            $preparada->execute($array);
+            
+
+        } catch (Exception $ex) {
+            if ($ex->getCode()==1045){
+                echo "Credenciales incorrectas";
+            }
+            if ($ex->getCode()==2002){
+                echo "Acabado tiempo de conexión";
+            }       
+            if ($ex->getCode()==1049){
+                echo "No existe la base de datos no existe";
+            }       
+        }
+    }
 
 ?>

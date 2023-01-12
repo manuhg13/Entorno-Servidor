@@ -86,20 +86,22 @@
                     break;
             }
             
-        }elseif (enviado() && patFecha()) {
-            if ($operacion=='mod'){
-                $clave=$_REQUEST['clave'];
-
-                actualizar();
-                
-
-                header("Location: ./leerTabla.php");
-            }elseif ($operacion=='ins') {
+        }
+        if ($operacion=='aum'){
+            $id=$_REQUEST['id'];
+            $stock=(int)$_REQUEST['stock'];
+            $cantidad=(int)$_REQUEST['cantidad'];
+            $nuevo=$cantidad+$stock;
+            actualizarStock($nuevo,$cantidad);
+            header("Location: ./almacen.php");
+        }
+        /*if (enviado() && patFecha()) {
+            elseif ($operacion=='') {
                 modificar();
 
                 header("Location: ./leerTabla.php");
             }
-        }
+        }*/
     ?>
     
 </body>
