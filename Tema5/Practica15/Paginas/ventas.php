@@ -94,9 +94,8 @@
                         echo "<td>". $valor['precioTotal'] . "</td> ";
                         if (esAdmin()) {
                             echo "<td>";
-                            echo '<a name="" id="" class="btn btn-danger m-2" href="#" role="button">Eliminar</a>';
-                            echo '<a name="" id="" class="btn btn-danger" href="#" role="button">Modificar</a>';
-                            
+                            echo '<a name="eliminar" id="eliminar" class="btn btn-danger m-2" href="#" role="button">Eliminar</a>';
+                            echo '<a name="modificar" id="modificar" class="btn btn-danger" href="#" role="button">Modificar</a>';  
                             echo "</td>";     
                         }
                     echo "</tr>";
