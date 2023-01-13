@@ -62,9 +62,9 @@
                     }
                 ?>           
     </header>
-    <div class="bd-example">
+    <div class="bd-example row d-flex justify-content-center">
 
-        <table class="table table-dark table-hover">
+        <table class="table table-dark table-hover text-aling-center">
             <thead>
               <tr class="aling-text-center">
                 <th scope="col">idProducto</th>
@@ -116,7 +116,7 @@
             }
         ?>
 
-        <table class="table table-dark table-hover">
+        <table class="table table-center table-dark table-hover">
             <thead>
               <tr class="aling-text-center">
                 <th scope="col">idAlbaran</th>
