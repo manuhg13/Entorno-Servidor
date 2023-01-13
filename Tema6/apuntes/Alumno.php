@@ -14,7 +14,7 @@ class Alumno extends Persona implements Acciones{
 
     public function __toString()
     {
-        return parent::$id.". Nombre: " .$this->nombre. ", edad: " .$this->edad;
+        return parent::$id.". Nombre: " .$this->nombre. ", edad: " .$this->curso;
     }
 
     public function darBaja()
