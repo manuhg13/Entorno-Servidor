@@ -92,7 +92,7 @@
             $stock=(int)$_REQUEST['stock'];
             $cantidad=(int)$_REQUEST['cantidad'];
             $nuevo=$cantidad+$stock;
-            actualizarStock($nuevo,$cantidad);
+            actualizarStock($nuevo);
             header("Location: ./almacen.php");
         }
         /*if (enviado() && patFecha()) {

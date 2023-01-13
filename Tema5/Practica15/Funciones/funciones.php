@@ -292,16 +292,18 @@
             }       
         } 
     }
-    function actualizarStock($nuevo,$cantidad){
+    function actualizarStock($nuevo){
         try {
             $conexion= new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS);
             
             $orden1="update productos set stock='".$nuevo."' where idProducto='" . $_REQUEST['id'] ."';" ;
-            $orden2="insert into albaran (fechaAlbaran,idProducto,cantidad,usuario) values (:fechaAlbaran,:idProducto,:cantidad,:usuario);" ;
+            $orden2="insert into albaran (fechaAlbaran,idProducto,cantidad,usuario) values (?,?,?,?);" ;
             
             $preparada=$conexion->prepare($orden2);
 
-            $array=array(":fechaAlabaran"=>date('Y-m-d'),":idProducto"=>$_REQUEST['id'],":cantidad"=>$cantidad,":usuario"=>$_SESSION['user']);
+            //$array=array(":fechaAlabaran"=>date('Y-m-d'),":idProducto"=>(int)($_REQUEST['id']),":cantidad"=>(int)($_REQUEST['cantidad']),":usuario"=>$_SESSION['user']);
+            $array=array(date('Y-m-d'),(int)($_REQUEST['id']),(int)($_REQUEST['cantidad']),$_SESSION['user']);
+            
             $conexion->exec($orden1);
             $preparada->execute($array);
             

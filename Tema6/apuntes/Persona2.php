@@ -5,6 +5,10 @@
         private $email;
         public static $id=0;
         /*----------------------*/ 
+
+        public static function elProximoID(){
+            return self::$id +1;
+        }
         
         public function __construct($nombre,$edad,$email)
         {
@@ -16,7 +20,11 @@
 
         public function __get($get)
         {
-            return $this->$get;
+            //Si la propiedad no existiera retornaría null
+            if (property_exists(__CLASS__,$get)) {
+                return $this->$get;
+            }
+            return null;
         }
 
         public function __set($clave, $valor)
@@ -39,9 +47,9 @@
             //$this->id=$this->id +1;
         }
 
-       /* public function __destruct()
+        public function __destruct()
         {
-            echo "se destruye " . $this;
-        }*/
+           self::$id=self::$id -1;
+        }
     }
 ?>

@@ -26,5 +26,24 @@
     echo '<br><br>';
     echo $p1->__get('edad');
     echo '<br><br>';
-    echo Persona::$id
+    echo Persona::$id;
+    echo '<br><br>';
+    echo Persona::elProximoID();
+    echo '<br><br>';
+    echo "Propiedad que existen en la clase: ";
+    print_r(get_class_vars('Persona'));
+    echo '<br><br>';
+    //Las variables privadas no se pueden ver a no ser que se ponga una funcion publica que las enseñe
+    echo "Propiedad que existen en el objeto: ";
+    print_r(get_object_vars($p1));
+    
+    echo '<br><br>';
+    setcookie('objeto',serialize($p1));
+    
+    echo var_dump(unserialize($_COOKIE['objeto']));
+    
+    echo '<br><br>';
+    $p2=unserialize($_COOKIE['objeto']);
+    print_r(get_object_vars($p2));
+
     ?>
