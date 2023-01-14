@@ -95,11 +95,10 @@
             actualizarStock($nuevo);
             header("Location: ./almacen.php");
         }
-        if (enviado()) {
-            if ($operacion=='edi') {
-                $id=$_REQUEST['id'];
-                
-            }
+        if ($operacion=='edi') {
+            $id=$_REQUEST['id'];
+             header('Location: ./gestionProductos.php?id='.$id.'&op=edi');
+             exit;  
         }
     ?>
     

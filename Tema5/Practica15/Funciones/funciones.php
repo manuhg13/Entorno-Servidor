@@ -158,6 +158,14 @@
         return false;
     }
 
+    function patFoto(){
+        $patron='/^[^.]+\.(jpg|png|bmp)$/';
+        if (preg_match($patron,$_FILES['url']['name'])){
+            return true;
+        }
+        return false;
+    }
+
     function validarTodo(){
         if(enviado()){
             if(!vacio('user') && usuarioValido()){
@@ -254,7 +262,7 @@
     function findById($id,$tabla){
         try {
             $conexion=new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS);
-            $sql="select * from producto where codigo=?";
+            $sql="select * from ".$tabla." where codigo=?";
             $prepare= $conexion->prepare($sql);
             $resultado=$prepare->execute(array($id));
             if ($resultado) {
@@ -340,6 +348,28 @@
             if ($ex->getCode()==1049){
                 echo "No existe la base de datos no existe";
             }       
+        }
+    }
+
+    function validarProducto(){
+        if (enviado()){
+            if ($_REQUEST['op']=='edi') {
+                return true;
+            }elseif ($_REQUEST['op']=='nue') {
+                if (!vacio('nombre')) {
+                    if (!vacio('precio')) {
+                        if (!vacio('descripcion')) {
+                            if (!vacio('stock')) {
+                                if (file_exists($_FILES['url']['tmp_name']) && ($_FILES['url']['size'])!=0 && patFoto()){
+                                    $ubi= "../img/" . $_FILES['url']['name'];
+                                    move_uploaded_file($_FILES['foto']['tmp_name'],$ubi);
+                                    return true;
+                                } 
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
