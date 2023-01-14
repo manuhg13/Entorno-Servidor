@@ -73,8 +73,10 @@
         $operacion=$_REQUEST['op'];
         if (enviado()) {
             if ($_REQUEST['op']=='edi') {
-                actualizarProducto();
-                header("Location ./almacen.php");
+                if (validarProducto()) {
+                    actualizarProducto();
+                    header("Location ./almacen.php");
+                }
             }elseif($_REQUEST['op']=='nue'){
                 if (validarProducto()) {
                     nuevoProducto();

@@ -362,7 +362,7 @@
                             if (!vacio('stock')) {
                                 if (file_exists($_FILES['url']['tmp_name']) && ($_FILES['url']['size'])!=0 && patFoto()){
                                     $ubi= "../img/" . $_FILES['url']['name'];
-                                    move_uploaded_file($_FILES['foto']['tmp_name'],$ubi);
+                                    move_uploaded_file($_FILES['url']['tmp_name'],$ubi);
                                     return true;
                                 } 
                             }
@@ -370,6 +370,39 @@
                     }
                 }
             }
+        }
+        return false;
+    }
+
+    function nuevoProducto(){
+        try {
+            $conexion= new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS); 
+            $sql="insert into productos (nombre,precio,descripcion,stock,url) values (?,?,?,?,?);";
+
+            $preparada=$conexion->prepare($sql);
+            $array= array($_REQUEST['nombre'],(int)$_REQUEST['precio'],$_REQUEST['descripcion'],(int)$_REQUEST['stock'],"../img/".$_FILES['url']['name']);
+            $preparada->execute($array);
+        } catch (Exception $ex) {
+            print_r($ex);
+            unset($conexion);
+            
+        }
+    }
+
+    function actualizarProducto(){
+        try {
+            $conexion= new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS); 
+            $sql="update productos set precio='".(float)$_REQUEST['precio']."' where idProducto='".$_REQUEST['id']."';";
+            $sql2="update productos set descripcion='".$_REQUEST['descripcion']."' where idProducto='".$_REQUEST['id']."';";
+
+            $preparada=$conexion->prepare($sql);
+            $preparada2=$conexion->prepare($sql2);
+            $preparada->execute();
+            $preparada2->execute();
+        } catch (Exception $ex) {
+            print_r($ex);
+            unset($conexion);
+            
         }
     }
 
