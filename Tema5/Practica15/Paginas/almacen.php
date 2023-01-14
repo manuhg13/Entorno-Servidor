@@ -101,7 +101,7 @@
                           ';
                         }
                         if (esAdmin()) {
-                            echo '<button type="button" class="btn btn-outline-danger">Modificar producto</button>';
+                            echo '<a class="btn btn-danger m-2" href="./operar.php?tabla=productos&op=edi&id='.$jamon['idProducto'].'" role="button">Modificar producto</a>';
                         }
                             echo "</td>";     
                     echo "</tr>";

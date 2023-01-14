@@ -8,6 +8,12 @@
     <link href="./CSS/headers.css" rel="stylesheet">
     <link href="./CSS/bootstrap.min.css" rel="stylesheet">
     <link href="./CSS/cheatsheet.css" rel="stylesheet">
+
+    <style>
+        .invalid-feedback{
+            display: flex;
+        }
+    </style>
     
     <title>Nuevo usuario</title>
 </head>
@@ -78,6 +84,7 @@
         <div class="caja" style="text-align: center; margin: 7px">
         <form action="./registro.php" method="post">
             <h1 class="h3 mb-3 fw-normal">Nuevo usuario</h1>
+            <div class="form-floating">
             <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">@</span>
                     <input type="text" class="form-control" id="floatingInput" placeholder="Usuario" aria-label="Usuario" name="user" aria-describedby="basic-addon1"value="<?php
@@ -95,11 +102,14 @@
                         }                
                     }
                     ?>
+
+                </div>
             </div>
             <div class="form-floating">
                 <input type="password" name="pass" class="form-control" id="floatingPassword" placeholder="Password"> 
                 <label for="floatingPassword">Contraseña</label>  
             
+            </div>
                 <?php
                     if (enviado()) {
                         if (vacio('pass')) {
@@ -111,7 +121,6 @@
                     }
                         
                 ?>
-            </div>
             
                 <br>
             

@@ -68,9 +68,9 @@
 
     <?
         $operacion=$_REQUEST['op'];
-        $tabla=$_REQUEST['tabla'];
-    
+        
         if ($operacion=='eli'){
+            $tabla=$_REQUEST['tabla'];
             $id=$_REQUEST['id'];
             switch ($tabla) {
                 case 'ventas':
@@ -95,13 +95,12 @@
             actualizarStock($nuevo);
             header("Location: ./almacen.php");
         }
-        /*if (enviado() && patFecha()) {
-            elseif ($operacion=='') {
-                modificar();
-
-                header("Location: ./leerTabla.php");
+        if (enviado()) {
+            if ($operacion=='edi') {
+                $id=$_REQUEST['id'];
+                
             }
-        }*/
+        }
     ?>
     
 </body>

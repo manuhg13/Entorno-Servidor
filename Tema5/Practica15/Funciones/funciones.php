@@ -4,7 +4,6 @@
     function anadirBBDD(){
         return file_get_contents('./BBDD/tienda.sql');
     }
-
     /*-----------Sesiones y perfiles---------*/
     function estaValidado(){
         if (isset($_SESSION['validado'])){
@@ -250,6 +249,29 @@
             unset($conexion);
             return false;
         }
+    }
+
+    function findById($id,$tabla){
+        try {
+            $conexion=new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS);
+            $sql="select * from producto where codigo=?";
+            $prepare= $conexion->prepare($sql);
+            $resultado=$prepare->execute(array($id));
+            if ($resultado) {
+                $producto=$prepare->fetchAll(PDO::FETCH_ASSOC);
+                unset($conexion);
+                return $producto;
+            }else{
+                return false;
+            }
+            unset($conexion);
+        } catch (Exception $ex){
+            print_r($ex);
+            unset($conexion);
+            return false;
+        }
+
+
     }
 
     function eliminarVenta(){
