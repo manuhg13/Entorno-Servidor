@@ -262,7 +262,7 @@
     function findById($id,$tabla){
         try {
             $conexion=new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS);
-            $sql="select * from ".$tabla." where idProducto=?";
+            $sql="select * from ".$tabla." where idAlbaran=?";
             $prepare= $conexion->prepare($sql);
             $resultado=$prepare->execute(array($id));
             if ($resultado) {
@@ -424,7 +424,7 @@
             $conexion= new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS); 
             
             $sql="update albaran set fechaAlbaran='".$_REQUEST['fecha']."' where idAlbaran='".$_REQUEST['id']."'";
-            $sql2="update albaran set cantidad='".$_REQUEST['cantiad']."' where idAlbaran='".$_REQUEST['id']."'";
+            $sql2="update albaran set cantidad='".(int)$_REQUEST['cantidad']."' where idAlbaran='".$_REQUEST['id']."'";
 
             $preparada=$conexion->prepare($sql);
             $preparada2=$conexion->prepare($sql2);

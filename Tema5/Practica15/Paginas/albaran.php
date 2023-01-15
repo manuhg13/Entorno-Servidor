@@ -70,6 +70,7 @@
 </header>
 
 <?
+    $operacion=$_REQUEST['op'];
     if (enviado()) {
         if(validarAlbaran()){
             actualizarRegistro();
@@ -84,7 +85,7 @@
 
 <div class="ordenar">
     <div class="caja" style="text-align: center; margin: 7px">
-        <form action="./gestionProductos.php" method="post">
+        <form action="./albaran.php" method="post">
             <input type="hidden" name="op" value="<?
                 echo $operacion;
             ?>">
