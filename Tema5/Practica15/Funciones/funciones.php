@@ -381,6 +381,8 @@
 
             $preparada=$conexion->prepare($sql);
             $array= array($_REQUEST['nombre'],(int)$_REQUEST['precio'],$_REQUEST['descripcion'],(int)$_REQUEST['stock'],"img/".$_FILES['fichero']['name']);
+            
+            
             $preparada->execute($array);
         } catch (Exception $ex) {
             print_r($ex);

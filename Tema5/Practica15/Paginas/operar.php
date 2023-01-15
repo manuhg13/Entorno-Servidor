@@ -104,6 +104,10 @@
              header('Location: ./gestionProductos.php?op=nue');
              exit;  
         }
+        if ($operacion=='mod'){
+            $id=$_REQUEST['id'];
+            header('Location: ./albaran.php?op=mod&id='.$id);
+        }
     ?>
     
 </body>

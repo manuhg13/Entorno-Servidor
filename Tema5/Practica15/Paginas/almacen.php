@@ -141,7 +141,7 @@
                         echo "<td>". $valor['usuario'] . "</td> ";
                         echo "<td>";
                         if (esAdmin()) {
-                            echo '<button type="button" class="btn btn-outline-danger">Modificar registro</button>';
+                            echo '<a class="btn btn-danger m-2" href="./operar.php?tabla=productos&op=mod&id='.$valor['idAlbaran'].'" role="button">Modificar registro</a>';
                             echo '<a class="btn btn-danger m-2" href="./operar.php?tabla=albaran&op=eli&id='.$valor['idAlbaran'].'" role="button">Eliminar</a>';
                         }
                         echo "</td>";     

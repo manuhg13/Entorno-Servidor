@@ -114,7 +114,7 @@
                                 }
                                 
                     echo  '<li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="./logout.php">Cerrar sesión</a></li>
+                                <li><a class="dropdown-item" href="../logout.php">Cerrar sesión</a></li>
                             </ul>
                         </div>';
                     }else {
@@ -131,22 +131,33 @@
     
     
   <div class="ordenar">
-        <main>            
-            <section>
-                <?
-                    foreach ($arrayJamones as $jamon) {
-                        
-                        echo "<article>";
-                            echo '<img src="../'. $jamon['url'].'" alt="fotoJamón">';
-                            echo '<h3>'. $jamon['nombre']. '</h3>';
-                            echo '<p>Precio: '.$jamon['precio'].'€</p>';
-                            echo '<a href="./producto.php?id='.$jamon['idProducto'].'"><button type="button" class="btn btn-primary" style="background-color:#ca3925; border: 1px solid black;">Comprar</button></a>';                        
-                        echo "</article>";
-                        
-                    }
-
-                ?>
+        <main>
+        <section class="album py-5">
+        <section class="container">
+            <section class='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
+            <?php
+                foreach($arrayJamones as $jamon) {     
+                    echo "<section class='col'>";
+                        echo "<section class='card shadow-sm'>";
+                        echo "<img src='../".$jamon['url']."' width='100%' height='450'>";
+                        echo "<section class='card-body bg-dark'>";
+                            echo "<h3 class='h3 text-light'>".$jamon['nombre']."</h3>";
+                            echo "<p class='card-text text-light'>".$jamon['descripcion']."</p>";
+                            echo "<section class='d-flex justify-content-between align-items-center'>";
+                            echo "<section class='btn-group'>";
+                            echo '<a href="./producto.php?id='.$jamon['idProducto'].'"><button type="button" class="btn btn-primary" style="background-color:#ca3925; border: 1px solid black;">Comprar</button></a>';
+                            echo "</section>";
+                            echo "<small class='text-light'>".$jamon['precio']."€</small>";
+                            echo "</section>";
+                            echo "</section>";
+                            echo "</section>";
+                        echo "</section>";                   
+                }
+            ?>
             </section>
+        </section>
+    </section>
+
             <script src="../JS/bootstrap.bundle.min.js"></script>
         </main>
     </div>

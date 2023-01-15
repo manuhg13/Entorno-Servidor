@@ -94,7 +94,7 @@
     <div class="ordenar">
         
         <main>            
-            <section>
+            <section class="d-flex justify-content-center">
                 <form action="./carrito.php">
                     <?
                         foreach ($arrayJamones as $jamon) {
