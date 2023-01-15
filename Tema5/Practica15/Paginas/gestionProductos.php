@@ -193,7 +193,7 @@
                 ?>
 
                 </div>
-                <button type="submit" name="enviado" class="btn btn-danger">Enviar</button>
+                <button type="submit" name="enviado" class="btn btn-danger mt-3">Enviar</button>
             </form>
         </div>
     </div>
