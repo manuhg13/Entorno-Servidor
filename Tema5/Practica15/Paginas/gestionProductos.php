@@ -89,7 +89,6 @@
             $jamon=findById($_REQUEST['id'],'productos');
         }
         
-        print_r($_FILES);
     ?>
 
     <div class="ordenar">
