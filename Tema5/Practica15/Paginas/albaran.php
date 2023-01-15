@@ -70,8 +70,16 @@
 </header>
 
 <?
+    if (enviado()) {
+        if(validarAlbaran()){
+            actualizarRegistro();
+            header("Location: ./almacen.php");
+            exit;
+        }
+    }else{
+        $registro=findById($_REQUEST['id'],'albaran');
+    }
     $id=$_REQUEST['id'];
-    $registro=findById($_REQUEST['id'],'albaran');
 ?>
 
 <div class="ordenar">
@@ -80,14 +88,57 @@
             <input type="hidden" name="op" value="<?
                 echo $operacion;
             ?>">
-            <label for="nombre" class="form-label">Nombre</label>
+            <label for="id" class="form-label">Id albaran</label>
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="nombre" aria-label="nombre" name="nombre" value="<?php
-                        if ($operacion=='edi') {
-                            echo $jamon[0]['nombre'];
-                        }
+                    <input type="text" class="form-control" id="floatingInput" placeholder="id" aria-label="id" name="id" value="<?php
+                            echo $registro[0]['idAlbaran'];
                     ?>" readonly>
+                </div>
+            <label for="fecha" class="form-label">Fecha expedición</label>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="fecha" aria-label="fecha" name="fecha" value="<?php
+                            echo $registro[0]['fechaAlbaran'];
+                    ?>">
 
+                    <?php
+                        if (enviado()){
+                            if (vacio('fecha')) {
+                                echo '<div class="invalid-feedback">Introduce una fecha</div>';
+                            }elseif (!patFecha()) {
+                                echo '<div class="invalid-feedback">Fecha no valida</div>';
+                            }
+                        }
+                    ?>
+
+                </div>
+            <label for="idProducto" class="form-label">id Producto</label>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="idProducto" aria-label="idProducto" name="idProducto" value="<?php
+                            echo $registro[0]['idProducto'];
+                    ?>" readonly>
+                </div>
+            <label for="cantidad" class="form-label">Cantidad</label>
+                <div class="form-floating">
+                    <input type="number" class="form-control" id="floatingInput" placeholder="cantidad" aria-label="cantidad" name="cantidad" value="<?php
+                            echo $registro[0]['cantidad'];
+                    ?>">
+
+                    <?
+                        if (enviado()){
+                            if (vacio('cantidad')) {
+                                echo '<div class="invalid-feedback">Introduce una cantidad</div>';
+                            }
+                        }
+                    ?>
+                </div>
+            <label for="usuario" class="form-label">Usuario</label>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="usuario" aria-label="usuario" name="usuario" value="<?php
+                            echo $registro[0]['usuario'];
+                    ?>" readonly>
+                </div>
+
+            <button type="submit" name="enviar" class="btn btn-danger mt-3">Enviar</button>
         </form>
     </div>
 </div>

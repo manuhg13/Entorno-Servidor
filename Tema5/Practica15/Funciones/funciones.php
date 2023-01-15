@@ -408,4 +408,35 @@
         }
     }
 
+    function validarAlbaran(){
+        if (enviado()) {
+            if (!vacio('fecha') && patFecha()) {
+                if (!vacio('cantidad')) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    function actualizarRegistro(){
+        try {
+            $conexion= new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS); 
+            
+            $sql="update albaran set fechaAlbaran='".$_REQUEST['fecha']."' where idAlbaran='".$_REQUEST['id']."'";
+            $sql2="update albaran set cantidad='".$_REQUEST['cantiad']."' where idAlbaran='".$_REQUEST['id']."'";
+
+            $preparada=$conexion->prepare($sql);
+            $preparada2=$conexion->prepare($sql2);
+            
+            $preparada->execute();
+            $preparada2->execute();
+            
+        } catch (Exception $ex) {
+            print_r($ex);
+            unset($conexion);
+            
+        }
+    }
+
 ?>
