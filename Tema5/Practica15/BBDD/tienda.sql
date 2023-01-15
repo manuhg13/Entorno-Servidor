@@ -21,6 +21,13 @@ create table usuarios(
 	foreign key (roles) references roles (id)
 )engine=innodb;
 
+/*Contraseña: Adm1234567*/
+INSERT INTO usuarios VALUES ('admin','8c9c8ccfcbf6e09beb44b8e25841037ee2292cfe','admin','admin@admin.com','2023-01-15','ADM01');
+/*Contraseña: Mod1234567*/
+INSERT INTO usuarios VALUES ('mod','aa0e39d753ded291efa2454e91b40b18442af243','mod','mod@mod.com','2023-01-15','MOD02');
+/*Contraseña: Nor1234567*/
+INSERT INTO usuarios VALUES ('normi','1cc75cf56f6263ee1af243787705c56688071e59','normi','normi@normi.com','2023-01-15','NOR03');
+
 create table productos(
     idProducto int primary key auto_increment,
     nombre char(60) not null,
