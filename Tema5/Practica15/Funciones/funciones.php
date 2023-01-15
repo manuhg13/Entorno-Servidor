@@ -160,7 +160,7 @@
 
     function patFoto(){
         $patron='/^[^.]+\.(jpg|png|bmp)$/';
-        if (preg_match($patron,$_FILES['url']['name'])){
+        if (preg_match($patron,$_FILES['fichero']['name'])){
             return true;
         }
         return false;
@@ -380,7 +380,7 @@
             $sql="insert into productos (nombre,precio,descripcion,stock,url) values (?,?,?,?,?);";
 
             $preparada=$conexion->prepare($sql);
-            $array= array($_REQUEST['nombre'],(int)$_REQUEST['precio'],$_REQUEST['descripcion'],(int)$_REQUEST['stock'],"../img/".$_FILES['url']['name']);
+            $array= array($_REQUEST['nombre'],(int)$_REQUEST['precio'],$_REQUEST['descripcion'],(int)$_REQUEST['stock'],"img/".$_FILES['fichero']['name']);
             $preparada->execute($array);
         } catch (Exception $ex) {
             print_r($ex);

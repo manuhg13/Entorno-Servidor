@@ -113,7 +113,11 @@
                                     echo '<input type="hidden" name="id" value="'.$jamon['idProducto'].'">';
                                     echo '<input type="hidden" name="precio" value="'.$jamon['precio'].'">';
                                     echo '<input type="hidden" name="stock" value="'.$jamon['stock'].'">';
-                                    echo '<input type="submit" name="venta" value="COMPRAR YA">';                        
+                                    echo '<input type="submit" class="btn btn-danger mt-3" name="venta" value="COMPRAR YA"';
+                                    if ($jamon['stock']==0){
+                                        echo ' disabled';
+                                    }
+                                    echo '>';                        
                                 echo "</article>";
                             }
                         }

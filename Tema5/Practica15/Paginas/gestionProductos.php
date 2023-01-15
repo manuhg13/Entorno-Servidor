@@ -81,7 +81,7 @@
             }elseif($_REQUEST['op']=='nue'){
                 if (validarProducto()) {
                     nuevoProducto();
-                    header("Location ./almacen.php");
+                    header("Location: ./almacen.php");
                     exit;
                 }
             }
@@ -89,12 +89,12 @@
             $jamon=findById($_REQUEST['id'],'productos');
         }
         
-        
+        print_r($_FILES);
     ?>
 
     <div class="ordenar">
         <div class="caja" style="text-align: center; margin: 7px">
-            <form action="./gestionProductos.php" method="post">
+            <form action="./gestionProductos.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="op" value="<?
                     echo $operacion;
                 ?>">
