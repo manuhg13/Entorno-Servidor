@@ -62,7 +62,7 @@
                     }
                 ?>           
     </header>
-    <div class="bd-example row d-flex justify-content-center">
+    <div class="bd-example m-5">
 
         <table class="table table-dark table-hover text-aling-center">
             <thead>
@@ -101,7 +101,7 @@
                           ';
                         }
                         if (esAdmin()) {
-                            echo '<a class="btn btn-danger m-2" href="./operar.php?tabla=productos&op=edi&id='.$jamon['idProducto'].'" role="button">Modificar producto</a>';
+                            echo '<a class="btn btn-danger m-2" href="./operar.php?tabla=productos&op=edi&id='.$valor['idProducto'].'" role="button">Modificar producto</a>';
                         }
                             echo "</td>";     
                     echo "</tr>";
@@ -109,7 +109,7 @@
                 ?>
             </tbody>
         </table>
-
+                <a name="nue" id="nue" class="btn btn-danger mb-5" href="./operar.php?op=nue" role="button">Añadir nuevo producto</a>
         <?
             if (esAdmin()) {
                 echo '<button type="button" class="btn btn-danger mb-5">Añadir nuevo producto</button>';

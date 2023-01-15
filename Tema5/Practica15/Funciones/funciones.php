@@ -262,7 +262,7 @@
     function findById($id,$tabla){
         try {
             $conexion=new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS);
-            $sql="select * from ".$tabla." where codigo=?";
+            $sql="select * from ".$tabla." where idProducto=?";
             $prepare= $conexion->prepare($sql);
             $resultado=$prepare->execute(array($id));
             if ($resultado) {

@@ -100,6 +100,10 @@
              header('Location: ./gestionProductos.php?id='.$id.'&op=edi');
              exit;  
         }
+        if ($operacion=='nue') {
+             header('Location: ./gestionProductos.php?op=nue');
+             exit;  
+        }
     ?>
     
 </body>

@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/formulario.css">
-    <link href="./CSS/headers.css" rel="stylesheet">
-    <link href="./CSS/bootstrap.min.css" rel="stylesheet">
-    <link href="./CSS/cheatsheet.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/formulario.css">
+    <link href="../CSS/headers.css" rel="stylesheet">
+    <link href="../CSS/bootstrap.min.css" rel="stylesheet">
+    <link href="../CSS/cheatsheet.css" rel="stylesheet">
 
     <style>
         .invalid-feedback{
@@ -86,7 +86,7 @@
         }
         if ($_REQUEST['id']) {
             $id=$_REQUEST['id'];
-            $jamon=findById($_REQUEST['id'],'producto');
+            $jamon=findById($_REQUEST['id'],'productos');
         }
         
     ?>
@@ -99,18 +99,18 @@
                 ?>">
                 <?
                     if ($operacion=='edi') {
-                        echo '<div class="form-floating">
-                        <label for="id" class="form-label">Id</label>
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Id" aria-label="id" name="id" value="'.$id.'">';
+                        echo '<label for="id" class="form-label">Id</label>
+                        <div class="form-floating">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Id" aria-label="id" name="id" value="'.$id.'" disabled>';
                     }
                 ?>
                 
                 </div>
+                <label for="nombre" class="form-label">Nombre</label>
                 <div class="form-floating">
-                    <label for="nombre" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="floatingInput" placeholder="nombre" aria-label="nombre" name="nombre" value="<?php
                         if ($operacion=='edi') {
-                            echo $jamon['nombre'];
+                            echo $jamon[0]['nombre'];
                         }
                     ?>" <?
                         if ($operacion=='edi') {
@@ -125,11 +125,11 @@
                         }
                     ?>
                 </div>
+                <label for="precio" class="form-label">Precio</label>
                 <div class="form-floating">
-                    <label for="precio" class="form-label">Precio</label>
                     <input type="number" step="0.01" class="form-control" id="precio" placeholder="precio" name="precio" value="<?php
                         if ($operacion=='edi') {
-                            echo $jamon['precio'];
+                            echo $jamon[0]['precio'];
                         }
                     ?>">
 
@@ -141,9 +141,9 @@
                         }
                     ?>
                 </div>
+                <label for="descripcion" class="form-label">Descripcion</label>
                 <div class="form-floating">
-                    <label for="descripcion" class="form-label">Descripcion</label>
-                    <textarea class="form-control" id="descripcion" rows="3" name="descripcion"><? echo $jamon['descripcion']?></textarea>
+                    <textarea class="form-control" id="descripcion" rows="3" name="descripcion"><? echo $jamon[0]['descripcion']?></textarea>
                     
                     <?
                         if (enviado() && $operacion=='nue') {
@@ -153,11 +153,11 @@
                         }
                     ?>
                 </div>
+                <label for="stock" class="form-label">Stock</label>
                 <div class="form-floating">
-                    <label for="stock" class="form-label">Stock</label>
                     <input type="number" class="form-control" id="stock" placeholder="stock" name="stock" value="<?php
                         if ($operacion=='edi') {
-                            echo $jamon['nombre'];
+                            echo $jamon[0]['stock'];
                         }
                     ?>" <?
                         if ($operacion=='edi') {
@@ -173,8 +173,8 @@
                         }
                     ?>
                 </div>
+                <label for="url" class="form-label">Imagen</label>
                 <div class="form-floating">
-                    <label for="url" class="form-label">Imagen</label>
                     <input class="form-control" type="file" id="url" name="url" <?
                         if ($operacion=='edi') {
                             echo ' disabled';
