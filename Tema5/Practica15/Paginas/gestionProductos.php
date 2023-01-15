@@ -117,6 +117,13 @@
                             echo ' disabled';
                         }
                     ?>>
+                    <?
+                        if (enviado() && $operacion=='nue') {
+                            if (vacio('nombre')) {
+                                echo '<div class="invalid-feedback">Introduce un nombre</div>';
+                            }
+                        }
+                    ?>
                 </div>
                 <div class="form-floating">
                     <label for="precio" class="form-label">Precio</label>
@@ -125,10 +132,26 @@
                             echo $jamon['precio'];
                         }
                     ?>">
+
+<?
+                        if (enviado() && $operacion=='nue') {
+                            if (vacio('precio')) {
+                                echo '<div class="invalid-feedback">Introduce un precio</div>';
+                            }
+                        }
+                    ?>
                 </div>
                 <div class="form-floating">
                     <label for="descripcion" class="form-label">Descripcion</label>
                     <textarea class="form-control" id="descripcion" rows="3" name="descripcion"><? echo $jamon['descripcion']?></textarea>
+                    
+                    <?
+                        if (enviado() && $operacion=='nue') {
+                            if (vacio('nombre')) {
+                                echo '<div class="invalid-feedback">Introduce una descripción</div>';
+                            }
+                        }
+                    ?>
                 </div>
                 <div class="form-floating">
                     <label for="stock" class="form-label">Stock</label>
@@ -141,6 +164,14 @@
                             echo ' disabled';
                         }
                     ?>>
+
+                    <?
+                        if (enviado() && $operacion=='nue') {
+                            if (vacio('nombre')) {
+                                echo '<div class="invalid-feedback">Introduce el stock</div>';
+                            }
+                        }
+                    ?>
                 </div>
                 <div class="form-floating">
                     <label for="url" class="form-label">Imagen</label>
@@ -149,6 +180,18 @@
                             echo ' disabled';
                         }
                     ?>>
+                <?
+                    if (enviado() && $operacion=='nue') {
+                        if (!file_exists($_FILES['url']['tmp_name'])) {
+                            echo '<div class="invalid-feedback">No existe esta imagen</div>';
+                        }elseif ($_FILES['url']['size']==0) {
+                            echo '<div class="invalid-feedback">Imagen vacía</div>';      
+                        }elseif (!patFoto()) {
+                            echo '<div class="invalid-feedback">Extensión de archivo no soportada</div>';      
+                        }
+                    }
+                ?>
+
                 </div>
                 <button type="submit" name="enviado" class="btn btn-danger">Enviar</button>
             </form>

@@ -148,8 +148,8 @@
         <p>
             <label for="idFoto">Imágen de perfil: </label>
             <input type="file" name="foto" id="idFoto">
-
-            <?php
+ 
+           <?php
                 if (enviado()) {
                     if(!file_exists($_FILES['foto']['tmp_name'])){
                         echo "<p style='color: red'>No existe esta imagen</p>";
