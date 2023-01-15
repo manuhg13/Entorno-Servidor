@@ -95,7 +95,7 @@
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li><a href="../index.php" class="nav-link px-2 link-light" >Inicio</a></li>
             <li><a href="./tienda.php" class="nav-link px-2 link-danger">Tienda</a></li>
-            <li><a href="#" class="nav-link px-2 link-light">Ayuda</a></li>
+            <li><a href="../verCodigo.php?fichero=../tienda.php" class="nav-link px-2 link-light">Ver código</a></li>
             
             </ul>
                 <?
