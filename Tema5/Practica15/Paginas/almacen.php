@@ -109,10 +109,10 @@
                 ?>
             </tbody>
         </table>
-                <a name="nue" id="nue" class="btn btn-danger mb-5" href="./operar.php?op=nue" role="button">Añadir nuevo producto</a>
+                
         <?
             if (esAdmin()) {
-                echo '<button type="button" class="btn btn-danger mb-5">Añadir nuevo producto</button>';
+                echo '<a name="nue" id="nue" class="btn btn-danger mb-5" href="./operar.php?op=nue" role="button">Añadir nuevo producto</a>';
             }
         ?>
 

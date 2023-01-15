@@ -360,9 +360,9 @@
                     if (!vacio('precio')) {
                         if (!vacio('descripcion')) {
                             if (!vacio('stock')) {
-                                if (file_exists($_FILES['url']['tmp_name']) && ($_FILES['url']['size'])!=0 && patFoto()){
-                                    $ubi= "../img/" . $_FILES['url']['name'];
-                                    move_uploaded_file($_FILES['url']['tmp_name'],$ubi);
+                                if (file_exists($_FILES['fichero']['tmp_name']) && ($_FILES['fichero']['size'])!=0 && patFoto()){
+                                    $ubi= "../img/" . $_FILES['fichero']['name'];
+                                    move_uploaded_file($_FILES['fichero']['tmp_name'],$ubi);
                                     return true;
                                 } 
                             }

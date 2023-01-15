@@ -75,19 +75,20 @@
             if ($_REQUEST['op']=='edi') {
                 if (validarProducto()) {
                     actualizarProducto();
-                    header("Location ./almacen.php");
+                    header("Location: ./almacen.php");
+                    exit;
                 }
             }elseif($_REQUEST['op']=='nue'){
                 if (validarProducto()) {
                     nuevoProducto();
                     header("Location ./almacen.php");
+                    exit;
                 }
             }
-        }
-        if ($_REQUEST['id']) {
-            $id=$_REQUEST['id'];
+        }elseif ($operacion=='edi') {
             $jamon=findById($_REQUEST['id'],'productos');
         }
+        
         
     ?>
 
@@ -101,11 +102,12 @@
                     if ($operacion=='edi') {
                         echo '<label for="id" class="form-label">Id</label>
                         <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Id" aria-label="id" name="id" value="'.$id.'" disabled>';
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Id" aria-label="id" name="id" value="'.$_REQUEST['id'].'" readonly>
+                        </div>';
                     }
                 ?>
                 
-                </div>
+                
                 <label for="nombre" class="form-label">Nombre</label>
                 <div class="form-floating">
                     <input type="text" class="form-control" id="floatingInput" placeholder="nombre" aria-label="nombre" name="nombre" value="<?php
@@ -114,7 +116,7 @@
                         }
                     ?>" <?
                         if ($operacion=='edi') {
-                            echo ' disabled';
+                            echo ' readonly';
                         }
                     ?>>
                     <?
@@ -143,7 +145,9 @@
                 </div>
                 <label for="descripcion" class="form-label">Descripcion</label>
                 <div class="form-floating">
-                    <textarea class="form-control" id="descripcion" rows="3" name="descripcion"><? echo $jamon[0]['descripcion']?></textarea>
+                    <textarea class="form-control" id="descripcion" rows="3" name="descripcion"><? if ($operacion=='edi'){
+                        echo $jamon[0]['descripcion'];
+                    }?></textarea>
                     
                     <?
                         if (enviado() && $operacion=='nue') {
@@ -161,7 +165,7 @@
                         }
                     ?>" <?
                         if ($operacion=='edi') {
-                            echo ' disabled';
+                            echo ' readonly';
                         }
                     ?>>
 
@@ -173,18 +177,17 @@
                         }
                     ?>
                 </div>
-                <label for="url" class="form-label">Imagen</label>
-                <div class="form-floating">
-                    <input class="form-control" type="file" id="url" name="url" <?
+                <label for="url" class="form-label">Imagen</label>               
+                    <input class="form-control" type="file" id="fichero" name="fichero" <?
                         if ($operacion=='edi') {
                             echo ' disabled';
                         }
                     ?>>
                 <?
                     if (enviado() && $operacion=='nue') {
-                        if (!file_exists($_FILES['url']['tmp_name'])) {
+                        if (!file_exists($_FILES['fichero']['tmp_name'])) {
                             echo '<div class="invalid-feedback">No existe esta imagen</div>';
-                        }elseif ($_FILES['url']['size']==0) {
+                        }elseif ($_FILES['fichero']['size']==0) {
                             echo '<div class="invalid-feedback">Imagen vacía</div>';      
                         }elseif (!patFoto()) {
                             echo '<div class="invalid-feedback">Extensión de archivo no soportada</div>';      
@@ -192,8 +195,7 @@
                     }
                 ?>
 
-                </div>
-                <button type="submit" name="enviado" class="btn btn-danger mt-3">Enviar</button>
+                <button type="submit" name="enviar" class="btn btn-danger mt-3">Enviar</button>
             </form>
         </div>
     </div>
