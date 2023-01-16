@@ -5,6 +5,9 @@
             $sql='select * from usuarios;';
             $datos=array();
             $devuelve=parent::ejecuta($sql,$datos);
+            while($obj= $devuelve->fetchObject()){
+                print_r($obj);
+            }
         }
         public static function findById($id){
             $sql='select * from usuarios where;';
