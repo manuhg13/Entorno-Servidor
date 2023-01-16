@@ -1,4 +1,5 @@
 <?  
+    
     class FactoryBD{
 
         public static function ejecuta($sql,$datos){
@@ -14,6 +15,7 @@
                 echo $ex;
             }finally{
                 unset($con);
+                return $preparada;
             }
         }
     }

@@ -1,5 +1,4 @@
 <?
-    require_once('./FactoryBD.php');
 
     class UsuarioDAO extends FactoryBD implements DAO{
         public static function findAll(){
