@@ -27,13 +27,34 @@
             }
         }
         public static function delete($id){
-
+            $sql='delete from usuarios where usuario=?;';
+            $datos=array($id);
+            $devuelve=parent::ejecuta($sql,$datos);  
+            if ($devuelve->rowCount()==0){
+                return 'No ha borrado';
+            }else{
+                return 'Borrado';
+            }        
+            
         }
-        public static function insert(){
-
+        public static function insert($objeto){
+            $sql='insert into usuarios values (?,?,?,?,?)';
+            $objeto=(array)$objeto;
+            $datos=array();
+            foreach ($objeto as $att) {
+                array_push($datos,$att);
+            }
+            parent::ejecuta($sql,$datos);
         }
         public static function update($objeto){
-
+            $sql='update usuarios set clave=?,nombre=?,correo=?,perfil=? where usuario=?';
+            $datos=array($objeto->clave,$objeto->nombre,$objeto->correo,$objeto->perfil,$objeto->usuario);
+            $devuelve=parent::ejecuta($sql,$datos);
+            if ($devuelve->rowCount()==0){
+                return 'No actualizado';
+            }else{
+                return 'Actualizado';
+            }
         }
     }
 ?>
