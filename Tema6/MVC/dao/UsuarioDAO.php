@@ -22,6 +22,8 @@
             $obj=$devuelve->fetchObject();
             if ($obj) {
                 return $usuario= new Usuario($obj->usuario,$obj->clave,$obj->nombre,$obj->correo,$obj->perfil);
+            }else{
+                return 'No existe el usuario';
             }
         }
         public static function delete($id){

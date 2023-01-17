@@ -5,7 +5,7 @@
     echo '<pre>';
     print_r($arrayUsuarios);
     echo '</pre>';*/
-    $usuario=UsuarioDAO::findById('u1');
+    $usuario=UsuarioDAO::findById('u12');
     echo '<pre>';
     print_r($usuario);
     echo '</pre>';
