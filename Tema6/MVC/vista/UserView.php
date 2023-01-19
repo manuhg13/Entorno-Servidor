@@ -12,6 +12,7 @@
                 <input type="text" class="form-control" name="user" id="inputName" placeholder="Name" value="<? echo $usuario->usuario?>">
             </div>
         </div>
+
         <?if ($_SESSION['accion']=='editar'){?>
         <div class="mb-3 row">
             <label for="inputName" class="col-4 col-form-label">Contraseña</label>
@@ -22,6 +23,7 @@
         <?
             }
         ?>
+        
         <div class="mb-3 row">
             <label for="inputName" class="col-4 col-form-label">Email</label>
             <div class="col-8">

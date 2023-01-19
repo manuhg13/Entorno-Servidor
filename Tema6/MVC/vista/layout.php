@@ -30,10 +30,11 @@
         <form action="./index.php" method="post"> 
         <?
             if (!estaValidado()) {
-                echo '<input type="submit" class="btn btn-warning" name="login" value="Inicia sesion" />';
+                echo '<input type="submit" class="btn btn-warning" name="login" value="Inicia sesion"/>';
+                echo '<input type="submit" class="btn btn-warning" name="registro" value="Registrarse"/>';
               }else{
                 echo '<h2>'.$_SESSION['user'].'</h2>';
-                echo '<input type="submit" class="btn btn-warning" name="miperfil" value="Mi perfil" />';
+                echo '<input type="submit" class="btn btn-warning" name="miperfil" value="Mi perfil"/>';
                 echo '<button type="submit" class="btn btn-warning" name="logout">logout</button>';
 
             }
