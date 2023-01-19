@@ -1,6 +1,9 @@
 <?
     require_once('./config/configuracion.php');
 
+    if (isset($_REQUEST['logout'])) {
+        session_destroy();
+    }
     
     session_start();
     if (estaValidado() && !isset($_SESSION['pagina'])) {
