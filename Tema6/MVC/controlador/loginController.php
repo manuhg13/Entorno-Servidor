@@ -13,7 +13,7 @@
             $_SESSION['user']= $user;
             $_SESSION['nombre']= $usuario->nombre;
             $_SESSION['perfil']= $usuario->perfil;
-            $_SESSION['vista']= $vista->home;
+            $_SESSION['vista']= $vistas['home'];
             unset($_SESSION['controlador']);
         }
     }

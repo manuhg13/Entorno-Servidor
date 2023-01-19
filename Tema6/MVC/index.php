@@ -5,7 +5,7 @@
     session_start();
     if (estaValidado() && !isset($_SESSION['pagina'])) {
         $_SESSION['vista']=$vistas['home'];
-    }elseif ((!estaValidado() && !isset($_SESSION['pagina'])) || !isset($_REQUEST['login'])) {
+    }elseif ((!estaValidado() && !isset($_SESSION['pagina'])) || isset($_REQUEST['login'])) {
         $_SESSION['pagina']='login';
         $_SESSION['controlador']= $controladores['login'];
         $_SESSION['vista']=$vistas['login'];
