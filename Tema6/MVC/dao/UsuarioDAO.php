@@ -51,9 +51,9 @@
             $datos=array($objeto->clave,$objeto->nombre,$objeto->correo,$objeto->perfil,$objeto->usuario);
             $devuelve=parent::ejecuta($sql,$datos);
             if ($devuelve->rowCount()==0){
-                return 'No actualizado';
+                return false;
             }else{
-                return 'Actualizado';
+                return true;
             }
         }
 
