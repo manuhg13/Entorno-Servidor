@@ -15,7 +15,7 @@
 
     //Controladores
     $controladores=array(
-        'login'=>'loginController.php'
+        'login'=>'./controlador/loginController.php'
     );
 
     //Vistas
