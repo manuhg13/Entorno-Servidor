@@ -9,7 +9,7 @@
                 /*echo "<pre>";
                 print_r($obj);
                 echo "</pre>";*/
-                $producto=new Producto($obj->idProcuto,$obj->nombre,$obj->precio,$obj->descripcion,$obj->stock,$obj->url);
+                $producto=new Producto($obj->idProducto,$obj->nombre,$obj->precio,$obj->descripcion,$obj->stock,$obj->url);
                 array_push($arrayProductos,$producto);
             }
             return $arrayProductos;
