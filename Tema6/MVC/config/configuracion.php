@@ -17,12 +17,15 @@
     $controladores=array(
         'login'=>'./controlador/loginController.php',
         'user'=>'./controlador/UserController.php',
+        'registro'=>'./controlador/registroController.php',
+        'home'=>'./controlador/homeController.php'
     );
 
     //Vistas
     $vistas= array(
         'home'=>'homeView.php',
         'login'=>'loginView.php',
-        'user'=>'UserView.php'
+        'user'=>'UserView.php',
+        'registro'=>'registroView.php'
     );
     ?>

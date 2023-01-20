@@ -14,7 +14,7 @@
 </head>
 
 <body>
-<header class="p-3 text-bg-dark">
+<header class="p-3 text-bg-dark mb-3">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
@@ -30,7 +30,7 @@
         <form action="./index.php" method="post"> 
         <?
             if (!estaValidado()) {
-                echo '<input type="submit" class="btn btn-warning" name="login" value="Inicia sesion"/>';
+                echo '<input type="submit" class="btn btn-warning m-3" name="login" value="Inicia sesion"/>';
                 echo '<input type="submit" class="btn btn-warning" name="registro" value="Registrarse"/>';
               }else{
                 echo '<h2>'.$_SESSION['user'].'</h2>';

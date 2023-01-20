@@ -44,7 +44,12 @@
             foreach ($objeto as $att) {
                 array_push($datos,$att);
             }
-            parent::ejecuta($sql,$datos);
+            $devuelve=parent::ejecuta($sql,$datos);
+            if ($devuelve->rowCount()==0){
+                return false;
+            }else{
+                return true;
+            }
         }
         public static function update($objeto){
             $sql='update usuarios set clave=?,nombre=?,correo=?,perfil=? where usuario=?';
