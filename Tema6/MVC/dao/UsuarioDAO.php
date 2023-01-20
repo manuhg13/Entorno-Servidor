@@ -10,7 +10,7 @@
                 /*echo "<pre>";
                 print_r($obj);
                 echo "</pre>";*/
-                $usuario=new Usuario($obj->usuario,$obj->clave,$obj->nombre,$obj->correo,$obj->perfil);
+                $usuario=new Usuario($obj->usuario,$obj->clave,$obj->nombre,$obj->correo,$obj->fecha,$obj->roles);
                 array_push($arrayUsuario,$usuario);
             }
             return $arrayUsuario;
@@ -21,7 +21,7 @@
             $devuelve = parent::ejecuta($sql,$datos);
             $obj=$devuelve->fetchObject();
             if ($obj) {
-                return $usuario= new Usuario($obj->usuario,$obj->clave,$obj->nombre,$obj->correo,$obj->perfil);
+                return $usuario= new Usuario($obj->usuario,$obj->clave,$obj->nombre,$obj->correo,$obj->fecha,$obj->roles);
             }else{
                 return 'No existe el usuario';
             }
@@ -51,9 +51,10 @@
                 return true;
             }
         }
+        //CAMBIAR
         public static function update($objeto){
-            $sql='update usuarios set clave=?,nombre=?,correo=?,perfil=? where usuario=?';
-            $datos=array($objeto->clave,$objeto->nombre,$objeto->correo,$objeto->perfil,$objeto->usuario);
+            $sql='update usuarios set clave=?,nombre=?,correo=?,fecha=?,roles=? where usuario=?';
+            $datos=array($objeto->clave,$objeto->nombre,$objeto->correo,$objeto->fecha,$objeto->roles,$objeto->usuario);
             $devuelve=parent::ejecuta($sql,$datos);
             if ($devuelve->rowCount()==0){
                 return false;
@@ -69,7 +70,7 @@
             $devuelve = parent::ejecuta($sql,$datos);
             $obj=$devuelve->fetchObject();
             if ($obj) {
-                return $usuario= new Usuario($obj->usuario,$obj->clave,$obj->nombre,$obj->correo,$obj->perfil);
+                return $usuario= new Usuario($obj->usuario,$obj->clave,$obj->nombre,$obj->correo,$obj->fecha,$obj->roles);
             }else{
                 return 'No existe el usuario';
             }

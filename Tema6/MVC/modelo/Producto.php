@@ -1,22 +1,21 @@
 <?
-    class Usuario{
-        private $usuario;
-        private $clave;
+    class Producto{
+        private $idProducto;
         private $nombre;
-        private $correo;
-        private $fecha;
-        private $roles;
+        private $precio;
+        private $descripcion;
+        private $stock;
+        private $url;
 
-        public function __construct($usuario,$clave,$nombre,$correo,$fecha,$roles)
-        {
-            $this->usuario=$usuario;
-            $this->clave=$clave;
+        public function __construct($idProducto,$nombre,$precio,$descripcion,$stock,$url){
+            $this->idProducto=$idProducto;
             $this->nombre=$nombre;
-            $this->correo=$correo;
-            $this->fecha=$fecha;
-            $this->roles=$roles;
+            $this->precio=$precio;
+            $this->descripcion=$descripcion;
+            $this->stock=$stock;
+            $this->url=$url;
         }
-
+        
         public function __get($get)
         {
             //Si la propiedad no existiera retornaría null
@@ -31,8 +30,8 @@
             if (property_exists(__CLASS__,$clave)) {
                 return $this->$clave=$valor;
             }
-        }
-
-
+        } 
+        
     }
+
 ?>
