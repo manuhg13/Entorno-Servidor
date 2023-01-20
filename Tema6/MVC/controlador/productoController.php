@@ -1,3 +1,6 @@
 <?
-    $producto=ProductoDAO::findById($_REQUEST['idProducto']);
+    if(isset($_REQUEST['idProducto'])){
+        $_SESSION['producto']=$_REQUEST['idProducto'];
+    }
+    $producto=ProductoDAO::findById($_SESSION['producto']);
 ?>
