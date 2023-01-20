@@ -2,7 +2,10 @@
     echo "<h1>INDEX</h1>";
 
     $arrayProductos=ProductoDAO::findAll();
+    ?>
+    <div class="album py-5">
 
+    <?
     foreach ($arrayProductos as $producto) {?>
         <div class="card" style="width: 18rem;">
             <img src="<? echo './webroot/'. $producto->url ?>" class="card-img-top" alt="...">
@@ -13,5 +16,7 @@
                 <input type="submit" class="btn btn-primary" value="Ver" name="ver" href="./index.php">
             </div>
         </div>
-    <?}
+    <?}?>
+    </div>
+    <?
 ?>

@@ -20,7 +20,8 @@
         'login'=>'./controlador/loginController.php',
         'user'=>'./controlador/UserController.php',
         'registro'=>'./controlador/registroController.php',
-        'home'=>'./controlador/homeController.php'
+        'home'=>'./controlador/homeController.php',
+        'producto'=>'./controlador/productoController.php'
     );
 
     //Vistas
@@ -28,6 +29,7 @@
         'home'=>'homeView.php',
         'login'=>'loginView.php',
         'user'=>'UserView.php',
-        'registro'=>'registroView.php'
+        'registro'=>'registroView.php',
+        'verProducto'=>'verProductoView.php'
     );
     ?>
