@@ -6,7 +6,9 @@
     require_once('./dao/FactoryBD.php');
     require_once('./dao/DAO.php');
     require_once('./modelo/Usuario.php');
+    require_once('./modelo/Producto.php');
     require_once('./dao/UsuarioDAO.php');
+    require_once('./dao/ProductoDAO.php');
     
     //Core
     require_once('./core/funciones.php');
