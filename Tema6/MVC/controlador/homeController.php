@@ -4,7 +4,7 @@
         $_SESSION['controlador']=$controladores['producto'];
         require_once $_SESSION['controlador'];
     }else{
-
+        
     }
 
 ?>

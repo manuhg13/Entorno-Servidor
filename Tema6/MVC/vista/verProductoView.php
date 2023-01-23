@@ -1,4 +1,5 @@
 <?
+    
     foreach ($arrayProductos as $producto) {?>
         <div class="card" style="width: 18rem;">
             <img src="<? echo './webroot/'. $producto->url ?>" class="card-img-top" alt="...">

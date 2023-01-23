@@ -19,7 +19,7 @@
                     $_SESSION['nombre']= $usuario->nombre;
                     $_SESSION['roles']= $usuario->roles;
                     $_SESSION['vista']= $vistas['home'];
-                    $_SESSION['controlador']=$controladores['user'];
+                    $_SESSION['controlador']=$controladores['home'];
                     header('Location: ./index.php');
                 }
             }

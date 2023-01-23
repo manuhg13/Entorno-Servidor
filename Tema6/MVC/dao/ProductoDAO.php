@@ -21,7 +21,7 @@
             $devuelve = parent::ejecuta($sql,$datos);
             $obj=$devuelve->fetchObject();
             if ($obj) {
-                return $producto= new Usuario($obj->idProcuto,$obj->nombre,$obj->precio,$obj->descripcion,$obj->stock,$obj->url);
+                return $producto= new Usuario($obj->idProducto,$obj->nombre,$obj->precio,$obj->descripcion,$obj->stock,$obj->url);
             }else{
                 return 'No existe el producto';
             }
