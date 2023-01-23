@@ -22,6 +22,7 @@
                     <td><? echo $prod['descripcion']; ?></td>
                     <td><? echo $prod['stock']; ?></td>
                     <form action="./index" method="post">
+                    <input type="hidden" value="<? echo $prod['idProducto']; ?>">
                     <td><? echo '<input type="submit" name="ver" value="VER">'; ?></td>
                     <td><? echo '<input type="submit" name="editar" value="EDITAR">'; ?></td>
                     <td><? echo '<input type="submit" name="borrar" value="BORRAR">'; ?></td>
