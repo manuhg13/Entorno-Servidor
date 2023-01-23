@@ -26,7 +26,7 @@
           <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
         </ul>
 
-        <div class="text-end">
+        <div class="text-end g-2">
         <form action="./index.php" method="post"> 
         <?
             if (!estaValidado()) {
@@ -34,6 +34,9 @@
                 echo '<input type="submit" class="btn btn-warning" name="registro" value="Registrarse"/>';
               }else{
                 echo '<h2>'.$_SESSION['user'].'</h2>';
+                if (esAdmin()) {
+                  echo '<input type="submit" class="btn btn-warning" name="admProductos" value="Administración"/>';
+                }
                 echo '<input type="submit" class="btn btn-warning" name="miperfil" value="Mi perfil"/>';
                 echo '<button type="submit" class="btn btn-warning" name="logout">logout</button>';
 

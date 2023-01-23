@@ -17,7 +17,7 @@
                     $_SESSION['validado']= true;
                     $_SESSION['user']= $user;
                     $_SESSION['nombre']= $usuario->nombre;
-                    $_SESSION['perfil']= $usuario->perfil;
+                    $_SESSION['roles']= $usuario->roles;
                     $_SESSION['vista']= $vistas['home'];
                     $_SESSION['controlador']=$controladores['user'];
                     header('Location: ./index.php');

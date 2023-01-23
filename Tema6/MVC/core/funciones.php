@@ -7,16 +7,16 @@
         return false;
     }
     function esAdmin(){
-        if(isset($_SESSION['perfil'])){
-            if ($_SESSION['perfil']=='ADM01'){
+        if(isset($_SESSION['roles'])){
+            if ($_SESSION['roles']=='ADM01'){
                 return true;
             }
             return false;
         }
     }
     function esModerador(){
-        if(isset($_SESSION['perfil'])){
-            if ($_SESSION['perfil']=='P0002'){
+        if(isset($_SESSION['roles'])){
+            if ($_SESSION['roles']=='P0002'){
                 return true;
             }
             return false;
