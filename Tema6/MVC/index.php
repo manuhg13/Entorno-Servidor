@@ -21,8 +21,9 @@
         if (esAdmin() && isset($_REQUEST['admin'])) {          
             $_SESSION['controlador']= $controladores['admin'];
             require_once($_SESSION['controlador']);
+        }else{
+            require_once($_SESSION['controlador']);
         }
-        require_once($_SESSION['controlador']);
     }
     require_once('./vista/layout.php');
 ?>

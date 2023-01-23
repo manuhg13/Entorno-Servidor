@@ -21,7 +21,8 @@
         'user'=>'./controlador/UserController.php',
         'registro'=>'./controlador/registroController.php',
         'home'=>'./controlador/homeController.php',
-        'producto'=>'./controlador/productoController.php'
+        'producto'=>'./controlador/productoController.php',
+        'admin'=>'./controlador/adminController.php'
     );
 
     //Vistas
@@ -30,6 +31,8 @@
         'login'=>'loginView.php',
         'user'=>'UserView.php',
         'registro'=>'registroView.php',
-        'verProducto'=>'verProductoView.php'
+        'verProducto'=>'verProductoView.php',
+        'admin'=>'adminView.php',
+        'listaProd'=>'listaProductosView.php'
     );
     ?>
