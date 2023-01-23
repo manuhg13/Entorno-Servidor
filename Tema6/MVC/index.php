@@ -18,7 +18,7 @@
         $_SESSION['controlador']= $controladores['login'];
         $_SESSION['vista']=$vistas['login'];
     }elseif (isset($_SESSION['pagina'])) {
-        if (esAdmin() && isset($_REQUEST['admProductos'])) {          
+        if (esAdmin() && isset($_REQUEST['admin'])) {          
             $_SESSION['controlador']= $controladores['admin'];
             require_once($_SESSION['controlador']);
         }

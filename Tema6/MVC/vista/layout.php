@@ -35,7 +35,7 @@
               }else{
                 echo '<h2>'.$_SESSION['user'].'</h2>';
                 if (esAdmin()) {
-                  echo '<input type="submit" class="btn btn-warning" name="admProductos" value="Administración"/>';
+                  echo '<input type="submit" class="btn btn-warning" name="admin" value="Administración"/>';
                 }
                 echo '<input type="submit" class="btn btn-warning" name="miperfil" value="Mi perfil"/>';
                 echo '<button type="submit" class="btn btn-warning" name="logout">logout</button>';
