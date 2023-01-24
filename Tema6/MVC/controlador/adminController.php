@@ -1,5 +1,5 @@
 <?php
-    if (isset($_REQUEST['producto'])){
+    if (isset($_REQUEST['admProducto'])){
 
         $_SESSION['vista']=$vistas['listaProd'];
         $_SESSION['controlador']=$controladores['producto'];

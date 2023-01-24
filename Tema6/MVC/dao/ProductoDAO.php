@@ -6,9 +6,6 @@
             $devuelve=parent::ejecuta($sql,$datos);
             $arrayProductos=array();
             while($obj= $devuelve->fetchObject()){
-                /*echo "<pre>";
-                print_r($obj);
-                echo "</pre>";*/
                 $producto=new Producto($obj->idProducto,$obj->nombre,$obj->precio,$obj->descripcion,$obj->stock,$obj->url);
                 array_push($arrayProductos,$producto);
             }
