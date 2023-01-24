@@ -12,6 +12,7 @@
             $this->fechaAlbaran=$fechaAlbaran;
             $this->idProducto=$idProducto;
             $this->cantidad=$cantidad;
+            $this->usuario=$usuario;
         }
 
         public function __get($get)
