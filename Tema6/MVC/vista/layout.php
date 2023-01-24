@@ -21,13 +21,13 @@
           <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
         </a>
 
+        <form action="./index.php" method="post"> 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+          <li><input type="submit" name="home" value="HOME"></li>
           <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
         </ul>
 
         <div class="text-end g-2">
-        <form action="./index.php" method="post"> 
         <?
             if (!estaValidado()) {
                 echo '<input type="submit" class="btn btn-warning m-3" name="login" value="Inicia sesion"/>';

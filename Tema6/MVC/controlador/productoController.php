@@ -15,6 +15,7 @@
 
         $_SESSION['producto']=$_REQUEST['idProducto'];
         $producto=ProductoDAO::findById($_SESSION['producto']);
+        $_SESSION['vista']=$vistas['verProducto'];
 
     }elseif (isset($_REQUEST['admProductos'])){
         

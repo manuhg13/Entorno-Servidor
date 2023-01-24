@@ -17,14 +17,13 @@
         <tbody>
             <?foreach ($lista as $prod) {?>
                 <tr>
-                    <input type="submit" name="ver" value="VER">
-                    <td scope="row"><? echo $prod['idProducto']; ?></td>
-                    <td><? echo $prod['nombre']; ?></td>
-                    <td><? echo $prod['precio']; ?></td>
-                    <td><? echo $prod['descripcion']; ?></td>
-                    <td><? echo $prod['stock']; ?></td>
-                    <form action="./index" method="post">
-                    <input type="hidden" value="<? echo $prod['idProducto']; ?>">
+                    <td scope="row"><? echo $prod->idProducto; ?></td>
+                    <td><? echo $prod->nombre; ?></td>
+                    <td><? echo $prod->precio; ?></td>
+                    <td><? echo $prod->descripcion; ?></td>
+                    <td><? echo $prod->stock; ?></td>
+                    <form action="./index.php" method="post">
+                    <input type="hidden" name="idProducto" value="<? echo $prod->idProducto; ?>">
                     <td><? echo '<input type="submit" name="ver" value="VER">'; ?></td>
                     <td><? echo '<input type="submit" name="editar" value="EDITAR">'; ?></td>
                     <td><? echo '<input type="submit" name="borrar" value="BORRAR">'; ?></td>
