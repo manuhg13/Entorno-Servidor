@@ -36,25 +36,20 @@
                             </a>
                             <form action=""></form>
                             <ul class="dropdown-menu text-small">
-                                <li><a class="dropdown-item" href="./Paginas/perfil.php">Perfil</a></li>';
+                                <li><input type="submit" class="dropdown-item" name="miperfil" value="Perfil"></li>
                                 <?if (esAdmin() || esModerador()) {?>
                                     <li><a class="dropdown-item" href="./Paginas/almacen.php">Almacen</a></li>
                                     <li><a class="dropdown-item" href="./Paginas/ventas.php">Ventas</a></li>';
                                 <?}?>
-                                
-                    echo  '<li><hr class="dropdown-divider"></li>
+                                <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="./logout.php">Cerrar sesión</a></li>
                             </ul>
-                        </div>';
-                    }else {
-                        
-                        ?>
-                            <a href="./login.php"><button type="button" class="btn btn-light text-dark me-2">Login</button></a>
-                            <a href="./registro.php"><button type="button" class="btn btn-primary" style="background-color:#ca3925; border: 1px solid black;">Resgistrarse</button></a>
-                            
-                        <?
-                    }
-                ?>        
+                        </div>
+                    <?}else { ?>
+                        <a href="./login.php"><button type="button" class="btn btn-light text-dark me-2">Login</button></a>
+                        <a href="./registro.php"><button type="button" class="btn btn-primary" style="background-color:#ca3925; border: 1px solid black;">Resgistrarse</button></a>                      
+                    <?}?>  
+                      
     </header>
   <main>
         <? require_once($_SESSION['vista']) ?>
