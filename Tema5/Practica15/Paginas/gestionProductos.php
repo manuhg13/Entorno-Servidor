@@ -86,7 +86,7 @@
                 }
             }
         }elseif ($operacion=='edi') {
-            $jamon=findById($_REQUEST['id'],'productos');
+            $jamon=findByIdPRO($_REQUEST['id'],'productos');
         }
         
     ?>

@@ -78,7 +78,7 @@
             exit;
         }
     }else{
-        $registro=findById($_REQUEST['id'],'albaran');
+        $registro=findByIdALB($_REQUEST['id'],'albaran');
     }
     $id=$_REQUEST['id'];
 ?>

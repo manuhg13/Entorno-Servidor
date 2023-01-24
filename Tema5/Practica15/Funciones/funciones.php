@@ -259,10 +259,32 @@
         }
     }
 
-    function findById($id,$tabla){
+    function findByIdALB($id,$tabla){
         try {
             $conexion=new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS);
             $sql="select * from ".$tabla." where idAlbaran=?";
+            $prepare= $conexion->prepare($sql);
+            $resultado=$prepare->execute(array($id));
+            if ($resultado) {
+                $producto=$prepare->fetchAll(PDO::FETCH_ASSOC);
+                unset($conexion);
+                return $producto;
+            }else{
+                return false;
+            }
+            unset($conexion);
+        } catch (Exception $ex){
+            print_r($ex);
+            unset($conexion);
+            return false;
+        }
+
+
+    }
+    function findByIdPRO($id,$tabla){
+        try {
+            $conexion=new PDO('mysql:host='. $_SERVER['SERVER_ADDR']. ';dbname=' .BBDD,USER,PASS);
+            $sql="select * from ".$tabla." where idProducto=?";
             $prepare= $conexion->prepare($sql);
             $resultado=$prepare->execute(array($id));
             if ($resultado) {

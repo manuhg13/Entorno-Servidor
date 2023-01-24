@@ -85,14 +85,13 @@
         }
     ?>
 
-    <header class="p-3 mb-3 border-bottom">
-        <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="../index.php" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
+        
+            <a href="../index.php" class="d-flex align-items-center col-md-3 ms-lg-4 ms-md-4 mb-md-0 text-dark text-decoration-none">
                 <img src="../img/logo.png" alt="logo">
             </a>
 
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li><a href="../index.php" class="nav-link px-2 link-light" >Inicio</a></li>
             <li><a href="./tienda.php" class="nav-link px-2 link-danger">Tienda</a></li>
             <li><a href="../verCodigo.php?fichero=../tienda.php" class="nav-link px-2 link-light">Ver código</a></li>
@@ -120,9 +119,10 @@
                     }else {
                         
                         ?>
+                        <div class="col-md-3 text-end me-lg-4 me-md-4">
                             <a href="../login.php"><button type="button" class="btn btn-light text-dark me-2">Login</button></a>
                             <a href="../registro.php"><button type="button" class="btn btn-primary" style="background-color:#ca3925; border: 1px solid black;">Resgistrarse</button></a>
-                            
+                        </div>
                         <?
                     }
                 ?>
