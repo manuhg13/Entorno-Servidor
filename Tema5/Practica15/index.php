@@ -100,7 +100,7 @@
                 <?
                     session_start();
                     if (estaValidado()) {
-                    echo '<div class="dropdown text-end">
+                    echo '<div class="dropdown col-md-3 text-center me-lg-4 me-md-4">
                             <p>Hola '.$_SESSION['user'].'!</p>
                             <a href="#" class="d-block link-danger text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
                                 <svg class="bi d-block mx-auto mb-1" width="24" height="24" style="color: white;"><use xlink:href="#people-circle"/></svg>
