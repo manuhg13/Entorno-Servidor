@@ -1,5 +1,5 @@
 <?
-    if ($_REQUEST['registro']){
+    if (isset($_REQUEST['registro'])){
         $_SESSION['vista']=$vistas['registro'];
         $_SESSION['controlador']=$controladores['registro'];
     }else{

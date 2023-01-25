@@ -31,12 +31,12 @@
 
         }elseif(isset($_SESSION['pagina'])){
 
-            if ($_REQUEST['miperfil']) {
+            if (isset($_REQUEST['miperfil'])) {
                 $_SESSION['accion']='ver';
                 $usuario=UsuarioDAO::findById($_SESSION['user']);
                 $_SESSION['vista']=$vistas['user'];
                 require_once $_SESSION['controlador'];
-            }elseif($_REQUEST['tienda']){
+            }elseif(isset($_REQUEST['tienda'])){
                 $_SESSION['controlador']=$controladores['tienda'];
                 $_SESSION['pagina']='tienda';
                 $_SESSION['vista']=$vistas['tienda'];

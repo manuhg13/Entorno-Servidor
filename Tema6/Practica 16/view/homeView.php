@@ -45,38 +45,38 @@
 </div>
 
 <div class="col-12 text-center">
-  <p class="diplay-4">Los más deseados</p>
+  <p class="diplay-2">Los más deseados</p>
 </div>
 
-<section class="album py-5">
-  <section class="container">
-    <section class='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
+<div class="album py-5">
+  <div class="container">
+    <div class='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
       <?php
       $arrayJamones=ProductoDAO::findAll();
 
       foreach ($arrayJamones as $jamon) {
         if ($jamon->precio >= 100) {?>
-          <section class='col'>
-          <section class='card shadow-sm'>
+          <div class='col'>
+          <div class='card shadow-sm'>
           <img src='<? echo $jamon->url ?>' width='100%' height='450'>
-          <section class='card-body bg-dark'>
+          <div class='card-body bg-dark'>
           <h3 class='h3 text-light'><? echo $jamon->nombre ?></h3>
           <p class='card-text text-light'><? echo $jamon->descripcion ?></p>
-          <section class='d-flex justify-content-between align-items-center'>";
-          <section class='btn-group'>";
+          <div class='d-flex justify-content-between align-items-center'>";
+            <small class='text-light'><? echo $jamon->precio ?>€</small>";
+          <div class='btn-group'>";
             <form action="./index.php" method="post">
               <input type="hidden" name="idProducto" value="<? echo $jamon->idProducto ?>">
               <input type="submit" value="Ver" name="ver" class="btn btn-danger">
             </form>
-          </section>";
-          <small class='text-light'><? echo $jamon->precio ?>€</small>";
-          </section>";
-          </section>";
-          </section>";
-          </section>";
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
         <?}
       }
       ?>
-    </section>
-  </section>
-</section>
+    </div>
+  </div>
+</div>
