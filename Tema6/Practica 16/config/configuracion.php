@@ -19,6 +19,14 @@
     //Core
     require_once('./core/funciones.php');
 
+    //Controladores 
+    $controladores=array(
+        'home'=>'./controller/homeController.php',
+    );
+
+    $vistas=array(
+        'home'=>'./view/homeView.php',
+    );
 
 
 ?>

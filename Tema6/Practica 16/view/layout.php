@@ -13,6 +13,9 @@
 </head>
 
 <body>
+  <form action="./index.php" method="post">
+
+  
   <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
     <a href="./index.php" class="d-flex align-items-center col-md-3 ms-lg-4 ms-md-4 mb-md-0 text-dark text-decoration-none">
       <img src="img/logo.png" alt="logo">
@@ -48,9 +51,10 @@
       </div>
     <? } else { ?>
       <div class="col-md-3 text-end me-lg-4 me-md-4">
-        <a href="./login.php"><button type="button" class="btn btn-light text-dark me-2">Login</button></a>
+        <input type="submit" value="Iniciar sesión" class="btn btn-light text-dark me-2" name="login">
         <a href="./registro.php"><button type="button" class="btn btn-primary" style="background-color:#ca3925; border: 1px solid black;">Resgistrarse</button></a>
       </div>
+      </form>
     <? } ?>
 
   </header>
