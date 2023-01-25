@@ -6,6 +6,12 @@
         $_SESSION['vista']= $vistas['home'];
         $_SESSION['pagina']= 'home';
         require_once $_SESSION['controlador'];
+    }elseif (isset($_REQUEST['logout'])) {
+        session_destroy();
+        $_SESSION['controlador']= $controladores['home'];
+        $_SESSION['vista']= $vistas['home'];
+        $_SESSION['pagina']= 'home';
+        header('Location: index.php');
     }
 
 ?>
