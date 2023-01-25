@@ -7,7 +7,9 @@
         $_SESSION['vista']= $vistas['home'];
         $_SESSION['pagina']= 'home';
         require_once $_SESSION['controlador'];
+
     }elseif (isset($_REQUEST['logout'])) {
+        
         session_destroy();
         $_SESSION['controlador']= $controladores['home'];
         $_SESSION['vista']= $vistas['home'];
@@ -34,9 +36,18 @@
                 $usuario=UsuarioDAO::findById($_SESSION['user']);
                 $_SESSION['vista']=$vistas['user'];
                 require_once $_SESSION['controlador'];
+            }elseif($_REQUEST['tienda']){
+                $_SESSION['controlador']=$controladores['tienda'];
+                $_SESSION['pagina']='tienda';
+                $_SESSION['vista']=$vistas['tienda'];
+                require_once $_SESSION['controlador'];
+            }else{
+                require_once $_SESSION['controlador'];
             }
 
         }
     }
+
+    require_once('./view/layout.php');
 
 ?>
