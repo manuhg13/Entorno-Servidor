@@ -189,7 +189,7 @@
                 foreach($arrayJamones as $jamon) {
                     if ($jamon['precio']>=100) {     
                     echo "<section class='col'>";
-                        echo "<section class='card shadow-sm'>";
+                        echo "<section class='card shadow-sm '>";
                         echo "<img src='".$jamon['url']."' width='100%' height='450'>";
                         echo "<section class='card-body bg-dark'>";
                             echo "<h3 class='h3 text-light'>".$jamon['nombre']."</h3>";
