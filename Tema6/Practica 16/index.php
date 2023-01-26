@@ -36,6 +36,7 @@
                 $usuario=UsuarioDAO::findById($_SESSION['user']);
                 $_SESSION['vista']=$vistas['user'];
                 require_once $_SESSION['controlador'];
+                
             }elseif(isset($_REQUEST['tienda'])){
                 $_SESSION['controlador']=$controladores['tienda'];
                 $_SESSION['pagina']='tienda';
