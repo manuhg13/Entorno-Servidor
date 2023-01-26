@@ -42,7 +42,21 @@
                 $_SESSION['pagina']='tienda';
                 $_SESSION['vista']=$vistas['tienda'];
                 require_once $_SESSION['controlador'];
+
+            }elseif(isset($_REQUEST['almacen'])){
+                $_SESSION['controlador']=$controladores['almacen'];
+                $_SESSION['pagina']='almacen';
+                $_SESSION['vista']=$vistas['almacen'];
+                require_once $_SESSION['controlador'];
+
+            }elseif(isset($_REQUEST['ventas'])){
+                $_SESSION['controlador']=$controladores['ventas'];
+                $_SESSION['pagina']='ventas';
+                $_SESSION['vista']=$vistas['ventas'];
+                require_once $_SESSION['controlador'];
+
             }else{
+                
                 require_once $_SESSION['controlador'];
             }
 
