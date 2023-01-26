@@ -23,11 +23,13 @@
     $controladores=array(
         'home'=>'./controller/homeController.php',
         'login'=>'./controller/loginController.php',
+        'tienda'=>'./controller/tiendaController.php',
     );
 
     $vistas=array(
         'home'=>'./view/homeView.php',
         'login'=>'./view/loginView.php',
+        'tienda'=>'./view/tiendaView.php',
     );
 
 
