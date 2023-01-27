@@ -24,12 +24,14 @@
         'home'=>'./controller/homeController.php',
         'login'=>'./controller/loginController.php',
         'tienda'=>'./controller/tiendaController.php',
+        'user'=>'./controller/userController.php',
     );
 
     $vistas=array(
         'home'=>'./view/homeView.php',
         'login'=>'./view/loginView.php',
         'tienda'=>'./view/tiendaView.php',
+        'user'=>'./view/userView.php',
     );
 
 
