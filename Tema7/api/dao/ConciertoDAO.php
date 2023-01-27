@@ -37,7 +37,7 @@
         }
 
         public static function insert($objeto){
-            $sql='insert into conciertos values (?,?,?,?)';
+            $sql='insert into conciertos values (null,?,?,?,?)';
             $objeto=(array)$objeto;
             $datos=array();
             foreach ($objeto as $att) {
@@ -51,9 +51,9 @@
             }
         }
 
-        public static function update($objeto){
-            $sql='';
-            $datos=array();
+        public static function update($obj){
+            $sql='update conciertos set grupo=?,fecha=?,precio=?,lugar=? where id=?';
+            $datos=array($obj->grupo,$obj->fecha,$obj->precio,$obj->lugar,$obj->id);
             $devuelve=parent::ejecuta($sql,$datos);
             if ($devuelve->rowCount()==0){
                 return false;
