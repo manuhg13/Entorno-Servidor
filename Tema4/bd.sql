@@ -1,12 +1,12 @@
 create database conciertos;
-
-create table cociertos{
+use conciertos;
+create table conciertos(
     id int primary key auto_increment,
-    grupo varchar(40) not null, 
-    precio date not null,
+    grupo varchar(40) not null,
+    fecha date not null,
     precio float not null,
     lugar varchar(100)
-}
+);
 
-insert into concierto values (null, 'Los planetas','2023-02-15',25,'Auditorio de Zamora')
-insert into concierto values (null, 'Aitana','2023-02-23',25,'Ramos Carrión')
+insert into conciertos values(null,'Los planeta', '2023-02-15',25,'Auditorio Ruta de la Plata,Zamora');
+insert into conciertos values(null,'Natos y Waor', '2023-03-01',25,'Multiusos, Salamanca');
