@@ -16,9 +16,8 @@ class ControladorPadre{
     }
 
     protected function parametros(){
-        $uri= $_SERVER['PATH_INFO'];
-        print_r($uri);
-        return $uri;
+        $par=$_GET;
+        return $par;
     }
 
     public static function respuesta($datos,$httpHeaders=array()){

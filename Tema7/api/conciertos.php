@@ -1,6 +1,6 @@
 <?
-    require_once './controller/ControladorPadre.php';
-    require_once './controller/ConciertosControlador.php';
+    require_once './config/configuracion.php';
+    
     $recurso=ControladorPadre::recurso(); 
 
     if($recurso){

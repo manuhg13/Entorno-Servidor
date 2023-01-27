@@ -26,6 +26,17 @@
 
         public function buscar(){
             $parametros=$this->parametros();
+            //recurso conciertos y nada despues 
+            if (count(self::recurso())==2) {
+                if (!$parametros){
+                    //Listar 
+                    $lista =ConciertoDAO::findAll();
+                    print_r($lista);
+                }
+            }
+
+            //conciertos y despues id
+            //if (!$parametros)
         }
         public function insertar(){
             $parametros=$this->parametros();
