@@ -25,6 +25,7 @@
         'login'=>'./controller/loginController.php',
         'tienda'=>'./controller/tiendaController.php',
         'user'=>'./controller/userController.php',
+        'registro'=>'./controller/registroController.php',
     );
 
     $vistas=array(
@@ -32,6 +33,7 @@
         'login'=>'./view/loginView.php',
         'tienda'=>'./view/tiendaView.php',
         'user'=>'./view/userView.php',
+        'registro'=>'./view/registroView.php',
     );
 
 

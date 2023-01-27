@@ -55,6 +55,12 @@
                 $_SESSION['vista']=$vistas['ventas'];
                 require_once $_SESSION['controlador'];
 
+            }elseif(isset($_REQUEST['registro'])){
+                $_SESSION['controlador']=$controladores['registro'];
+                $_SESSION['pagina']='registrar';
+                $_SESSION['vista']=$vistas['registro'];
+                require_once $_SESSION['controlador'];
+
             }else{
                 
                 require_once $_SESSION['controlador'];
