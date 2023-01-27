@@ -33,7 +33,7 @@
 
             if (isset($_REQUEST['miperfil'])) {
                 $_SESSION['accion']='ver';
-                $usuario=UsuarioDAO::findById($_SESSION['user']);
+                $_SESSION['controlador']=$controladores['user'];
                 $_SESSION['vista']=$vistas['user'];
                 require_once $_SESSION['controlador'];
                 
