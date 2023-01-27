@@ -6,12 +6,20 @@
                 <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
             </div>
         </div>
+        <?if (isset($_SESSION['registroError']['nombre'])){?>
+            <div class="invalid-feedback"><? echo $_SESSION['registroError']['nombre']?> </div>
+        <?}?>
+        <!--USUARIO-->
         <div class="mb-3 row">
             <label for="inputName" class="col-4 col-form-label">Usuario</label>
             <div class="col-8">
                 <input type="text" class="form-control" name="user" id="inputName" placeholder="Usuario">
             </div>
         </div>
+
+        <?if (isset($_SESSION['registroError']['user'])){?>
+            <div class="invalid-feedback"><? echo $_SESSION['registroError']['user']?> </div>
+        <?}?>
 
         <div class="mb-3 row">
             <label for="inputName" class="col-4 col-form-label">Contraseña</label>
@@ -25,7 +33,9 @@
                 <input type="pass" class="form-control" name="pass2" id="inputName" placeholder="Repite contraseña" >
             </div>
         </div>
-        
+        <?if (isset($_SESSION['registroError']['pass'])){?>
+            <div class="invalid-feedback"><? echo $_SESSION['registroError']['pass']?> </div>
+        <?}?>
         
         <div class="mb-3 row">
             <label for="inputName" class="col-4 col-form-label">Email</label>

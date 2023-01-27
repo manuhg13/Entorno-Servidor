@@ -55,11 +55,11 @@ function validarRegistro(){
     }
 
     if (vacio('nombre')) {
-        $_SESSION['registroError']['fecha']='Fallo en el campo nombre';
+        $_SESSION['registroError']['nombre']='Fallo en el campo nombre';
     }
 
     if (!isset($_REQUEST['roles']) || $_REQUEST['roles']==0){
-        $_SESSION['registroError']['fecha']='Fallo en el campo nombre';
+        $_SESSION['registroError']['roles']='Fallo en el campo roles';
     }
 
     if (!isset($_SESSION['registroError'])){
