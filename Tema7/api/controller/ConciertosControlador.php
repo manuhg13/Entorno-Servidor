@@ -1,21 +1,21 @@
 <?
     class ConciertosControlador extends ControladorPadre{
-        public static function controlar(){
+        public function controlar(){
             $metodo=$_SERVER['REQUEST_METHOD'];
             switch ($metodo) {
                 case 'GET':
-                    self::buscar();
+                    $this->buscar();
                     break;
                 case 'POST':
-                    self::insertar();
+                    $this->insertar();
                     break;
                 
                 case 'PUT':
-                    self::modificar();
+                    $this->modificar();
                     break;
                 
                 case 'DELETE':
-                    self::borrar();
+                    $this->borrar();
                     break;
                 
                 default:
