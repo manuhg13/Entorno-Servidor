@@ -69,6 +69,32 @@ function validarRegistro(){
     }
 }
 
+function validarProducto(){
+    if (!isset($_REQUEST['guardar'])){
+        $_SESSION['prodError']['guardar']='No enviado';
+    }
+    if (vacio('nombre')){
+        $_SESSION['prodError']['nombre']='Nombre de producto vacio';
+    }
+    if (vacio('precio')){
+        $_SESSION['prodError']['precio']='Precio de producto vacio';
+    }
+    if (vacio('descripcion')){
+        $_SESSION['prodError']['descripcion']='Descripcion de producto vacio';
+    }
+    if (vacio('stock')){
+        $_SESSION['prodError']['stock']='Stock de producto vacio';
+    }
+
+    if (!file_exists($_FILES['url']['tmp_name'])){
+        $_SESSION['prodError']['url']='No existe esta imagen';
+    }elseif ($_FILES['url']['size']==0) {
+        $_SESSION['prodError']['url']='Fichero vacio';
+    }elseif (!patFoto()) {
+        $_SESSION['prodError']['url']='Extensión de archivo no soportada';
+    }
+}
+
 //------------REGeX-----------------
 function patPass(){
     $patron='/(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,}$/';
@@ -94,6 +120,14 @@ function patFecha(){
         if(checkdate($cortado[1],$cortado[2],$cortado[0])){
             return true;
         }
+    }
+    return false;
+}
+
+function patFoto(){
+    $patron='/^[^.]+\.(jpg|png|bmp)$/';
+    if (preg_match($patron,$_FILES['fichero']['name'])){
+        return true;
     }
     return false;
 }
