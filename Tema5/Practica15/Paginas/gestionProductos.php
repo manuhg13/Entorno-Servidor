@@ -170,7 +170,7 @@
 
                     <?
                         if (enviado() && $operacion=='nue') {
-                            if (vacio('nombre')) {
+                            if (vacio('stock')) {
                                 echo '<div class="invalid-feedback">Introduce el stock</div>';
                             }
                         }
