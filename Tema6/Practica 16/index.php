@@ -44,8 +44,8 @@
                 require_once $_SESSION['controlador'];
 
             }elseif(isset($_REQUEST['almacen'])){
-                $_SESSION['controlador']=$controladores['almacen'];
-                $_SESSION['pagina']='almacen';
+                $_SESSION['controlador']=$controladores['producto'];
+                $_SESSION['pagina']='Almacen';
                 $_SESSION['vista']=$vistas['almacen'];
                 require_once $_SESSION['controlador'];
 
@@ -53,6 +53,12 @@
                 $_SESSION['controlador']=$controladores['ventas'];
                 $_SESSION['pagina']='ventas';
                 $_SESSION['vista']=$vistas['ventas'];
+                require_once $_SESSION['controlador'];
+
+            }elseif(isset($_REQUEST['registro'])){
+                $_SESSION['controlador']=$controladores['registro'];
+                $_SESSION['pagina']='registrar';
+                $_SESSION['vista']=$vistas['registro'];
                 require_once $_SESSION['controlador'];
 
             }else{
