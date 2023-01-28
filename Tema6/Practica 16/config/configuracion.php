@@ -27,7 +27,8 @@
         'user'=>'./controller/userController.php',
         'registro'=>'./controller/registroController.php',
         'producto'=>'./controller/productoController.php',
-        'editarProducto'=>'./controller/productoController.php',
+        'editarProducto'=>'./controller/editarProductoController.php',
+        'editarAlbaran'=>'./controller/albaranController.php',
     );
 
     $vistas=array(
@@ -39,6 +40,7 @@
         'verProducto'=>'./view/verProductoView.php',
         'almacen'=>'./view/almacenView.php',
         'editarProducto'=>'./view/editarProductoView.php',
+        'editarAlbaran'=>'./view/editarAlbaranView.php',
     );
 
 

@@ -1,5 +1,6 @@
 <?
     if (isset($_REQUEST['editar'])){
+        $_SESSION['accion']='editar';
         $_SESSION['producto']=$_REQUEST['idProducto'];
         $_SESSION['vista']=$vistas['editarProductos'];
         $_SESSION['controlador']=$controlador['editarProductos'];
@@ -12,6 +13,18 @@
         $_SESSION['accion']='nuevo';
         $_SESSION['vista']=$vistas['editarProductos'];
         $_SESSION['controlador']=$controlador['editarProductos'];
+    }elseif(isset($_REQUEST['almacen'])){
+        $lista= ProductoDAO::findAll();
+        $albaran=AlbaranDAO::findAll();
+    }elseif (isset($_REQUEST['modificar'])) {
+        $_SESSION['albaran']=$_REQUEST['idAlbaran'];
+        $_SESSION['vista']=$vistas['editarAlbaran'];
+        $_SESSION['controlador']=$controlador['editarAlbaran'];
+    }elseif (isset($_REQUEST['eliminar'])) {
+        $_SESSION['albaran']=$_REQUEST['idAlbaran'];
+        AlbaranDAO::delete($_SESSION['albaran']);
+        $lista= ProductoDAO::findAll();
+        $albaran=AlbaranDAO::findAll();
     }
 
 
