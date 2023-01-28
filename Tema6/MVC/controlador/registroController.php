@@ -2,7 +2,7 @@
     if ($_REQUEST['guardar']){
         //tooos los campos estan bien 
         //$_SESSION['error'] el motivo de que no vale
-        $nuevo= new Usuario($_REQUEST['user'],sha1($_REQUEST['pass']),$_REQUEST['nombre'],$_REQUEST['email'],'P0001');
+        //$nuevo= new Usuario($_REQUEST['user'],sha1($_REQUEST['pass']),$_REQUEST['nombre'],$_REQUEST['email'],'P0001');
         if (UsuarioDAO::insert($nuevo)){
             $_SESSION['controlador']=$controladores['home'];
             $_SESSION['vista']=$vistas['home'];
