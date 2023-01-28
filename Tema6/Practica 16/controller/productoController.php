@@ -25,6 +25,9 @@
         AlbaranDAO::delete($_SESSION['albaran']);
         $lista= ProductoDAO::findAll();
         $albaran=AlbaranDAO::findAll();
+    }else{
+        $lista= ProductoDAO::findAll();
+        $albaran=AlbaranDAO::findAll();
     }
 
 
