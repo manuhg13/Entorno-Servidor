@@ -44,8 +44,8 @@
                 require_once $_SESSION['controlador'];
 
             }elseif(isset($_REQUEST['almacen'])){
-                $_SESSION['controlador']=$controladores['almacen'];
-                $_SESSION['pagina']='almacen';
+                $_SESSION['controlador']=$controladores['producto'];
+                $_SESSION['pagina']='Almacen';
                 $_SESSION['vista']=$vistas['almacen'];
                 require_once $_SESSION['controlador'];
 
