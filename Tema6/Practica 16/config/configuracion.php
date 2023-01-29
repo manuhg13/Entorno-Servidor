@@ -24,6 +24,7 @@
         'home'=>'./controller/homeController.php',
         'login'=>'./controller/loginController.php',
         'tienda'=>'./controller/tiendaController.php',
+        'ventas'=>'./controller/ventasController.php',
         'user'=>'./controller/userController.php',
         'registro'=>'./controller/registroController.php',
         'producto'=>'./controller/productoController.php',
@@ -39,6 +40,7 @@
         'registro'=>'./view/registroView.php',
         'verProducto'=>'./view/verProductoView.php',
         'almacen'=>'./view/almacenView.php',
+        'ventas'=>'./view/ventasView.php',
         'editarProducto'=>'./view/editarProductoView.php',
         'editarAlbaran'=>'./view/editarAlbaranView.php',
     );
