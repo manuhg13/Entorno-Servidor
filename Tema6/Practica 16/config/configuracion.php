@@ -32,6 +32,7 @@
         'editarAlbaran'=>'./controller/albaranController.php',
     );
 
+    //Vistas
     $vistas=array(
         'home'=>'./view/homeView.php',
         'login'=>'./view/loginView.php',
