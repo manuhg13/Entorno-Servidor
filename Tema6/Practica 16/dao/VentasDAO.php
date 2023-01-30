@@ -26,7 +26,7 @@
         }
 
         public static function delete($id){
-            $sql='delete from ventas where idVentas=?;';
+            $sql='delete from ventas where idVenta=?;';
             $datos=array($id);
             $devuelve=parent::ejecuta($sql,$datos);  
             if ($devuelve->rowCount()==0){
@@ -38,7 +38,7 @@
 
         public static function insert($objeto){
             $sql='insert into ventas values (?,?,?,?,?)';
-            /*$objeto=(array)$objeto;
+            $objeto=(array)$objeto;
             $datos=array();
             foreach ($objeto as $att) {
                 array_push($datos,$att);
@@ -48,7 +48,7 @@
                 return false;
             }else{
                 return true;
-            }*/
+            }
         }
 
         public static function update($objeto){
