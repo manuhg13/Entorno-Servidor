@@ -22,7 +22,7 @@
   <form action="./index.php" method="post">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 bg-dark">
       <a href="./index.php" class="d-flex align-items-center col-md-3 ms-lg-4 ms-md-4 mb-md-0 text-dark text-decoration-none">
-        <img src="img/logo.png" alt="logo">
+        <img src="./web/img/logo.png" alt="logo">
       </a>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">

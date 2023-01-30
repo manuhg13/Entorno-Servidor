@@ -56,7 +56,7 @@
 
       foreach ($arrayJamones as $jamon) {
         if ($jamon->precio >= 100) {?>
-          <div class='col'>
+          <div class='col '>
           <div class='card shadow-sm'>
           <img src='<? echo $jamon->url ?>' width='100%' height='450'>
           <div class='card-body bg-dark'>
