@@ -11,15 +11,41 @@
         }
 
         public static function findById($id){
-            $sql='select * from conciertos where id=?';
+            $sql='select * from conciertos where id=? ;';
             $datos=array($id);
             $devuelve = parent::ejecuta($sql,$datos);
-            $obj=$devuelve->fetchObject();
+            $obj=$devuelve->fetch(PDO::FETCH_ASSOC);
             if ($obj) {
-                return $concierto= new Concierto($obj->grupo,$obj->fecha,$obj->precio,$obj->lugar);
+                return $obj;
             }else{
-                return 'No existe el producto';
+                return 'No existe el concierto';
             }
+        }
+
+        public static function findByFecha($fecha){
+            $sql='select * from conciertos where fecha > ? ;';
+            $datos=array($fecha);
+            $devuelve = parent::ejecuta($sql,$datos);
+            $arrayCociertos=$devuelve->fetchAll(PDO::FETCH_ASSOC);
+            return $arrayCociertos;
+            
+        }
+
+        public static function findOrderByFecha($orden){
+            $sql='select * from conciertos order by fecha '.$orden;
+            $datos=array();
+            $devuelve = parent::ejecuta($sql,$datos);
+            $arrayCociertos=$devuelve->fetchAll(PDO::FETCH_ASSOC);
+            return $arrayCociertos;
+            
+        }
+        public static function findByFechaOrder($fecha,$orden){
+            $sql='select * from conciertos where fecha > '.$fecha.' order by fecha '.$orden;
+            $datos=array();
+            $devuelve = parent::ejecuta($sql,$datos);
+            $arrayCociertos=$devuelve->fetchAll(PDO::FETCH_ASSOC);
+            return $arrayCociertos;
+            
         }
 
         public static function delete($id){

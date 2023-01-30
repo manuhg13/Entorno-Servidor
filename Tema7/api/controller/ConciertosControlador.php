@@ -26,8 +26,9 @@
 
         public function buscar(){
             $parametros=$this->parametros();
+            $recurso=self::recurso();
             //recurso conciertos y nada despues 
-            if (count(self::recurso())==2) {
+            if (count($recurso)==2) {
                 if (!$parametros){
                     //Listar 
                     $lista =ConciertoDAO::findAll();
@@ -37,11 +38,59 @@
                         array('Content-Type: application/json', 'HTTP/1.1 200 OK')
                     );
                     
+                }else {
+
+                    if (isset($_GET['fecha']) && isset($_GET['ordenF'])) {
+                        $concierto=ConciertoDAO::findByFechaOrder($_GET['fecha'],$_GET['ordenF']);
+                        $data=json_encode($concierto);
+                            self::respuesta(
+                                $data,
+                                array('Content-Type: application/json', 'HTTP/1.1 200 OK')
+                            );
+                    }else{
+                        if (isset($_GET['fecha'])) {
+                            $concierto=ConciertoDAO::findByFecha($_GET['fecha']);
+                            $data=json_encode($concierto);
+                            self::respuesta(
+                                $data,
+                                array('Content-Type: application/json', 'HTTP/1.1 200 OK')
+                            );
+                        }elseif (isset($_GET['ordenF'])) {
+                            $concierto=ConciertoDAO::findOrderByFecha($_GET['ordenF']);
+                            $data=json_encode($concierto);
+                            self::respuesta(
+                                $data,
+                                array('Content-Type: application/json', 'HTTP/1.1 200 OK')
+                            );
+                            if (($_GET['ordenF']!='ASC') && ($_GET['ordenF']!='DESC')) {
+                                self::respuesta(
+                                    '',
+                                    array('HTTP/1.1 404 No se ha utilizado el filtro correcto')
+                                );
+                            }
+                        }else {
+                            self::respuesta(
+                                '',
+                                array('HTTP/1.1 404 No se ha utilizado el filtro correcto')
+                            );
+                        }
+
+                    }
+
                 }
             }
 
             //conciertos y despues id
-            //if (!$parametros)
+            if(count($recurso)==3){
+                if (!$parametros){
+                    $concierto=ConciertoDAO::findById($recurso[2]);
+                    $data=json_encode($concierto);
+                    self::respuesta(
+                        $data,
+                        array('Content-Type: application/json', 'HTTP/1.1 200 OK')
+                    );
+                }
+            }
         }
         public function insertar(){
             $parametros=$this->parametros();
