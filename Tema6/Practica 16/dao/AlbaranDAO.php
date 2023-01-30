@@ -26,8 +26,8 @@
         }
 
         public static function insert($objeto){
-            $sql='insert into albaran values (?,?,?,?,?)';
-            /*$objeto=(array)$objeto;
+            $sql='insert into albaran values (?,?,?,?)';
+            $objeto=(array)$objeto;
             $datos=array();
             foreach ($objeto as $att) {
                 array_push($datos,$att);
@@ -37,7 +37,7 @@
                 return false;
             }else{
                 return true;
-            }*/
+            }
         }
 
         public static function delete($id){

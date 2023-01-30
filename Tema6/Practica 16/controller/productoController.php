@@ -10,6 +10,7 @@
         $producto->stock=($producto->stock)+$_REQUEST['cantidad'];
         ProductoDAO::update($producto);
         $nStock=new Albaran(null,date('Y-m-d'),$_SESSION['producto'],$_REQUEST['cantidad'],$_SESSION['user']);
+        AlbaranDAO::insert($nStock);
     }elseif (isset($_REQUEST['nuevo'])) {
         $_SESSION['accion']='nuevo';
         $_SESSION['vista']=$vistas['editarProducto'];
