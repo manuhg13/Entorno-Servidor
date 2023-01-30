@@ -31,7 +31,12 @@
                 if (!$parametros){
                     //Listar 
                     $lista =ConciertoDAO::findAll();
-                    print_r($lista);
+                    $data=json_encode($lista);
+                    self::respuesta(
+                        $data,
+                        array('Content-Type: application/json', 'HTTP/1.1 200 OK')
+                    );
+                    
                 }
             }
 

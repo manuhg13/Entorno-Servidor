@@ -6,11 +6,7 @@
             $sql='select * from conciertos';
             $datos=array();
             $devuelve=parent::ejecuta($sql,$datos);
-            $arrayCociertos=array();
-            while($obj= $devuelve->fetchObject()){
-                $concierto=new Concierto($obj->grupo,$obj->fecha,$obj->precio,$obj->lugar);
-                array_push($arrayCociertos,$concierto);
-            }
+            $arrayCociertos=$devuelve->fetchAll(PDO::FETCH_ASSOC);
             return $arrayCociertos;
         }
 
