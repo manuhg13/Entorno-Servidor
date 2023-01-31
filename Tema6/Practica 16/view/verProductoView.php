@@ -9,6 +9,11 @@
                 <div class='btn-group'>";
                     <form action="./index.php" method="post">
                         <input type="hidden" name="idProducto" value="<? echo $jamon->idProducto ?>">
+                        <select name="cantidad" id="cantidad" class="form-select form-select-sm">
+                            <? for ($i=1; $i < $jamon->stock; $i++) {?>
+                                <option value="<? echo $i ?>"><? echo $i ?></option>
+                            <?}?>
+                        </select>
                         <input type="submit" value="Comprar" name="comprar" class="btn btn-danger">
                     </form>
                 </div>

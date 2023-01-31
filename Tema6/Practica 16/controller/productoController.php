@@ -27,6 +27,12 @@
         AlbaranDAO::delete($_SESSION['albaran']);
         $lista= ProductoDAO::findAll();
         $albaran=AlbaranDAO::findAll();
+    }elseif (isset($_REQUEST['comprar'])){
+        $producto=ProductoDAO::findById($_SESSION['producto']);
+        $producto->stock=($producto->stock)-$_REQUEST['cantidad'];
+        ProductoDAO::update($producto);
+        $venta= new Ventas (null,$_SESSION['user'],date('Y-m-d'),$_SESSION['producto'],$_REQUEST['cantidad'],(float)(($producto->precio)*$_REQUEST['cantidad']));
+        VentasDAO::insert($venta);
     }else{
         $lista= ProductoDAO::findAll();
         $albaran=AlbaranDAO::findAll();
