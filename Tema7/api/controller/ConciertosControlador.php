@@ -18,6 +18,10 @@
                     $this->borrar();
                     break;
                 
+                case 'PATCH':
+                    $this->editar();
+                    break;
+                
                 default:
                     # code...
                     break;
@@ -129,7 +133,30 @@
             }
         }
         public function borrar(){
-            $parametros=$this->parametros();
+            $recurso=self::recurso();
+            if(count($recurso)==3){
+                if(ConciertoDAO::delete($recurso[2])){
+                    self::recurso(
+                        [],
+                        array('Content-Type: application/json', 'HTTP/1.1 200 OK')
+                    );
+                }else{
+                    self::respuesta(
+                        '',
+                        array('HTTP/1.1 404 El recurso id no existe')
+                    );
+                }
+            }
+        }
+
+        public function editar(){
+            $recurso=self::recurso();
+            if(count(($recurso))==3){
+                $concierto=array(ConciertoDAO::findById($recurso[2]));
+                $body=file_get_contents('php://input');
+                $dato=json_decode($body);
+                print_r($dato);
+            }
         }
     }
 
