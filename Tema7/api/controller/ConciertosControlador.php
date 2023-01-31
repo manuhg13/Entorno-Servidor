@@ -40,45 +40,44 @@
                     
                 }else {
 
-                    if (isset($_GET['fecha']) && isset($_GET['ordenF'])) {
+                    if (isset($_GET['fecha']) && isset($_GET['ordenF']) && count($_GET)==2) {
                         $concierto=ConciertoDAO::findByFechaOrder($_GET['fecha'],$_GET['ordenF']);
                         $data=json_encode($concierto);
                             self::respuesta(
                                 $data,
                                 array('Content-Type: application/json', 'HTTP/1.1 200 OK')
                             );
-                    }else{
-                        if (isset($_GET['fecha'])) {
-                            $concierto=ConciertoDAO::findByFecha($_GET['fecha']);
-                            $data=json_encode($concierto);
-                            self::respuesta(
-                                $data,
-                                array('Content-Type: application/json', 'HTTP/1.1 200 OK')
-                            );
-                        }elseif (isset($_GET['ordenF'])) {
-                            $concierto=ConciertoDAO::findOrderByFecha($_GET['ordenF']);
-                            $data=json_encode($concierto);
-                            self::respuesta(
-                                $data,
-                                array('Content-Type: application/json', 'HTTP/1.1 200 OK')
-                            );
-                            if (($_GET['ordenF']!='ASC') && ($_GET['ordenF']!='DESC')) {
-                                self::respuesta(
-                                    '',
-                                    array('HTTP/1.1 404 No se ha utilizado el filtro correcto')
-                                );
-                            }
-                        }else {
+                    }elseif (isset($_GET['fecha'])) {
+                        $concierto=ConciertoDAO::findByFecha($_GET['fecha']);
+                        $data=json_encode($concierto);
+                        self::respuesta(
+                            $data,
+                            array('Content-Type: application/json', 'HTTP/1.1 200 OK')
+                        );
+                    }elseif (isset($_GET['ordenF'])) {
+                        $concierto=ConciertoDAO::findOrderByFecha($_GET['ordenF']);
+                        $data=json_encode($concierto);
+                        self::respuesta(
+                            $data,
+                            array('Content-Type: application/json', 'HTTP/1.1 200 OK')
+                        );
+                        if (($_GET['ordenF']!='ASC') && ($_GET['ordenF']!='DESC')) {
                             self::respuesta(
                                 '',
                                 array('HTTP/1.1 404 No se ha utilizado el filtro correcto')
                             );
                         }
-
+                    }else {
+                        self::respuesta(
+                            '',
+                            array('HTTP/1.1 404 No se ha utilizado el filtro correcto')
+                        );
                     }
 
                 }
+
             }
+        
 
             //conciertos y despues id
             if(count($recurso)==3){
@@ -93,10 +92,41 @@
             }
         }
         public function insertar(){
-            $parametros=$this->parametros();
+            $body=file_get_contents('php://input');
+            $dato=json_decode($body);
+            if(isset($dato->grupo) && isset($dato->fecha) && isset($dato->precio) && isset($dato->lugar)){
+                $concierto= new Concierto($dato->grupo,$dato->fecha,$dato->precio,$dato->lugar);
+                if ( ConciertoDAO::insert($concierto)) {
+                    self::recurso(
+                        [],
+                        array('Content-Type: application/json', 'HTTP/1.1 200 OK')
+                    );
+            }
+            }else {
+                self::respuesta(
+                    '',
+                    array('HTTP/1.1 404 No se ha introducido')
+                );
+            }
+           
+            print_r($dato);
         }
         public function modificar(){
-            $parametros=$this->parametros();
+            $recurso=self::recurso();
+            if(count($recurso)==3){
+                $body=file_get_contents('php://input');
+                $dato=json_decode($body);
+                if(isset($dato->grupo) && isset($dato->fecha) && isset($dato->precio) && isset($dato->lugar)){
+                    $concierto= new Concierto($dato->grupo,$dato->fecha,$dato->precio,$dato->lugar);
+                    $concierto->id=$recurso[2];
+                    ConciertoDAO::update($concierto);
+                }
+            }else{
+                self::respuesta(
+                    '',
+                    array('HTTP/1.1 404 El recurso está mal fomado /concientos/id')
+                );
+            }
         }
         public function borrar(){
             $parametros=$this->parametros();

@@ -40,8 +40,8 @@
             
         }
         public static function findByFechaOrder($fecha,$orden){
-            $sql='select * from conciertos where fecha > '.$fecha.' order by fecha '.$orden;
-            $datos=array();
+            $sql='select * from conciertos where fecha > ? order by fecha '.$orden;
+            $datos=array($fecha);
             $devuelve = parent::ejecuta($sql,$datos);
             $arrayCociertos=$devuelve->fetchAll(PDO::FETCH_ASSOC);
             return $arrayCociertos;
@@ -60,12 +60,13 @@
         }
 
         public static function insert($objeto){
-            $sql='insert into conciertos values (null,?,?,?,?)';
+            $sql='insert into conciertos values (?,?,?,?,?)';
             $objeto=(array)$objeto;
             $datos=array();
             foreach ($objeto as $att) {
                 array_push($datos,$att);
             }
+            $datos[0]=null;
             $devuelve=parent::ejecuta($sql,$datos);
             if ($devuelve->rowCount()==0){
                 return false;
