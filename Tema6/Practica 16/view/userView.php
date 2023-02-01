@@ -53,13 +53,13 @@
             <div class="offset-sm-4 col-sm-8">
                 <?
                 if ($_SESSION['accion'] == 'editar') { ?>
-                    <input type="submit" class="btn btn-primary" name="guardar" value="Guardar" />
+                    <input type="submit" class="btn btn-danger" name="guardar" value="Guardar" />
 
                 <? }
                 ?>
                 <?
                 if ($_SESSION['accion'] == 'ver') { ?>
-                    <input type="submit" class="btn btn-primary" name="editar" value="Editar" />
+                    <input type="submit" class="btn btn-danger" name="editar" value="Editar" />
 
                 <? }
                 ?>
