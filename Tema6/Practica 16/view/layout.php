@@ -16,7 +16,7 @@
   </style>
 </head>
 
-<body>
+<body style="background-color: #fadcdc;">
 
 
   <form action="./index.php" method="post">
