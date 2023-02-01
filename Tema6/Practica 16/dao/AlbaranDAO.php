@@ -26,7 +26,7 @@
         }
 
         public static function insert($objeto){
-            $sql='insert into albaran values (?,?,?,?)';
+            $sql='insert into albaran values (?,?,?,?,?)';
             $objeto=(array)$objeto;
             $datos=array();
             foreach ($objeto as $att) {

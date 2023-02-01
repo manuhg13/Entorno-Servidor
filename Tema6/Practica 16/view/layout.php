@@ -66,8 +66,8 @@
   <? require_once($_SESSION['vista']) ?>
 </main>
 
-bs5-
-<footer class="bg-dark text-center text-white position-relative bottom-0 start-50 translate-middle-x">
+
+<footer class="bg-dark text-center text-white">
   <!-- Grid container -->
   <div class="container p-4 pb-0">
     <!-- Section: Social media -->

@@ -28,7 +28,7 @@
         'user'=>'./controller/userController.php',
         'registro'=>'./controller/registroController.php',
         'producto'=>'./controller/productoController.php',
-        'editarProducto'=>'./controller/editarProductoController.php',
+        'editarProductos'=>'./controller/editarProductoController.php',
         'editarAlbaran'=>'./controller/albaranController.php',
     );
 
@@ -42,7 +42,7 @@
         'verProducto'=>'./view/verProductoView.php',
         'almacen'=>'./view/almacenView.php',
         'ventas'=>'./view/ventasView.php',
-        'editarProducto'=>'./view/editarProductoView.php',
+        'editarProductos'=>'./view/editarProductoView.php',
         'editarAlbaran'=>'./view/editarAlbaranView.php',
     );
 

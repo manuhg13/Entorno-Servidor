@@ -9,7 +9,7 @@
 
         public function __construct($idVenta,$cliente,$fechaVent,$idProducto,$cantidad,$precioTotal)
         {
-            $this->idVenta=$idProducto;
+            $this->idVenta=$idVenta;
             $this->cliente=$cliente;
             $this->fechaVent=$fechaVent;
             $this->idProducto=$idProducto;

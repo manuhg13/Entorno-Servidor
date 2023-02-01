@@ -21,8 +21,8 @@
                     <? if (esAdmin() || esModerador()) { ?>
                         <form action="./index.php" method="post">
                             <div class="form-group">
-                                <input type="number" name="cantidad" class="form-control" size="3" value="1">
-                                <input type="hidden" name="idProducto" value="<? echo $prod->idProducto ?>">
+                                <input type="number" name="cantidad" class="form-control" size="3">
+                                <input type="hidden" name="producto" value="<? echo $prod->idProducto ?>">
                                 <input type="submit" name="aumentar" class="btn btn-outline-danger mb-1 mt-1" value="Añadir">
                             </div>
 
