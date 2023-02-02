@@ -20,12 +20,10 @@
                 <td>
                     <? if (esAdmin() || esModerador()) { ?>
                         <form action="./index.php" method="post">
-                            <div class="form-group">
                                 <input type="number" name="cantidad" class="form-control" size="3">
                                 <input type="hidden" name="producto" value="<? echo $prod->idProducto ?>">
                                 <input type="submit" name="aumentar" class="btn btn-outline-danger mb-1 mt-1" value="Añadir">
-                            </div>
-
+                        </form>
                         <? }
                     if (esAdmin()) { ?>
                             <input type="submit" name="editar" class="btn btn-outline-danger mb-1 mt-1" value="Editar">
@@ -37,7 +35,9 @@
 </table>
 
 <? if (esAdmin()) { ?>
+    <form action="./index.php" method="post">
     <input type="submit" name="nuevo" class="btn btn-outline-danger mb-1 mt-1" value="Añadir nuevo producto">
+    </form>
 <? } ?>
 </form>
 

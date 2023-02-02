@@ -58,9 +58,9 @@
           <input type="submit" value="Iniciar sesión" class="btn btn-outline-danger me-2" name="login">
           <input type="submit" value="Registrarse" class="btn btn-outline-danger me-2" name="registro">
         </div>
-  </form>
+  
 <? } ?>
-
+</form>
 </header>
 <main>
   <? require_once($_SESSION['vista']) ?>

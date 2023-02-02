@@ -13,6 +13,8 @@
         ProductoDAO::update($producto);
         $nStock=new Albaran(null,date('Y-m-d'),$_SESSION['producto'],$_REQUEST['cantidad'],$_SESSION['user']);
         AlbaranDAO::insert($nStock);
+        $lista= ProductoDAO::findAll();
+        $albaran=AlbaranDAO::findAll();
 
     //Añadir un producto
     }elseif (isset($_REQUEST['nuevo'])) {
