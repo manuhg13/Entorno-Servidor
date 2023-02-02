@@ -103,6 +103,40 @@ function validarProducto(){
     }
 }
 
+function validarUsuario(){
+    if (!isset($_REQUEST['guardar'])){
+        $_SESSION['userError']['guardar']='No enviado';
+    }
+
+    if (vacio('nombre')){
+        $_SESSION['userError']['nombre']='Nombre vacio';
+    }
+    
+    if (vacio('pass') || vacio('pass2')){
+        $_SESSION['userError']['pass']='Contraseña vacía';
+    }elseif ($_REQUEST['pass']!=$_REQUEST['pass2']) {
+        $_SESSION['userError']['pass']='No son iguales';    
+    }elseif (!patPass()) {
+        $_SESSION['userError']['pass']='Debes incluir, mayuscula, minuscula, número y al menos 8 caracteres';        
+    }
+    
+    if (vacio('email')){
+        $_SESSION['userError']['email']='Debes rellenar el correo';        
+    }/*elseif (!patMail()) {
+        $_SESSION['userError']['email']='Email incorrecto';             
+    }*/
+    
+    if ($_REQUEST['roles']==0) {
+        $_SESSION['userError']['roles']='Selecciona un rol';                
+    }
+
+    if (!isset($_SESSION['userError'])){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 //------------REGeX-----------------
 function patPass(){
     $patron='/(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,}$/';
@@ -115,7 +149,7 @@ function patPass(){
 
 function patMail(){
     $patron='/^.{1,}@.{1,}\..{2,}$/';
-    if (preg_match($patron,$_REQUEST['mail'])==1){
+    if (preg_match($patron,$_REQUEST['email'])==1){
         return true;
     }
     return false;
