@@ -93,6 +93,14 @@ function validarProducto(){
     }elseif (!patFoto()) {
         $_SESSION['prodError']['url']='Extensión de archivo no soportada';
     }
+
+    if (!isset($_SESSION['prodError'])){
+        $ubi= "./web/img/" . $_FILES['url']['name'];
+        move_uploaded_file($_FILES['url']['tmp_name'],$ubi);
+        return true;
+    }else{
+        return false;
+    }
 }
 
 //------------REGeX-----------------
@@ -126,7 +134,7 @@ function patFecha(){
 
 function patFoto(){
     $patron='/^[^.]+\.(jpg|png|bmp)$/';
-    if (preg_match($patron,$_FILES['fichero']['name'])){
+    if (preg_match($patron,$_FILES['url']['name'])){
         return true;
     }
     return false;

@@ -36,7 +36,7 @@
         }
 
         public static function insert($objeto){
-            $sql='insert into productos values (?,?,?,?,?)';
+            $sql='insert into productos values (?,?,?,?,?,?)';
             $objeto=(array)$objeto;
             $datos=array();
             foreach ($objeto as $att) {

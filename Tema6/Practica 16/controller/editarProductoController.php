@@ -18,6 +18,8 @@ if (isset($_REQUEST['idProducto'])){
             if (ProductoDAO::insert($nuevo)){
                 $_SESSION['controlador']=$controladores['producto'];
                 $_SESSION['vista']=$vistas['almacen'];
+                $lista= ProductoDAO::findAll();
+                $albaran=AlbaranDAO::findAll();
             }
         }
     }
