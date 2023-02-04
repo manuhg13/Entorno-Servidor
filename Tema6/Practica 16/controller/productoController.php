@@ -32,7 +32,7 @@
     }elseif (isset($_REQUEST['modificar'])) {
         $_SESSION['albaran']=$_REQUEST['idAlbaran'];
         $_SESSION['vista']=$vistas['editarAlbaran'];
-        $_SESSION['controlador']=$controlador['editarAlbaran'];
+        $_SESSION['controlador']=$controladores['editarAlbaran'];
         $registro=AlbaranDAO::findById($_SESSION['albaran']);
 
     //Eliminar albaran
@@ -49,6 +49,9 @@
         ProductoDAO::update($producto);
         $venta= new Ventas (null,$_SESSION['user'],date('Y-m-d'),$_SESSION['producto'],$_REQUEST['cantidad'],(float)(($producto->precio)*$_REQUEST['cantidad']));
         VentasDAO::insert($venta);
+        $_SESSION['vista']=$vistas['home'];
+        $_SESSION['controlador']=$controladores['home'];
+        $_SESSION['pagina']='home';
 
     //Estando en ver producto
     }elseif (isset($_SESSION['producto']) && $_SESSION['vista']==$vistas['verProducto']) {

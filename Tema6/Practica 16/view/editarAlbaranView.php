@@ -7,11 +7,14 @@
             </div>
         </div>
         <div class="mb-3 row">
-            <label for="fechaAlbaran" class="col-4 col-form-label">Fecha</label>
+            <label for="fecha" class="col-4 col-form-label">Fecha</label>
             <div class="col-8">
-                <input type="text" class="form-control" name="fechaAlbaran" id="fechaAlbaran" placeholder="Fecha" value="<? echo $registro->fechaAlbaran ?>">
+                <input type="text" class="form-control" name="fecha" id="fecha" placeholder="Fecha" value="<? echo $registro->fechaAlbaran ?>">
             </div>
         </div>
+        <?if (isset($_SESSION['albError']['fecha'])){?>
+            <div class="invalid-feedback"><? echo $_SESSION['albError']['fecha']?> </div>
+        <?}?>
         <div class="mb-3 row">
             <label for="idProducto" class="col-4 col-form-label">Id Producto</label>
             <div class="col-8">
@@ -22,20 +25,20 @@
             <label for="cantidad" class="form-label">Cantidad</label>
             <input type="number" class="form-control" name="cantidad" id="cantidad" value="<? echo $registro->cantidad ?>">
         </div>
+        <?if (isset($_SESSION['albError']['cantidad'])){?>
+            <div class="invalid-feedback"><? echo $_SESSION['albError']['cantidad']?> </div>
+        <?}?>
         <div class="mb-3 row">
             <label for="usuario" class="col-4 col-form-label">Usuario</label>
-            <div class="col-8">  
-                <label for="" class="form-label">City</label>
-                <select class="form-select form-select" name="usuario" id="usuario">
-                    <?
-                        $usuarios=UsuarioDAO::findAll();
-                        foreach ($usuarios as $valor) {?>
-                            <option value="<? echo $valor->usuario ?>"><? echo $valor->usuario ?></option>
-                        <?}
-                    ?>
-                </select>     
-            </div>
+            <select class="form-select form-select" name="usuario" id="usuario">
+            <?
+                $usuarios=UsuarioDAO::findAll();
+                foreach ($usuarios as $valor) {?>
+                    <option value="<? echo $valor->usuario ?>"><? echo $valor->usuario ?></option>
+                <?}?>        
+            </select>     
         </div>
+        
         <div class="mb-3 row">
             <div class="offset-sm-4 col-sm-8">
                 <input type="submit" name="guardar" class="btn btn-outline-danger mb-1 mt-1" value="Guardar">

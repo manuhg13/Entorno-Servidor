@@ -5,7 +5,7 @@
         }
         if (validarAlbaran()){
             $registro=AlbaranDAO::findById($_SESSION['albaran']);
-            $registro->fechaAlbaran=$_REQUEST['fechaAlbaran'];
+            $registro->fechaAlbaran=$_REQUEST['fecha'];
             $registro->cantidad=(int)$_REQUEST['cantidad'];
             $registro->usuario=$_REQUEST['usuario'];
 

@@ -37,7 +37,7 @@
         }
 
         public static function insert($objeto){
-            $sql='insert into ventas values (?,?,?,?,?)';
+            $sql='insert into ventas values (?,?,?,?,?,?)';
             $objeto=(array)$objeto;
             $datos=array();
             foreach ($objeto as $att) {
