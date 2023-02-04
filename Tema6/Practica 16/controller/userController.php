@@ -16,7 +16,11 @@
             if(!UsuarioDAO::update($usuario)) {
                 $_SESSION['error']="No se ha podido modificar";
                 $_SESSION['accion']= 'editar';
+                $_SESSION['nombre']= $usuario->nombre;
+                $_SESSION['roles']= $usuario->roles;
             }
+
+
         }
         $usuario=UsuarioDAO::findById($_SESSION['user']);
     }else{

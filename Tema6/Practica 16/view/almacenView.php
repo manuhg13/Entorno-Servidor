@@ -26,7 +26,10 @@
                         </form>
                         <? }
                     if (esAdmin()) { ?>
+                            <form action="./index.php" method="post">
+                            <input type="hidden" name="idProducto" value="<? echo $prod->idProducto ?>">
                             <input type="submit" name="editar" class="btn btn-outline-danger mb-1 mt-1" value="Editar">
+                            </form>
                         <? } ?>
                 </td>
             </tr>

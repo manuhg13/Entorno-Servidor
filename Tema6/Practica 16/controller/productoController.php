@@ -5,6 +5,7 @@
         $_SESSION['producto']=$_REQUEST['idProducto'];
         $_SESSION['vista']=$vistas['editarProductos'];
         $_SESSION['controlador']=$controladores['editarProductos'];
+        $producto=ProductoDAO::findById($_SESSION['producto']);
 
     }elseif (isset($_REQUEST['aumentar'])) {
         $_SESSION['producto']=$_REQUEST['producto'];
@@ -32,6 +33,7 @@
         $_SESSION['albaran']=$_REQUEST['idAlbaran'];
         $_SESSION['vista']=$vistas['editarAlbaran'];
         $_SESSION['controlador']=$controlador['editarAlbaran'];
+        $registro=AlbaranDAO::findById($_SESSION['albaran']);
 
     //Eliminar albaran
     }elseif (isset($_REQUEST['eliminar'])) {
