@@ -137,6 +137,28 @@ function validarUsuario(){
     }
 }
 
+function validarAlbaran(){
+    if (!isset($_REQUEST['guardar'])){
+        $_SESSION['albError']['guardar']='No enviado';
+    }
+
+    if (vacio('fecha')) {
+        $_SESSION['albError']['fecha']='Campo fecha vacío';
+    }elseif (!patFecha())  {
+        $_SESSION['albError']['fecha']='Fecha en formato incorrecto (aaaa-mm-dd)';
+    }
+    
+    if (vacio('cantidad')){
+        $_SESSION['albError']['cantidad']='Cantidad no puede estar vacío';
+    }
+    
+    if (!isset($_SESSION['albError'])){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 //------------REGeX-----------------
 function patPass(){
     $patron='/(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,}$/';

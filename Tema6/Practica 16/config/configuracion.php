@@ -29,7 +29,7 @@
         'registro'=>'./controller/registroController.php',
         'producto'=>'./controller/productoController.php',
         'editarProductos'=>'./controller/editarProductoController.php',
-        'editarAlbaran'=>'./controller/albaranController.php',
+        'editarAlbaran'=>'./controller/editarAlbaranController.php',
     );
 
     //Vistas
