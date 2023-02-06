@@ -15,4 +15,13 @@
          require '../vistas/formInsert.php';
        }
     }
+
+    if ($_REQUEST['accion']=='Modificar'){
+      if (put($_REQUEST['id'],$_REQUEST['grupo'],$_REQUEST['fecha'],$_REQUEST['precio'],$_REQUEST['lugar'])){
+         $lista=get();
+         require '../vista/listar.php';
+      }else{
+        require '../vistas/formInsert.php';
+      }
+    }
 ?>
