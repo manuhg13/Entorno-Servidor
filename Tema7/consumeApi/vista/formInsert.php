@@ -1,5 +1,5 @@
 <div class="container">
-    <form action="../controlador/conciertosControlador.php">
+    <form action="../controlador/conciertosControlador.php" method="post">
         <div class="mb-3 row">
             <label for="grupo" class="col-4 col-form-label">Grupo</label>
             <div class="col-8">
@@ -26,7 +26,7 @@
         </div>
         <div class="mb-3 row">
             <div class="offset-sm-4 col-sm-8">
-                <button type="submit" class="btn btn-primary" name="accion">Guardar</button>
+                <input type="submit" class="btn btn-primary" name="accion" value="Guardar"/>
             </div>
         </div>
     </form>

@@ -21,7 +21,7 @@
         $con= curl_init();
         $url= 'http://192.168.2.206/DAWServidor/DWES/Tema7/api/conciertos.php/conciertos';
         curl_setopt($con, CURLOPT_URL, $url);
-        curl_setopt($con, CURLOPT_HTTPHEADER, 'Content-Type:application/json');
+        curl_setopt($con, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
         curl_setopt($con, CURLOPT_POST, 1);
         $resultado=curl_exec($con);
 
