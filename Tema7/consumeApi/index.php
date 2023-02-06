@@ -2,5 +2,5 @@
 <a href="">Listar id</a>
 <a href="./vista/formInsert.php">Insertar</a>
 <a href="./vista/formPut.php">Modificar</a>
-<a href="">Borrar</a>
+<a href="./vista/borrar.php">Borrar</a>
 

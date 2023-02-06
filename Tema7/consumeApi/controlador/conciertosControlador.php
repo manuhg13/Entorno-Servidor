@@ -24,4 +24,12 @@
         require '../vistas/formInsert.php';
       }
     }
+    if ($_REQUEST['accion']=='Borrar'){
+      if (delete($_REQUEST['id'])){
+         $lista=get();
+         require '../vista/listar.php';
+      }else{
+        require '../vistas/formInsert.php';
+      }
+    }
 ?>
