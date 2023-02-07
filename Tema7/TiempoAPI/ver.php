@@ -5,6 +5,11 @@
     curl_setopt($con, CURLOPT_RETURNTRANSFER, true);
     $resultado=curl_exec($con);
     $datos=json_decode($resultado,true);
+
+    $url2='http://dataservice.accuweather.com/forecasts/v1/daily/5day/'.$datos['key'].'';
+    curl_setopt($con, CURLOPT_URL, $url2);
+    curl_setopt($con, CURLOPT_RETURNTRANSFER, true);
+
     ?>
 <pre>
     <?
