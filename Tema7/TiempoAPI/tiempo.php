@@ -32,9 +32,12 @@
                     <option value="Zamora">Zamora</option>
                     <option value="Salamanca">Salamanca</option>
                     <option value="Leon">León</option>
-                    <option value="Leon">León</option>
-                    <option value="Leon">León</option>
-                    <option value="Leon">León</option>
+                    <option value="Palencia">Palencia</option>
+                    <option value="Valladolid">Valladolid</option>
+                    <option value="Segovia">Segovia</option>
+                    <option value="Avila">Ávila</option>
+                    <option value="Burgos">Burgos</option>
+                    <option value="Soria">Soria</option>
                 </select>
             </div>
             <div class="mb-3 row">
