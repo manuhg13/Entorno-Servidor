@@ -12,4 +12,4 @@
     ?>
 </pre>
 
-<button>Volver<a href="./tiempo.php"></a></button>
+<a href="./tiempo.php"><button>Volver</button></a>

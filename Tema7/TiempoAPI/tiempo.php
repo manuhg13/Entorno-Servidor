@@ -23,10 +23,10 @@
     <!-- place navbar here -->
   </header>
   <main>
-    <div class="container">
-        <form action="./tiempo.php">
+    <div class="container mt-3">
+        <form action="./ver.php">
             <div class="mb-3">
-                <label for="ciudad" class="form-label">City</label>
+                <label for="ciudad" class="form-label">Ciudad</label>
                 <select class="form-select form-select-lg" name="ciudad" id="ciudad">
                     <option selected>Selecciona una ciudad</option>
                     <option value="Zamora">Zamora</option>
@@ -42,7 +42,7 @@
             </div>
             <div class="mb-3 row">
                 <div class="offset-sm-4 col-sm-8">
-                    <button type="submit" class="btn btn-primary">Action</button>
+                    <button type="submit" class="btn btn-primary">Buscar</button>
                 </div>
             </div>
         </form>
