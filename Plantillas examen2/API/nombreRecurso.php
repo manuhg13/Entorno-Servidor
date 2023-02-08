@@ -2,11 +2,11 @@
     
     require_once './config/configuracion.php';
     
-    $recurso=ControladorPadre::recurso(); 
+    $recurso=FatherController::recurso(); 
 
     if($recurso){
         if ($recurso[1]=='nombreRecurso') {
-            $controlador= new RecursoControlador();
+            $controlador= new RecursoController();
             $controlador->controlar();
         }
     }
