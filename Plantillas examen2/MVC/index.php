@@ -47,7 +47,7 @@
                 //Siempre va el controlador como requerido
                 require_once $_SESSION['controlador'];
 
-            }*/ 
+            } */
         }
 
     }
