@@ -6,7 +6,7 @@
             <div class="mb-auto col-12">
                 <h1>Iniciar sesión</h1>
 
-                <form class="row" action="./index.php">
+                <form class="row" action="./index.php" method="post">
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="user" class="form-label">Usuario</label>
