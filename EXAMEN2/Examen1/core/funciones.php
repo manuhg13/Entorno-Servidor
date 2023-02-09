@@ -20,6 +20,18 @@
             return false;
         }
     }
+
+    function get(){
+        $con= curl_init();
+        $url= 'http://192.168.2.205/ServidorClase/EXAMEN2/api/numeros.php/numeros?min=1&max=50';
+        curl_setopt($con, CURLOPT_URL, $url);
+        //curl_setopt($con, CURLOPT_CUSTOMREQUEST, "GET");
+        curl_setopt($con, CURLOPT_RETURNTRANSFER, true);
+
+        $resultado=curl_exec($con);
+
+        return json_decode($resultado,true);
+    }
     
     //----------------------------------------------
     function esAdmin(){

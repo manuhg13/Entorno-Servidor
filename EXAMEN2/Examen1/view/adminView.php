@@ -31,7 +31,6 @@
         </tbody>
     </table>
 </div>
-
-<form action="./index.html">
-    <input type="submit" class="btn btn-white btn-xl mb-4" name="generar" value="Generar">
-</form>
+<? if(!sorteado()){?>
+    <input type="submit" class="btn btn-white btn-xl mb-4" name="generar" value="Generar">    
+<?}?>

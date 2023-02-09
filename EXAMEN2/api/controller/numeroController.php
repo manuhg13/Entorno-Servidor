@@ -15,7 +15,7 @@
         public function buscar(){
             $parametros=$this->parametros();
             $recurso=self::recurso();
-            //recurso conciertos y nada despues 
+            //recurso numeros y nada despues 
             if (count($recurso)==2) {
                 if (!$parametros){
                     //Listar 
@@ -28,33 +28,16 @@
                     
                 }else {
 
-                    if (isset($_GET['fecha']) && isset($_GET['ordenF']) && count($_GET)==2) {
-                        $concierto=ConciertoDAO::findByFechaOrder($_GET['fecha'],$_GET['ordenF']);
-                        $data=json_encode($concierto);
+                    if (isset($_GET['min']) && isset($_GET['max']) && count($_GET)==2) {
+                        $premiados=array();
+                        for ($i=0; $i < 5; $i++) { 
+                           array_push($premiados,random_int($_GET['min'],$_GET['max']));
+                        }
+                        $data=json_encode($premiados);
                             self::respuesta(
                                 $data,
                                 array('Content-Type: application/json', 'HTTP/1.1 200 OK')
                             );
-                    }elseif (isset($_GET['fecha'])) {
-                        $concierto=ConciertoDAO::findByFecha($_GET['fecha']);
-                        $data=json_encode($concierto);
-                        self::respuesta(
-                            $data,
-                            array('Content-Type: application/json', 'HTTP/1.1 200 OK')
-                        );
-                    }elseif (isset($_GET['ordenF'])) {
-                        $concierto=ConciertoDAO::findOrderByFecha($_GET['ordenF']);
-                        $data=json_encode($concierto);
-                        self::respuesta(
-                            $data,
-                            array('Content-Type: application/json', 'HTTP/1.1 200 OK')
-                        );
-                        if (($_GET['ordenF']!='ASC') && ($_GET['ordenF']!='DESC')) {
-                            self::respuesta(
-                                '',
-                                array('HTTP/1.1 404 No se ha utilizado el filtro correcto')
-                            );
-                        }
                     }else {
                         self::respuesta(
                             '',
