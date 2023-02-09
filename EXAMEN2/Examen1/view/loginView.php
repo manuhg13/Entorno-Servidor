@@ -10,7 +10,10 @@
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="user" class="form-label">Usuario</label>
-                            <input type="text" class="form-control form-control-lg bg-gray-800 border-dark" id="user" aria-describedby="user" name="user">
+                            <input type="text" class="form-control form-control-lg bg-gray-800 border-dark" id="user" aria-describedby="user" name="user" value="<?
+                            if (isset($_COOKIE['usuario'])){
+                                echo $_COOKIE['usuario'];
+                            }?>">
                         </div>
                         <?if (isset($_SESSION['logError']['user'])){?>
                             <div class="invalid-feedback"><? echo $_SESSION['logError']['pass']?> </div>

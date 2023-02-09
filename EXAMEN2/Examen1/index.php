@@ -13,9 +13,9 @@
     //Si quiere desloguearse
     }elseif (isset($_REQUEST['logout'])) {   
         session_destroy();
-        $_SESSION['controlador']= $controladores['home'];
-        $_SESSION['vista']= $vistas['home'];
-        $_SESSION['pagina']= 'home';
+        $_SESSION['controlador']= $controladores['login'];
+        $_SESSION['vista']= $vistas['login'];
+        $_SESSION['pagina']= 'Login';
         header('Location: index.php');
 
     //Otras opciones
@@ -28,20 +28,9 @@
             require_once $_SESSION['controlador'];
         
         //Una vez se tenga ya página 
-        }elseif(isset($_SESSION['pagina'])){
-            //Aquí van todas las opciones que tenga nuestro <header> para poder navegar Ej.:
-
-            /*if(isset($_REQUEST['tienda'])){
-                $_SESSION['controlador']=$controladores['tienda'];
-                $_SESSION['pagina']='tienda';
-                $_SESSION['vista']=$vistas['tienda'];
-                require_once $_SESSION['controlador'];
-
-            }else{
-                //Siempre va el controlador como requerido
-                require_once $_SESSION['controlador'];
-
-            } */
+        }else{
+            require_once $_SESSION['controlador'];
+    
         }
 
     }

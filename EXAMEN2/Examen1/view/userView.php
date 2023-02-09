@@ -6,7 +6,7 @@
             <div class="mb-auto col-12">
                 <form class="row" action="./index.php" method="post">
                     <div class="col-12">
-                        <div class="form-check">
+                        <div class="form-check mb-3">
                             <? for ($i=1; $i <= 50 ; $i++) { ?>
                                 <input class="oculto" type="checkbox" value="<?echo $i?>" id="<?echo $i?>">
                                 <label class="<??>" for="<?echo $i?>">
