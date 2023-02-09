@@ -20,7 +20,7 @@
 
     //Controladores 
     $controladores=array(
-        'home'=>'./controller/homeController.php',
+        'user'=>'./controller/userController.php',
         'login'=>'./controller/loginController.php',
         
     );
@@ -28,6 +28,7 @@
     //Vistas
     $vistas=array(
         'login'=>'./view/loginView.php',
+        'user'=>'./view/userView.php',
         
     );
 

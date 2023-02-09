@@ -11,6 +11,13 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="./web/css/theme.min.css">
+    <link rel="stylesheet" href="./web/css/style.css">
+
+    <style>
+    .invalid-feedback {
+      display: flex;
+    }
+  </style>
 
 </head>
 
@@ -31,31 +38,10 @@
           <input type="submit" class=" nav-link fs-5 btn" href="index.html" aria-label="Homepage" name="home" value="Inicio">
         </li>
       </ul>
-
       <?
-      /*if (estaValidado()) { ?>
-        <div class="dropdown col-md-3 text-center me-lg-4 me-md-4">
-          <p class="text-light">Hola <? echo $_SESSION['user'] ?></p>
-          <a href="#" class="link-danger text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-              <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-            </svg>
-          </a>
-          <ul class="dropdown-menu text-small">
-            <li><input type="submit" class="dropdown-item" name="miperfil" value="Perfil"></li>
-            <? if (esAdmin() || esModerador()) { ?>
-              <li><input type="submit" class="dropdown-item" name="almacen" value="Almacen"></li>
-              <li><input type="submit" class="dropdown-item" name="ventas" value="Ventas"></li>
-            <? } ?>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li>
-              <input type="submit" value="Cerrar sesión" class="dropdown-item danger" name="logout">
-            </li>
-          </ul>
-        </div>
-     <? } else { */?>
+      if (estaValidado()) { ?>
+        <input type="submit" value="Cerrar sesión" class="btn btn-light" name="logout">      
+     <? } ?>
     </div>
     </form>
   </nav>
