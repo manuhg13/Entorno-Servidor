@@ -7,29 +7,29 @@
             $devuelve=parent::ejecuta($sql,$datos);
             $arrayApuestas=array();
             while($obj= $devuelve->fetchObject()){
-                $apuesta=new Apuesta($obj->id,$obj->fecha,$obj->idUser,$obj->n1,$obj->n2,$obj->n3,$obj->n4,$obj->n5);
+                $apuesta=new Apuesta($obj->id,$obj->fecha,$obj->iduser,$obj->n1,$obj->n2,$obj->n3,$obj->n4,$obj->n5);
                 array_push($arrayApuestas,$apuesta);
             }
             return $arrayApuestas;
         }
         public static function findById($id){
-            $sql='select * from apuesta where idUser=? and fecha=?;';
+            $sql='select * from apuesta where iduser=? ;';
             $datos=array($id);
             $devuelve = parent::ejecuta($sql,$datos);
             $obj=$devuelve->fetchObject();
             if ($obj) {
-                return $apuesta= new Apuesta($obj->id,$obj->fecha,$obj->idUser,$obj->n1,$obj->n2,$obj->n3,$obj->n4,$obj->n5);
+                return $apuesta= new Apuesta($obj->id,$obj->fecha,$obj->iduser,$obj->n1,$obj->n2,$obj->n3,$obj->n4,$obj->n5);
             }else{
                 return 'No existe el usuario';
             }
         }
         public static function findByIdDate($id,$fecha){
-            $sql='select * from apuesta where idUser=? and fecha=?;';
+            $sql='select * from apuesta where iduser=? and fecha=?;';
             $datos=array($id,$fecha);
             $devuelve = parent::ejecuta($sql,$datos);
             $obj=$devuelve->fetchObject();
             if ($obj) {
-                return $apuesta= new Apuesta($obj->id,$obj->fecha,$obj->idUser,$obj->n1,$obj->n2,$obj->n3,$obj->n4,$obj->n5);
+                return $apuesta= new Apuesta($obj->id,$obj->fecha,$obj->iduser,$obj->n1,$obj->n2,$obj->n3,$obj->n4,$obj->n5);
             }else{
                 return 'No existe el usuario';
             }
@@ -57,8 +57,8 @@
         }
         //CAMBIAR
         public static function update($obj){
-            $sql='update apuesta set fecha=?,idUser=?,n1=?,n2=?,n3=?,n4=?,n5=? where id=?';
-            $datos=array($obj->fecha,$obj->idUser,$obj->n1,$obj->n2,$obj->n3,$obj->n4,$obj->n5,$obj->id);
+            $sql='update apuesta set n1=?,n2=?,n3=?,n4=?,n5=? where iduser=?';
+            $datos=array($obj->n1,$obj->n2,$obj->n3,$obj->n4,$obj->n5,$obj->iduser);
             $devuelve=parent::ejecuta($sql,$datos);
             if ($devuelve->rowCount()==0){
                 return false;

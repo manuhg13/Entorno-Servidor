@@ -31,7 +31,7 @@
             if ($obj) {
                 return $sorteo= new Usuario($obj->id,$obj->fecha,$obj->n1,$obj->n2,$obj->n3,$obj->n4,$obj->n5);
             }else{
-                return 'No existe el usuario';
+                return false;
             }
         }
         public static function delete($id){
