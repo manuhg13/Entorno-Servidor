@@ -1,5 +1,5 @@
 <?
-    class Apuesta{
+    class Sorteo{
         private $id;
         private $fecha;
         private $n1;

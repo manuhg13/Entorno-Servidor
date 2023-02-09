@@ -1,30 +1,30 @@
 <?
 
-    class ApuestaDAO extends FactoryBD implements DAO{
+    class SorteoDAO extends FactoryBD implements DAO{
         public static function findAll(){
-            $sql='select * from apuesta;';
+            $sql='select * from sorteo;';
             $datos=array();
             $devuelve=parent::ejecuta($sql,$datos);
-            $arrayApuestas=array();
+            $arraySorteo=array();
             while($obj= $devuelve->fetchObject()){
-                $apuesta=new Apuesta($obj->id,$obj->fecha,$obj->idUser,$obj->n1,$obj->n2,$obj->n3,$obj->n4,$obj->n5);
-                array_push($arrayApuestas,$apuesta);
+                $sorteo=new Sorteo($obj->id,$obj->fecha,$obj->n1,$obj->n2,$obj->n3,$obj->n4,$obj->n5);
+                array_push($arraySorteo,$sorteo);
             }
-            return $arrayApuestas;
+            return $arraySorteo;
         }
         public static function findById($id){
-            $sql='select * from apuesta where id=?;';
+            $sql='select * from sorteo where id=?;';
             $datos=array($id);
             $devuelve = parent::ejecuta($sql,$datos);
             $obj=$devuelve->fetchObject();
             if ($obj) {
-                return $apuesta= new Apuesta($obj->id,$obj->fecha,$obj->idUser,$obj->n1,$obj->n2,$obj->n3,$obj->n4,$obj->n5);
+                return $sorteo= new Usuario($obj->id,$obj->fecha,$obj->n1,$obj->n2,$obj->n3,$obj->n4,$obj->n5);
             }else{
                 return 'No existe el usuario';
             }
         }
         public static function delete($id){
-            $sql='delete from apuesta where id=?;';
+            $sql='delete from sorteo where id=?;';
             $datos=array($id);
             $devuelve=parent::ejecuta($sql,$datos);  
             if ($devuelve->rowCount()==0){
@@ -35,7 +35,7 @@
             
         }
         public static function insert($objeto){
-            $sql='insert into apuesta values (?,?,?,?,?,?,?,?)';
+            $sql='insert into sorteo values (?,?,?,?,?,?,?)';
             $objeto=(array)$objeto;
             $datos=array();
             foreach ($objeto as $att) {
@@ -50,8 +50,8 @@
         }
         //CAMBIAR
         public static function update($obj){
-            $sql='update apuesta set fecha=?,idUser=?,n1=?,n2=?,n3=?,n4=?,n5=? where id=?';
-            $datos=array($obj->fecha,$obj->idUser,$obj->n1,$obj->n2,$obj->n3,$obj->n4,$obj->n5,$obj->id);
+            $sql='update sorteo set fecha=?,n1=?,n2=?,n3=?,n4=?,n5=? where id=?';
+            $datos=array($obj->fecha,$obj->n1,$obj->n2,$obj->n3,$obj->n4,$obj->n5,$obj->id);
             $devuelve=parent::ejecuta($sql,$datos);
             if ($devuelve->rowCount()==0){
                 return false;
