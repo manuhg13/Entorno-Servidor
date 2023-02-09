@@ -22,7 +22,7 @@ if (isset($_REQUEST['user'])) {
             $_SESSION['validado'] = true;
             $_SESSION['user'] = $user;
             $_SESSION['nombre'] = $usuario->nombre;
-            $_SESSION['roles'] = $usuario->perfil;
+            $_SESSION['perfil'] = $usuario->perfil;
             //Guardamos la vista de home
             if (esAdmin()){
                 $_SESSION['vista'] = $vistas['admin'];
