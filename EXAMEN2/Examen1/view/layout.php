@@ -56,9 +56,6 @@
           </ul>
         </div>
      <? } else { */?>
-      <input type="submit" class="btn btn-light me-2" name="login" value="Inciar sesión">
-      <input type="submit" class="btn btn-outline-light" name="registro" value="Registrarse">
-      <?//}?>
     </div>
     </form>
   </nav>

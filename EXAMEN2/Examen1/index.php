@@ -5,9 +5,9 @@
 
     //Si está la pagina 'home'
     if (isset($_REQUEST['home'])){
-        $_SESSION['controlador']= $controladores['home'];
-        $_SESSION['vista']= $vistas['home'];
-        $_SESSION['pagina']= 'home';
+        $_SESSION['pagina']='Login';
+        $_SESSION['controlador']= $controladores['login'];
+        $_SESSION['vista']=$vistas['login'];
         require_once $_SESSION['controlador'];
 
     //Si quiere desloguearse
@@ -20,19 +20,13 @@
 
     //Otras opciones
     }else{
-        //Si no tiene página se le asigna la principal
+        //Si no tiene página se le asigna la del Login como principal
         if (!isset($_SESSION['pagina'])){
-            $_SESSION['vista']=$vistas['home'];
-            $_SESSION['controlador']= $controladores['home'];
-            $_SESSION['pagina']= 'home';
-            require_once $_SESSION['controlador'];
-        
-        //Para ir al login 
-        }elseif (isset($_REQUEST['login'])){
-            $_SESSION['pagina']='login';
+            $_SESSION['pagina']='Login';
             $_SESSION['controlador']= $controladores['login'];
             $_SESSION['vista']=$vistas['login'];
-
+            require_once $_SESSION['controlador'];
+        
         //Una vez se tenga ya página 
         }elseif(isset($_SESSION['pagina'])){
             //Aquí van todas las opciones que tenga nuestro <header> para poder navegar Ej.:
