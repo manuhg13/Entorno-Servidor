@@ -13,6 +13,14 @@
             return false;
         }
     }
+    function sorteado(){
+        if(SorteoDAO::findByDate(date('Y-m-d'))){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
     //----------------------------------------------
     function esAdmin(){
         if(isset($_SESSION['perfil'])){

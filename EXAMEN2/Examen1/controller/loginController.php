@@ -25,6 +25,7 @@ if (isset($_REQUEST['user'])) {
         if ($usuario != null) {
             $_SESSION['validado'] = true;
             $_SESSION['user'] = $user;
+            $_SESSION['id'] = $usuario->id;
             $_SESSION['nombre'] = $usuario->nombre;
             $_SESSION['perfil'] = $usuario->perfil;
             //Guardamos la vista dependiendo de quien entre

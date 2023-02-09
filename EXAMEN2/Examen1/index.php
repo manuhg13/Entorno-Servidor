@@ -3,15 +3,8 @@
 
     session_start();
 
-    //Si está la pagina 'home'
-    if (isset($_REQUEST['home'])){
-        $_SESSION['pagina']='Login';
-        $_SESSION['controlador']= $controladores['login'];
-        $_SESSION['vista']=$vistas['login'];
-        require_once $_SESSION['controlador'];
-
-    //Si quiere desloguearse
-    }elseif (isset($_REQUEST['logout'])) {   
+    
+    if (isset($_REQUEST['logout'])) {   
         session_destroy();
         $_SESSION['controlador']= $controladores['login'];
         $_SESSION['vista']= $vistas['login'];
@@ -27,7 +20,6 @@
             $_SESSION['vista']=$vistas['login'];
             require_once $_SESSION['controlador'];
         
-        //Una vez se tenga ya página 
         }else{
             require_once $_SESSION['controlador'];
     

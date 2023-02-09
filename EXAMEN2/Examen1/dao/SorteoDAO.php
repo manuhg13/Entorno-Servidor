@@ -23,6 +23,17 @@
                 return 'No existe el usuario';
             }
         }
+        public static function findByDate($fecha){
+            $sql='select * from sorteo where fecha=?;';
+            $datos=array($fecha);
+            $devuelve = parent::ejecuta($sql,$datos);
+            $obj=$devuelve->fetchObject();
+            if ($obj) {
+                return $sorteo= new Usuario($obj->id,$obj->fecha,$obj->n1,$obj->n2,$obj->n3,$obj->n4,$obj->n5);
+            }else{
+                return 'No existe el usuario';
+            }
+        }
         public static function delete($id){
             $sql='delete from sorteo where id=?;';
             $datos=array($id);

@@ -13,8 +13,19 @@
             return $arrayApuestas;
         }
         public static function findById($id){
-            $sql='select * from apuesta where id=?;';
+            $sql='select * from apuesta where idUser=? and fecha=?;';
             $datos=array($id);
+            $devuelve = parent::ejecuta($sql,$datos);
+            $obj=$devuelve->fetchObject();
+            if ($obj) {
+                return $apuesta= new Apuesta($obj->id,$obj->fecha,$obj->idUser,$obj->n1,$obj->n2,$obj->n3,$obj->n4,$obj->n5);
+            }else{
+                return 'No existe el usuario';
+            }
+        }
+        public static function findByIdDate($id,$fecha){
+            $sql='select * from apuesta where idUser=? and fecha=?;';
+            $datos=array($id,$fecha);
             $devuelve = parent::ejecuta($sql,$datos);
             $obj=$devuelve->fetchObject();
             if ($obj) {
@@ -35,12 +46,8 @@
             
         }
         public static function insert($objeto){
-            $sql='insert into apuesta values (?,?,?,?,?,?,?,?)';
-            $objeto=(array)$objeto;
-            $datos=array();
-            foreach ($objeto as $att) {
-                array_push($datos,$att);
-            }
+            $sql='insert into apuesta (idUser,n1,n2,n3,n4,n5) values (?,?,?,?,?,?)';
+            $datos=array($objeto->idUser,$objeto->n1,$objeto->n2,$objeto->n3,$objeto->n4,$objeto->n5);
             $devuelve=parent::ejecuta($sql,$datos);
             if ($devuelve->rowCount()==0){
                 return false;
